@@ -123,15 +123,6 @@ function About() {
             healthcare initiatives. Join us in our mission to build a greener,
             healthier future.
           </Typography>
-
-          <Button
-            variant="contained"
-            size="large"
-            sx={{ px: 6, py: 1.8, fontWeight: 700, borderRadius: 3 }}
-            href="/donate"
-          >
-            Donate Now
-          </Button>
         </Container>
       </AltSectionBox>
 
@@ -153,22 +144,116 @@ function About() {
                     gutterBottom
                     sx={{ color: "primary.main", fontWeight: "bold", mb: 4 }}
                   >
-                    Our Mission
+                    Our Goals
                   </Typography>
                   <Typography
                     variant="body1"
                     paragraph
-                    sx={{ fontSize: "1.15rem", lineHeight: 1.8, mb: 3 }}
+                    sx={{
+                      fontSize: "1.1rem",
+                      lineHeight: 1.8,
+                      mb: 4,
+                      color: "text.primary",
+                      textAlign: "justify",
+                    }}
                   >
-                    Green Future Initiative is dedicated to combating climate
-                    change in rural areas while ensuring children's education
-                    and healthcare access. We believe in creating sustainable
-                    communities that thrive in harmony with nature.
+                    Caps || Climate Adaptation Plan Society has designed a
+                    comprehensive strategy to help communities as well as
+                    societies adapt to the impacts of climate change. The
+                    Society outlines strategies and actions, takes to prepare
+                    for and adjust to the unavoidable impacts of climate change.
+                    These plans aim to reduce vulnerability, build resilience,
+                    and integrate adaptation into various sectors and levels of
+                    governance. They often involve a combination of
+                    infrastructural, institutional, behavioral, and nature-based
+                    solutions. Our specialty is in the point.... <br /> <br />
+                    A. Limited cost, service more <br />
+                    B. Small work, total solution <br />
+                    C. Area small, full support, achievement 100%
+                    <br /> <br />
+                    Based on the point <strong>B+C,</strong>  we declare a small community having
+                    Min20, Max50 houses and then following the point A we
+                    emphasize on cost management and try to be a sustainable
+                    Development Partner providing more social development
+                    support within our limit for the people of the country
+                    specially, coastal districts, as a whole Lower Southern Part
+                    of Bangladesh that can be go under water for climate change
+                    impact predicted by Scientists. <br /> <br />
+                    Education Program is the Mother program of all programs,
+                    bearing the sense, Caps takes Climate Smart Education
+                    program first among the 40 programs of Climate Adaptation
+                    Plan sothat all the programs can be launched fruitfully one
+                    after one through Education program as guardians make
+                    connections and keep the connections with Educational
+                    Institutions. Based on B+C, Caps sets up a CLC-Community
+                    Learning Centre in the proposed community for all types of
+                    Education, for all age’s people. Caps works in the root of
+                    climate change impact and under goes Nature Based Solution
+                    for sustainable development of the most vulnerable coastal
+                    poor people of southern part of Bangladesh. It’s our Goal.{" "}
+                    <br /> <br />
+                    <strong>
+                      Key components of Climate Adaptation Plan Society:
+                    </strong>{" "}
+                    <br />
+                    <b>Vulnerability Assessment:</b> <br /> Identifying
+                    communities and sectors most at risk from climate change
+                    impacts like sea-level rise, extreme weather events, and
+                    water scarcity. <br />
+                    <b>Adaptation Strategies:</b> <br /> Developing and
+                    implementing measures to reduce vulnerability and build
+                    resilience. <br /> This can include: <br /> Infrastructural:
+                    Building seawalls, flood defenses, and resilient
+                    infrastructure. <br />
+                    Institutional: Developing new insurance schemes, early
+                    warning systems, and climate-resilient building codes.{" "}
+                    <br />
+                    Behavioral: Changing crop planting times, promoting water
+                    conservation, and adopting climate-smart agricultural
+                    practices. <br /> Nature-based Solutions: Utilizing green
+                    infrastructure, restoring wetlands, and promoting
+                    sustainable land management. <br /> Integration into
+                    Planning: Incorporating climate adaptation considerations
+                    into national and local development plans, policies, and
+                    programs. <br /> Stakeholder Engagement: Involving
+                    vulnerable communities, local governments, civil society
+                    organizations, and other stakeholders in the planning and
+                    implementation process. <br />{" "}
+                    <b>Monitoring and Evaluation:</b> <br /> Tracking the
+                    effectiveness of adaptation measures and making adjustments
+                    as needed. <br /> <br />{" "}
+                    <b>Examples of Climate Adaptation Plans:</b> <br />{" "}
+                    <b>National Adaptation Plans (NAPs):</b> These are
+                    country-led strategies that outline how countries will adapt
+                    to climate change in the medium and long term. <br />{" "}
+                    <b>Community-Based Adaptation (CBA):</b> <br />
+                    These initiatives empower vulnerable communities to adapt to
+                    climate change impacts through participatory planning and
+                    action. <br />
+                    <b>City-Level Adaptation Plans: </b> <br /> Many cities are
+                    developing their own plans to address climate risks specific
+                    to their urban environment. <br /> <br />
+                    <b>Importance of Climate Adaptation Plans:</b> <br />
+                    <b>Reducing Vulnerability:</b> <br /> Adaptation plans help
+                    communities and societies become more resilient to the
+                    impacts of climate change. <br />
+                    <b>
+                      Protecting Livelihoods and Infrastructure:
+                    </b> <br /> Adaptation measures can safeguard livelihoods,
+                    infrastructure, and economic activity. <br /> Building
+                    <b>Building a Sustainable Future:</b> <br /> Climate
+                    adaptation is crucial for achieving sustainable development
+                    goals and ensuring a healthy planet for future generations.
                   </Typography>
                   <Typography
                     variant="body1"
                     paragraph
-                    sx={{ fontSize: "1.15rem", lineHeight: 1.8 }}
+                    sx={{
+                      fontSize: "1.1rem",
+                      lineHeight: 1.8,
+                      color: "text.primary",
+                      textAlign: "justify",
+                    }}
                   >
                     Since our founding, we've worked with over 50 rural
                     communities across the country, implementing innovative
@@ -228,6 +313,97 @@ function About() {
             </Grid>
           </Grid>
 
+          {/* Key Approaches Section */}
+          <Box sx={{ mt: 8, mb: 8 }}>
+            <Typography
+              variant="h4"
+              gutterBottom
+              sx={{
+                color: "primary.main",
+                mb: 6,
+                fontWeight: "bold",
+                textAlign: "center",
+              }}
+            >
+              Key Approaches of the Society
+            </Typography>
+            <Typography
+              variant="body1"
+              sx={{
+                fontSize: "1.1rem",
+                lineHeight: 1.8,
+                color: "text.primary",
+                textAlign: "justify",
+                mb: 4,
+              }}
+            >
+              Our comprehensive strategy integrates multiple approaches to build
+              climate-resilient communities and achieve sustainable development
+              goals. The Society employs a multifaceted approach encompassing{" "}
+              <strong>Vulnerability Assessment</strong>,{" "}
+              <strong>Risk Management</strong>, and{" "}
+              <strong>Adaptive Capacity Building</strong> to identify and
+              address the most pressing climate challenges. We implement{" "}
+              <strong>Ecosystem-Based Adaptation</strong> strategies alongside{" "}
+              <strong>Infrastructure Development</strong> to create sustainable
+              solutions that work with nature rather than against it.
+            </Typography>
+            <Typography
+              variant="body1"
+              sx={{
+                fontSize: "1.1rem",
+                lineHeight: 1.8,
+                color: "text.primary",
+                textAlign: "justify",
+                mb: 4,
+              }}
+            >
+              At the governance level, we focus on{" "}
+              <strong>Policy and Governance</strong> reforms while ensuring{" "}
+              <strong>Community Engagement</strong> remains at the heart of all
+              our initiatives. Our <strong>Early Warning Systems</strong> and{" "}
+              <strong>Disaster Preparedness</strong> programs help communities
+              anticipate and respond to climate-related emergencies effectively.
+            </Typography>
+            <Typography
+              variant="body1"
+              sx={{
+                fontSize: "1.1rem",
+                lineHeight: 1.8,
+                color: "text.primary",
+                textAlign: "justify",
+                mb: 4,
+              }}
+            >
+              In addressing resource management, we prioritize{" "}
+              <strong>Water Resource Management</strong> and{" "}
+              <strong>Agricultural Diversification</strong> to ensure food
+              security and sustainable livelihoods. Our{" "}
+              <strong>Coastal Protection</strong> initiatives and{" "}
+              <strong>Urban Green Spaces</strong> development create resilient
+              environments for both rural and urban communities.
+            </Typography>
+            <Typography
+              variant="body1"
+              sx={{
+                fontSize: "1.1rem",
+                lineHeight: 1.8,
+                color: "text.primary",
+                textAlign: "justify",
+                mb: 4,
+              }}
+            >
+              The ultimate goals of our approach are{" "}
+              <strong>Protecting Lives and Livelihoods</strong>,{" "}
+              <strong>Reducing Economic Losses</strong>, and{" "}
+              <strong>Building Climate-Resilient Societies</strong>. Through
+              these integrated strategies, we work towards{" "}
+              <strong>Achieving Sustainable Development Goals</strong> while
+              ensuring no community is left behind in the face of climate
+              change.
+            </Typography>
+          </Box>
+
           {/* Why Choose Us Section */}
           <Box sx={{ textAlign: "center", mb: 12 }}>
             <Typography
@@ -237,7 +413,13 @@ function About() {
             >
               Why Choose Us?
             </Typography>
-            <Grid container spacing={6} justifyContent="center" maxWidth="lg" mx="auto">
+            <Grid
+              container
+              spacing={6}
+              justifyContent="center"
+              maxWidth="lg"
+              mx="auto"
+            >
               {[
                 {
                   icon: "🌍",
@@ -271,7 +453,10 @@ function About() {
                     >
                       {title}
                     </Typography>
-                    <Typography variant="body1" sx={{ color: "text.secondary" }}>
+                    <Typography
+                      variant="body1"
+                      sx={{ color: "text.secondary" }}
+                    >
                       {description}
                     </Typography>
                   </ValueCard>
@@ -292,7 +477,13 @@ function About() {
           >
             Our Core Values
           </Typography>
-          <Grid container spacing={6} justifyContent="center" maxWidth="lg" mx="auto">
+          <Grid
+            container
+            spacing={6}
+            justifyContent="center"
+            maxWidth="lg"
+            mx="auto"
+          >
             {[
               {
                 emoji: "🌱",
@@ -347,22 +538,22 @@ function About() {
             Our Journey
           </Typography>
           <Box sx={{ maxWidth: "700px", mx: "auto" }}>
-            {[ 
+            {[
               {
-                year: "2018 - Foundation",
-                desc: "Green Future Initiative was founded with a vision to address climate change and rural development challenges.",
+                year: "2021 - Foundation",
+                desc: "CAPS is founded with a vision to address climate change impact & Climate change and it's Impact, Adaptation and  vulnerable coastal development challeng,  ",
               },
               {
-                year: "2020 - First Milestone",
-                desc: "Successfully planted 10,000 trees and established education programs in 10 rural communities.",
+                year: "2023 - First Milestone",
+                desc: "Successful governance of 27 community Learning Centre.",
               },
               {
-                year: "2022 - Expansion",
-                desc: "Expanded to 50 communities with healthcare initiatives and plastic waste management programs.",
+                year: "2024 - Expansion",
+                desc: "Successfully raise community awareness about Adaptation",
               },
               {
-                year: "2024 - Future Vision",
-                desc: "Aiming to reach 100 communities and create the first completely sustainable rural development model.",
+                year: "2030 - Future Vision",
+                desc: "Sustainable climate Adaptation Development",
               },
             ].map(({ year, desc }, idx) => (
               <TimelineCard key={idx}>
@@ -391,7 +582,13 @@ function About() {
           >
             Meet Our Team
           </Typography>
-          <Grid container spacing={6} justifyContent="center" maxWidth="lg" mx="auto">
+          <Grid
+            container
+            spacing={6}
+            justifyContent="center"
+            maxWidth="lg"
+            mx="auto"
+          >
             {[
               {
                 name: "Dr. Sarah Johnson",

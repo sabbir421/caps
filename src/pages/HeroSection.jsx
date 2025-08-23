@@ -1,194 +1,169 @@
-import React, { useState, useEffect } from "react";
-import {
-  Box,
-  Typography,
-  Button,
-  Card,
-  CardMedia,
-  CardContent,
-  useTheme,
-} from "@mui/material";
-import {
-  Nature,
-  School,
-  LocalHospital,
-  Agriculture,
-  Opacity,
-  Bolt,
-} from "@mui/icons-material";
-
-const workingAreas = [
-  {
-    title: "Climate Action",
-    description:
-      "Promoting sustainable practices and climate resilience in rural communities. We implement tree plantation drives, awareness campaigns, and support local adaptation strategies to reduce the impact of climate change. Our projects empower communities to adopt eco-friendly technologies and build resilience against natural disasters.",
-    image:
-      "https://images.pexels.com/photos/2229887/pexels-photo-2229887.jpeg?cs=srgb&dl=pexels-guillaume-falco-1112556-2229887.jpg&fm=jpg",
-    icon: <Nature fontSize="large" color="primary" />,
-    link: "/working-area/climate-action",
-  },
-  {
-    title: "Education",
-    description:
-      "Ensuring access to quality education for every child in rural areas. We run community schools, provide scholarships, and distribute learning materials to underprivileged children. Our focus is on inclusive education, digital literacy, and skill development for lifelong learning.",
-    image:
-      "https://img.freepik.com/free-vector/characters-people-holding-green-energy-icons_53876-66137.jpg?semt=ais_hybrid&w=740",
-    icon: <School fontSize="large" color="primary" />,
-    link: "/working-area/education",
-  },
-  {
-    title: "Healthcare",
-    description:
-      "Providing essential healthcare services and awareness in underserved regions. We organize medical camps, maternal and child health programs, and health education sessions. Our initiatives aim to improve access to doctors, medicines, and preventive care for rural families.",
-    image:
-      "https://img.freepik.com/free-photo/medical-banner-with-doctor-working-laptop_23-2149611211.jpg?semt=ais_hybrid&w=740",
-    icon: <LocalHospital fontSize="large" color="primary" />,
-    link: "/working-area/healthcare",
-  },
-  {
-    title: "Agriculture",
-    description:
-      "Empowering farmers with modern techniques and sustainable agriculture. We provide training on organic farming, distribute high-yield seeds, and promote water-efficient irrigation. Our goal is to increase productivity, ensure food security, and improve rural livelihoods.",
-    image:
-      "https://img.freepik.com/free-photo/green-tea-bud-leaves-green-tea-plantations-morning_335224-955.jpg?semt=ais_hybrid&w=740",
-    icon: <Agriculture fontSize="large" color="primary" />,
-    link: "/working-area/agriculture",
-  },
-  {
-    title: "Water Management",
-    description:
-      "Innovative solutions for water conservation and management. We construct rainwater harvesting systems, restore ponds, and educate communities on efficient water use. Our projects help ensure clean water access and sustainable agriculture in water-scarce areas.",
-    image:
-      "https://media.istockphoto.com/id/505176828/photo/water-treatment-plant-at-sunset.jpg?s=612x612&w=0&k=20&c=TqbiqmeZcjlZeB2TLoWPrRIyVsYx2m8mZC4rMbNmsXc=",
-    icon: <Opacity fontSize="large" color="primary" />,
-    link: "/working-area/water",
-  },
-  {
-    title: "Renewable Energy",
-    description:
-      "Promoting clean and renewable energy sources in rural areas. We install solar panels, train local technicians, and advocate for the adoption of wind and biogas solutions. Our efforts reduce carbon emissions and bring reliable electricity to off-grid communities.",
-    image:
-      "https://beyondexclamation.com/wp-content/uploads/2020/01/renewable-energy-sources.jpg",
-    icon: <Bolt fontSize="large" color="primary" />,
-    link: "/working-area/energy",
-  },
-];
+import React from "react";
+import { Box, Typography, Container, Divider } from "@mui/material";
+import logo from "../assets/logo.jpeg";
 
 const HeroSection = () => {
-  const theme = useTheme();
-  const [current, setCurrent] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % workingAreas.length);
-    }, 4000);
-    return () => clearInterval(timer);
-  }, []);
-
-  const handlePrev = () =>
-    setCurrent(
-      (prev) => (prev - 1 + workingAreas.length) % workingAreas.length
-    );
-  const handleNext = () =>
-    setCurrent((prev) => (prev + 1) % workingAreas.length);
-
-  const area = workingAreas[current];
-
   return (
     <Box
       sx={{
-        backgroundColor: theme.palette.primary.main,
-        color: theme.palette.primary.contrastText,
-        py: { xs: 4, sm: 6, md: 8 },
-        px: { xs: 0, sm: 2 },
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        minHeight: { xs: 320, sm: 380, md: 420 },
+        background:
+          "linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%)",
+        color: "white",
+        position: "relative",
+        overflow: "hidden",
+        py: { xs: 4, sm: 5, md: 6 },
+        "&::before": {
+          content: '""',
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          background:
+            'url(\'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>\')',
+          opacity: 0.3,
+        },
       }}
     >
-      <Box
+      <Container
+        maxWidth="lg"
         sx={{
-          width: "100%",
-          maxWidth: { xs: 360, sm: 600, md: 950 },
-          mx: "auto",
-          borderRadius: 2,
-          boxShadow: 3,
-          overflow: "hidden",
-          backgroundColor: "white",
-          color: theme.palette.text.primary,
+          position: "relative",
+          zIndex: 1,
+          px: { xs: 2, sm: 3, md: 0 }, // reduced horizontal padding for mobile
         }}
       >
-        <Card
-          sx={{
-            display: "flex",
-            flexDirection: { xs: "column", sm: "row" },
-            alignItems: "stretch",
-            boxShadow: "none",
-            background: "none",
-            minHeight: { xs: 320, sm: 260, md: 400 },
-          }}
-        >
-          <CardMedia
-            component="img"
-            image={area.image}
-            alt={area.title}
+        {/* Header */}
+        <Box sx={{ textAlign: "center", mb: { xs: 3, md: 4 } }}>
+          <Box
             sx={{
-              width: { xs: "100%", sm: 260, md: 360 },
-              height: { xs: 180, sm: 260, md: 400 },
-              objectFit: "cover",
-              flexShrink: 0,
-            }}
-          />
-          <CardContent
-            sx={{
-              flex: 1,
-              p: { xs: 2, sm: 3, md: 4 },
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
+              alignItems: "center",
+              gap: { xs: 1.5, sm: 2 },
             }}
           >
-            <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
-              {area.icon}
-              <Typography variant="h5" sx={{ fontWeight: 700, ml: 1 }}>
-                {area.title}
+            <img
+              src={logo}
+              alt="CAPS Logo"
+              style={{
+                height: "240px", // slightly smaller for mobile
+                width: "auto",
+                borderRadius: "8px",
+                maxWidth: "100%",
+              }}
+            />
+            <Box sx={{ textAlign: "center" }}>
+              <Typography
+                variant="h3"
+                sx={{
+                  fontWeight: 800,
+                  fontSize: { xs: "1.2rem", sm: "1.5rem", md: "1.8rem" },
+                  mb: 1,
+                  background:
+                    "linear-gradient(45deg, #ffffff 30%, #f0f8ff 90%)",
+                  backgroundClip: "text",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  textShadow: "0 4px 8px rgba(0,0,0,0.15)",
+                  lineHeight: 1.3,
+                }}
+              >
+                Caps || Climate Adaptation Plan Society
+              </Typography>
+              <Typography
+                variant="h5"
+                sx={{
+                  fontWeight: 500,
+                  fontStyle: "italic",
+                  color: "rgba(255,255,255,0.9)",
+                  fontSize: { xs: "0.85rem", sm: "1rem", md: "1.1rem" },
+                  lineHeight: 1.4,
+                }}
+              >
+                "An Albatross of Sustainable Development…"
               </Typography>
             </Box>
-            <Typography variant="body1" sx={{ mb: 2 }}>
-              {area.description}
-            </Typography>
-            <Button
-              variant="contained"
-              color="primary"
-              href={area.link}
-              sx={{ borderRadius: 2, fontWeight: 600, alignSelf: "flex-start" }}
-            >
-              Learn More
-            </Button>
-          </CardContent>
-        </Card>
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            px: { xs: 1, sm: 2 },
-            py: 1,
-            backgroundColor: theme.palette.background.secondary,
-          }}
-        >
-          <Button onClick={handlePrev} size="small">
-            Prev
-          </Button>
-          <Typography variant="caption">
-            {current + 1} / {workingAreas.length}
-          </Typography>
-          <Button onClick={handleNext} size="small">
-            Next
-          </Button>
+          </Box>
+
+          <Divider
+            sx={{
+              width: 60,
+              mx: "auto",
+              borderColor: "rgba(255,255,255,0.4)",
+              mt: { xs: 2, md: 3 },
+              mb: { xs: 2, md: 3 },
+            }}
+          />
         </Box>
-      </Box>
+
+        {/* Section Builder */}
+        {[
+          {
+            texts: [
+              "We work for sustainable development focused on meeting present needs without compromising the ability of future generations to meet their own. Our specialty is creating a world where societal needs are met without compromising the environment's ability to meet future needs.",
+              "We balance economic growth, social progress, and environmental protection, aligned with the UN's Sustainable Development Goals (SDGs).",
+            ],
+          },
+          {
+            title: "Core Principles",
+            texts: [
+              "<b>Meeting Present Needs:</b> Ensuring essential resources and opportunities for the current generation.",
+              "<b>Future Generations:</b> Protecting the environment and resources so future generations can thrive.",
+              "<b>Holistic Approach:</b> Integrating economic development, social progress, and environmental protection to achieve true sustainability.",
+            ],
+          },
+          {
+            title: "Key Aspects",
+            texts: [
+              "<b>Environmental Sustainability:</b> Conserving ecosystems, biodiversity, and natural resources.",
+              "<b>Social Equity:</b> Ensuring fair access to resources, opportunities, and participation for all.",
+              "<b>Economic Viability:</b> Promoting economic systems that support long-term prosperity.",
+            ],
+          },
+          {
+            title: "Climate Sustainability",
+            texts: [
+              "<b>1. Climate Mitigation:</b> Reducing greenhouse gas emissions through renewable energy, efficiency, and sustainable land use.",
+              "<b>2. Climate Adaptation:</b> Building climate-resilient infrastructure and protecting vulnerable communities.",
+              "<b>3. Sustainable Lifestyle:</b> Promoting sustainable consumption, transportation, and education on climate action.",
+            ],
+          },
+        ].map((section, i) => (
+          <Box key={i} sx={{ mb: { xs: 3, md: 4 } }}>
+            <Typography
+              variant="h4"
+              sx={{
+                fontWeight: 700,
+                mb: { xs: 2, md: 3 },
+                textAlign: "center",
+                color: "rgba(255,255,255,0.98)",
+                fontSize: { xs: "1.1rem", sm: "1.3rem", md: "1.4rem" },
+              }}
+            >
+              {section.title}
+            </Typography>
+            <Box sx={{ maxWidth: { xs: "100%", sm: "700px" }, mx: "auto" }}>
+              {section.texts.map((txt, idx) => (
+                <Typography
+                  key={idx}
+                  variant="body1"
+                  sx={{
+                    mb: 2,
+                    fontSize: { xs: "0.85rem", sm: "0.95rem", md: "1rem" },
+                    color: "rgba(255,255,255,0.95)",
+                    lineHeight: 1.5,
+                    textAlign: "left", // change from justify to left
+                    wordBreak: "break-word", // prevent overflow
+                  }}
+                  dangerouslySetInnerHTML={{ __html: txt }}
+                />
+              ))}
+            </Box>
+          </Box>
+        ))}
+      </Container>
     </Box>
   );
 };

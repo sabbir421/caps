@@ -11,10 +11,6 @@ import {
 } from "@mui/material";
 import {
   Facebook,
-  Twitter,
-  Instagram,
-  LinkedIn,
-  YouTube,
   Email,
   Phone,
   LocationOn,
@@ -34,31 +30,22 @@ const Footer = () => {
       ],
     },
     {
-      title: "Our Programs",
+      // title: "Our Programs",
       links: [
-        { name: "Climate Action", href: "/what-we-do" },
-        { name: "Rural Development", href: "/working-area" },
-        { name: "Education", href: "/what-we-do" },
-        { name: "Healthcare", href: "/working-area" },
-      ],
-    },
-    {
-      title: "Get Involved",
-      links: [
-        { name: "Volunteer", href: "/contact" },
-        { name: "Donate", href: "/contact" },
-        { name: "Partner With Us", href: "/contact" },
-        { name: "Careers", href: "/contact" },
+        // { name: "Climate Action", href: "/what-we-do" },
+        // { name: "Rural Development", href: "/working-area" },
+        // { name: "Education", href: "/what-we-do" },
+        // { name: "Healthcare", href: "/working-area" },
       ],
     },
   ];
 
   const socialLinks = [
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: LinkedIn, href: "#", label: "LinkedIn" },
-    { icon: YouTube, href: "#", label: "YouTube" },
+    {
+      icon: Facebook,
+      href: "https://www.facebook.com/share/1RbthrbeBQ/",
+      label: "Facebook",
+    },
   ];
 
   return (
@@ -84,7 +71,7 @@ const Footer = () => {
                 mb: 2,
               }}
             >
-              Climate Action NGO
+              CAPS BD
             </Typography>
             <Typography
               variant="body1"
@@ -110,7 +97,7 @@ const Footer = () => {
                   }}
                 />
                 <Typography variant="body2" color="text.secondary">
-                  123 Climate Street, Green City, GC 12345
+                  Purba Basabat, Bottalar Mor Ward no-08, Sadar Bagerhat.
                 </Typography>
               </Box>
               <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
@@ -122,7 +109,7 @@ const Footer = () => {
                   }}
                 />
                 <Typography variant="body2" color="text.secondary">
-                  +1 (555) 123-4567
+                  +8801704422997
                 </Typography>
               </Box>
               <Box sx={{ display: "flex", alignItems: "center" }}>
@@ -134,7 +121,7 @@ const Footer = () => {
                   }}
                 />
                 <Typography variant="body2" color="text.secondary">
-                  info@climateaction.org
+                  capsbd25@gmail.com
                 </Typography>
               </Box>
             </Box>
@@ -225,7 +212,7 @@ const Footer = () => {
             color="text.secondary"
             sx={{ textAlign: { xs: "left", md: "left" } }}
           >
-            © {new Date().getFullYear()} Climate Action NGO. All rights
+            © {new Date().getFullYear()} CapsBD. All rights
             reserved.
           </Typography>
           <Box

@@ -1,392 +1,296 @@
 import React from "react";
-import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
-import Typography from "@mui/material/Typography";
-import Grid from "@mui/material/Grid";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import Button from "@mui/material/Button";
-import { styled } from "@mui/material/styles";
+import {
+  Box,
+  Container,
+  Typography,
+  Grid,
+  Card,
+  CardContent,
+  Button,
+  useTheme,
+} from "@mui/material";
 
-const SectionBox = styled(Box)(({ theme }) => ({
-  padding: theme.spacing(12, 0),
-  backgroundColor: "#f8f9fa",
-  width: "100%",
-}));
+const publications = [
+  {
+    title:
+      "CAPS) climate change adapting people's society বিশেষ তত্ত্বাবধানে (CLC) community learning centre এর শুভ উদ্বোধন অনুষ্ঠানে উপস্থিত ছিলেন খুলনা",
+    type: "facebook",
+    iframe:
+      "https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FJournalist.Sharankhola.Bagerhat%2Fvideos%2F1325455928563352%2F&show_text=true&width=560&t=0",
+    link: "https://www.facebook.com/Journalist.Sharankhola.Bagerhat/videos/1325455928563352/",
+  },
+  {
+    title: "ইংরেজিতে অনর্গল কথা বলছে উপকূলের শিশুরা!",
+    type: "facebook",
+    iframe:
+      "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02zRypBhvXkMT2pPsBKmB9mTdVWweK2kCiDCYfd1F4e7pivBu9yNVSn3pkkvKgv9UJl%26id%3D61572729269078&show_text=true&width=500",
+    link: "https://www.facebook.com/photo/?fbid=122130846770757642&set=a.122130097514757642",
+  },
+  {
+    title: "ইংরেজিতে অনর্গল কথা বলছে উপকূলের শিশুরা!",
+    type: "facebook",
+    iframe:
+      "https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fsomoynews.tv%2Fvideos%2F1837148566857222%2F&show_text=true&width=560&t=0",
+    link: "https://www.facebook.com/share/p/1B5YCC9tqw/",
+  },
+  {
+    title: "বড় শিক্ষক যখন ক্ষুদে শিক্ষকের ছাত্র!!",
+    type: "facebook",
+    iframe:
+      "https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2F61572729269078%2Fvideos%2F1010617047570730%2F&show_text=true&width=267&t=0",
+    link: "https://www.facebook.com/share/v/19g2zSP68z/",
+  },
 
-const AltSectionBox = styled(Box)(({ theme }) => ({
-  padding: theme.spacing(12, 0),
-  backgroundColor: "white",
-  width: "100%",
-}));
+  {
+    title: "মাইন্ড ম্যাথ। ব্রেইন ভালো করে দিনে দিনে...…",
+    type: "facebook",
+    iframe:
+      "https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2F61572729269078%2Fvideos%2F718605014073531%2F&show_text=true&width=560&t=0",
+    link: "https://www.facebook.com/share/v/173narxq7y/",
+  },
+  {
+    title:
+      "Phonics as per International Phonics Rules. After Assessment Class at Bridge School, CODEC. Sarankhola.",
+    type: "facebook",
+    iframe:
+      "https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2F61572729269078%2Fvideos%2F704475072151275%2F&show_text=true&width=560&t=0",
+    link: "https://www.facebook.com/watch/?v=704475072151275",
+  },
+  {
+    title:
+      "কমিউনিটি লার্নিং সেন্টার CLC অভিভাবক মিটিং -এ আমাদের এডমিন ম্যাডাম, লামিয়া খন্দকার।…",
+    type: "facebook",
+    iframe:
+      "https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2F61572729269078%2Fvideos%2F674685078604606%2F&show_text=true&width=267&t=0",
+    link: "https://www.facebook.com/watch/?v=674685078604606",
+  },
+  {
+    title:
+      "Teachers' Training at CLC. MLTS- Multi Level Teaching System. 1.10 অর্থাৎ আপনি এক জন, আপনি শিক্ষে ১০ জনকে শিক্ষাবেন, অর্থাৎ...",
+    type: "facebook",
+    iframe:
+      "https://www.facebook.com/plugins/video.php?height=322&href=https%3A%2F%2Fwww.facebook.com%2F61572729269078%2Fvideos%2F647312078060299%2F&show_text=true&width=560&t=0",
+    link: "https://www.facebook.com/watch/?v=647312078060299",
+  },
+  {
+    title: "Polythene free Bangladesh we want fertile land, more crops.",
+    type: "facebook",
+    iframe:
+      "https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F2043037509529504%2F&show_text=true&width=267&t=0",
+    link: "https://www.facebook.com/reel/2043037509529504",
+  },
+  {
+    title: "Education for Climate Vulnerable Children. …",
+    type: "facebook",
+    iframe:
+      "https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2F61572729269078%2Fvideos%2F1746989839199805%2F&show_text=true&width=560&t=0",
+    link: "https://www.facebook.com/watch/?v=1746989839199805",
+  },
+  {
+    title: "Climate change adapting peoples",
+    type: "facebook",
+    iframe:
+      "https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1013351060215767%2F&show_text=true&width=267&t=0",
+    link: "https://www.facebook.com/reel/1013351060215767",
+  },
+  {
+    title:
+      "Polythene free Bangladesh, our target is to increase fertility of land and getting more crops.",
+    type: "facebook",
+    iframe:
+      "https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2F61572729269078%2Fvideos%2F677712118025178%2F&show_text=true&width=560&t=0",
+    link: "https://www.facebook.com/watch/?v=677712118025178",
+  },
+  {
+    title:
+      "ক্যাপস-এর অধীনে জলবায়ু পরিবর্তন ও এর নেতিবাচক প্রভাব থেকে জীবজগৎ কে বাঁচাতে কাজ করছে এক ঝাঁক নিবেদিত…",
+    type: "facebook",
+    iframe:
+      "https://www.facebook.com/plugins/video.php?height=316&href=https%3A%2F%2Fwww.facebook.com%2F61572729269078%2Fvideos%2F1173940100758759%2F&show_text=true&width=560&t=0",
+    link: "https://www.facebook.com/watch/?v=1173940100758759",
+  },
+];
 
 function Publications() {
+  const theme = useTheme();
+
   return (
     <Box sx={{ width: "100%", pt: 8 }}>
       {/* Hero Section */}
-      <AltSectionBox>
+      <Box sx={{ py: 8, backgroundColor: "#f8f9fa" }}>
         <Container maxWidth="xl">
           <Typography
             variant="h2"
             gutterBottom
             sx={{
               textAlign: "center",
-              mb: 6,
-              color: "#1976d2",
-              fontWeight: "bold",
+              mb: 4,
+              color: theme.palette.primary.main,
+              fontWeight: 700,
             }}
           >
-            Publications & Reports
+            Publications & Success Stories
           </Typography>
           <Typography
             variant="h5"
             sx={{
               textAlign: "center",
-              mb: 8,
+              mb: 6,
               maxWidth: "900px",
               mx: "auto",
               color: "text.secondary",
+              lineHeight: 1.6,
             }}
           >
-            Explore our research, impact reports, and educational resources that
-            document our work in rural development and climate action.
+            Explore our latest videos, impact reports, and success stories that
+            showcase our work in rural development, education, and climate
+            action.
           </Typography>
         </Container>
-      </AltSectionBox>
+      </Box>
 
-      {/* Annual Reports */}
-      <SectionBox>
+      {/* Publications Grid */}
+      <Box sx={{ py: 8, backgroundColor: "#fff" }}>
         <Container maxWidth="xl">
           <Typography
-            variant="h3"
-            gutterBottom
-            sx={{ textAlign: "center", mb: 8, color: "#1976d2" }}
+            variant="h4"
+            sx={{ fontWeight: 700, mb: 6, textAlign: "center" }}
           >
-            Annual Impact Reports
+            Featured Content
           </Typography>
           <Grid container spacing={4} justifyContent="center">
-            <Grid item xs={12} md={4}>
-              <Card sx={{ height: "100%", boxShadow: 4 }}>
-                <CardContent>
-                  <Typography
-                    variant="h6"
-                    gutterBottom
-                    color="primary"
-                    sx={{ fontWeight: "bold" }}
-                  >
-                    Annual Impact Report 2023
-                  </Typography>
-                  <Typography variant="body2" paragraph color="text.secondary">
-                    Published: December 2023
-                  </Typography>
-                  <Typography variant="body1" paragraph>
-                    Comprehensive overview of our climate action initiatives,
-                    educational programs, and healthcare interventions across
-                    rural communities.
-                  </Typography>
-                  <Typography variant="body2" paragraph>
-                    <strong>Key Highlights:</strong>
-                    <br />
-                    • 10,000+ trees planted
-                    <br />
-                    • 5,000+ children educated
-                    <br />
-                    • 50+ rural communities served
-                    <br />• 1,000+ homes powered by renewable energy
-                  </Typography>
-                  <Button variant="contained" color="primary" fullWidth>
-                    Download PDF (5.2 MB)
-                  </Button>
-                </CardContent>
-              </Card>
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <Card sx={{ height: "100%", boxShadow: 4 }}>
-                <CardContent>
-                  <Typography
-                    variant="h6"
-                    gutterBottom
-                    color="primary"
-                    sx={{ fontWeight: "bold" }}
-                  >
-                    Annual Impact Report 2022
-                  </Typography>
-                  <Typography variant="body2" paragraph color="text.secondary">
-                    Published: December 2022
-                  </Typography>
-                  <Typography variant="body1" paragraph>
-                    Detailed analysis of our expansion to 50 communities and the
-                    implementation of healthcare initiatives and plastic waste
-                    management.
-                  </Typography>
-                  <Typography variant="body2" paragraph>
-                    <strong>Key Highlights:</strong>
-                    <br />
-                    • 7,500+ trees planted
-                    <br />
-                    • 3,500+ children educated
-                    <br />
-                    • 40+ rural communities served
-                    <br />• 15+ healthcare centers established
-                  </Typography>
-                  <Button variant="contained" color="primary" fullWidth>
-                    Download PDF (4.8 MB)
-                  </Button>
-                </CardContent>
-              </Card>
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <Card sx={{ height: "100%", boxShadow: 4 }}>
-                <CardContent>
-                  <Typography
-                    variant="h6"
-                    gutterBottom
-                    color="primary"
-                    sx={{ fontWeight: "bold" }}
-                  >
-                    Annual Impact Report 2021
-                  </Typography>
-                  <Typography variant="body2" paragraph color="text.secondary">
-                    Published: December 2021
-                  </Typography>
-                  <Typography variant="body1" paragraph>
-                    Foundation year report documenting our initial programs and
-                    the establishment of our first 25 rural community
-                    partnerships.
-                  </Typography>
-                  <Typography variant="body2" paragraph>
-                    <strong>Key Highlights:</strong>
-                    <br />
-                    • 5,000+ trees planted
-                    <br />
-                    • 2,000+ children educated
-                    <br />
-                    • 25+ rural communities served
-                    <br />• 10+ schools supported
-                  </Typography>
-                  <Button variant="contained" color="primary" fullWidth>
-                    Download PDF (3.9 MB)
-                  </Button>
-                </CardContent>
-              </Card>
-            </Grid>
+            {publications.map((publication, idx) => (
+              <Grid item xs={12} md={6} lg={4} key={`publication-${idx}`}>
+                <Card
+                  sx={{
+                    height: "100%",
+                    borderRadius: 3,
+                    boxShadow: 3,
+                    transition: "transform 0.2s, box-shadow 0.2s",
+                    "&:hover": {
+                      transform: "translateY(-6px) scale(1.02)",
+                      boxShadow: "0 8px 32px 0 rgba(102,126,234,0.16)",
+                    },
+                  }}
+                >
+                  {publication.type === "facebook" ? (
+                    <Box sx={{ p: 2 }}>
+                      <iframe
+                        src={publication.iframe}
+                        width="100%"
+                        height="314"
+                        style={{
+                          border: "none",
+                          overflow: "hidden",
+                          borderRadius: "8px",
+                        }}
+                        scrolling="no"
+                        frameBorder="0"
+                        allowFullScreen={true}
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                      />
+                    </Box>
+                  ) : (
+                    <Box
+                      component="img"
+                      src={publication.image}
+                      alt={publication.title}
+                      sx={{
+                        width: "100%",
+                        height: 200,
+                        objectFit: "cover",
+                        borderTopLeftRadius: 12,
+                        borderTopRightRadius: 12,
+                      }}
+                    />
+                  )}
+                  <CardContent sx={{ p: 3 }}>
+                    <Typography
+                      variant="h6"
+                      fontWeight={700}
+                      gutterBottom
+                      sx={{
+                        mb: 2,
+                        color: theme.palette.primary.main,
+                        lineHeight: 1.3,
+                      }}
+                    >
+                      {publication.title}
+                    </Typography>
+                    {publication.description && (
+                      <Typography
+                        variant="body2"
+                        color="text.secondary"
+                        sx={{
+                          mb: 3,
+                          lineHeight: 1.6,
+                        }}
+                      >
+                        {publication.description}
+                      </Typography>
+                    )}
+                    <Button
+                      href={publication.link}
+                      variant="outlined"
+                      color="primary"
+                      target="blank"
+                      size="medium"
+                      sx={{
+                        fontWeight: 600,
+                        borderRadius: 2,
+                        px: 3,
+                        py: 1,
+                      }}
+                    >
+                      {publication.type === "facebook"
+                        ? "Watch Video"
+                        : "Read More"}
+                    </Button>
+                  </CardContent>
+                </Card>
+              </Grid>
+            ))}
           </Grid>
         </Container>
-      </SectionBox>
+      </Box>
 
-      {/* Research Papers */}
-      <AltSectionBox>
-        <Container maxWidth="xl">
-          <Typography
-            variant="h3"
-            gutterBottom
-            sx={{ textAlign: "center", mb: 8, color: "#1976d2" }}
-          >
-            Research Papers & Studies
-          </Typography>
-          <Grid container spacing={4} justifyContent="center">
-            <Grid item xs={12} md={6}>
-              <Card sx={{ height: "100%", boxShadow: 4 }}>
-                <CardContent>
-                  <Typography
-                    variant="h6"
-                    gutterBottom
-                    color="primary"
-                    sx={{ fontWeight: "bold" }}
-                  >
-                    Climate-Resilient Agriculture in Rural Communities
-                  </Typography>
-                  <Typography variant="body2" paragraph color="text.secondary">
-                    Published: Journal of Rural Development, 2023
-                  </Typography>
-                  <Typography variant="body1" paragraph>
-                    A comprehensive study on implementing sustainable farming
-                    practices in rural areas affected by climate change,
-                    including case studies from 15 farming communities.
-                  </Typography>
-                  <Button variant="outlined" color="primary" fullWidth>
-                    Read Online
-                  </Button>
-                </CardContent>
-              </Card>
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <Card sx={{ height: "100%", boxShadow: 4 }}>
-                <CardContent>
-                  <Typography
-                    variant="h6"
-                    gutterBottom
-                    color="primary"
-                    sx={{ fontWeight: "bold" }}
-                  >
-                    Renewable Energy Adoption in Rural India
-                  </Typography>
-                  <Typography variant="body2" paragraph color="text.secondary">
-                    Published: Energy Policy Journal, 2023
-                  </Typography>
-                  <Typography variant="body1" paragraph>
-                    Analysis of solar power adoption patterns in rural
-                    communities, including economic benefits, challenges, and
-                    policy recommendations for scaling renewable energy
-                    solutions.
-                  </Typography>
-                  <Button variant="outlined" color="primary" fullWidth>
-                    Read Online
-                  </Button>
-                </CardContent>
-              </Card>
-            </Grid>
-          </Grid>
+      {/* Call to Action */}
+      <Box sx={{ py: 8, backgroundColor: "#f8f9fa" }}>
+        <Container maxWidth="md">
+          <Box sx={{ textAlign: "center" }}>
+            <Typography
+              variant="h4"
+              sx={{ fontWeight: 700, mb: 3, color: theme.palette.primary.main }}
+            >
+              Stay Connected
+            </Typography>
+            <Typography
+              variant="h6"
+              sx={{ mb: 4, color: "text.secondary", lineHeight: 1.6 }}
+            >
+              Follow us on social media for the latest updates, success stories,
+              and behind-the-scenes content from our projects.
+            </Typography>
+            <Button
+              variant="contained"
+              color="primary"
+              size="large"
+              sx={{
+                fontWeight: 700,
+                px: 5,
+                py: 1.5,
+                borderRadius: 2,
+                fontSize: "1.1rem",
+              }}
+              href="https://www.facebook.com/CAPSBD"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Follow on Facebook
+            </Button>
+          </Box>
         </Container>
-      </AltSectionBox>
-
-      {/* Educational Resources */}
-      <SectionBox>
-        <Container maxWidth="xl">
-          <Typography
-            variant="h3"
-            gutterBottom
-            sx={{ textAlign: "center", mb: 8, color: "#1976d2" }}
-          >
-            Educational Resources
-          </Typography>
-          <Grid container spacing={4} justifyContent="center">
-            <Grid item xs={12} md={4}>
-              <Card sx={{ height: "100%", boxShadow: 4 }}>
-                <CardContent>
-                  <Typography
-                    variant="h6"
-                    gutterBottom
-                    color="primary"
-                    sx={{ fontWeight: "bold" }}
-                  >
-                    Climate Action Guide
-                  </Typography>
-                  <Typography variant="body2" paragraph color="text.secondary">
-                    Updated: January 2024
-                  </Typography>
-                  <Typography variant="body1" paragraph>
-                    Practical guide for rural communities on implementing
-                    sustainable practices and reducing environmental impact.
-                  </Typography>
-                  <Button variant="contained" color="secondary" fullWidth>
-                    Download Guide
-                  </Button>
-                </CardContent>
-              </Card>
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <Card sx={{ height: "100%", boxShadow: 4 }}>
-                <CardContent>
-                  <Typography
-                    variant="h6"
-                    gutterBottom
-                    color="primary"
-                    sx={{ fontWeight: "bold" }}
-                  >
-                    Education Success Stories
-                  </Typography>
-                  <Typography variant="body2" paragraph color="text.secondary">
-                    Published: March 2024
-                  </Typography>
-                  <Typography variant="body1" paragraph>
-                    Inspiring stories of children whose lives have been
-                    transformed through our educational programs.
-                  </Typography>
-                  <Button variant="contained" color="secondary" fullWidth>
-                    View Stories
-                  </Button>
-                </CardContent>
-              </Card>
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <Card sx={{ height: "100%", boxShadow: 4 }}>
-                <CardContent>
-                  <Typography
-                    variant="h6"
-                    gutterBottom
-                    color="primary"
-                    sx={{ fontWeight: "bold" }}
-                  >
-                    Plastic Waste Management Manual
-                  </Typography>
-                  <Typography variant="body2" paragraph color="text.secondary">
-                    Published: February 2024
-                  </Typography>
-                  <Typography variant="body1" paragraph>
-                    Step-by-step manual for communities to implement effective
-                    plastic waste management and recycling programs.
-                  </Typography>
-                  <Button variant="contained" color="secondary" fullWidth>
-                    Download Manual
-                  </Button>
-                </CardContent>
-              </Card>
-            </Grid>
-          </Grid>
-        </Container>
-      </SectionBox>
-
-      {/* Newsletter */}
-      <AltSectionBox>
-        <Container maxWidth="xl">
-          <Typography
-            variant="h3"
-            gutterBottom
-            sx={{ textAlign: "center", mb: 8, color: "#1976d2" }}
-          >
-            Newsletter & Updates
-          </Typography>
-          <Grid container spacing={4} justifyContent="center">
-            <Grid item xs={12} md={6}>
-              <Card sx={{ height: "100%", boxShadow: 4 }}>
-                <CardContent>
-                  <Typography
-                    variant="h6"
-                    gutterBottom
-                    color="primary"
-                    sx={{ fontWeight: "bold" }}
-                  >
-                    Monthly Newsletter - March 2024
-                  </Typography>
-                  <Typography variant="body2" paragraph color="text.secondary">
-                    Published: March 15, 2024
-                  </Typography>
-                  <Typography variant="body1" paragraph>
-                    Latest updates on our programs, success stories, upcoming
-                    events, and ways to get involved in our mission.
-                  </Typography>
-                  <Button variant="outlined" color="primary" fullWidth>
-                    Read Newsletter
-                  </Button>
-                </CardContent>
-              </Card>
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <Card sx={{ height: "100%", boxShadow: 4 }}>
-                <CardContent>
-                  <Typography
-                    variant="h6"
-                    gutterBottom
-                    color="primary"
-                    sx={{ fontWeight: "bold" }}
-                  >
-                    Subscribe to Our Newsletter
-                  </Typography>
-                  <Typography variant="body1" paragraph>
-                    Stay updated with our latest news, impact stories, and
-                    opportunities to support our mission. Receive monthly
-                    newsletters directly in your inbox.
-                  </Typography>
-                  <Button variant="contained" color="primary" fullWidth>
-                    Subscribe Now
-                  </Button>
-                </CardContent>
-              </Card>
-            </Grid>
-          </Grid>
-        </Container>
-      </AltSectionBox>
+      </Box>
     </Box>
   );
 }

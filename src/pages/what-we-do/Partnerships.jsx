@@ -99,13 +99,19 @@ const Partnerships = () => {
       {/* Hero Section */}
       <Box
         sx={{
-          background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 100%)`,
+          bgcolor: theme.palette.primary.main,
           color: "white",
           py: { xs: 6, md: 8 },
+          textAlign: "center",
         }}
       >
         <Container maxWidth="xl">
-          <Grid container spacing={4} alignItems="center">
+          <Grid
+            container
+            spacing={4}
+            alignItems="center"
+            justifyContent="center"
+          >
             <Grid item xs={12} md={6}>
               <Typography
                 variant="h1"
@@ -160,7 +166,7 @@ const Partnerships = () => {
           >
             Partnership Impact
           </Typography>
-          <Grid container spacing={4}>
+          <Grid container spacing={4} justifyContent="center">
             {impactStats.map((stat, index) => (
               <Grid item xs={12} sm={6} md={3} key={index}>
                 <Box
@@ -232,7 +238,7 @@ const Partnerships = () => {
           >
             Our Partnership Programs
           </Typography>
-          <Grid container spacing={4}>
+          <Grid container spacing={4} justifyContent="center">
             {programs.map((program, index) => (
               <Grid item xs={12} md={6} key={index}>
                 <Card
@@ -324,8 +330,9 @@ const Partnerships = () => {
       <Box
         sx={{
           py: 8,
-          background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 100%)`,
+          bgcolor: theme.palette.primary.main,
           color: "white",
+          textAlign: "center",
         }}
       >
         <Container maxWidth="xl">

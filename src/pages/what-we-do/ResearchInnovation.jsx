@@ -48,7 +48,7 @@ const ResearchInnovation = () => {
       description:
         "Developing sustainable farming techniques and technologies.",
       image:
-        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop",
+        "https://img.freepik.com/premium-photo/rows-onion-fields-bangladeshi-farmers-are-working-village-crop-farming_104279-186.jpg",
       icon: Engineering,
       details: [
         "Crop improvement research",
@@ -74,7 +74,7 @@ const ResearchInnovation = () => {
       title: "Community Solutions",
       description: "Researching and developing community-based solutions.",
       image:
-        "https://images.unsplash.com/photo-1523240794102-9eb5ccbdd362?w=400&h=300&fit=crop",
+        "https://media.istockphoto.com/id/870402320/photo/a-social-worker-meeting-with-a-group-of-villagers.jpg?s=612x612&w=0&k=20&c=2JlS1vqg4pU5lCp8oiFXjVgMPlHbhrmH4wmtRJdq384=",
       icon: Business,
       details: [
         "Social impact studies",
@@ -97,14 +97,21 @@ const ResearchInnovation = () => {
       {/* Hero Section */}
       <Box
         sx={{
-          background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 100%)`,
+          bgcolor: theme.palette.primary.main,
           color: "white",
           py: { xs: 6, md: 8 },
+          textAlign: "center",
         }}
       >
         <Container maxWidth="xl">
-          <Grid container spacing={4} alignItems="center">
-            <Grid item xs={12} md={6}>
+          <Grid
+            container
+            spacing={4}
+            alignItems="center"
+            justifyContent="center"
+            textAlign="center"
+          >
+            <Grid item xs={12} md={8}>
               <Typography
                 variant="h1"
                 sx={{
@@ -121,21 +128,25 @@ const ResearchInnovation = () => {
                   mb: 4,
                   opacity: 0.9,
                   lineHeight: 1.6,
+                  maxWidth: 800,
+                  mx: "auto",
+                  textAlign: "justify",
                 }}
               >
                 Driving sustainable development through cutting-edge research
                 and innovative solutions for rural communities.
               </Typography>
-            </Grid>
-            <Grid item xs={12} md={6}>
               <Box
                 component="img"
-                src="https://images.unsplash.com/photo-1523240794102-9eb5ccbdd362?w=600&h=400&fit=crop"
+                src="https://be.brussels/i/3840/sites/default/files/2023-10/entreprendre-entreprise3-new.jpg"
                 alt="Research & Innovation"
                 sx={{
                   width: "100%",
+                  maxWidth: 700,
                   borderRadius: 4,
                   boxShadow: "0px 20px 40px rgba(0, 0, 0, 0.2)",
+                  mx: "auto",
+                  display: "block",
                 }}
               />
             </Grid>
@@ -157,7 +168,7 @@ const ResearchInnovation = () => {
           >
             Research & Innovation Impact
           </Typography>
-          <Grid container spacing={4}>
+          <Grid container spacing={4} justifyContent="center">
             {impactStats.map((stat, index) => (
               <Grid item xs={12} sm={6} md={3} key={index}>
                 <Box
@@ -229,12 +240,13 @@ const ResearchInnovation = () => {
           >
             Our Research & Innovation Programs
           </Typography>
-          <Grid container spacing={4}>
+          <Grid container spacing={4} justifyContent="center">
             {programs.map((program, index) => (
               <Grid item xs={12} md={6} key={index}>
                 <Card
                   sx={{
                     height: "100%",
+                    textAlign: "center",
                     transition: "all 0.3s ease",
                     "&:hover": {
                       transform: "translateY(-8px)",
@@ -249,7 +261,14 @@ const ResearchInnovation = () => {
                     alt={program.title}
                   />
                   <CardContent sx={{ p: 3 }}>
-                    <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
+                    <Box
+                      sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        mb: 2,
+                      }}
+                    >
                       <Box
                         sx={{
                           display: "flex",
@@ -260,7 +279,7 @@ const ResearchInnovation = () => {
                           borderRadius: "50%",
                           backgroundColor: theme.palette.primary.main,
                           color: "white",
-                          mr: 2,
+                          mr: 1,
                         }}
                       >
                         <program.icon />
@@ -282,11 +301,16 @@ const ResearchInnovation = () => {
                         mb: 3,
                         color: theme.palette.text.secondary,
                         lineHeight: 1.6,
+                        maxWidth: 500,
+                        mx: "auto",
                       }}
                     >
                       {program.description}
                     </Typography>
-                    <List dense>
+                    <List
+                      dense
+                      sx={{ display: "inline-block", textAlign: "left" }}
+                    >
                       {program.details.map((detail, detailIndex) => (
                         <ListItem key={detailIndex} sx={{ px: 0 }}>
                           <ListItemIcon sx={{ minWidth: 30 }}>
@@ -321,46 +345,45 @@ const ResearchInnovation = () => {
       <Box
         sx={{
           py: 8,
-          background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 100%)`,
+          bgcolor: theme.palette.primary.main,
           color: "white",
+          textAlign: "center",
         }}
       >
         <Container maxWidth="xl">
-          <Box sx={{ textAlign: "center" }}>
-            <Typography
-              variant="h2"
-              sx={{
-                fontWeight: 700,
-                mb: 3,
-              }}
-            >
-              Support Research & Innovation
-            </Typography>
-            <Typography
-              variant="h6"
-              sx={{
-                mb: 4,
-                opacity: 0.9,
-                maxWidth: 600,
-                mx: "auto",
-              }}
-            >
-              Innovation drives progress. Help us develop cutting-edge solutions
-              for sustainable rural development.
-            </Typography>
-            <Chip
-              label="Partner with us for research and innovation"
-              sx={{
-                backgroundColor: "rgba(255, 255, 255, 0.2)",
-                color: "white",
-                fontSize: "1.1rem",
-                padding: "12px 24px",
-                "&:hover": {
-                  backgroundColor: "rgba(255, 255, 255, 0.3)",
-                },
-              }}
-            />
-          </Box>
+          <Typography
+            variant="h2"
+            sx={{
+              fontWeight: 700,
+              mb: 3,
+            }}
+          >
+            Support Research & Innovation
+          </Typography>
+          <Typography
+            variant="h6"
+            sx={{
+              mb: 4,
+              opacity: 0.9,
+              maxWidth: 600,
+              mx: "auto",
+            }}
+          >
+            Innovation drives progress. Help us develop cutting-edge solutions
+            for sustainable rural development.
+          </Typography>
+          <Chip
+            label="Partner with us for research and innovation"
+            sx={{
+              backgroundColor: "rgba(255, 255, 255, 0.2)",
+              color: "white",
+              fontSize: "1.1rem",
+              padding: "12px 24px",
+              "&:hover": {
+                backgroundColor: "rgba(255, 255, 255, 0.3)",
+              },
+            }}
+          />
         </Container>
       </Box>
     </Box>

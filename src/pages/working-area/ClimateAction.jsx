@@ -164,7 +164,9 @@ const ClimateAction = () => {
       </Box>
 
       {/* Impact Statistics */}
-      <Box sx={{ py: 8, bgcolor: theme.palette.grey[100], textAlign: "center" }}>
+      <Box
+        sx={{ py: 8, bgcolor: theme.palette.grey[100], textAlign: "center" }}
+      >
         <Container maxWidth="lg">
           <Typography
             variant="h2"
@@ -191,7 +193,9 @@ const ClimateAction = () => {
                   transform: visibleIndexes.includes(index)
                     ? "translateY(0)"
                     : "translateY(30px)",
-                  transition: `all ${fadeInDuration}ms ease-out ${index * 150}ms`,
+                  transition: `all ${fadeInDuration}ms ease-out ${
+                    index * 150
+                  }ms`,
                 }}
               >
                 <Box
@@ -327,13 +331,21 @@ const ClimateAction = () => {
                   </Box>
                   <Typography
                     variant="h5"
-                    sx={{ fontWeight: 700, color: theme.palette.text.primary, mb: 2 }}
+                    sx={{
+                      fontWeight: 700,
+                      color: theme.palette.text.primary,
+                      mb: 2,
+                    }}
                   >
                     {initiative.title}
                   </Typography>
                   <Typography
                     variant="body1"
-                    sx={{ mb: 3, color: theme.palette.text.secondary, lineHeight: 1.6 }}
+                    sx={{
+                      mb: 3,
+                      color: theme.palette.text.secondary,
+                      lineHeight: 1.6,
+                    }}
                   >
                     {initiative.description}
                   </Typography>
@@ -403,11 +415,16 @@ const ClimateAction = () => {
           </Typography>
           <Typography
             variant="h6"
-            sx={{ mb: 5, lineHeight: 1.7, color: "rgba(255,255,255,0.85)" }}
+            sx={{
+              mb: 5,
+              lineHeight: 1.7,
+              color: "rgba(255,255,255,0.85)",
+              textAlign: "justify",
+            }}
           >
-            We believe that lasting climate action comes from community involvement
-            and local leadership. Our programs empower communities to take ownership
-            of their environmental future.
+            We believe that lasting climate action comes from community
+            involvement and local leadership. Our programs empower communities
+            to take ownership of their environmental future.
           </Typography>
           <List
             sx={{
@@ -478,9 +495,9 @@ const ClimateAction = () => {
               lineHeight: 1.6,
             }}
           >
-            Every action counts in the fight against climate change. Get involved
-            in our initiatives and help create a sustainable future for generations
-            to come.
+            Every action counts in the fight against climate change. Get
+            involved in our initiatives and help create a sustainable future for
+            generations to come.
           </Typography>
           <Chip
             label="Contact us to learn more about volunteering opportunities"

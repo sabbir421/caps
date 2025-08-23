@@ -16,9 +16,12 @@ import {
   Menu,
   MenuItem,
   ListItemIcon,
+  Collapse,
 } from "@mui/material";
+import logo from "../assets/logo.jpeg";
 import MenuIcon from "@mui/icons-material/Menu";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { Link, useLocation } from "react-router-dom";
 import {
   Nature,
@@ -41,30 +44,152 @@ const navItems = [
     path: "/working-area",
     subItems: [
       {
-        name: "Climate Action",
-        path: "/working-area/climate-action",
+        name: "Community Education",
+        path: "/working-area/community-education",
+        icon: School,
+        subSubItems: [
+          {
+            name: "Climate Smart Community Education",
+            path: "/working-area/community-education/community-education",
+          },
+          {
+            name: "Climate-smart Child Protection",
+            path: "/working-area/community-education/child-protection",
+          },
+          {
+            name: "Climate Smart Coding Education",
+            path: "/working-area/community-education/coding-education",
+          },
+          {
+            name: "Climate-smart Programs for People with Disabilities",
+            path: "/working-area/community-education/disabilities",
+          },
+          {
+            name: "Climate-Smart Women Entrepreneurs",
+            path: "/working-area/community-education/women-entrepreneurs",
+          },
+          {
+            name: "Prioritizing Climate-Vulnerable People",
+            path: "/working-area/community-education/vulnerable-people",
+          },
+          {
+            name: "Climate-Smart Migration",
+            path: "/working-area/community-education/migration",
+          },
+          {
+            name: "Global Green Ambassador",
+            path: "/working-area/global-green-ambassador",
+          },
+          {
+            name: "Climate-Smart Technical Education",
+            path: "/working-area/climate-smart-technical-education",
+          },
+          {
+            name: "Climate-Smart Housing",
+            path: "/working-area/climate-smart-housing",
+          },
+          {
+            name: "Climate-Smart Schooling",
+            path: "/working-area/climate-smart-schooling",
+          },
+          {
+            name: "Climate Smart Club",
+            path: "/working-area/climate-smart-club",
+          },
+          {
+            name: "Climate Adaptive English Learning",
+            path: "/working-area/climate-adaptive-english-learning",
+          },
+        ],
+      },
+      {
+        name: "Waste & Plastic Management",
+        path: "/working-area/waste-management",
+        icon: Recycling,
+        subSubItems: [
+          {
+            name: "Climate Smart Community Garbage Management",
+            path: "/working-area/waste-management/garbage-management",
+          },
+          {
+            name: "Climate-smart Plastic Management",
+            path: "/working-area/waste-management/plastic-management",
+          },
+        ],
+      },
+      {
+        name: "Coastal & Forest Ecosystems",
+        path: "/working-area/coastal-forests",
         icon: Nature,
+        subSubItems: [
+          {
+            name: "Climate-smart Sundarbans",
+            path: "/working-area/coastal-forests/sundarbans",
+          },
+          {
+            name: "Climate-smart Afforestation",
+            path: "/working-area/coastal-forests/afforestation",
+          },
+          {
+            name: "Climate-smart Wildlife Adaptation",
+            path: "/working-area/coastal-forests/wildlife",
+          },
+          {
+            name: "Climate-smart Wilderness",
+            path: "/working-area/coastal-forests/wilderness",
+          },
+          {
+            name: "Climate-smart Fisherman Resettlement",
+            path: "/working-area/coastal-forests/fisherman-resettlement",
+          },
+          {
+            name: "Climate-smart Resettlement for Women",
+            path: "/working-area/coastal-forests/women-resettlement",
+          },
+        ],
       },
-      { name: "Education", path: "/working-area/education", icon: School },
       {
-        name: "Healthcare",
-        path: "/working-area/healthcare",
-        icon: LocalHospital,
-      },
-      {
-        name: "Agriculture",
-        path: "/working-area/agriculture",
+        name: "Agriculture & Water",
+        path: "/working-area/agriculture-water",
         icon: Agriculture,
+        subSubItems: [
+          {
+            name: "Climate-smart Agro-forestry",
+            path: "/working-area/agriculture-water/agro-forestry",
+          },
+          {
+            name: "Climate-smart Agriculture (CSA)",
+            path: "/working-area/agriculture-water/csa",
+          },
+          {
+            name: "Climate-smart Irrigation",
+            path: "/working-area/agriculture-water/irrigation",
+          },
+          {
+            name: "Climate Smart Water Plant",
+            path: "/working-area/agriculture-water/water-plant",
+          },
+          {
+            name: "Climate-smart Canal and River Excavation",
+            path: "/working-area/agriculture-water/canal-river",
+          },
+          {
+            name: "Climate-smart Aquaculture",
+            path: "/working-area/agriculture-water/aquaculture",
+          },
+        ],
       },
+      
       {
-        name: "Water Management",
-        path: "/working-area/water",
+        name: "Marine Life",
+        path: "/working-area/marine-life",
         icon: WaterDrop,
-      },
-      {
-        name: "Renewable Energy",
-        path: "/working-area/energy",
-        icon: SolarPower,
+        subSubItems: [
+          {
+            name: "Climate-smart Adaptation for Sea Species",
+            path: "/working-area/marine-life/sea-species",
+          },
+        ],
       },
     ],
   },
@@ -89,20 +214,21 @@ const navItems = [
       },
       { name: "Capacity Building", path: "/what-we-do/capacity", icon: School },
       { name: "Advocacy & Policy", path: "/what-we-do/advocacy", icon: Nature },
-      {
-        name: "Partnerships",
-        path: "/what-we-do/partnerships",
-        icon: Business,
-      },
+      // {
+      //   name: "Partnerships",
+      //   path: "/what-we-do/partnerships",
+      //   icon: Business,
+      // },
     ],
   },
-  { name: "Publications", path: "/publications" },
+  { name: "Publications & Stories", path: "/publications" },
   { name: "Contact Us", path: "/contact" },
 ];
 
 function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [anchorEl, setAnchorEl] = useState({});
+  const [openSubMenus, setOpenSubMenus] = useState({});
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const location = useLocation();
@@ -117,6 +243,13 @@ function Navbar() {
 
   const handleMenuClose = (itemName) => {
     setAnchorEl({ ...anchorEl, [itemName]: null });
+  };
+
+  const handleSubMenuToggle = (itemName) => {
+    setOpenSubMenus((prev) => ({
+      ...prev,
+      [itemName]: !prev[itemName],
+    }));
   };
 
   const isActive = (path) => {
@@ -177,9 +310,13 @@ function Navbar() {
             {item.subItems.map((subItem) => (
               <MenuItem
                 key={subItem.name}
-                component={Link}
-                to={subItem.path}
-                onClick={() => handleMenuClose(item.name)}
+                component={subItem.subSubItems ? "div" : Link}
+                to={subItem.subSubItems ? null : subItem.path}
+                onClick={
+                  subItem.subSubItems
+                    ? (e) => handleMenuOpen(e, subItem.name)
+                    : () => handleMenuClose(item.name)
+                }
                 sx={{
                   py: 1.5,
                   px: 2,
@@ -200,9 +337,68 @@ function Navbar() {
                       : theme.palette.text.primary,
                   }}
                 />
+                {subItem.subSubItems && <ChevronRightIcon />}
               </MenuItem>
             ))}
           </Menu>
+          {/* Sub-sub-menu rendering */}
+          {item.subItems.map(
+            (subItem) =>
+              subItem.subSubItems && (
+                <Menu
+                  key={subItem.name}
+                  anchorEl={anchorEl[subItem.name]}
+                  open={Boolean(anchorEl[subItem.name])}
+                  onClose={() => handleMenuClose(subItem.name)}
+                  anchorOrigin={{
+                    vertical: "top",
+                    horizontal: "right",
+                  }}
+                  transformOrigin={{
+                    vertical: "top",
+                    horizontal: "left",
+                  }}
+                  PaperProps={{
+                    sx: {
+                      mt: 0,
+                      ml: 1,
+                      minWidth: 250,
+                      boxShadow: "0px 8px 16px rgba(0, 0, 0, 0.1)",
+                      borderRadius: 2,
+                    },
+                  }}
+                >
+                  {subItem.subSubItems.map((subSubItem) => (
+                    <MenuItem
+                      key={subSubItem.name}
+                      component={Link}
+                      to={subSubItem.path}
+                      onClick={() => {
+                        handleMenuClose(subItem.name);
+                        handleMenuClose(item.name);
+                      }}
+                      sx={{
+                        py: 1.5,
+                        px: 2,
+                        "&:hover": {
+                          backgroundColor: theme.palette.background.primary,
+                        },
+                      }}
+                    >
+                      <ListItemText
+                        primary={subSubItem.name}
+                        primaryTypographyProps={{
+                          fontWeight: isActive(subSubItem.path) ? 600 : 400,
+                          color: isActive(subSubItem.path)
+                            ? theme.palette.primary.main
+                            : theme.palette.text.primary,
+                        }}
+                      />
+                    </MenuItem>
+                  ))}
+                </Menu>
+              )
+          )}
         </Box>
       );
     }
@@ -240,7 +436,7 @@ function Navbar() {
       return (
         <Box key={item.name}>
           <ListItem
-            onClick={(e) => handleMenuOpen(e, item.name)}
+            onClick={() => handleSubMenuToggle(item.name)}
             sx={{
               padding: theme.spacing(2, 3),
               margin: theme.spacing(0.5, 1),
@@ -264,51 +460,105 @@ function Navbar() {
                   : theme.palette.text.primary,
               }}
             />
-            <ExpandMoreIcon />
+            {openSubMenus[item.name] ? (
+              <ExpandMoreIcon />
+            ) : (
+              <ChevronRightIcon />
+            )}
           </ListItem>
-          {Boolean(anchorEl[item.name]) && (
-            <List sx={{ pl: 2 }}>
+          <Collapse in={openSubMenus[item.name]} timeout="auto" unmountOnExit>
+            <List component="div" disablePadding>
               {item.subItems.map((subItem) => (
-                <ListItem
-                  key={subItem.name}
-                  component={Link}
-                  to={subItem.path}
-                  onClick={handleDrawerToggle}
-                  sx={{
-                    textDecoration: "none",
-                    color: "inherit",
-                    padding: theme.spacing(1.5, 3),
-                    margin: theme.spacing(0.25, 1),
-                    borderRadius: 2,
-                    transition: "all 0.3s ease",
-                    backgroundColor: isActive(subItem.path)
-                      ? theme.palette.background.primary
-                      : "transparent",
-                    "&:hover": {
-                      backgroundColor: theme.palette.background.primary,
-                      transform: "translateX(8px)",
-                    },
-                  }}
-                >
-                  <ListItemIcon>
-                    <subItem.icon
-                      sx={{ color: theme.palette.primary.main, fontSize: 20 }}
-                    />
-                  </ListItemIcon>
-                  <ListItemText
-                    primary={subItem.name}
-                    primaryTypographyProps={{
-                      fontWeight: isActive(subItem.path) ? 600 : 400,
-                      color: isActive(subItem.path)
-                        ? theme.palette.primary.main
-                        : theme.palette.text.primary,
-                      fontSize: "0.9rem",
+                <Box key={subItem.name}>
+                  <ListItem
+                    onClick={() => handleSubMenuToggle(subItem.name)}
+                    sx={{
+                      pl: 4,
+                      padding: theme.spacing(1.5, 3),
+                      margin: theme.spacing(0.25, 1),
+                      borderRadius: 2,
+                      transition: "all 0.3s ease",
+                      backgroundColor: isActive(subItem.path)
+                        ? theme.palette.background.primary
+                        : "transparent",
+                      "&:hover": {
+                        backgroundColor: theme.palette.background.primary,
+                        transform: "translateX(8px)",
+                      },
                     }}
-                  />
-                </ListItem>
+                  >
+                    <ListItemIcon>
+                      <subItem.icon
+                        sx={{ color: theme.palette.primary.main, fontSize: 20 }}
+                      />
+                    </ListItemIcon>
+                    <ListItemText
+                      primary={subItem.name}
+                      primaryTypographyProps={{
+                        fontWeight: isActive(subItem.path) ? 600 : 400,
+                        color: isActive(subItem.path)
+                          ? theme.palette.primary.main
+                          : theme.palette.text.primary,
+                        fontSize: "0.9rem",
+                      }}
+                    />
+                    {subItem.subSubItems &&
+                      (openSubMenus[subItem.name] ? (
+                        <ExpandMoreIcon />
+                      ) : (
+                        <ChevronRightIcon />
+                      ))}
+                  </ListItem>
+                  {subItem.subSubItems && (
+                    <Collapse
+                      in={openSubMenus[subItem.name]}
+                      timeout="auto"
+                      unmountOnExit
+                    >
+                      <List component="div" disablePadding>
+                        {subItem.subSubItems.map((subSubItem) => (
+                          <ListItem
+                            key={subSubItem.name}
+                            component={Link}
+                            to={subSubItem.path}
+                            onClick={handleDrawerToggle}
+                            sx={{
+                              pl: 8,
+                              padding: theme.spacing(1.5, 3),
+                              margin: theme.spacing(0.25, 1),
+                              borderRadius: 2,
+                              transition: "all 0.3s ease",
+                              backgroundColor: isActive(subSubItem.path)
+                                ? theme.palette.background.primary
+                                : "transparent",
+                              "&:hover": {
+                                backgroundColor:
+                                  theme.palette.background.primary,
+                                transform: "translateX(8px)",
+                              },
+                            }}
+                          >
+                            <ListItemText
+                              primary={subSubItem.name}
+                              primaryTypographyProps={{
+                                fontWeight: isActive(subSubItem.path)
+                                  ? 600
+                                  : 400,
+                                color: isActive(subSubItem.path)
+                                  ? theme.palette.primary.main
+                                  : theme.palette.text.primary,
+                                fontSize: "0.85rem",
+                              }}
+                            />
+                          </ListItem>
+                        ))}
+                      </List>
+                    </Collapse>
+                  )}
+                </Box>
               ))}
             </List>
-          )}
+          </Collapse>
         </Box>
       );
     }
@@ -351,6 +601,16 @@ function Navbar() {
   const drawer = (
     <Box sx={{ width: 280, pt: 2 }}>
       <Box sx={{ textAlign: "center", mb: 3 }}>
+        <img
+          src={logo}
+          alt="CAPS Logo"
+          style={{
+            height: "50px",
+            width: "auto",
+            marginBottom: "8px",
+            borderRadius: "4px",
+          }}
+        />
         <Typography
           variant="h6"
           sx={{
@@ -359,7 +619,7 @@ function Navbar() {
             color: theme.palette.primary.main,
           }}
         >
-          Climate Action NGO
+          CAPSBD
         </Typography>
       </Box>
       <List>{navItems.map(renderDrawerItem)}</List>
@@ -379,6 +639,16 @@ function Navbar() {
         <Container maxWidth="xl">
           <Toolbar sx={{ justifyContent: "space-between", py: 1 }}>
             <Box sx={{ display: "flex", alignItems: "center" }}>
+              <img
+                src={logo}
+                alt="CAPS Logo"
+                style={{
+                  height: "60px",
+                  width: "auto",
+                  marginRight: "12px",
+                  borderRadius: "4px",
+                }}
+              />
               <Typography
                 variant="h6"
                 component={Link}
@@ -390,7 +660,7 @@ function Navbar() {
                   color: theme.palette.primary.main,
                 }}
               >
-                Climate Action NGO
+                CAPS BD
               </Typography>
             </Box>
 

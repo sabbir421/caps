@@ -23,99 +23,101 @@ import {
   Business,
   Engineering,
   Groups,
+  WaterDrop,
+  Agriculture,
+  ChildCare,
+  Forest,
+  Water,
+  Handshake,
+  Commute,
+  WorkspacePremium
 } from "@mui/icons-material";
-import { Link } from "react-router-dom";
 
 const ProgramsOverview = () => {
   const theme = useTheme();
 
   const programCategories = [
     {
-      title: "Climate Action",
+      title: "Community Education & Support",
       description:
-        "Comprehensive climate change mitigation and adaptation programs.",
-      image:
-        "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=400&h=300&fit=crop",
-      icon: Nature,
-      link: "/working-area/climate-action",
-      programs: [
-        "Tree Planting Campaigns",
-        "Renewable Energy Adoption",
-        "Waste Management",
-        "Carbon Reduction",
-      ],
-    },
-    {
-      title: "Education",
-      description:
-        "Quality education and skill development for rural communities.",
-      image:
-        "https://images.unsplash.com/photo-1523240794102-9eb5ccb5ac1e?w=400&h=300&fit=crop",
+        "Programs focused on empowering communities through education and social services.",
+      image: "https://placehold.co/400x300/FFFDE7/F57F17?text=Community+Education",
       icon: School,
-      link: "/working-area/education",
+      link: "/working-area/community-education",
       programs: [
-        "Digital Literacy",
-        "Environmental Education",
-        "Vocational Training",
-        "Women Empowerment",
+        "Climate Smart Community Education",
+        "Climate-smart child protection",
+        "Climate Smart Coding education",
+        "Climate-smart Programs for People with Disabilities",
       ],
     },
     {
-      title: "Healthcare",
+      title: "Environmental & Waste Management",
       description:
-        "Comprehensive healthcare services and community health programs.",
-      image:
-        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=300&fit=crop",
-      icon: LocalHospital,
-      link: "/working-area/healthcare",
+        "Initiatives to manage waste sustainably and reduce environmental pollution.",
+      image: "https://placehold.co/400x300/E8F5E9/2E7D32?text=Waste+Management",
+      icon: Nature,
+      link: "/working-area/environmental-management",
       programs: [
-        "Primary Healthcare",
-        "Maternal & Child Health",
-        "Mental Health Support",
-        "Elderly Care",
+        "Climate Smart Community Garbage Management",
+        "Climate-smart plastic management",
       ],
     },
     {
-      title: "Agriculture",
+      title: "Ecosystem Conservation",
       description:
-        "Sustainable farming and agricultural development initiatives.",
-      image:
-        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop",
-      icon: Nature,
-      link: "/working-area/agriculture",
+        "Protecting and restoring natural ecosystems, including forests and wildlife.",
+      image: "https://placehold.co/400x300/F0F4C3/689F38?text=Ecosystem+Conservation",
+      icon: Forest,
+      link: "/working-area/ecosystem-conservation",
       programs: [
-        "Sustainable Farming",
-        "Water Management",
-        "Market Access",
-        "Technology Adoption",
+        "Climate-smart Sundarbans",
+        "Climate-smart Afforestation",
+        "Climate-smart Wildlife Adaptation",
+        "Climate-smart Wilderness",
+        "Climate-smart adaptation for sea species",
       ],
     },
     {
-      title: "Water Management",
-      description: "Sustainable water solutions and conservation programs.",
-      image:
-        "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=300&fit=crop",
-      icon: Nature,
-      link: "/working-area/water",
+      title: "Sustainable Livelihoods",
+      description:
+        "Developing climate-resilient economic opportunities and sustainable practices.",
+      image: "https://placehold.co/400x300/FFEBEE/C62828?text=Sustainable+Livelihoods",
+      icon: Agriculture,
+      link: "/working-area/sustainable-livelihoods",
       programs: [
-        "Rainwater Harvesting",
-        "Irrigation Systems",
-        "Water Conservation",
-        "Quality Management",
+        "Climate-smart fisherman resettlement",
+        "Climate-smart Resettlement for women",
+        "Climate-smart women entrepreneurs",
+        "Climate-smart agro-forestry",
+        "Climate-smart agriculture (CSA)",
+        "Climate-smart aquaculture",
+        "Climate-Smart Migration",
+        "Climate smart outsourcing…",
       ],
     },
     {
-      title: "Renewable Energy",
-      description: "Clean energy solutions and sustainable power generation.",
-      image:
-        "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=400&h=300&fit=crop",
-      icon: Nature,
-      link: "/working-area/energy",
+      title: "Water & Infrastructure",
+      description:
+        "Improving water systems and building resilient infrastructure.",
+      image: "https://placehold.co/400x300/E1F5FE/01579B?text=Water+Infrastructure",
+      icon: WaterDrop,
+      link: "/working-area/water-infrastructure",
       programs: [
-        "Solar Energy",
-        "Wind Energy",
-        "Biomass Energy",
-        "Energy Efficiency",
+        "Climate-smart irrigation",
+        "Climate Smart Water Plant",
+        "Climate-smart Canal and River Excavation",
+      ],
+    },
+    {
+      title: "Prioritizing Vulnerable People",
+      description:
+        "Special initiatives to protect and support people most affected by climate change.",
+      image: "https://placehold.co/400x300/D1C4E9/4527A0?text=Vulnerable+Communities",
+      icon: People,
+      link: "/working-area/vulnerable-people",
+      programs: [
+        "Prioritizing climate-vulnerable people",
       ],
     },
   ];
@@ -124,7 +126,7 @@ const ProgramsOverview = () => {
     { number: "100K+", label: "People Impacted", icon: Groups },
     { number: "500+", label: "Projects Completed", icon: Business },
     { number: "25+", label: "Years Experience", icon: TrendingUp },
-    { number: "50+", label: "Communities Served", icon: Nature },
+    { number: "50+", label: "Communities Served", icon: Handshake },
   ];
 
   return (
@@ -132,14 +134,15 @@ const ProgramsOverview = () => {
       {/* Hero Section */}
       <Box
         sx={{
-          background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 100%)`,
+          bgcolor: theme.palette.primary.main,
           color: "white",
           py: { xs: 6, md: 8 },
+          textAlign: 'center',
         }}
       >
         <Container maxWidth="xl">
-          <Grid container spacing={4} alignItems="center">
-            <Grid item xs={12} md={6}>
+          <Grid container spacing={4} alignItems="center" justifyContent="center">
+            <Grid item xs={12} md={8}>
               <Typography
                 variant="h1"
                 sx={{
@@ -158,29 +161,16 @@ const ProgramsOverview = () => {
                   lineHeight: 1.6,
                 }}
               >
-                Comprehensive programs across climate action, education,
-                healthcare, agriculture, water management, and renewable energy
-                to create sustainable rural development.
+                Comprehensive programs across various sectors to create
+                sustainable rural development and climate resilience.
               </Typography>
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <Box
-                component="img"
-                src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=600&h=400&fit=crop"
-                alt="Programs Overview"
-                sx={{
-                  width: "100%",
-                  borderRadius: 4,
-                  boxShadow: "0px 20px 40px rgba(0, 0, 0, 0.2)",
-                }}
-              />
             </Grid>
           </Grid>
         </Container>
       </Box>
 
       {/* Impact Statistics */}
-      <Box sx={{ py: 6, backgroundColor: theme.palette.background.secondary }}>
+      <Box sx={{ py: 6, bgcolor: theme.palette.grey[100] }}>
         <Container maxWidth="xl">
           <Typography
             variant="h2"
@@ -193,7 +183,7 @@ const ProgramsOverview = () => {
           >
             Our Impact
           </Typography>
-          <Grid container spacing={4}>
+          <Grid container spacing={4} justifyContent="center">
             {impactStats.map((stat, index) => (
               <Grid item xs={12} sm={6} md={3} key={index}>
                 <Box
@@ -205,7 +195,6 @@ const ProgramsOverview = () => {
                     boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.08)",
                     transition: "all 0.3s ease",
                     "&:hover": {
-                      transform: "translateY(-4px)",
                       boxShadow: "0px 8px 16px rgba(0, 0, 0, 0.12)",
                     },
                   }}
@@ -265,18 +254,16 @@ const ProgramsOverview = () => {
           >
             Our Program Categories
           </Typography>
-          <Grid container spacing={4}>
+          <Grid container spacing={4} justifyContent="center">
             {programCategories.map((category, index) => (
               <Grid item xs={12} md={6} lg={4} key={index}>
                 <Card
-                  component={Link}
-                  to={category.link}
                   sx={{
                     height: "100%",
                     textDecoration: "none",
                     transition: "all 0.3s ease",
+                    cursor: 'pointer',
                     "&:hover": {
-                      transform: "translateY(-8px)",
                       boxShadow: "0px 16px 32px rgba(0, 0, 0, 0.15)",
                     },
                   }}
@@ -357,7 +344,7 @@ const ProgramsOverview = () => {
       </Box>
 
       {/* Approach */}
-      <Box sx={{ py: 8, backgroundColor: theme.palette.background.secondary }}>
+      <Box sx={{ py: 8, bgcolor: theme.palette.grey[100] }}>
         <Container maxWidth="xl">
           <Typography
             variant="h2"
@@ -370,7 +357,7 @@ const ProgramsOverview = () => {
           >
             Our Approach
           </Typography>
-          <Grid container spacing={4}>
+          <Grid container spacing={4} justifyContent="center">
             <Grid item xs={12} md={4}>
               <Box
                 sx={{
@@ -521,8 +508,9 @@ const ProgramsOverview = () => {
       <Box
         sx={{
           py: 8,
-          background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 100%)`,
+          bgcolor: theme.palette.primary.main,
           color: "white",
+          textAlign: 'center',
         }}
       >
         <Container maxWidth="xl">

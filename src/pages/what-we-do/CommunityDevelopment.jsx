@@ -7,23 +7,24 @@ import {
   Card,
   CardContent,
   CardMedia,
-  Chip,
   List,
   ListItem,
   ListItemIcon,
   ListItemText,
+  Button,
   useTheme,
 } from "@mui/material";
+import { motion } from "framer-motion";
 import {
-  Nature,
-  TrendingUp,
-  People,
-  School,
-  LocalHospital,
+  Psychology,
   Business,
-  Engineering,
   Groups,
+  School,
+  TrendingUp,
 } from "@mui/icons-material";
+
+const MotionCard = motion(Card);
+const MotionBox = motion(Box);
 
 const CommunityDevelopment = () => {
   const theme = useTheme();
@@ -34,7 +35,7 @@ const CommunityDevelopment = () => {
       description:
         "Empowering community leaders with skills and knowledge to drive local development.",
       image:
-        "https://images.unsplash.com/photo-1523240794102-9eb5ccbdd362?w=400&h=300&fit=crop",
+        "https://images.unsplash.com/photo-1523240794102-9eb5ccbdd362?w=800&fit=crop",
       icon: Psychology,
       details: [
         "Leadership training workshops",
@@ -48,7 +49,7 @@ const CommunityDevelopment = () => {
       description:
         "Creating sustainable economic opportunities for community members.",
       image:
-        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=300&fit=crop",
+        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&fit=crop",
       icon: Business,
       details: [
         "Micro-enterprise development",
@@ -61,7 +62,7 @@ const CommunityDevelopment = () => {
       title: "Social Infrastructure",
       description: "Building and improving community facilities and services.",
       image:
-        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop",
+        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&fit=crop",
       icon: Groups,
       details: [
         "Community centers",
@@ -74,7 +75,7 @@ const CommunityDevelopment = () => {
       title: "Capacity Building",
       description: "Strengthening community organizations and institutions.",
       image:
-        "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=400&h=300&fit=crop",
+        "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&fit=crop",
       icon: School,
       details: [
         "Organizational development",
@@ -97,82 +98,78 @@ const CommunityDevelopment = () => {
       {/* Hero Section */}
       <Box
         sx={{
-          background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 100%)`,
+          bgcolor: theme.palette.primary.main,
           color: "white",
-          py: { xs: 6, md: 8 },
+          py: { xs: 8, md: 12 },
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          textAlign: "center",
+          flexDirection: "column",
+          backgroundImage:
+            "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1508780709619-79562169bc64?w=1600&fit=crop')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
         }}
       >
-        <Container maxWidth="xl">
-          <Grid container spacing={4} alignItems="center">
-            <Grid item xs={12} md={6}>
-              <Typography
-                variant="h1"
-                sx={{
-                  fontWeight: 700,
-                  mb: 3,
-                  fontSize: { xs: "2.5rem", md: "3.5rem" },
-                }}
-              >
-                Community Development
-              </Typography>
-              <Typography
-                variant="h5"
-                sx={{
-                  mb: 4,
-                  opacity: 0.9,
-                  lineHeight: 1.6,
-                }}
-              >
-                Empowering communities to take ownership of their development
-                through leadership, capacity building, and sustainable
-                initiatives.
-              </Typography>
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <Box
-                component="img"
-                src="https://images.unsplash.com/photo-1523240794102-9eb5ccbdd362?w=600&h=400&fit=crop"
-                alt="Community Development"
-                sx={{
-                  width: "100%",
-                  borderRadius: 4,
-                  boxShadow: "0px 20px 40px rgba(0, 0, 0, 0.2)",
-                }}
-              />
-            </Grid>
-          </Grid>
+        <Container maxWidth="md">
+          <Typography
+            variant="h2"
+            sx={{
+              fontWeight: 700,
+              mb: 2,
+              fontSize: { xs: "2rem", md: "3rem" },
+              color: "white",
+            }}
+          >
+            Community Development
+          </Typography>
+          <Typography
+            variant="h6"
+            sx={{
+              mb: 4,
+              opacity: 0.9,
+              lineHeight: 1.6,
+              color: "white",
+              textAlign: "justify",
+            }}
+          >
+            Empowering communities to take ownership of their development
+            through leadership, capacity building, and sustainable initiatives.
+          </Typography>
+          <Button
+            variant="contained"
+            size="large"
+            sx={{
+              bgcolor: "white",
+              color: theme.palette.primary.main,
+              fontWeight: 600,
+              px: 4,
+              "&:hover": { bgcolor: "rgba(255,255,255,0.9)" },
+            }}
+          >
+            Join Our Mission
+          </Button>
         </Container>
       </Box>
 
       {/* Impact Statistics */}
-      <Box sx={{ py: 6, backgroundColor: theme.palette.background.secondary }}>
-        <Container maxWidth="xl">
-          <Typography
-            variant="h2"
-            sx={{
-              textAlign: "center",
-              fontWeight: 700,
-              mb: 6,
-              color: theme.palette.text.primary,
-            }}
-          >
-            Community Development Impact
+      <Box sx={{ py: 8, textAlign: "center" }}>
+        <Container maxWidth="lg">
+          <Typography variant="h3" fontWeight={700} mb={6}>
+            Our Impact
           </Typography>
-          <Grid container spacing={4}>
+          <Grid container spacing={4} justifyContent="center">
             {impactStats.map((stat, index) => (
               <Grid item xs={12} sm={6} md={3} key={index}>
-                <Box
+                <MotionBox
+                  whileHover={{ scale: 1.05 }}
                   sx={{
-                    textAlign: "center",
                     p: 3,
-                    borderRadius: 3,
-                    backgroundColor: "white",
-                    boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.08)",
-                    transition: "all 0.3s ease",
-                    "&:hover": {
-                      transform: "translateY(-4px)",
-                      boxShadow: "0px 8px 16px rgba(0, 0, 0, 0.12)",
-                    },
+                    borderRadius: 4,
+                    backdropFilter: "blur(10px)",
+                    background: "rgba(255,255,255,0.8)",
+                    boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
                   }}
                 >
                   <Box
@@ -191,56 +188,41 @@ const CommunityDevelopment = () => {
                     <stat.icon sx={{ fontSize: 30 }} />
                   </Box>
                   <Typography
-                    variant="h3"
-                    sx={{
-                      fontWeight: 700,
-                      color: theme.palette.primary.main,
-                      mb: 1,
-                    }}
+                    variant="h4"
+                    fontWeight={700}
+                    color={theme.palette.primary.main}
                   >
                     {stat.number}
                   </Typography>
-                  <Typography
-                    variant="h6"
-                    sx={{
-                      color: theme.palette.text.secondary,
-                      fontWeight: 500,
-                    }}
-                  >
+                  <Typography variant="subtitle1" color="text.secondary">
                     {stat.label}
                   </Typography>
-                </Box>
+                </MotionBox>
               </Grid>
             ))}
           </Grid>
         </Container>
       </Box>
 
-      {/* Key Programs */}
-      <Box sx={{ py: 8 }}>
-        <Container maxWidth="xl">
-          <Typography
-            variant="h2"
-            sx={{
-              textAlign: "center",
-              fontWeight: 700,
-              mb: 6,
-              color: theme.palette.text.primary,
-            }}
-          >
-            Our Community Development Programs
+      {/* Programs */}
+      <Box sx={{ py: 8, textAlign: "center" }}>
+        <Container maxWidth="lg">
+          <Typography variant="h3" fontWeight={700} mb={6}>
+            Our Programs
           </Typography>
-          <Grid container spacing={4}>
+          <Grid container spacing={4} justifyContent="center">
             {programs.map((program, index) => (
-              <Grid item xs={12} md={6} key={index}>
-                <Card
+              <Grid item xs={12} sm={6} md={5} key={index}>
+                <MotionCard
+                  whileHover={{ scale: 1.03 }}
+                  transition={{ duration: 0.3 }}
                   sx={{
+                    borderRadius: 4,
+                    overflow: "hidden",
                     height: "100%",
-                    transition: "all 0.3s ease",
-                    "&:hover": {
-                      transform: "translateY(-8px)",
-                      boxShadow: "0px 16px 32px rgba(0, 0, 0, 0.15)",
-                    },
+                    display: "flex",
+                    flexDirection: "column",
+                    textAlign: "center",
                   }}
                 >
                   <CardMedia
@@ -249,8 +231,15 @@ const CommunityDevelopment = () => {
                     image={program.image}
                     alt={program.title}
                   />
-                  <CardContent sx={{ p: 3 }}>
-                    <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
+                  <CardContent sx={{ flexGrow: 1 }}>
+                    <Box
+                      sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        mb: 2,
+                      }}
+                    >
                       <Box
                         sx={{
                           display: "flex",
@@ -261,36 +250,25 @@ const CommunityDevelopment = () => {
                           borderRadius: "50%",
                           backgroundColor: theme.palette.primary.main,
                           color: "white",
-                          mr: 2,
+                          mr: 1,
                         }}
                       >
                         <program.icon />
                       </Box>
-                      <Typography
-                        variant="h5"
-                        component="h3"
-                        sx={{
-                          fontWeight: 600,
-                          color: theme.palette.text.primary,
-                        }}
-                      >
+                      <Typography variant="h6" fontWeight={600}>
                         {program.title}
                       </Typography>
                     </Box>
-                    <Typography
-                      variant="body1"
-                      sx={{
-                        mb: 3,
-                        color: theme.palette.text.secondary,
-                        lineHeight: 1.6,
-                      }}
-                    >
+                    <Typography variant="body2" color="text.secondary" mb={2}>
                       {program.description}
                     </Typography>
-                    <List dense>
-                      {program.details.map((detail, detailIndex) => (
-                        <ListItem key={detailIndex} sx={{ px: 0 }}>
-                          <ListItemIcon sx={{ minWidth: 30 }}>
+                    <List
+                      dense
+                      sx={{ display: "inline-block", textAlign: "left" }}
+                    >
+                      {program.details.map((detail, i) => (
+                        <ListItem key={i} sx={{ px: 0 }}>
+                          <ListItemIcon sx={{ minWidth: 20 }}>
                             <Box
                               sx={{
                                 width: 6,
@@ -311,57 +289,10 @@ const CommunityDevelopment = () => {
                       ))}
                     </List>
                   </CardContent>
-                </Card>
+                </MotionCard>
               </Grid>
             ))}
           </Grid>
-        </Container>
-      </Box>
-
-      {/* Call to Action */}
-      <Box
-        sx={{
-          py: 8,
-          background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 100%)`,
-          color: "white",
-        }}
-      >
-        <Container maxWidth="xl">
-          <Box sx={{ textAlign: "center" }}>
-            <Typography
-              variant="h2"
-              sx={{
-                fontWeight: 700,
-                mb: 3,
-              }}
-            >
-              Support Community Development
-            </Typography>
-            <Typography
-              variant="h6"
-              sx={{
-                mb: 4,
-                opacity: 0.9,
-                maxWidth: 600,
-                mx: "auto",
-              }}
-            >
-              Strong communities are the foundation of sustainable development.
-              Help us empower rural communities to build their own future.
-            </Typography>
-            <Chip
-              label="Partner with us for community development"
-              sx={{
-                backgroundColor: "rgba(255, 255, 255, 0.2)",
-                color: "white",
-                fontSize: "1.1rem",
-                padding: "12px 24px",
-                "&:hover": {
-                  backgroundColor: "rgba(255, 255, 255, 0.3)",
-                },
-              }}
-            />
-          </Box>
         </Container>
       </Box>
     </Box>

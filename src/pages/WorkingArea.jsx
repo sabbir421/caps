@@ -136,9 +136,9 @@ function WorkingArea() {
                     Rural Communities
                   </Typography>
                   <Typography variant="body1" paragraph>
-                    Working directly with rural villages to implement sustainable
-                    farming practices, renewable energy solutions, and
-                    community-based conservation programs.
+                    Working directly with rural villages to implement
+                    sustainable farming practices, renewable energy solutions,
+                    and community-based conservation programs.
                   </Typography>
                   <Box sx={{ mb: 2 }}>
                     <Chip
@@ -157,7 +157,11 @@ function WorkingArea() {
                       sx={{ mr: 1, mb: 1, fontWeight: "bold" }}
                     />
                   </Box>
-                  <Typography variant="body2" color="text.secondary" sx={{ fontStyle: "italic" }}>
+                  <Typography
+                    variant="body2"
+                    color="text.secondary"
+                    sx={{ fontStyle: "italic" }}
+                  >
                     <strong>Focus:</strong> Climate-resilient agriculture, solar
                     power adoption, water conservation, and community-led
                     environmental initiatives.
@@ -182,7 +186,9 @@ function WorkingArea() {
                     color="primary"
                     sx={{ fontWeight: "bold" }}
                   >
-                    <SchoolIcon sx={{ verticalAlign: "middle", mr: 1, fontSize: 30 }} />
+                    <SchoolIcon
+                      sx={{ verticalAlign: "middle", mr: 1, fontSize: 30 }}
+                    />
                     Educational Institutions
                   </Typography>
                   <Typography variant="body1" paragraph>
@@ -207,7 +213,11 @@ function WorkingArea() {
                       sx={{ mr: 1, mb: 1, fontWeight: "bold" }}
                     />
                   </Box>
-                  <Typography variant="body2" color="text.secondary" sx={{ fontStyle: "italic" }}>
+                  <Typography
+                    variant="body2"
+                    color="text.secondary"
+                    sx={{ fontStyle: "italic" }}
+                  >
                     <strong>Focus:</strong> School infrastructure, teacher
                     training, environmental curriculum, and technology
                     integration.
@@ -257,7 +267,11 @@ function WorkingArea() {
                     />
                     Rural Healthcare Facilities
                   </Typography>
-                  <Typography variant="body1" paragraph>
+                  <Typography
+                    variant="body1"
+                    paragraph
+                    sx={{ textAlign: "justify" }}
+                  >
                     Supporting rural healthcare facilities with medical
                     supplies, health education programs, and mobile medical
                     units.
@@ -279,7 +293,11 @@ function WorkingArea() {
                       sx={{ mr: 1, mb: 1, fontWeight: "bold" }}
                     />
                   </Box>
-                  <Typography variant="body2" color="text.secondary" sx={{ fontStyle: "italic" }}>
+                  <Typography
+                    variant="body2"
+                    color="text.secondary"
+                    sx={{ fontStyle: "italic" }}
+                  >
                     <strong>Focus:</strong> Maternal and child health, nutrition
                     programs, disease prevention, and mental health support.
                   </Typography>
@@ -330,7 +348,11 @@ function WorkingArea() {
                       sx={{ mr: 1, mb: 1, fontWeight: "bold" }}
                     />
                   </Box>
-                  <Typography variant="body2" color="text.secondary" sx={{ fontStyle: "italic" }}>
+                  <Typography
+                    variant="body2"
+                    color="text.secondary"
+                    sx={{ fontStyle: "italic" }}
+                  >
                     <strong>Focus:</strong> Emergency care, vaccinations, health
                     screenings, and community health awareness campaigns.
                   </Typography>
@@ -387,7 +409,11 @@ function WorkingArea() {
                     change impacts, water scarcity, and sustainable agriculture
                     practices.
                   </Typography>
-                  <Typography variant="body2" color="text.secondary" sx={{ fontStyle: "italic" }}>
+                  <Typography
+                    variant="body2"
+                    color="text.secondary"
+                    sx={{ fontStyle: "italic" }}
+                  >
                     <strong>Communities:</strong> 15 villages
                     <br />
                     <strong>Focus:</strong> Water conservation, terrace farming,
@@ -425,7 +451,11 @@ function WorkingArea() {
                     techniques, crop diversification, and climate-resilient
                     farming methods.
                   </Typography>
-                  <Typography variant="body2" color="text.secondary" sx={{ fontStyle: "italic" }}>
+                  <Typography
+                    variant="body2"
+                    color="text.secondary"
+                    sx={{ fontStyle: "italic" }}
+                  >
                     <strong>Communities:</strong> 25 villages
                     <br />
                     <strong>Focus:</strong> Organic farming, crop rotation, soil
@@ -463,7 +493,11 @@ function WorkingArea() {
                     through mangrove restoration, disaster preparedness, and
                     sustainable fishing.
                   </Typography>
-                  <Typography variant="body2" color="text.secondary" sx={{ fontStyle: "italic" }}>
+                  <Typography
+                    variant="body2"
+                    color="text.secondary"
+                    sx={{ fontStyle: "italic" }}
+                  >
                     <strong>Communities:</strong> 10 villages
                     <br />
                     <strong>Focus:</strong> Mangrove restoration, disaster
@@ -506,7 +540,11 @@ function WorkingArea() {
                   <Typography variant="h6" gutterBottom>
                     Rural Communities
                   </Typography>
-                  <Typography variant="body2" color="text.secondary" sx={{ fontStyle: "italic" }}>
+                  <Typography
+                    variant="body2"
+                    color="text.secondary"
+                    sx={{ fontStyle: "italic" }}
+                  >
                     Actively working across diverse regions
                   </Typography>
                 </CardContent>
@@ -525,7 +563,11 @@ function WorkingArea() {
                   <Typography variant="h6" gutterBottom>
                     Schools Supported
                   </Typography>
-                  <Typography variant="body2" color="text.secondary" sx={{ fontStyle: "italic" }}>
+                  <Typography
+                    variant="body2"
+                    color="text.secondary"
+                    sx={{ fontStyle: "italic" }}
+                  >
                     Educational infrastructure and programs
                   </Typography>
                 </CardContent>
@@ -544,7 +586,11 @@ function WorkingArea() {
                   <Typography variant="h6" gutterBottom>
                     Healthcare Centers
                   </Typography>
-                  <Typography variant="body2" color="text.secondary" sx={{ fontStyle: "italic" }}>
+                  <Typography
+                    variant="body2"
+                    color="text.secondary"
+                    sx={{ fontStyle: "italic" }}
+                  >
                     Medical facilities and mobile units
                   </Typography>
                 </CardContent>
@@ -563,7 +609,11 @@ function WorkingArea() {
                   <Typography variant="h6" gutterBottom>
                     Coverage
                   </Typography>
-                  <Typography variant="body2" color="text.secondary" sx={{ fontStyle: "italic" }}>
+                  <Typography
+                    variant="body2"
+                    color="text.secondary"
+                    sx={{ fontStyle: "italic" }}
+                  >
                     All regions have active programs
                   </Typography>
                 </CardContent>

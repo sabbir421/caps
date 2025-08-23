@@ -142,7 +142,10 @@ const RenewableEnergy = () => {
           >
             Empowering Rural Communities Through Renewable Energy
           </Typography>
-          <Typography variant="body1" sx={{ lineHeight: 1.8, color: "white" }}>
+          <Typography
+            variant="body1"
+            sx={{ lineHeight: 1.8, color: "white", textAlign: "justify" }}
+          >
             We bring clean, reliable, and affordable energy to remote villages,
             improving quality of life and supporting sustainable development.
           </Typography>

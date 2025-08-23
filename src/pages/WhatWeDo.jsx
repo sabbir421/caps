@@ -321,7 +321,11 @@ function WhatWeDo() {
                 >
                   Collection & Recycling
                 </Typography>
-                <Typography variant="body1" paragraph>
+                <Typography
+                  variant="body1"
+                  paragraph
+                  sx={{ textAlign: "justify" }}
+                >
                   Establishing plastic collection systems, recycling facilities,
                   and waste segregation programs in rural communities.
                 </Typography>
@@ -345,7 +349,11 @@ function WhatWeDo() {
                 >
                   Eco-friendly Alternatives
                 </Typography>
-                <Typography variant="body1" paragraph>
+                <Typography
+                  variant="body1"
+                  paragraph
+                  sx={{ textAlign: "justify" }}
+                >
                   Promoting biodegradable products, reusable materials, and
                   sustainable packaging solutions in rural markets.
                 </Typography>
@@ -370,7 +378,11 @@ function WhatWeDo() {
                 >
                   Upcycling Workshops
                 </Typography>
-                <Typography variant="body1" paragraph>
+                <Typography
+                  variant="body1"
+                  paragraph
+                  sx={{ textAlign: "justify" }}
+                >
                   Teaching communities to transform plastic waste into useful
                   products, creating income opportunities and reducing waste.
                 </Typography>

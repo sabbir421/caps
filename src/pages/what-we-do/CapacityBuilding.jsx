@@ -19,7 +19,6 @@ import {
   TrendingUp,
   People,
   School,
-  LocalHospital,
   Business,
   Engineering,
   Groups,
@@ -34,7 +33,7 @@ const CapacityBuilding = () => {
       description:
         "Building strong leadership skills among community members and local organizations.",
       image:
-        "https://images.unsplash.com/photo-1523240794102-9eb5ccbdd362?w=400&h=300&fit=crop",
+        "https://media.licdn.com/dms/image/v2/D4E12AQHVGmxdXZgKfQ/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1709838574597?e=2147483647&v=beta&t=Pug16J1d8Xg1Hs8zS4ZtW49bL73mlNbKLO7KDpCwGDs",
       icon: People,
       details: [
         "Leadership training workshops",
@@ -48,7 +47,7 @@ const CapacityBuilding = () => {
       description:
         "Providing technical expertise and skills development in various sectors.",
       image:
-        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=300&fit=crop",
+        "https://www.talentlms.com/blog/wp-content/uploads/2024/01/TLMS_20240104_1200x628-1.png",
       icon: Engineering,
       details: [
         "Agricultural technology training",
@@ -62,7 +61,7 @@ const CapacityBuilding = () => {
       description:
         "Strengthening local organizations and community groups for sustainable impact.",
       image:
-        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJaaUL3Oyl18I-4WbfLfk3LqTD3RXcTX6wQg&s",
       icon: Nature,
       details: [
         "Organizational governance",
@@ -76,7 +75,7 @@ const CapacityBuilding = () => {
       description:
         "Facilitating knowledge exchange and learning among communities and partners.",
       image:
-        "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=400&h=300&fit=crop",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9te3Qq9kyOzkPtGmUybWI3ZPPQ_S_HQcpZg&s",
       icon: School,
       details: [
         "Best practice sharing",
@@ -99,68 +98,70 @@ const CapacityBuilding = () => {
       {/* Hero Section */}
       <Box
         sx={{
-          background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 100%)`,
+          bgcolor: theme.palette.primary.main,
           color: "white",
-          py: { xs: 6, md: 8 },
+          py: 10,
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
+          textAlign: "center",
         }}
       >
-        <Container maxWidth="xl">
-          <Grid container spacing={4} alignItems="center">
-            <Grid item xs={12} md={6}>
-              <Typography
-                variant="h1"
-                sx={{
-                  fontWeight: 700,
-                  mb: 3,
-                  fontSize: { xs: "2.5rem", md: "3.5rem" },
-                }}
-              >
-                Capacity Building
-              </Typography>
-              <Typography
-                variant="h5"
-                sx={{
-                  mb: 4,
-                  opacity: 0.9,
-                  lineHeight: 1.6,
-                }}
-              >
-                Empowering communities through comprehensive training, skill
-                development, and organizational strengthening for sustainable
-                development.
-              </Typography>
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <Box
-                component="img"
-                src="https://images.unsplash.com/photo-1523240794102-9eb5ccbdd362?w=600&h=400&fit=crop"
-                alt="Capacity Building"
-                sx={{
-                  width: "100%",
-                  borderRadius: 4,
-                  boxShadow: "0px 20px 40px rgba(0, 0, 0, 0.2)",
-                }}
-              />
-            </Grid>
-          </Grid>
+        <Container maxWidth="md">
+          <Typography
+            variant="h1"
+            sx={{
+              fontWeight: 700,
+              mb: 3,
+              fontSize: { xs: "2.5rem", md: "3.5rem" },
+            }}
+          >
+            Capacity Building
+          </Typography>
+          <Typography
+            variant="h6"
+            sx={{
+              mb: 4,
+              opacity: 0.9,
+              lineHeight: 1.6,
+              textAlign: "justify",
+            }}
+          >
+            Empowering communities through comprehensive training, skill
+            development, and organizational strengthening for sustainable
+            development.
+          </Typography>
+          <Box
+            component="img"
+            src="https://t3.ftcdn.net/jpg/02/01/01/22/360_F_201012244_a8uvbhikzy2KSYh6KoBJ7y24Ps7kPzSq.jpg"
+            alt="Capacity Building"
+            sx={{
+              width: "100%",
+              maxWidth: 600,
+              borderRadius: 4,
+              boxShadow: "0px 20px 40px rgba(0, 0, 0, 0.2)",
+              mx: "auto",
+              display: "block",
+            }}
+          />
         </Container>
       </Box>
 
       {/* Impact Statistics */}
-      <Box sx={{ py: 6, backgroundColor: theme.palette.background.secondary }}>
-        <Container maxWidth="xl">
+      <Box sx={{ py: 8, backgroundColor: "#f9f9f9" }}>
+        <Container maxWidth="lg">
           <Typography
             variant="h2"
             sx={{
               textAlign: "center",
               fontWeight: 700,
               mb: 6,
-              color: theme.palette.text.primary,
             }}
           >
             Capacity Building Impact
           </Typography>
-          <Grid container spacing={4}>
+          <Grid container spacing={4} justifyContent="center">
             {impactStats.map((stat, index) => (
               <Grid item xs={12} sm={6} md={3} key={index}>
                 <Box
@@ -169,11 +170,11 @@ const CapacityBuilding = () => {
                     p: 3,
                     borderRadius: 3,
                     backgroundColor: "white",
-                    boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.08)",
+                    boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
                     transition: "all 0.3s ease",
                     "&:hover": {
                       transform: "translateY(-4px)",
-                      boxShadow: "0px 8px 16px rgba(0, 0, 0, 0.12)",
+                      boxShadow: "0px 8px 20px rgba(0, 0, 0, 0.15)",
                     },
                   }}
                 >
@@ -182,33 +183,20 @@ const CapacityBuilding = () => {
                       display: "inline-flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      width: 60,
-                      height: 60,
+                      width: 70,
+                      height: 70,
                       borderRadius: "50%",
                       backgroundColor: theme.palette.primary.main,
                       color: "white",
                       mb: 2,
                     }}
                   >
-                    <stat.icon sx={{ fontSize: 30 }} />
+                    <stat.icon sx={{ fontSize: 34 }} />
                   </Box>
-                  <Typography
-                    variant="h3"
-                    sx={{
-                      fontWeight: 700,
-                      color: theme.palette.primary.main,
-                      mb: 1,
-                    }}
-                  >
+                  <Typography variant="h4" sx={{ fontWeight: 700, mb: 1 }}>
                     {stat.number}
                   </Typography>
-                  <Typography
-                    variant="h6"
-                    sx={{
-                      color: theme.palette.text.secondary,
-                      fontWeight: 500,
-                    }}
-                  >
+                  <Typography variant="subtitle1" color="textSecondary">
                     {stat.label}
                   </Typography>
                 </Box>
@@ -218,26 +206,26 @@ const CapacityBuilding = () => {
         </Container>
       </Box>
 
-      {/* Key Programs */}
+      {/* Programs */}
       <Box sx={{ py: 8 }}>
-        <Container maxWidth="xl">
+        <Container maxWidth="lg">
           <Typography
             variant="h2"
             sx={{
               textAlign: "center",
               fontWeight: 700,
               mb: 6,
-              color: theme.palette.text.primary,
             }}
           >
             Our Capacity Building Programs
           </Typography>
-          <Grid container spacing={4}>
+          <Grid container spacing={4} justifyContent="center">
             {programs.map((program, index) => (
-              <Grid item xs={12} md={6} key={index}>
+              <Grid item xs={12} sm={8} md={5} key={index}>
                 <Card
                   sx={{
                     height: "100%",
+                    textAlign: "center",
                     transition: "all 0.3s ease",
                     "&:hover": {
                       transform: "translateY(-8px)",
@@ -252,18 +240,25 @@ const CapacityBuilding = () => {
                     alt={program.title}
                   />
                   <CardContent sx={{ p: 3 }}>
-                    <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
+                    <Box
+                      sx={{
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                        mb: 2,
+                      }}
+                    >
                       <Box
                         sx={{
                           display: "flex",
                           alignItems: "center",
                           justifyContent: "center",
-                          width: 40,
-                          height: 40,
+                          width: 50,
+                          height: 50,
                           borderRadius: "50%",
                           backgroundColor: theme.palette.primary.main,
                           color: "white",
-                          mr: 2,
+                          mb: 1,
                         }}
                       >
                         <program.icon />
@@ -271,10 +266,7 @@ const CapacityBuilding = () => {
                       <Typography
                         variant="h5"
                         component="h3"
-                        sx={{
-                          fontWeight: 600,
-                          color: theme.palette.text.primary,
-                        }}
+                        sx={{ fontWeight: 600 }}
                       >
                         {program.title}
                       </Typography>
@@ -289,7 +281,7 @@ const CapacityBuilding = () => {
                     >
                       {program.description}
                     </Typography>
-                    <List dense>
+                    <List dense sx={{ textAlign: "left" }}>
                       {program.details.map((detail, detailIndex) => (
                         <ListItem key={detailIndex} sx={{ px: 0 }}>
                           <ListItemIcon sx={{ minWidth: 30 }}>
@@ -324,47 +316,31 @@ const CapacityBuilding = () => {
       <Box
         sx={{
           py: 8,
-          background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 100%)`,
+          bgcolor: theme.palette.primary.main,
           color: "white",
+          textAlign: "center",
         }}
       >
-        <Container maxWidth="xl">
-          <Box sx={{ textAlign: "center" }}>
-            <Typography
-              variant="h2"
-              sx={{
-                fontWeight: 700,
-                mb: 3,
-              }}
-            >
-              Support Capacity Building
-            </Typography>
-            <Typography
-              variant="h6"
-              sx={{
-                mb: 4,
-                opacity: 0.9,
-                maxWidth: 600,
-                mx: "auto",
-              }}
-            >
-              Building capacity is building the future. Help us empower
-              communities with the skills and knowledge they need for
-              sustainable development.
-            </Typography>
-            <Chip
-              label="Partner with us for capacity building"
-              sx={{
-                backgroundColor: "rgba(255, 255, 255, 0.2)",
-                color: "white",
-                fontSize: "1.1rem",
-                padding: "12px 24px",
-                "&:hover": {
-                  backgroundColor: "rgba(255, 255, 255, 0.3)",
-                },
-              }}
-            />
-          </Box>
+        <Container maxWidth="sm">
+          <Typography variant="h3" sx={{ fontWeight: 700, mb: 3 }}>
+            Support Capacity Building
+          </Typography>
+          <Typography variant="h6" sx={{ mb: 4, opacity: 0.9 }}>
+            Building capacity is building the future. Help us empower
+            communities.
+          </Typography>
+          <Chip
+            label="Partner with us for capacity building"
+            sx={{
+              backgroundColor: "rgba(255, 255, 255, 0.2)",
+              color: "white",
+              fontSize: "1.1rem",
+              padding: "12px 24px",
+              "&:hover": {
+                backgroundColor: "rgba(255, 255, 255, 0.3)",
+              },
+            }}
+          />
         </Container>
       </Box>
     </Box>

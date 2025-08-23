@@ -127,12 +127,15 @@ const AgriculturePage = () => {
               fontWeight: 700,
               mb: 3,
               fontSize: { xs: "2.5rem", md: "3.5rem" },
-              color:"white"
+              color: "white",
             }}
           >
             Agricultural Development
           </Typography>
-          <Typography variant="h6" sx={{ opacity: 0.95, lineHeight: 1.6 }}>
+          <Typography
+            variant="h6"
+            sx={{ opacity: 0.95, lineHeight: 1.6, textAlign: "justify" }}
+          >
             Empowering rural farmers with sustainable practices, modern tools,
             and improved market access to combat climate challenges.
           </Typography>
