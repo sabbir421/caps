@@ -44,16 +44,6 @@ const HeroSection = () => {
               gap: { xs: 2, sm: 2.5 },
             }}
           >
-            <img
-              src={logo}
-              alt="CAPS Logo"
-              style={{
-                height: "220px",
-                width: "auto",
-                borderRadius: "12px",
-                maxWidth: "100%",
-              }}
-            />
             <Box sx={{ textAlign: "center" }}>
               <Typography
                 variant="h3"
@@ -126,7 +116,6 @@ const HeroSection = () => {
                 color: "rgba(255,255,255,0.95)",
                 lineHeight: { xs: 1.7, md: 1.6 },
                 textAlign: "center",
-               
               }}
             >
               We balance economic growth, social progress, and environmental
@@ -155,7 +144,7 @@ const HeroSection = () => {
               variant="body1"
               sx={{
                 mb: { xs: 2, md: 2.5 },
-                fontSize: {xs: "1rem", sm: "1rem", md: "1rem" },
+                fontSize: { xs: "1rem", sm: "1rem", md: "1rem" },
                 color: "rgba(255,255,255,0.95)",
                 lineHeight: { xs: 1.7, md: 1.6 },
                 textAlign: "center",
@@ -183,7 +172,7 @@ const HeroSection = () => {
               variant="body1"
               sx={{
                 mb: { xs: 2, md: 2.5 },
-                fontSize: {xs: "1rem", sm: "1rem", md: "1rem" },
+                fontSize: { xs: "1rem", sm: "1rem", md: "1rem" },
                 color: "rgba(255,255,255,0.95)",
                 lineHeight: { xs: 1.7, md: 1.6 },
                 textAlign: "center",
@@ -230,7 +219,7 @@ const HeroSection = () => {
               variant="body1"
               sx={{
                 mb: { xs: 2, md: 2.5 },
-                fontSize: { xs: "1rem", sm: "1rem", md: "1rem"},
+                fontSize: { xs: "1rem", sm: "1rem", md: "1rem" },
                 color: "rgba(255,255,255,0.95)",
                 lineHeight: { xs: 1.7, md: 1.6 },
                 textAlign: "center",
@@ -244,7 +233,7 @@ const HeroSection = () => {
               variant="body1"
               sx={{
                 mb: { xs: 2, md: 2.5 },
-                fontSize: { xs: "1rem", sm: "1rem", md: "1rem"},
+                fontSize: { xs: "1rem", sm: "1rem", md: "1rem" },
                 color: "rgba(255,255,255,0.95)",
                 lineHeight: { xs: 1.7, md: 1.6 },
                 textAlign: "center",
@@ -276,7 +265,7 @@ const HeroSection = () => {
               variant="body1"
               sx={{
                 mb: { xs: 2, md: 2.5 },
-                fontSize: {xs: "1rem", sm: "1rem", md: "1rem" },
+                fontSize: { xs: "1rem", sm: "1rem", md: "1rem" },
                 color: "rgba(255,255,255,0.95)",
                 lineHeight: { xs: 1.7, md: 1.6 },
                 textAlign: "center",
