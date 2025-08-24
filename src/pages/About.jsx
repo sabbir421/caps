@@ -94,15 +94,21 @@ function About() {
     >
       {/* Hero Section */}
       <AltSectionBox sx={{ width: "100%", pb: 10 }}>
-        <Container maxWidth="lg" sx={{ textAlign: "center" }}>
+        <Container maxWidth="xl" sx={{ textAlign: "center" }}>
           <Typography
             variant="h2"
             gutterBottom
             sx={{
               fontWeight: "bold",
               color: "primary.main",
-              mb: 3,
+              mb: { xs: 2, md: 3 },
               letterSpacing: 1,
+              fontSize: {
+                xs: "1.8rem",
+                sm: "2.2rem",
+                md: "2.5rem",
+                lg: "3rem",
+              },
             }}
           >
             About Green Future Initiative
@@ -110,12 +116,14 @@ function About() {
           <Typography
             variant="h6"
             sx={{
-              maxWidth: 720,
+              maxWidth: { xs: "100%", sm: "600px", md: "720px" },
               mx: "auto",
               color: "text.secondary",
-              mb: 5,
+              mb: { xs: 3, md: 5 },
               fontWeight: 500,
               lineHeight: 1.6,
+              fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+              px: { xs: 2, sm: 0 },
             }}
           >
             We are a dedicated non-profit committed to creating sustainable
@@ -128,13 +136,13 @@ function About() {
 
       {/* Mission & Vision Section */}
       <SectionBox sx={{ width: "100%" }}>
-        <Container maxWidth="lg">
+        <Container maxWidth="xl">
           <Grid
             container
-            spacing={8}
+            spacing={{ xs: 4, md: 8 }}
             alignItems="center"
             justifyContent="center"
-            sx={{ mb: 10 }}
+            sx={{ mb: { xs: 6, md: 10 } }}
           >
             <Grid item xs={12} md={6}>
               <Fade in timeout={1000}>
@@ -142,7 +150,12 @@ function About() {
                   <Typography
                     variant="h4"
                     gutterBottom
-                    sx={{ color: "primary.main", fontWeight: "bold", mb: 4 }}
+                    sx={{
+                      color: "primary.main",
+                      fontWeight: "bold",
+                      mb: { xs: 2, md: 4 },
+                      fontSize: { xs: "1.5rem", sm: "1.8rem", md: "2rem" },
+                    }}
                   >
                     Our Goals
                   </Typography>
@@ -150,7 +163,7 @@ function About() {
                     variant="body1"
                     paragraph
                     sx={{
-                      fontSize: "1.1rem",
+                      fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
                       lineHeight: 1.8,
                       mb: 4,
                       color: "text.primary",
@@ -171,14 +184,14 @@ function About() {
                     B. Small work, total solution <br />
                     C. Area small, full support, achievement 100%
                     <br /> <br />
-                    Based on the point <strong>B+C,</strong>  we declare a small community having
-                    Min20, Max50 houses and then following the point A we
-                    emphasize on cost management and try to be a sustainable
-                    Development Partner providing more social development
-                    support within our limit for the people of the country
-                    specially, coastal districts, as a whole Lower Southern Part
-                    of Bangladesh that can be go under water for climate change
-                    impact predicted by Scientists. <br /> <br />
+                    Based on the point <strong>B+C,</strong> we declare a small
+                    community having Min20, Max50 houses and then following the
+                    point A we emphasize on cost management and try to be a
+                    sustainable Development Partner providing more social
+                    development support within our limit for the people of the
+                    country specially, coastal districts, as a whole Lower
+                    Southern Part of Bangladesh that can be go under water for
+                    climate change impact predicted by Scientists. <br /> <br />
                     Education Program is the Mother program of all programs,
                     bearing the sense, Caps takes Climate Smart Education
                     program first among the 40 programs of Climate Adaptation
@@ -187,10 +200,10 @@ function About() {
                     connections and keep the connections with Educational
                     Institutions. Based on B+C, Caps sets up a CLC-Community
                     Learning Centre in the proposed community for all types of
-                    Education, for all age’s people. Caps works in the root of
+                    Education, for all age's people. Caps works in the root of
                     climate change impact and under goes Nature Based Solution
                     for sustainable development of the most vulnerable coastal
-                    poor people of southern part of Bangladesh. It’s our Goal.{" "}
+                    poor people of southern part of Bangladesh. It's our Goal.{" "}
                     <br /> <br />
                     <strong>
                       Key components of Climate Adaptation Plan Society:
@@ -249,7 +262,7 @@ function About() {
                     variant="body1"
                     paragraph
                     sx={{
-                      fontSize: "1.1rem",
+                      fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
                       lineHeight: 1.8,
                       color: "text.primary",
                       textAlign: "justify",
@@ -261,26 +274,46 @@ function About() {
                     development.
                   </Typography>
 
-                  <Box sx={{ mt: 5 }}>
+                  <Box sx={{ mt: { xs: 3, md: 5 } }}>
                     <Chip
                       label="Climate Action"
                       color="primary"
-                      sx={{ mr: 2, mb: 2, fontSize: "1rem", py: 1 }}
+                      sx={{
+                        mr: { xs: 1, sm: 2 },
+                        mb: 2,
+                        fontSize: { xs: "0.8rem", sm: "1rem" },
+                        py: 1,
+                      }}
                     />
                     <Chip
                       label="Education"
                       color="secondary"
-                      sx={{ mr: 2, mb: 2, fontSize: "1rem", py: 1 }}
+                      sx={{
+                        mr: { xs: 1, sm: 2 },
+                        mb: 2,
+                        fontSize: { xs: "0.8rem", sm: "1rem" },
+                        py: 1,
+                      }}
                     />
                     <Chip
                       label="Healthcare"
                       color="success"
-                      sx={{ mr: 2, mb: 2, fontSize: "1rem", py: 1 }}
+                      sx={{
+                        mr: { xs: 1, sm: 2 },
+                        mb: 2,
+                        fontSize: { xs: "0.8rem", sm: "1rem" },
+                        py: 1,
+                      }}
                     />
                     <Chip
                       label="Rural Development"
                       color="info"
-                      sx={{ mr: 2, mb: 2, fontSize: "1rem", py: 1 }}
+                      sx={{
+                        mr: { xs: 1, sm: 2 },
+                        mb: 2,
+                        fontSize: { xs: "0.8rem", sm: "1rem" },
+                        py: 1,
+                      }}
                     />
                   </Box>
                 </Box>
@@ -304,221 +337,318 @@ function About() {
                 >
                   <CardMedia
                     component="img"
-                    height="450"
-                    image="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80"
-                    alt="Community meeting"
+                    height="400"
+                    image="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80"
+                    alt="Team working together"
                   />
                 </Card>
               </Fade>
             </Grid>
           </Grid>
+        </Container>
+      </SectionBox>
 
-          {/* Key Approaches Section */}
-          <Box sx={{ mt: 8, mb: 8 }}>
-            <Typography
-              variant="h4"
-              gutterBottom
-              sx={{
-                color: "primary.main",
-                mb: 6,
-                fontWeight: "bold",
-                textAlign: "center",
-              }}
-            >
-              Key Approaches of the Society
-            </Typography>
-            <Typography
-              variant="body1"
-              sx={{
-                fontSize: "1.1rem",
-                lineHeight: 1.8,
-                color: "text.primary",
-                textAlign: "justify",
-                mb: 4,
-              }}
-            >
-              Our comprehensive strategy integrates multiple approaches to build
-              climate-resilient communities and achieve sustainable development
-              goals. The Society employs a multifaceted approach encompassing{" "}
-              <strong>Vulnerability Assessment</strong>,{" "}
-              <strong>Risk Management</strong>, and{" "}
-              <strong>Adaptive Capacity Building</strong> to identify and
-              address the most pressing climate challenges. We implement{" "}
-              <strong>Ecosystem-Based Adaptation</strong> strategies alongside{" "}
-              <strong>Infrastructure Development</strong> to create sustainable
-              solutions that work with nature rather than against it.
-            </Typography>
-            <Typography
-              variant="body1"
-              sx={{
-                fontSize: "1.1rem",
-                lineHeight: 1.8,
-                color: "text.primary",
-                textAlign: "justify",
-                mb: 4,
-              }}
-            >
-              At the governance level, we focus on{" "}
-              <strong>Policy and Governance</strong> reforms while ensuring{" "}
-              <strong>Community Engagement</strong> remains at the heart of all
-              our initiatives. Our <strong>Early Warning Systems</strong> and{" "}
-              <strong>Disaster Preparedness</strong> programs help communities
-              anticipate and respond to climate-related emergencies effectively.
-            </Typography>
-            <Typography
-              variant="body1"
-              sx={{
-                fontSize: "1.1rem",
-                lineHeight: 1.8,
-                color: "text.primary",
-                textAlign: "justify",
-                mb: 4,
-              }}
-            >
-              In addressing resource management, we prioritize{" "}
-              <strong>Water Resource Management</strong> and{" "}
-              <strong>Agricultural Diversification</strong> to ensure food
-              security and sustainable livelihoods. Our{" "}
-              <strong>Coastal Protection</strong> initiatives and{" "}
-              <strong>Urban Green Spaces</strong> development create resilient
-              environments for both rural and urban communities.
-            </Typography>
-            <Typography
-              variant="body1"
-              sx={{
-                fontSize: "1.1rem",
-                lineHeight: 1.8,
-                color: "text.primary",
-                textAlign: "justify",
-                mb: 4,
-              }}
-            >
-              The ultimate goals of our approach are{" "}
-              <strong>Protecting Lives and Livelihoods</strong>,{" "}
-              <strong>Reducing Economic Losses</strong>, and{" "}
-              <strong>Building Climate-Resilient Societies</strong>. Through
-              these integrated strategies, we work towards{" "}
-              <strong>Achieving Sustainable Development Goals</strong> while
-              ensuring no community is left behind in the face of climate
-              change.
-            </Typography>
-          </Box>
+      {/* Key Approaches Section */}
+      <AltSectionBox sx={{ width: "100%" }}>
+        <Container maxWidth="xl">
+          <Typography
+            variant="h3"
+            gutterBottom
+            sx={{
+              textAlign: "center",
+              color: "primary.main",
+              mb: { xs: 4, md: 8 },
+              fontWeight: "bold",
+              fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.5rem" },
+            }}
+          >
+            Key Approaches of the Society
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+              lineHeight: 1.8,
+              color: "text.primary",
+              textAlign: "justify",
+              maxWidth: { xs: "100%", sm: "800px", md: "900px" },
+              mx: "auto",
+              mb: { xs: 4, md: 6 },
+            }}
+          >
+            Our comprehensive approach to climate adaptation encompasses
+            multiple strategies designed to build resilience and promote
+            sustainable development. We focus on{" "}
+            <strong>Vulnerability Assessment</strong> to identify communities
+            and sectors most at risk from climate change impacts like sea-level
+            rise, extreme weather events, and water scarcity. Our{" "}
+            <strong>Risk Management</strong> strategies involve developing and
+            implementing measures to reduce vulnerability and build resilience
+            through infrastructural improvements, institutional reforms, and
+            behavioral changes.
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+              lineHeight: 1.8,
+              color: "text.primary",
+              textAlign: "justify",
+              maxWidth: { xs: "100%", sm: "800px", md: "900px" },
+              mx: "auto",
+              mb: { xs: 4, md: 6 },
+            }}
+          >
+            <strong>Adaptive Capacity Building</strong> is central to our
+            mission, as we work to enhance communities' ability to respond to
+            and recover from climate impacts. We implement{" "}
+            <strong>Ecosystem-Based Adaptation</strong> solutions, utilizing
+            green infrastructure, restoring wetlands, and promoting sustainable
+            land management practices. Our{" "}
+            <strong>Infrastructure Development</strong> focuses on building
+            climate-resilient structures that can withstand extreme weather
+            events while minimizing environmental impact.
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+              lineHeight: 1.8,
+              color: "text.primary",
+              textAlign: "justify",
+              maxWidth: { xs: "100%", sm: "800px", md: "900px" },
+              mx: "auto",
+              mb: { xs: 4, md: 6 },
+            }}
+          >
+            We emphasize <strong>Policy and Governance</strong> by incorporating
+            climate adaptation considerations into development plans, policies,
+            and programs at all levels. <strong>Community Engagement</strong> is
+            fundamental to our approach, as we involve vulnerable communities,
+            local governments, civil society organizations, and other
+            stakeholders in the planning and implementation process. Our{" "}
+            <strong>Early Warning Systems</strong> help communities prepare for
+            and respond to climate-related disasters effectively.
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+              lineHeight: 1.8,
+              color: "text.primary",
+              textAlign: "justify",
+              maxWidth: { xs: "100%", sm: "800px", md: "900px" },
+              mx: "auto",
+              mb: { xs: 4, md: 6 },
+            }}
+          >
+            <strong>Water Resource Management</strong> strategies address the
+            critical challenges of water scarcity and flooding through
+            sustainable practices and infrastructure. We promote{" "}
+            <strong>Agricultural Diversification</strong> to help farmers adapt
+            to changing climate conditions and maintain food security.{" "}
+            <strong>Coastal Protection</strong> measures safeguard vulnerable
+            coastal communities from sea-level rise and storm surges.
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+              lineHeight: 1.8,
+              color: "text.primary",
+              textAlign: "justify",
+              maxWidth: { xs: "100%", sm: "800px", md: "900px" },
+              mx: "auto",
+              mb: { xs: 4, md: 6 },
+            }}
+          >
+            Our <strong>Urban Green Spaces</strong> initiatives create resilient
+            urban environments that can withstand climate impacts while
+            providing multiple benefits to communities.{" "}
+            <strong>Disaster Preparedness</strong> programs ensure communities
+            are ready to respond to climate-related emergencies. We focus on{" "}
+            <strong>Protecting Lives and Livelihoods</strong> by implementing
+            measures that safeguard both human well-being and economic
+            stability.
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+              lineHeight: 1.8,
+              color: "text.primary",
+              textAlign: "justify",
+              maxWidth: { xs: "100%", sm: "800px", md: "900px" },
+              mx: "auto",
+              mb: { xs: 4, md: 6 },
+            }}
+          >
+            Through <strong>Reducing Economic Losses</strong>, we help
+            communities minimize the financial impact of climate change while
+            building more resilient economic systems. Our ultimate goal is{" "}
+            <strong>Building Climate-Resilient Societies</strong> that can
+            thrive despite climate challenges. We work towards{" "}
+            <strong>Achieving Sustainable Development Goals</strong> by
+            integrating climate action with broader development objectives,
+            ensuring that our efforts contribute to a more sustainable and
+            equitable future for all.
+          </Typography>
+        </Container>
+      </AltSectionBox>
 
-          {/* Why Choose Us Section */}
-          <Box sx={{ textAlign: "center", mb: 12 }}>
-            <Typography
-              variant="h4"
-              gutterBottom
-              sx={{ color: "primary.main", fontWeight: "bold", mb: 4 }}
-            >
-              Why Choose Us?
-            </Typography>
-            <Grid
-              container
-              spacing={6}
-              justifyContent="center"
-              maxWidth="lg"
-              mx="auto"
-            >
-              {[
-                {
-                  icon: "🌍",
-                  title: "Global Impact",
-                  description:
-                    "We focus on sustainable projects with measurable positive effects worldwide.",
-                },
-                {
-                  icon: "🤝",
-                  title: "Community Driven",
-                  description:
-                    "Local participation and respect for indigenous knowledge is at the core of our work.",
-                },
-                {
-                  icon: "💡",
-                  title: "Innovative Solutions",
-                  description:
-                    "We use cutting-edge, scalable solutions tailored to each community’s unique needs.",
-                },
-              ].map(({ icon, title, description }, idx) => (
-                <Grid item xs={12} md={4} key={idx}>
-                  <ValueCard>
-                    <Typography variant="h2" sx={{ mb: 1 }}>
-                      {icon}
-                    </Typography>
+      {/* Timeline Section */}
+      <SectionBox sx={{ width: "100%" }}>
+        <Container maxWidth="xl">
+          <Typography
+            variant="h3"
+            gutterBottom
+            sx={{
+              textAlign: "center",
+              color: "primary.main",
+              mb: { xs: 4, md: 8 },
+              fontWeight: "bold",
+              fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.5rem" },
+            }}
+          >
+            Our Journey
+          </Typography>
+          <Grid container spacing={4} justifyContent="center">
+            {[
+              {
+                year: "2020",
+                title: "Foundation",
+                description:
+                  "Started with a vision to create sustainable change in rural communities through climate action and education.",
+              },
+              {
+                year: "2021",
+                title: "First Community Project",
+                description:
+                  "Successfully implemented our first climate adaptation project in a coastal village, benefiting over 200 families.",
+              },
+              {
+                year: "2022",
+                title: "Expansion",
+                description:
+                  "Expanded our programs to 15 communities across the region, focusing on education and healthcare initiatives.",
+              },
+              {
+                year: "2023",
+                title: "Innovation Hub",
+                description:
+                  "Launched our community learning centers, providing education and skills training to over 1,000 students.",
+              },
+              {
+                year: "2024",
+                title: "Future Vision",
+                description:
+                  "Continuing to expand our impact, reaching more communities and developing new sustainable solutions.",
+              },
+            ].map(({ year, title, description }, idx) => (
+              <Grid item xs={12} md={6} lg={4} key={idx}>
+                <TimelineCard>
+                  <TimelineDot />
+                  <CardContent sx={{ pl: 6, pr: 3, py: 3 }}>
                     <Typography
                       variant="h6"
-                      gutterBottom
-                      color="primary"
-                      sx={{ fontWeight: "bold", mb: 2 }}
+                      sx={{
+                        color: "primary.main",
+                        fontWeight: "bold",
+                        fontSize: { xs: "1rem", sm: "1.1rem" },
+                      }}
+                    >
+                      {year}
+                    </Typography>
+                    <Typography
+                      variant="h5"
+                      sx={{
+                        fontWeight: "bold",
+                        mb: 2,
+                        fontSize: { xs: "1.1rem", sm: "1.3rem" },
+                      }}
                     >
                       {title}
                     </Typography>
                     <Typography
-                      variant="body1"
-                      sx={{ color: "text.secondary" }}
+                      variant="body2"
+                      sx={{
+                        color: "text.secondary",
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      }}
                     >
                       {description}
                     </Typography>
-                  </ValueCard>
-                </Grid>
-              ))}
-            </Grid>
-          </Box>
+                  </CardContent>
+                </TimelineCard>
+              </Grid>
+            ))}
+          </Grid>
         </Container>
       </SectionBox>
 
-      {/* Core Values Section */}
+      {/* Values Section */}
       <AltSectionBox sx={{ width: "100%" }}>
-        <Container maxWidth="lg" sx={{ textAlign: "center" }}>
+        <Container maxWidth="xl">
           <Typography
             variant="h3"
             gutterBottom
-            sx={{ color: "primary.main", mb: 10, fontWeight: "bold" }}
+            sx={{
+              textAlign: "center",
+              color: "primary.main",
+              mb: { xs: 4, md: 8 },
+              fontWeight: "bold",
+              fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.5rem" },
+            }}
           >
-            Our Core Values
+            Our Values
           </Typography>
-          <Grid
-            container
-            spacing={6}
-            justifyContent="center"
-            maxWidth="lg"
-            mx="auto"
-          >
+          <Grid container spacing={{ xs: 3, md: 4 }} justifyContent="center">
             {[
               {
-                emoji: "🌱",
                 title: "Sustainability",
-                description:
-                  "We create environmentally sustainable and economically viable solutions for long-term growth.",
+                desc: "We believe in creating lasting solutions that benefit both current and future generations.",
               },
               {
-                emoji: "🤝",
-                title: "Community Partnership",
-                description:
-                  "We collaborate closely with local communities, respecting their knowledge and culture.",
+                title: "Community",
+                desc: "Every decision we make is guided by the needs and aspirations of the communities we serve.",
               },
               {
-                emoji: "🎯",
-                title: "Impact-Driven",
-                description:
-                  "Every program is designed to create measurable, positive impacts on people and the environment.",
+                title: "Innovation",
+                desc: "We continuously seek new and creative ways to address complex environmental and social challenges.",
               },
-            ].map(({ emoji, title, description }, idx) => (
-              <Grid item xs={12} md={4} key={idx}>
+              {
+                title: "Integrity",
+                desc: "We maintain the highest standards of transparency and accountability in all our operations.",
+              },
+              {
+                title: "Equity",
+                desc: "We ensure that our programs benefit all members of society, especially the most vulnerable.",
+              },
+              {
+                title: "Collaboration",
+                desc: "We work with partners, governments, and communities to maximize our collective impact.",
+              },
+            ].map(({ title, desc }, idx) => (
+              <Grid item xs={12} sm={6} md={4} key={idx}>
                 <ValueCard>
-                  <Typography variant="h2" sx={{ mb: 2 }}>
-                    {emoji}
-                  </Typography>
                   <Typography
                     variant="h5"
-                    gutterBottom
-                    color="primary"
-                    sx={{ fontWeight: "bold", mb: 2 }}
+                    sx={{
+                      fontWeight: "bold",
+                      mb: 2,
+                      fontSize: { xs: "1.1rem", sm: "1.3rem" },
+                    }}
                   >
                     {title}
                   </Typography>
-                  <Typography variant="body1" sx={{ color: "text.secondary" }}>
-                    {description}
+                  <Typography
+                    variant="body2"
+                    sx={{
+                      color: "text.secondary",
+                      fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                    }}
+                  >
+                    {desc}
                   </Typography>
                 </ValueCard>
               </Grid>
@@ -527,145 +657,22 @@ function About() {
         </Container>
       </AltSectionBox>
 
-      {/* Timeline Section */}
-      <SectionBox sx={{ width: "100%" }}>
-        <Container maxWidth="md" sx={{ textAlign: "center" }}>
-          <Typography
-            variant="h3"
-            gutterBottom
-            sx={{ color: "primary.main", mb: 8, fontWeight: "bold" }}
-          >
-            Our Journey
-          </Typography>
-          <Box sx={{ maxWidth: "700px", mx: "auto" }}>
-            {[
-              {
-                year: "2021 - Foundation",
-                desc: "CAPS is founded with a vision to address climate change impact & Climate change and it's Impact, Adaptation and  vulnerable coastal development challeng,  ",
-              },
-              {
-                year: "2023 - First Milestone",
-                desc: "Successful governance of 27 community Learning Centre.",
-              },
-              {
-                year: "2024 - Expansion",
-                desc: "Successfully raise community awareness about Adaptation",
-              },
-              {
-                year: "2030 - Future Vision",
-                desc: "Sustainable climate Adaptation Development",
-              },
-            ].map(({ year, desc }, idx) => (
-              <TimelineCard key={idx}>
-                <TimelineDot />
-                <CardContent sx={{ pl: 6 }}>
-                  <Typography variant="h6" color="primary" gutterBottom>
-                    {year}
-                  </Typography>
-                  <Typography variant="body1" color="text.secondary">
-                    {desc}
-                  </Typography>
-                </CardContent>
-              </TimelineCard>
-            ))}
-          </Box>
-        </Container>
-      </SectionBox>
-
-      {/* Team Section */}
-      <AltSectionBox sx={{ width: "100%" }}>
-        <Container maxWidth="lg" sx={{ textAlign: "center" }}>
-          <Typography
-            variant="h3"
-            gutterBottom
-            sx={{ color: "primary.main", mb: 8, fontWeight: "bold" }}
-          >
-            Meet Our Team
-          </Typography>
-          <Grid
-            container
-            spacing={6}
-            justifyContent="center"
-            maxWidth="lg"
-            mx="auto"
-          >
-            {[
-              {
-                name: "Dr. Sarah Johnson",
-                title: "Executive Director",
-                img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
-                desc: "15+ years experience in environmental conservation and rural development.",
-              },
-              {
-                name: "Michael Chen",
-                title: "Program Director",
-                img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80",
-                desc: "Expert in community development and sustainable agriculture practices.",
-              },
-              {
-                name: "Maria Rodriguez",
-                title: "Education Coordinator",
-                img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=400&q=80",
-                desc: "Dedicated to improving educational access and quality in rural areas.",
-              },
-            ].map(({ name, title, img, desc }, idx) => (
-              <Grid item xs={12} md={4} key={idx}>
-                <Card
-                  sx={{
-                    textAlign: "center",
-                    height: "100%",
-                    boxShadow: 4,
-                    borderRadius: 3,
-                    transition: "transform 0.3s ease",
-                    "&:hover": { transform: "translateY(-8px)" },
-                  }}
-                >
-                  <CardMedia
-                    component="img"
-                    height="320"
-                    image={img}
-                    alt={name}
-                    sx={{ objectFit: "cover" }}
-                  />
-                  <CardContent>
-                    <Typography
-                      variant="h6"
-                      gutterBottom
-                      color="primary"
-                      sx={{ fontWeight: "bold" }}
-                    >
-                      {name}
-                    </Typography>
-                    <Typography
-                      variant="body2"
-                      color="text.secondary"
-                      gutterBottom
-                      sx={{ fontStyle: "italic" }}
-                    >
-                      {title}
-                    </Typography>
-                    <Typography variant="body2" sx={{ color: "text.primary" }}>
-                      {desc}
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </Container>
-      </AltSectionBox>
-
       {/* Testimonials Section */}
       <SectionBox sx={{ width: "100%", backgroundColor: "#e3f2fd" }}>
-        <Container maxWidth="md" sx={{ textAlign: "center" }}>
+        <Container maxWidth="xl" sx={{ textAlign: "center" }}>
           <Typography
             variant="h3"
             gutterBottom
-            sx={{ color: "primary.main", mb: 8, fontWeight: "bold" }}
+            sx={{
+              color: "primary.main",
+              mb: { xs: 4, md: 8 },
+              fontWeight: "bold",
+              fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.5rem" },
+            }}
           >
             What Our Supporters Say
           </Typography>
-          <Grid container spacing={4} justifyContent="center">
+          <Grid container spacing={{ xs: 3, md: 4 }} justifyContent="center">
             {[
               {
                 quote:
@@ -690,14 +697,29 @@ function About() {
                 <TestimonialCard>
                   <Typography
                     variant="body1"
-                    sx={{ fontStyle: "italic", mb: 3, color: "text.secondary" }}
+                    sx={{
+                      fontStyle: "italic",
+                      mb: 3,
+                      color: "text.secondary",
+                      fontSize: { xs: "0.9rem", sm: "1rem" },
+                    }}
                   >
-                    “{quote}”
+                    "{quote}"
                   </Typography>
-                  <Typography variant="subtitle1" sx={{ fontWeight: "bold" }}>
+                  <Typography
+                    variant="subtitle1"
+                    sx={{
+                      fontWeight: "bold",
+                      fontSize: { xs: "0.9rem", sm: "1rem" },
+                    }}
+                  >
                     {name}
                   </Typography>
-                  <Typography variant="subtitle2" color="text.secondary">
+                  <Typography
+                    variant="subtitle2"
+                    color="text.secondary"
+                    sx={{ fontSize: { xs: "0.8rem", sm: "0.875rem" } }}
+                  >
                     {role}
                   </Typography>
                 </TestimonialCard>
@@ -708,35 +730,71 @@ function About() {
       </SectionBox>
 
       {/* Call to Action Section */}
-      <AltSectionBox sx={{ width: "100%", pt: 10, pb: 10 }}>
-        <Container maxWidth="sm" sx={{ textAlign: "center" }}>
-          <Typography
-            variant="h4"
-            gutterBottom
-            sx={{ color: "primary.main", fontWeight: "bold", mb: 4 }}
+      <AltSectionBox
+        sx={{ width: "100%", pt: { xs: 8, md: 10 }, pb: { xs: 8, md: 10 } }}
+      >
+        <Container maxWidth="xl" sx={{ textAlign: "center" }}>
+          <Box
+            sx={{
+              maxWidth: { xs: "100%", sm: "600px", md: "700px" },
+              mx: "auto",
+            }}
           >
-            Join Us in Making a Difference
-          </Typography>
-          <Typography variant="h6" color="text.secondary" paragraph>
-            Your support helps us bring sustainable change to rural communities.
-            Volunteer, donate, or partner with us today.
-          </Typography>
-          <Button
-            variant="contained"
-            size="large"
-            sx={{ px: 6, py: 1.8, fontWeight: 700, borderRadius: 3, mr: 3 }}
-            href="/volunteer"
-          >
-            Volunteer
-          </Button>
-          <Button
-            variant="outlined"
-            size="large"
-            sx={{ px: 6, py: 1.8, fontWeight: 700, borderRadius: 3 }}
-            href="/donate"
-          >
-            Donate
-          </Button>
+            <Typography
+              variant="h4"
+              gutterBottom
+              sx={{
+                color: "primary.main",
+                fontWeight: "bold",
+                mb: { xs: 2, md: 4 },
+                fontSize: { xs: "1.5rem", sm: "1.8rem", md: "2rem" },
+              }}
+            >
+              Join Us in Making a Difference
+            </Typography>
+            <Typography
+              variant="h6"
+              color="text.secondary"
+              paragraph
+              sx={{
+                fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                mb: { xs: 3, md: 4 },
+                px: { xs: 2, sm: 0 },
+              }}
+            >
+              Your support helps us bring sustainable change to rural
+              communities. Volunteer, donate, or partner with us today.
+            </Typography>
+            <Button
+              variant="contained"
+              size="large"
+              sx={{
+                px: { xs: 4, sm: 5, md: 6 },
+                py: { xs: 1.2, sm: 1.5, md: 1.8 },
+                fontWeight: 700,
+                borderRadius: 3,
+                mr: { xs: 2, sm: 3 },
+                fontSize: { xs: "0.9rem", sm: "1rem" },
+              }}
+              href="/volunteer"
+            >
+              Volunteer
+            </Button>
+            <Button
+              variant="outlined"
+              size="large"
+              sx={{
+                px: { xs: 4, sm: 5, md: 6 },
+                py: { xs: 1.2, sm: 1.5, md: 1.8 },
+                fontWeight: 700,
+                borderRadius: 3,
+                fontSize: { xs: "0.9rem", sm: "1rem" },
+              }}
+              href="/donate"
+            >
+              Donate
+            </Button>
+          </Box>
         </Container>
       </AltSectionBox>
     </Box>

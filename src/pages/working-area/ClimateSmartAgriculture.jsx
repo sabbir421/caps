@@ -26,16 +26,20 @@ import HandshakeIcon from "@mui/icons-material/Handshake";
 
 const ClimateSmartAgriculture = () => {
   return (
-    <Box sx={{ py: 8, bgcolor: "grey.50" }}>
-      <Container maxWidth="lg">
-        <Paper elevation={3} sx={{ p: { xs: 2, md: 6 }, borderRadius: 3 }}>
-          <Box sx={{ textAlign: "center", mb: 6 }}>
+    <Box sx={{ py: { xs: 6, md: 8 }, bgcolor: "grey.50" }}>
+      <Container maxWidth="xl">
+        <Paper elevation={3} sx={{ p: { xs: 3, md: 6 }, borderRadius: 3 }}>
+          <Box sx={{ textAlign: "center", mb: { xs: 4, md: 6 } }}>
             <Typography
               variant="h3"
               component="h1"
               gutterBottom
               align="center"
-              sx={{ fontWeight: 700, color: "primary.main" }}
+              sx={{
+                fontWeight: 700,
+                color: "primary.main",
+                fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.5rem" },
+              }}
             >
               Climate-smart agriculture (CSA)
             </Typography>
@@ -43,7 +47,12 @@ const ClimateSmartAgriculture = () => {
               variant="h6"
               color="text.secondary"
               align="center"
-              sx={{ textAlign: "justify" }}
+              sx={{
+                textAlign: "justify",
+                fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                maxWidth: { xs: "100%", sm: "800px", md: "900px" },
+                mx: "auto",
+              }}
             >
               CAPS (Climate Adaptation Plan Society) Approaches at Climate-smart
               agriculture (CSA) is a method of farming that aims to sustainably
@@ -52,7 +61,7 @@ const ClimateSmartAgriculture = () => {
             </Typography>
           </Box>
 
-          <Box sx={{ mb: 6 }}>
+          <Box sx={{ mb: { xs: 4, md: 6 } }}>
             <img
               src="https://placehold.co/1200x500/F0F4C3/689F38?text=Climate-Smart+Farming"
               alt="A green agricultural field with modern irrigation, representing sustainable farming practices."
@@ -65,7 +74,14 @@ const ClimateSmartAgriculture = () => {
             />
           </Box>
 
-          <Typography variant="body1" paragraph sx={{ textAlign: "justify" }}>
+          <Typography
+            variant="body1"
+            paragraph
+            sx={{
+              textAlign: "justify",
+              fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+            }}
+          >
             It's a holistic approach that integrates agriculture development
             with climate responsiveness, ultimately contributing to food
             security and broader development goals. CSA practices include
@@ -73,42 +89,102 @@ const ClimateSmartAgriculture = () => {
             emissions.
           </Typography>
 
-          <Grid container spacing={6}>
+          <Grid container spacing={{ xs: 3, md: 6 }}>
             <Grid item xs={12} md={6}>
               <Typography
                 variant="h5"
                 component="h2"
                 gutterBottom
-                sx={{ fontWeight: 600 }}
+                sx={{
+                  fontWeight: 600,
+                  fontSize: { xs: "1.2rem", sm: "1.3rem", md: "1.4rem" },
+                }}
               >
                 Key aspects of Climate-Smart Agriculture
               </Typography>
               <List>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <AgricultureIcon color="primary" />
+                    <AgricultureIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
                   <ListItemText
                     primary="Productivity"
                     secondary="CSA focuses on increasing agricultural output in a sustainable manner, ensuring food security for a growing population."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
                   />
                 </ListItem>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <FilterDramaIcon color="primary" />
+                    <FilterDramaIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
                   <ListItemText
                     primary="Adaptation"
-                    secondary="CSA involves implementing strategies to help agriculture adapt to the impacts of climate change, such as extreme weather events and changing rainfall patterns."
+                    secondary="CSA helps farmers adapt to changing climate conditions, such as increased temperatures, altered rainfall patterns, and extreme weather events."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
                   />
                 </ListItem>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <SpaIcon color="primary" />
+                    <WavesIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
                   <ListItemText
                     primary="Mitigation"
-                    secondary="CSA aims to reduce greenhouse gas emissions from agriculture through various practices like improved land management and reduced fertilizer use."
+                    secondary="CSA practices reduce greenhouse gas emissions from agriculture, contributing to climate change mitigation efforts."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
+                  />
+                </ListItem>
+                <ListItem sx={{ px: 0 }}>
+                  <ListItemIcon>
+                    <PeopleIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Resilience"
+                    secondary="CSA builds resilience in agricultural systems, making them more robust against climate-related shocks and stresses."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
                   />
                 </ListItem>
               </List>
@@ -119,86 +195,185 @@ const ClimateSmartAgriculture = () => {
                 variant="h5"
                 component="h2"
                 gutterBottom
-                sx={{ fontWeight: 600 }}
+                sx={{
+                  fontWeight: 600,
+                  fontSize: { xs: "1.2rem", sm: "1.3rem", md: "1.4rem" },
+                }}
               >
                 In Bangladesh, CSA is particularly relevant
               </Typography>
               <List>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <PublicIcon color="primary" />
+                    <PublicIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
-                  <ListItemText primary="Bangladesh is a country highly vulnerable to climate change impacts." />
+                  <ListItemText
+                    primary="Bangladesh is a country highly vulnerable to climate change impacts."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                    }}
+                  />
                 </ListItem>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <HandshakeIcon color="primary" />
+                    <HandshakeIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
-                  <ListItemText primary="CSA can help farmers in Bangladesh adapt to these challenges and improve their livelihoods." />
+                  <ListItemText
+                    primary="CSA can help farmers in Bangladesh adapt to these challenges and improve their livelihoods."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                    }}
+                  />
                 </ListItem>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <WbIncandescentIcon color="primary" />
+                    <WbIncandescentIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
-                  <ListItemText primary="There are ongoing efforts to disseminate knowledge about CSA and promote its adoption among farmers." />
+                  <ListItemText
+                    primary="There are ongoing efforts to disseminate knowledge about CSA and promote its adoption among farmers."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                    }}
+                  />
                 </ListItem>
               </List>
             </Grid>
           </Grid>
 
-          <Box sx={{ mt: 6 }}>
+          <Box sx={{ mt: { xs: 4, md: 6 } }}>
             <Typography
               variant="h5"
               component="h2"
               gutterBottom
-              sx={{ fontWeight: 600 }}
+              sx={{
+                fontWeight: 600,
+                fontSize: { xs: "1.2rem", sm: "1.3rem", md: "1.4rem" },
+              }}
             >
               Examples of CSA practices
             </Typography>
             <List>
-              <ListItem>
+              <ListItem sx={{ px: 0 }}>
                 <ListItemIcon>
-                  <WaterDropIcon color="primary" />
+                  <WaterDropIcon
+                    color="primary"
+                    sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                  />
                 </ListItemIcon>
                 <ListItemText
                   primary="Improved water management"
                   secondary="Implementing efficient irrigation systems and water conservation techniques."
+                  sx={{
+                    "& .MuiListItemText-primary": {
+                      fontWeight: 600,
+                      fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                    },
+                    "& .MuiListItemText-secondary": {
+                      fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                    },
+                  }}
                 />
               </ListItem>
-              <ListItem>
+              <ListItem sx={{ px: 0 }}>
                 <ListItemIcon>
-                  <GrassIcon color="primary" />
+                  <GrassIcon
+                    color="primary"
+                    sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                  />
                 </ListItemIcon>
                 <ListItemText
                   primary="Soil conservation"
                   secondary="Using practices like no-till farming and cover cropping to improve soil health and fertility."
+                  sx={{
+                    "& .MuiListItemText-primary": {
+                      fontWeight: 600,
+                      fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                    },
+                    "& .MuiListItemText-secondary": {
+                      fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                    },
+                  }}
                 />
               </ListItem>
-              <ListItem>
+              <ListItem sx={{ px: 0 }}>
                 <ListItemIcon>
-                  <AgricultureIcon color="primary" />
+                  <AgricultureIcon
+                    color="primary"
+                    sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                  />
                 </ListItemIcon>
                 <ListItemText
                   primary="Climate-resilient crops and varieties"
                   secondary="Selecting and cultivating crops that are more tolerant to drought, floods, and other climate-related stresses."
+                  sx={{
+                    "& .MuiListItemText-primary": {
+                      fontWeight: 600,
+                      fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                    },
+                    "& .MuiListItemText-secondary": {
+                      fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                    },
+                  }}
                 />
               </ListItem>
-              <ListItem>
+              <ListItem sx={{ px: 0 }}>
                 <ListItemIcon>
-                  <HubIcon color="primary" />
+                  <HubIcon
+                    color="primary"
+                    sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                  />
                 </ListItemIcon>
                 <ListItemText
                   primary="Integrated pest management"
                   secondary="Employing strategies to control pests and diseases in a sustainable way, minimizing the use of harmful chemicals."
+                  sx={{
+                    "& .MuiListItemText-primary": {
+                      fontWeight: 600,
+                      fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                    },
+                    "& .MuiListItemText-secondary": {
+                      fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                    },
+                  }}
                 />
               </ListItem>
-              <ListItem>
+              <ListItem sx={{ px: 0 }}>
                 <ListItemIcon>
-                  <NaturePeopleIcon color="primary" />
+                  <NaturePeopleIcon
+                    color="primary"
+                    sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                  />
                 </ListItemIcon>
                 <ListItemText
                   primary="Diversification of farming systems"
                   secondary="Encouraging a mix of crops, livestock, and other agricultural activities to reduce risks and improve resilience."
+                  sx={{
+                    "& .MuiListItemText-primary": {
+                      fontWeight: 600,
+                      fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                    },
+                    "& .MuiListItemText-secondary": {
+                      fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                    },
+                  }}
                 />
               </ListItem>
             </List>

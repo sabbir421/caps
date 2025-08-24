@@ -35,7 +35,7 @@ const CommunityDevelopment = () => {
       description:
         "Empowering community leaders with skills and knowledge to drive local development.",
       image:
-        "https://images.unsplash.com/photo-1523240794102-9eb5ccbdd362?w=800&fit=crop",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmaC4ABRZh3z2sU4tvYq8TTcVv-l0-xAGtXQ&s",
       icon: Psychology,
       details: [
         "Leadership training workshops",
@@ -49,7 +49,7 @@ const CommunityDevelopment = () => {
       description:
         "Creating sustainable economic opportunities for community members.",
       image:
-        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&fit=crop",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSo62pZ0ZamU68CSeO4qKK0bWblL12xcseW4A&s",
       icon: Business,
       details: [
         "Micro-enterprise development",
@@ -62,7 +62,7 @@ const CommunityDevelopment = () => {
       title: "Social Infrastructure",
       description: "Building and improving community facilities and services.",
       image:
-        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&fit=crop",
+        "https://equitablegrowth.org/wp-content/uploads/2023/01/Social-infrastructure-and-investment.jpg",
       icon: Groups,
       details: [
         "Community centers",
@@ -75,7 +75,7 @@ const CommunityDevelopment = () => {
       title: "Capacity Building",
       description: "Strengthening community organizations and institutions.",
       image:
-        "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&fit=crop",
+        "https://t3.ftcdn.net/jpg/02/01/01/22/360_F_201012244_a8uvbhikzy2KSYh6KoBJ7y24Ps7kPzSq.jpg",
       icon: School,
       details: [
         "Organizational development",
@@ -107,7 +107,7 @@ const CommunityDevelopment = () => {
           textAlign: "center",
           flexDirection: "column",
           backgroundImage:
-            "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1508780709619-79562169bc64?w=1600&fit=crop')",
+            "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.squarespace-cdn.com/content/v1/5df6bf8c5a9fd4488885978d/1584659880828-RGUPD3N7KCCD4X601DWM/Community%2BDevelopment%2BFramework%2Bdiagram.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}

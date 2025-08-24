@@ -116,17 +116,22 @@ const AgriculturePage = () => {
           backgroundSize: "cover",
           backgroundPosition: "center",
           color: "white",
-          py: { xs: 10, md: 14 },
+          py: { xs: 8, md: 14 },
           textAlign: "center",
         }}
       >
-        <Container maxWidth="md">
+        <Container maxWidth="xl">
           <Typography
             variant="h2"
             sx={{
               fontWeight: 700,
-              mb: 3,
-              fontSize: { xs: "2.5rem", md: "3.5rem" },
+              mb: { xs: 2, md: 3 },
+              fontSize: {
+                xs: "1.8rem",
+                sm: "2.2rem",
+                md: "2.5rem",
+                lg: "3.5rem",
+              },
               color: "white",
             }}
           >
@@ -134,7 +139,15 @@ const AgriculturePage = () => {
           </Typography>
           <Typography
             variant="h6"
-            sx={{ opacity: 0.95, lineHeight: 1.6, textAlign: "justify" }}
+            sx={{
+              opacity: 0.95,
+              lineHeight: 1.6,
+              textAlign: "justify",
+              fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+              maxWidth: { xs: "100%", sm: "800px", md: "900px" },
+              mx: "auto",
+              px: { xs: 2, sm: 0 },
+            }}
           >
             Empowering rural farmers with sustainable practices, modern tools,
             and improved market access to combat climate challenges.
@@ -143,17 +156,25 @@ const AgriculturePage = () => {
       </Box>
 
       {/* Impact Section */}
-      <Box sx={{ py: 8, backgroundColor: "#f9f9f9" }}>
-        <Container>
-          <Typography variant="h4" align="center" fontWeight={700} mb={6}>
+      <Box sx={{ py: { xs: 6, md: 8 }, backgroundColor: "#f9f9f9" }}>
+        <Container maxWidth="xl">
+          <Typography
+            variant="h4"
+            align="center"
+            fontWeight={700}
+            sx={{
+              mb: { xs: 4, md: 6 },
+              fontSize: { xs: "1.5rem", sm: "1.8rem", md: "2rem" },
+            }}
+          >
             Agricultural Impact
           </Typography>
-          <Grid container spacing={4} justifyContent="center">
+          <Grid container spacing={{ xs: 3, md: 4 }} justifyContent="center">
             {impactStats.map((stat, i) => (
               <Grid item xs={12} sm={6} md={3} key={i}>
                 <Box
                   sx={{
-                    p: 3,
+                    p: { xs: 2, md: 3 },
                     textAlign: "center",
                     backgroundColor: "white",
                     borderRadius: 3,
@@ -168,8 +189,8 @@ const AgriculturePage = () => {
                   <Box
                     sx={{
                       mb: 2,
-                      width: 56,
-                      height: 56,
+                      width: { xs: 48, md: 56 },
+                      height: { xs: 48, md: 56 },
                       borderRadius: "50%",
                       mx: "auto",
                       backgroundColor: theme.palette.primary.main,
@@ -179,12 +200,28 @@ const AgriculturePage = () => {
                       justifyContent: "center",
                     }}
                   >
-                    <stat.icon />
+                    <stat.icon
+                      sx={{ fontSize: { xs: "1.5rem", md: "2rem" } }}
+                    />
                   </Box>
-                  <Typography variant="h5" fontWeight={700} color="primary">
+                  <Typography
+                    variant="h5"
+                    fontWeight={700}
+                    color="primary"
+                    sx={{
+                      fontSize: { xs: "1.3rem", sm: "1.5rem", md: "1.8rem" },
+                    }}
+                  >
                     {stat.number}
                   </Typography>
-                  <Typography variant="body1">{stat.label}</Typography>
+                  <Typography
+                    variant="body1"
+                    sx={{
+                      fontSize: { xs: "0.8rem", sm: "0.875rem", md: "1rem" },
+                    }}
+                  >
+                    {stat.label}
+                  </Typography>
                 </Box>
               </Grid>
             ))}
@@ -193,12 +230,20 @@ const AgriculturePage = () => {
       </Box>
 
       {/* Program Cards */}
-      <Box sx={{ py: 8 }}>
-        <Container>
-          <Typography variant="h4" align="center" fontWeight={700} mb={6}>
+      <Box sx={{ py: { xs: 6, md: 8 } }}>
+        <Container maxWidth="xl">
+          <Typography
+            variant="h4"
+            align="center"
+            fontWeight={700}
+            sx={{
+              mb: { xs: 4, md: 6 },
+              fontSize: { xs: "1.5rem", sm: "1.8rem", md: "2rem" },
+            }}
+          >
             Our Agricultural Programs
           </Typography>
-          <Grid container spacing={4} justifyContent="center">
+          <Grid container spacing={{ xs: 3, md: 4 }} justifyContent="center">
             {programs.map((program, i) => (
               <Grid item xs={12} md={6} key={i}>
                 <Card
@@ -216,13 +261,13 @@ const AgriculturePage = () => {
                     image={program.image}
                     alt={program.title}
                   />
-                  <CardContent>
+                  <CardContent sx={{ p: { xs: 2, md: 3 } }}>
                     <Box display="flex" alignItems="center" mb={2}>
                       <Box
                         sx={{
                           mr: 2,
-                          width: 40,
-                          height: 40,
+                          width: { xs: 32, md: 40 },
+                          height: { xs: 32, md: 40 },
                           borderRadius: "50%",
                           backgroundColor: theme.palette.primary.main,
                           color: "white",
@@ -231,13 +276,28 @@ const AgriculturePage = () => {
                           justifyContent: "center",
                         }}
                       >
-                        <program.icon />
+                        <program.icon
+                          sx={{ fontSize: { xs: "1.2rem", md: "1.5rem" } }}
+                        />
                       </Box>
-                      <Typography variant="h6" fontWeight={600}>
+                      <Typography
+                        variant="h6"
+                        fontWeight={600}
+                        sx={{
+                          fontSize: { xs: "1rem", sm: "1.1rem", md: "1.2rem" },
+                        }}
+                      >
                         {program.title}
                       </Typography>
                     </Box>
-                    <Typography variant="body2" color="textSecondary" mb={2}>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                      mb={2}
+                      sx={{
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      }}
+                    >
                       {program.description}
                     </Typography>
                     <List dense>
@@ -253,7 +313,18 @@ const AgriculturePage = () => {
                               }}
                             />
                           </ListItemIcon>
-                          <ListItemText primary={detail} />
+                          <ListItemText
+                            primary={detail}
+                            sx={{
+                              "& .MuiListItemText-primary": {
+                                fontSize: {
+                                  xs: "0.75rem",
+                                  sm: "0.8rem",
+                                  md: "0.875rem",
+                                },
+                              },
+                            }}
+                          />
                         </ListItem>
                       ))}
                     </List>

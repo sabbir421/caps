@@ -10,44 +10,63 @@ import {
   ListItemIcon,
   ListItemText,
 } from "@mui/material";
-import PeopleIcon from "@mui/icons-material/People";
+import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import SchoolIcon from "@mui/icons-material/School";
 import PublicIcon from "@mui/icons-material/Public";
-import VolunteerActivismIcon from "@mui/icons-material/VolunteerActivism";
-import CampaignIcon from "@mui/icons-material/Campaign";
-import ConnectWithoutContactIcon from "@mui/icons-material/ConnectWithoutContact";
-import AssessmentIcon from "@mui/icons-material/Assessment";
+import HandshakeIcon from "@mui/icons-material/Handshake";
+import SpaIcon from "@mui/icons-material/Spa";
+import GrassIcon from "@mui/icons-material/Grass";
 import LightbulbIcon from "@mui/icons-material/Lightbulb";
-import EmojiPeopleIcon from "@mui/icons-material/EmojiPeople";
-import GroupsIcon from "@mui/icons-material/Groups";
-import PsychologyIcon from "@mui/icons-material/Psychology";
-import BusinessIcon from "@mui/icons-material/Business";
+import BoltIcon from "@mui/icons-material/Bolt";
+import WbIncandescentIcon from "@mui/icons-material/WbIncandescent";
+import ScienceIcon from "@mui/icons-material/Science";
+import NaturePeopleIcon from "@mui/icons-material/NaturePeople";
+import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 
 const GlobalGreenAmbassador = () => {
   return (
-    <Box sx={{ py: 8, bgcolor: "grey.50" }}>
-      <Container maxWidth="lg">
-        <Paper elevation={3} sx={{ p: { xs: 2, md: 6 }, borderRadius: 3 }}>
-          <Box sx={{ textAlign: "center", mb: 6 }}>
+    <Box sx={{ py: { xs: 6, md: 8 }, bgcolor: "grey.50" }}>
+      <Container maxWidth="xl">
+        <Paper elevation={3} sx={{ p: { xs: 3, md: 6 }, borderRadius: 3 }}>
+          <Box sx={{ textAlign: "center", mb: { xs: 4, md: 6 } }}>
             <Typography
               variant="h3"
               component="h1"
               gutterBottom
               align="center"
-              sx={{ fontWeight: 700, color: "primary.main" }}
+              sx={{
+                fontWeight: 700,
+                color: "primary.main",
+                fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.5rem" },
+              }}
             >
-              Global Green Ambassador Program
+              Global Green Ambassador
             </Typography>
-            <Typography variant="h6" color="text.secondary" align="center">
-              Empowering passionate individuals to become climate adaptation
-              champions and drive positive change in communities worldwide.
+            <Typography
+              variant="h6"
+              color="text.secondary"
+              align="center"
+              sx={{
+                textAlign: "justify",
+                fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                maxWidth: { xs: "100%", sm: "800px", md: "900px" },
+                mx: "auto",
+              }}
+            >
+              CAPS (Climate Adaptation Plan Society) has taken a program to
+              create a Global Green Ambassador for climate adaptation, focusing
+              on identifying individuals with a passion for sustainability and
+              empowering them to educate and inspire others. This can be
+              achieved through initiatives like offering resources, training,
+              and platforms for ambassadors to share their knowledge and promote
+              climate action.
             </Typography>
           </Box>
 
-          <Box sx={{ mb: 6 }}>
+          <Box sx={{ mb: { xs: 4, md: 6 } }}>
             <img
-              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80"
-              alt="Global Green Ambassadors working together for climate action"
+              src="https://placehold.co/1200x500/B3E5FC/01579B?text=Global+Green+Ambassador"
+              alt="A global green ambassador program promoting climate action and sustainability."
               style={{
                 width: "100%",
                 height: "auto",
@@ -60,222 +79,297 @@ const GlobalGreenAmbassador = () => {
           <Typography
             variant="body1"
             paragraph
-            sx={{ mt: 4, textAlign: "justify" }}
+            sx={{
+              textAlign: "justify",
+              fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+            }}
           >
-            CAPS (Climate Adaptation Plan Society) has taken a program to create
-            a Global Green Ambassador for climate adaptation, focusing on
-            identifying individuals with a passion for sustainability and
-            empowering them to educate and inspire others. This can be achieved
-            through initiatives like offering resources, training, and platforms
-            for ambassadors to share their knowledge and promote climate action.
+            Key elements for creating a successful Global Green Ambassador
+            program include identifying and recruiting ambassadors, providing
+            training and resources, creating a supportive network, offering
+            platforms for action, and monitoring and evaluating the program's
+            effectiveness.
           </Typography>
 
-          <Typography variant="body1" paragraph sx={{ textAlign: "justify" }}>
-            Our Global Green Ambassador program is designed to build a worldwide
-            network of climate champions who can effectively communicate the
-            urgency of climate action and implement practical solutions in their
-            communities. We believe that by empowering passionate individuals
-            with the right knowledge, skills, and support, we can create a
-            ripple effect of positive change across the globe.
-          </Typography>
-
-          <Typography variant="body1" paragraph sx={{ textAlign: "justify" }}>
-            The program focuses on creating a comprehensive ecosystem that
-            supports ambassadors throughout their journey, from initial
-            identification and recruitment to ongoing training, networking, and
-            action opportunities. We understand that successful climate
-            adaptation requires not just individual action, but collective
-            effort and community engagement.
-          </Typography>
-
-          <Typography variant="body1" paragraph sx={{ textAlign: "justify" }}>
-            By focusing on these key elements and learning from existing
-            successful programs, our Global Green Ambassador program for climate
-            adaptation can effectively empower individuals to drive positive
-            change in their communities and beyond. We are committed to building
-            a diverse, inclusive, and effective network of climate champions who
-            represent different backgrounds, experiences, and perspectives.
-          </Typography>
-
-          <Grid container spacing={6} sx={{ mt: 6 }}>
+          <Grid container spacing={{ xs: 3, md: 6 }}>
             <Grid item xs={12} md={6}>
               <Typography
                 variant="h5"
                 component="h2"
                 gutterBottom
-                sx={{ fontWeight: 600 }}
+                sx={{
+                  fontWeight: 600,
+                  fontSize: { xs: "1.2rem", sm: "1.3rem", md: "1.4rem" },
+                }}
               >
-                Key Elements for Success
+                Key Elements of the Program
               </Typography>
               <List>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <PeopleIcon color="primary" />
+                    <EmojiEventsIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
                   <ListItemText
                     primary="Identify and Recruit Ambassadors"
-                    secondary="Look for individuals with a strong interest in climate change and sustainability, and who possess excellent communication and leadership skills."
+                    secondary="Caps looks for individuals with a strong interest in climate change and sustainability, and who possess excellent communication and leadership skills."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
                   />
                 </ListItem>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <SchoolIcon color="primary" />
+                    <SchoolIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
                   <ListItemText
                     primary="Provide Training and Resources"
-                    secondary="Equip ambassadors with the knowledge and tools they need to effectively educate and inspire others. This includes information on climate science, adaptation strategies, and communication techniques."
+                    secondary="Caps equips ambassadors with the knowledge and tools they need to effectively educate and inspire others."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
                   />
                 </ListItem>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <ConnectWithoutContactIcon color="primary" />
+                    <HandshakeIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
                   <ListItemText
                     primary="Create a Supportive Network"
-                    secondary="Connect ambassadors with each other and with relevant organizations to foster collaboration and knowledge sharing."
+                    secondary="Caps connects ambassadors with each other and with relevant organizations to foster collaboration and knowledge sharing."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
                   />
                 </ListItem>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <CampaignIcon color="primary" />
+                    <PublicIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
                   <ListItemText
                     primary="Offer Platforms for Action"
-                    secondary="Provide opportunities for ambassadors to share their knowledge and inspire action through various channels, such as public speaking events, online platforms, and community engagement initiatives."
+                    secondary="Caps provides opportunities for ambassadors to share their knowledge and inspire action through various channels."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
                   />
                 </ListItem>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <AssessmentIcon color="primary" />
+                    <TrendingUpIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
                   <ListItemText
                     primary="Monitor and Evaluate"
-                    secondary="Regularly assess the impact of the program and make adjustments as needed to ensure its effectiveness."
+                    secondary="Caps regularly assesses the impact of the program and makes adjustments as needed to ensure its effectiveness."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
+                  />
+                </ListItem>
+              </List>
+
+              <Typography
+                variant="h5"
+                component="h2"
+                gutterBottom
+                sx={{
+                  fontWeight: 600,
+                  mt: { xs: 3, md: 4 },
+                  fontSize: { xs: "1.2rem", sm: "1.3rem", md: "1.4rem" },
+                }}
+              >
+                Specific Examples of Existing Programs
+              </Typography>
+              <List>
+                <ListItem sx={{ px: 0 }}>
+                  <ListItemIcon>
+                    <LightbulbIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Caps's Global Ambassadors Programme"
+                    secondary="This program focuses on amplifying the voices of young people fighting for climate justice and action."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
+                  />
+                </ListItem>
+                <ListItem sx={{ px: 0 }}>
+                  <ListItemIcon>
+                    <ScienceIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Climate Ambassadors Scheme"
+                    secondary="This scheme aims to develop agency amongst staff and young people, enhancing their climate education and skills development."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
+                  />
+                </ListItem>
+                <ListItem sx={{ px: 0 }}>
+                  <ListItemIcon>
+                    <GrassIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Global Green Ambassadors"
+                    secondary="This program focuses on encouraging a new generation of sustainability champions in schools."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
                   />
                 </ListItem>
               </List>
             </Grid>
 
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12}>
               <Typography
                 variant="h5"
                 component="h2"
                 gutterBottom
-                sx={{ fontWeight: 600 }}
+                sx={{
+                  fontWeight: 600,
+                  fontSize: { xs: "1.2rem", sm: "1.3rem", md: "1.4rem" },
+                }}
               >
-                Ambassador Programs
+                Program Benefits and Impact
               </Typography>
               <List>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <EmojiPeopleIcon color="primary" />
+                    <WbIncandescentIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
                   <ListItemText
-                    primary="Youth Climate Justice"
-                    secondary="Amplifying the voices of young people fighting for climate justice and action through dedicated youth ambassador programs."
+                    primary="Knowledge Sharing"
+                    secondary="By focusing on these key elements and learning from existing successful programs, a Global Green Ambassador program for climate adaptation can effectively empower individuals to drive positive change in their communities and beyond."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
                   />
                 </ListItem>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <SchoolIcon color="primary" />
+                    <BoltIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
                   <ListItemText
-                    primary="Staff & Student Development"
-                    secondary="Developing agency amongst staff and young people, enhancing their climate education and skills development."
+                    primary="Community Engagement"
+                    secondary="Ambassadors serve as catalysts for local climate action, engaging communities in sustainable practices and environmental awareness."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
                   />
                 </ListItem>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <GroupsIcon color="primary" />
+                    <NaturePeopleIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
                   <ListItemText
-                    primary="School Sustainability Champions"
-                    secondary="Encouraging a new generation of sustainability champions in schools through student ambassador initiatives."
-                  />
-                </ListItem>
-                <ListItem>
-                  <ListItemIcon>
-                    <BusinessIcon color="primary" />
-                  </ListItemIcon>
-                  <ListItemText
-                    primary="Community Leadership"
-                    secondary="Empowering local community leaders to drive climate adaptation and sustainability initiatives in their regions."
+                    primary="Global Network"
+                    secondary="Creating a network of ambassadors across different regions enables the sharing of best practices and collaborative climate action initiatives."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
                   />
                 </ListItem>
               </List>
             </Grid>
           </Grid>
-
-          <Box sx={{ mt: 6 }}>
-            <Typography
-              variant="h5"
-              component="h2"
-              gutterBottom
-              sx={{ fontWeight: 600 }}
-            >
-              Specific Examples of Existing Programs
-            </Typography>
-            <List>
-              <ListItem>
-                <ListItemIcon>
-                  <PublicIcon color="primary" />
-                </ListItemIcon>
-                <ListItemText
-                  primary="CAPS's Global Ambassadors Programme"
-                  secondary="This program focuses on amplifying the voices of young people fighting for climate justice and action."
-                />
-              </ListItem>
-              <ListItem>
-                <ListItemIcon>
-                  <PsychologyIcon color="primary" />
-                </ListItemIcon>
-                <ListItemText
-                  primary="Climate Ambassadors scheme"
-                  secondary="This scheme aims to develop agency amongst staff and young people, enhancing their climate education and skills development."
-                />
-              </ListItem>
-              <ListItem>
-                <ListItemIcon>
-                  <VolunteerActivismIcon color="primary" />
-                </ListItemIcon>
-                <ListItemText
-                  primary="Global Green Ambassadors"
-                  secondary="This program focuses on encouraging a new generation of sustainability champions in schools."
-                />
-              </ListItem>
-              <ListItem>
-                <ListItemIcon>
-                  <LightbulbIcon color="primary" />
-                </ListItemIcon>
-                <ListItemText
-                  primary="Innovation and Leadership Development"
-                  secondary="Encouraging ambassadors to develop innovative approaches and take leadership roles in climate action through recognition and support systems."
-                />
-              </ListItem>
-            </List>
-          </Box>
-
-          <Box sx={{ mt: 6, p: 4, bgcolor: "primary.light", borderRadius: 2 }}>
-            <Typography
-              variant="h6"
-              gutterBottom
-              sx={{ fontWeight: 600, color: "primary.main" }}
-            >
-              Our Impact
-            </Typography>
-            <Typography variant="body1" paragraph>
-              Through our Global Green Ambassador program, we have successfully
-              trained and empowered over 500 ambassadors across 50+ countries,
-              reaching more than 10,000 people through educational initiatives
-              and implementing over 100 community projects focused on climate
-              adaptation and sustainability.
-            </Typography>
-            <Typography variant="body1">
-              Join our mission to create a worldwide network of climate
-              champions. Together, we can build a more sustainable and resilient
-              future for generations to come.
-            </Typography>
-          </Box>
         </Paper>
       </Container>
     </Box>

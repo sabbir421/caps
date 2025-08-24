@@ -134,14 +134,14 @@ const ClimateAction = () => {
           },
         }}
       >
-        <Container maxWidth="md" sx={{ position: "relative", zIndex: 1 }}>
+        <Container maxWidth="xl" sx={{ position: "relative", zIndex: 1 }}>
           <Typography
             variant="h1"
             sx={{
               fontWeight: 800,
-              fontSize: { xs: "2.8rem", md: "3.8rem" },
+              fontSize: { xs: "2rem", sm: "2.5rem", md: "3rem", lg: "3.8rem" },
               lineHeight: 1.1,
-              mb: 3,
+              mb: { xs: 2, md: 3 },
               textShadow: "0 2px 8px rgb(252, 251, 253)",
             }}
           >
@@ -153,8 +153,11 @@ const ClimateAction = () => {
               opacity: 0.9,
               lineHeight: 1.6,
               fontWeight: 500,
-              mb: 5,
+              mb: { xs: 3, md: 5 },
               textShadow: "0 1px 5px rgb(249, 245, 245)",
+              fontSize: { xs: "1rem", sm: "1.2rem", md: "1.4rem" },
+              maxWidth: { xs: "100%", sm: "800px", md: "900px" },
+              mx: "auto",
             }}
           >
             Empowering communities to combat climate change through sustainable
@@ -165,21 +168,26 @@ const ClimateAction = () => {
 
       {/* Impact Statistics */}
       <Box
-        sx={{ py: 8, bgcolor: theme.palette.grey[100], textAlign: "center" }}
+        sx={{
+          py: { xs: 6, md: 8 },
+          bgcolor: theme.palette.grey[100],
+          textAlign: "center",
+        }}
       >
-        <Container maxWidth="lg">
+        <Container maxWidth="xl">
           <Typography
             variant="h2"
             sx={{
               fontWeight: 700,
-              mb: 6,
+              mb: { xs: 4, md: 6 },
               letterSpacing: "0.05em",
               color: theme.palette.text.primary,
+              fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.5rem" },
             }}
           >
             Our Climate Impact
           </Typography>
-          <Grid container spacing={5} justifyContent="center">
+          <Grid container spacing={{ xs: 3, md: 5 }} justifyContent="center">
             {impactStats.map((stat, index) => (
               <Grid
                 item
@@ -198,184 +206,40 @@ const ClimateAction = () => {
                   }ms`,
                 }}
               >
-                <Box
+                <Card
                   sx={{
-                    p: 4,
-                    borderRadius: 3,
-                    bgcolor: "white",
-                    boxShadow: "0 6px 20px rgba(0,0,0,0.08)",
-                    cursor: "default",
-                    transition: "transform 0.3s ease, box-shadow 0.3s ease",
-                    "&:hover": {
-                      transform: "translateY(-6px) scale(1.05)",
-                      boxShadow: "0 12px 40px rgba(0,0,0,0.18)",
-                    },
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
+                    p: { xs: 2, md: 3 },
+                    textAlign: "center",
+                    boxShadow: theme.shadows[3],
+                    borderRadius: 4,
+                    height: "100%",
                   }}
                 >
-                  <Box
+                  <stat.icon
                     sx={{
-                      width: 68,
-                      height: 68,
-                      borderRadius: "50%",
-                      bgcolor: theme.palette.primary.main,
-                      color: "white",
-                      mb: 2,
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
-                    }}
-                  >
-                    <stat.icon sx={{ fontSize: 36 }} />
-                  </Box>
-                  <Typography
-                    variant="h3"
-                    sx={{
-                      fontWeight: 700,
+                      fontSize: { xs: 40, md: 48 },
                       color: theme.palette.primary.main,
                       mb: 1,
-                      letterSpacing: "0.02em",
+                    }}
+                  />
+                  <Typography
+                    variant="h5"
+                    sx={{
+                      fontWeight: 700,
+                      fontSize: { xs: "1.3rem", sm: "1.5rem", md: "1.8rem" },
                     }}
                   >
                     {stat.number}
                   </Typography>
                   <Typography
-                    variant="h6"
+                    variant="subtitle1"
                     sx={{
-                      color: theme.palette.text.secondary,
-                      fontWeight: 600,
-                      letterSpacing: "0.03em",
+                      color: "text.secondary",
+                      fontSize: { xs: "0.8rem", sm: "0.875rem", md: "1rem" },
                     }}
                   >
                     {stat.label}
                   </Typography>
-                </Box>
-              </Grid>
-            ))}
-          </Grid>
-        </Container>
-      </Box>
-
-      {/* Key Initiatives with fade-in */}
-      <Box sx={{ py: 10, px: 2, textAlign: "center" }}>
-        <Container maxWidth="lg">
-          <Typography
-            variant="h2"
-            sx={{
-              fontWeight: 700,
-              mb: 8,
-              letterSpacing: "0.05em",
-              color: theme.palette.text.primary,
-            }}
-          >
-            Key Climate Initiatives
-          </Typography>
-          <Grid container spacing={6} justifyContent="center">
-            {initiatives.map((initiative, index) => (
-              <Grid
-                item
-                xs={12}
-                sm={10}
-                md={6}
-                key={index}
-                className="fade-in"
-                style={{
-                  opacity: visibleIndexes.includes(index + impactStats.length)
-                    ? 1
-                    : 0,
-                  transform: visibleIndexes.includes(index + impactStats.length)
-                    ? "translateY(0)"
-                    : "translateY(30px)",
-                  transition: `all ${fadeInDuration}ms ease-out ${
-                    (index + impactStats.length) * 150
-                  }ms`,
-                }}
-              >
-                <Card
-                  sx={{
-                    height: "100%",
-                    borderRadius: 3,
-                    boxShadow: "0 12px 28px rgba(0,0,0,0.06)",
-                    transition: "transform 0.3s ease, box-shadow 0.3s ease",
-                    "&:hover": {
-                      transform: "translateY(-10px) scale(1.04)",
-                      boxShadow: "0 20px 48px rgba(0,0,0,0.15)",
-                    },
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    px: 3,
-                    py: 4,
-                    textAlign: "center",
-                  }}
-                >
-                  <Box
-                    sx={{
-                      width: 56,
-                      height: 56,
-                      borderRadius: "50%",
-                      bgcolor: theme.palette.primary.main,
-                      color: "white",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      mb: 2,
-                      mx: "auto",
-                      boxShadow: "0 4px 8px rgba(0,0,0,0.18)",
-                    }}
-                  >
-                    <initiative.icon sx={{ fontSize: 28 }} />
-                  </Box>
-                  <Typography
-                    variant="h5"
-                    sx={{
-                      fontWeight: 700,
-                      color: theme.palette.text.primary,
-                      mb: 2,
-                    }}
-                  >
-                    {initiative.title}
-                  </Typography>
-                  <Typography
-                    variant="body1"
-                    sx={{
-                      mb: 3,
-                      color: theme.palette.text.secondary,
-                      lineHeight: 1.6,
-                    }}
-                  >
-                    {initiative.description}
-                  </Typography>
-                  <List
-                    dense
-                    disablePadding
-                    sx={{ textAlign: "left", maxWidth: 420, mx: "auto" }}
-                  >
-                    {initiative.details.map((detail, detailIndex) => (
-                      <ListItem key={detailIndex} sx={{ px: 0, mb: 1 }}>
-                        <ListItemIcon sx={{ minWidth: 30 }}>
-                          <Box
-                            sx={{
-                              width: 8,
-                              height: 8,
-                              borderRadius: "50%",
-                              bgcolor: theme.palette.primary.main,
-                            }}
-                          />
-                        </ListItemIcon>
-                        <ListItemText
-                          primary={detail}
-                          primaryTypographyProps={{
-                            fontSize: "0.95rem",
-                            color: theme.palette.text.secondary,
-                          }}
-                        />
-                      </ListItem>
-                    ))}
-                  </List>
                 </Card>
               </Grid>
             ))}
@@ -383,17 +247,168 @@ const ClimateAction = () => {
         </Container>
       </Box>
 
-      {/* Community Engagement with Background Image */}
+      {/* Initiatives Section */}
+      <Box sx={{ py: { xs: 6, md: 8 } }}>
+        <Container maxWidth="xl">
+          <Typography
+            variant="h2"
+            align="center"
+            sx={{
+              fontWeight: 700,
+              mb: { xs: 4, md: 6 },
+              letterSpacing: "0.04em",
+              fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.5rem" },
+            }}
+          >
+            Our Climate Initiatives
+          </Typography>
+          <Grid container spacing={{ xs: 3, md: 4 }} justifyContent="center">
+            {initiatives.map((initiative, index) => (
+              <Grid
+                item
+                xs={12}
+                sm={6}
+                md={6}
+                key={index}
+                className="fade-in"
+                style={{
+                  opacity: visibleIndexes.includes(index + 4) ? 1 : 0,
+                  transform: visibleIndexes.includes(index + 4)
+                    ? "translateY(0)"
+                    : "translateY(30px)",
+                  transition: `all ${fadeInDuration}ms ease-out ${
+                    (index + 4) * 150
+                  }ms`,
+                }}
+              >
+                <Card
+                  sx={{
+                    borderRadius: 4,
+                    textAlign: "center",
+                    boxShadow: theme.shadows[4],
+                    transition: "transform 0.3s, box-shadow 0.3s",
+                    "&:hover": {
+                      transform: "translateY(-8px)",
+                      boxShadow: theme.shadows[10],
+                    },
+                    display: "flex",
+                    flexDirection: "column",
+                    height: "100%",
+                  }}
+                >
+                  <Box sx={{ position: "relative" }}>
+                    <CardMedia
+                      component="img"
+                      height="200"
+                      image={`https://source.unsplash.com/400x200/?${initiative.title
+                        .toLowerCase()
+                        .replace(/\s+/g, "-")}`}
+                      alt={initiative.title}
+                      sx={{
+                        borderTopLeftRadius: 16,
+                        borderTopRightRadius: 16,
+                        objectFit: "cover",
+                      }}
+                    />
+                    <Box
+                      sx={{
+                        position: "absolute",
+                        top: 16,
+                        left: 16,
+                        bgcolor: theme.palette.primary.main,
+                        borderRadius: "50%",
+                        width: { xs: 40, md: 48 },
+                        height: { xs: 40, md: 48 },
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        boxShadow: theme.shadows[4],
+                      }}
+                    >
+                      <initiative.icon
+                        sx={{
+                          color: "white",
+                          fontSize: { xs: "1.5rem", md: "1.8rem" },
+                        }}
+                      />
+                    </Box>
+                  </Box>
+
+                  <CardContent
+                    sx={{ flexGrow: 1, px: { xs: 2, md: 3 }, pt: 3, pb: 4 }}
+                  >
+                    <Typography
+                      variant="h6"
+                      sx={{
+                        fontWeight: 700,
+                        mb: 1,
+                        color: theme.palette.text.primary,
+                        fontSize: { xs: "1rem", sm: "1.1rem", md: "1.2rem" },
+                      }}
+                    >
+                      {initiative.title}
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      sx={{
+                        color: theme.palette.text.secondary,
+                        mb: 2,
+                        minHeight: 48,
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      }}
+                    >
+                      {initiative.description}
+                    </Typography>
+                    <List
+                      dense
+                      sx={{ pt: 0, maxHeight: 140, overflowY: "auto" }}
+                    >
+                      {initiative.details.map((detail, idx) => (
+                        <ListItem key={idx} sx={{ px: 0 }}>
+                          <ListItemIcon sx={{ minWidth: 30 }}>
+                            <Box
+                              sx={{
+                                width: 8,
+                                height: 8,
+                                borderRadius: "50%",
+                                backgroundColor: theme.palette.primary.main,
+                              }}
+                            />
+                          </ListItemIcon>
+                          <ListItemText
+                            primary={detail}
+                            sx={{
+                              "& .MuiListItemText-primary": {
+                                fontSize: {
+                                  xs: "0.75rem",
+                                  sm: "0.8rem",
+                                  md: "0.875rem",
+                                },
+                              },
+                            }}
+                          />
+                        </ListItem>
+                      ))}
+                    </List>
+                  </CardContent>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
+      </Box>
+
+      {/* Community Engagement Section */}
       <Box
         sx={{
-          py: 10,
+          py: { xs: 6, md: 8 },
           px: 2,
-          textAlign: "center",
           color: "#fff",
+          textAlign: "center",
           position: "relative",
           overflow: "hidden",
           backgroundImage:
-            'url("https://images.unsplash.com/photo-1500534623283-312aade485b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80")',
+            'url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80")',
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -406,20 +421,28 @@ const ClimateAction = () => {
           },
         }}
       >
-        <Container maxWidth="md" sx={{ position: "relative", zIndex: 1 }}>
+        <Container maxWidth="xl" sx={{ position: "relative", zIndex: 1 }}>
           <Typography
             variant="h2"
-            sx={{ fontWeight: 700, mb: 5, letterSpacing: "0.04em" }}
+            sx={{
+              fontWeight: 700,
+              mb: { xs: 3, md: 5 },
+              letterSpacing: "0.04em",
+              fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.5rem" },
+            }}
           >
             Community Engagement
           </Typography>
           <Typography
             variant="h6"
             sx={{
-              mb: 5,
+              mb: { xs: 3, md: 5 },
               lineHeight: 1.7,
               color: "rgba(255,255,255,0.85)",
               textAlign: "justify",
+              fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+              maxWidth: { xs: "100%", sm: "800px", md: "900px" },
+              mx: "auto",
             }}
           >
             We believe that lasting climate action comes from community
@@ -437,35 +460,74 @@ const ClimateAction = () => {
           >
             <ListItem sx={{ px: 0, mb: 2 }}>
               <ListItemIcon>
-                <Groups sx={{ color: "#90caf9", fontSize: 28 }} />
+                <Groups
+                  sx={{
+                    color: "#90caf9",
+                    fontSize: { xs: "1.5rem", md: "1.8rem" },
+                  }}
+                />
               </ListItemIcon>
               <ListItemText
                 primary="Community Climate Committees"
                 secondary="Establishing local groups to lead climate initiatives"
-                primaryTypographyProps={{ fontWeight: 600, fontSize: "1rem" }}
-                secondaryTypographyProps={{ color: "rgba(255,255,255,0.7)" }}
+                sx={{
+                  "& .MuiListItemText-primary": {
+                    fontWeight: 600,
+                    fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                  },
+                  "& .MuiListItemText-secondary": {
+                    color: "rgba(255,255,255,0.7)",
+                    fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                  },
+                }}
               />
             </ListItem>
             <ListItem sx={{ px: 0, mb: 2 }}>
               <ListItemIcon>
-                <School sx={{ color: "#90caf9", fontSize: 28 }} />
+                <School
+                  sx={{
+                    color: "#90caf9",
+                    fontSize: { xs: "1.5rem", md: "1.8rem" },
+                  }}
+                />
               </ListItemIcon>
               <ListItemText
                 primary="Environmental Education"
                 secondary="Training programs for sustainable practices"
-                primaryTypographyProps={{ fontWeight: 600, fontSize: "1rem" }}
-                secondaryTypographyProps={{ color: "rgba(255,255,255,0.7)" }}
+                sx={{
+                  "& .MuiListItemText-primary": {
+                    fontWeight: 600,
+                    fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                  },
+                  "& .MuiListItemText-secondary": {
+                    color: "rgba(255,255,255,0.7)",
+                    fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                  },
+                }}
               />
             </ListItem>
             <ListItem sx={{ px: 0 }}>
               <ListItemIcon>
-                <Nature sx={{ color: "#90caf9", fontSize: 28 }} />
+                <Nature
+                  sx={{
+                    color: "#90caf9",
+                    fontSize: { xs: "1.5rem", md: "1.8rem" },
+                  }}
+                />
               </ListItemIcon>
               <ListItemText
                 primary="Green Livelihoods"
                 secondary="Creating economic opportunities through environmental conservation"
-                primaryTypographyProps={{ fontWeight: 600, fontSize: "1rem" }}
-                secondaryTypographyProps={{ color: "rgba(255,255,255,0.7)" }}
+                sx={{
+                  "& .MuiListItemText-primary": {
+                    fontWeight: 600,
+                    fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                  },
+                  "& .MuiListItemText-secondary": {
+                    color: "rgba(255,255,255,0.7)",
+                    fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                  },
+                }}
               />
             </ListItem>
           </List>
@@ -473,46 +535,63 @@ const ClimateAction = () => {
       </Box>
 
       {/* Call to Action */}
-      <Box sx={{ py: 10, bgcolor: "#fff", textAlign: "center", px: 2 }}>
-        <Container maxWidth="sm">
-          <Typography
-            variant="h2"
+      <Box
+        sx={{
+          py: { xs: 6, md: 10 },
+          bgcolor: "#fff",
+          textAlign: "center",
+          px: 2,
+        }}
+      >
+        <Container maxWidth="xl">
+          <Box
             sx={{
-              fontWeight: 700,
-              mb: 4,
-              letterSpacing: "0.04em",
-              lineHeight: 1.2,
+              maxWidth: { xs: "100%", sm: "600px", md: "700px" },
+              mx: "auto",
             }}
           >
-            Join Our Climate Action
-          </Typography>
-          <Typography
-            variant="h6"
-            sx={{
-              mb: 6,
-              opacity: 0.85,
-              fontWeight: 500,
-              lineHeight: 1.6,
-            }}
-          >
-            Every action counts in the fight against climate change. Get
-            involved in our initiatives and help create a sustainable future for
-            generations to come.
-          </Typography>
-          <Chip
-            label="Contact us to learn more about volunteering opportunities"
-            sx={{
-              backgroundColor: theme.palette.primary.main,
-              color: "white",
-              fontSize: "1.15rem",
-              padding: "14px 28px",
-              borderRadius: 6,
-              cursor: "pointer",
-              "&:hover": {
-                backgroundColor: theme.palette.primary.dark,
-              },
-            }}
-          />
+            <Typography
+              variant="h2"
+              sx={{
+                fontWeight: 700,
+                mb: { xs: 3, md: 4 },
+                letterSpacing: "0.04em",
+                lineHeight: 1.2,
+                fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.5rem" },
+              }}
+            >
+              Join Our Climate Action
+            </Typography>
+            <Typography
+              variant="h6"
+              sx={{
+                mb: { xs: 4, md: 6 },
+                opacity: 0.85,
+                fontWeight: 500,
+                lineHeight: 1.6,
+                fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                px: { xs: 2, sm: 0 },
+              }}
+            >
+              Every action counts in the fight against climate change. Get
+              involved in our initiatives and help create a sustainable future
+              for generations to come.
+            </Typography>
+            <Chip
+              label="Contact us to learn more about volunteering opportunities"
+              sx={{
+                backgroundColor: theme.palette.primary.main,
+                color: "white",
+                fontSize: { xs: "0.9rem", sm: "1rem", md: "1.15rem" },
+                padding: { xs: "10px 20px", md: "14px 28px" },
+                borderRadius: 6,
+                cursor: "pointer",
+                "&:hover": {
+                  backgroundColor: theme.palette.primary.dark,
+                },
+              }}
+            />
+          </Box>
         </Container>
       </Box>
     </Box>

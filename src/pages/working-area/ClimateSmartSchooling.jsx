@@ -11,46 +11,65 @@ import {
   ListItemText,
 } from "@mui/material";
 import SchoolIcon from "@mui/icons-material/School";
-import PsychologyIcon from "@mui/icons-material/Psychology";
-import BuildIcon from "@mui/icons-material/Build";
-import GroupsIcon from "@mui/icons-material/Groups";
-import PersonIcon from "@mui/icons-material/Person";
-import PolicyIcon from "@mui/icons-material/Policy";
-import SecurityIcon from "@mui/icons-material/Security";
-import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
-import ShieldIcon from "@mui/icons-material/Shield";
+import EngineeringIcon from "@mui/icons-material/Engineering";
+import PublicIcon from "@mui/icons-material/Public";
+import HandshakeIcon from "@mui/icons-material/Handshake";
+import SpaIcon from "@mui/icons-material/Spa";
+import GrassIcon from "@mui/icons-material/Grass";
+import LightbulbIcon from "@mui/icons-material/Lightbulb";
+import BoltIcon from "@mui/icons-material/Bolt";
+import WbIncandescentIcon from "@mui/icons-material/WbIncandescent";
+import ScienceIcon from "@mui/icons-material/Science";
+import NaturePeopleIcon from "@mui/icons-material/NaturePeople";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
-import WorkIcon from "@mui/icons-material/Work";
 
 const ClimateSmartSchooling = () => {
   return (
-    <Box sx={{ py: 8, bgcolor: "grey.50" }}>
-      <Container maxWidth="lg">
-        <Paper elevation={3} sx={{ p: { xs: 2, md: 6 }, borderRadius: 3 }}>
-          <Box sx={{ textAlign: "center", mb: 6 }}>
+    <Box sx={{ py: { xs: 6, md: 8 }, bgcolor: "grey.50" }}>
+      <Container maxWidth="xl">
+        <Paper elevation={3} sx={{ p: { xs: 3, md: 6 }, borderRadius: 3 }}>
+          <Box sx={{ textAlign: "center", mb: { xs: 4, md: 6 } }}>
             <Typography
               variant="h3"
               component="h1"
               gutterBottom
               align="center"
-              sx={{ fontWeight: 700, color: "primary.main" }}
+              sx={{
+                fontWeight: 700,
+                color: "primary.main",
+                fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.5rem" },
+              }}
             >
-              Climate-Smart Schooling
+              Climate Smart Schooling
             </Typography>
-            <Typography variant="h6" color="text.secondary" align="center">
-              Education that equips students with knowledge, skills, and values
-              to address climate change and its impacts.
+            <Typography
+              variant="h6"
+              color="text.secondary"
+              align="center"
+              sx={{
+                textAlign: "justify",
+                fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                maxWidth: { xs: "100%", sm: "800px", md: "900px" },
+                mx: "auto",
+              }}
+            >
+              CAPS (Climate Adaptation Plan Society) approaches "Climate-smart
+              schooling" refers to education that equips students with the
+              knowledge, skills, and values to address climate change and its
+              impacts, while also ensuring the sustainability of education
+              systems themselves. It involves integrating climate change
+              adaptation and environmental sustainability into education
+              policies, curricula, and school infrastructure.
             </Typography>
           </Box>
 
-          <Box sx={{ mb: 6 }}>
+          <Box sx={{ mb: { xs: 4, md: 6 } }}>
             <img
-              src="https://images.unsplash.com/photo-1523050854058-8df90110c9e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-              alt="Climate-smart schooling and sustainable education"
+              src="https://placehold.co/1200x500/B3E5FC/01579B?text=Climate+Smart+Schooling"
+              alt="A climate-smart school with sustainable infrastructure and green learning environment."
               style={{
                 width: "100%",
-                height: "300px",
-                objectFit: "cover",
+                height: "auto",
                 borderRadius: "12px",
                 boxShadow: "0px 8px 16px rgba(0, 0, 0, 0.1)",
               }}
@@ -60,166 +79,331 @@ const ClimateSmartSchooling = () => {
           <Typography
             variant="body1"
             paragraph
-            sx={{ mt: 4, textAlign: "justify" }}
+            sx={{
+              textAlign: "justify",
+              fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+            }}
           >
-            CAPS (Climate Adaptation Plan Society) approches "Climate-smart
-            schooling" refers to education that equips students with the
-            knowledge, skills, and values to address climate change and its
-            impacts, while also ensuring the sustainability of education systems
-            themselves. It involves integrating climate change adaptation and
-            environmental sustainability into education policies, curricula, and
-            school infrastructure. This approach aims to create a generation
-            prepared to live and thrive in a changing climate.
+            This approach aims to create a generation prepared to live and
+            thrive in a changing climate through comprehensive education and
+            sustainable school practices.
           </Typography>
 
-          <Grid container spacing={6} sx={{ mt: 6 }}>
+          <Grid container spacing={{ xs: 3, md: 6 }}>
             <Grid item xs={12} md={6}>
               <Typography
                 variant="h5"
                 component="h2"
                 gutterBottom
-                sx={{ fontWeight: 600 }}
+                sx={{
+                  fontWeight: 600,
+                  fontSize: { xs: "1.2rem", sm: "1.3rem", md: "1.4rem" },
+                }}
               >
                 Key Aspects of Climate-Smart Schooling
               </Typography>
               <List>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <SchoolIcon color="primary" />
+                    <SchoolIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
                   <ListItemText
                     primary="Curriculum Integration"
-                    secondary="Climate change and environmental sustainability are incorporated into various subjects, fostering understanding and critical thinking about climate-related issues."
+                    secondary="Caps incorporates climate change and environmental sustainability into various subjects, fostering understanding and critical thinking about climate-related issues."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
                   />
                 </ListItem>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <PsychologyIcon color="primary" />
+                    <EngineeringIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
                   <ListItemText
                     primary="Skills Development"
-                    secondary="Students gain practical skills related to climate adaptation, mitigation, and green technologies, preparing them for a changing job market."
+                    secondary="Caps helps students gain practical skills related to climate adaptation, mitigation, and green technologies, preparing them for a changing job market."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
                   />
                 </ListItem>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <BuildIcon color="primary" />
+                    <GrassIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
                   <ListItemText
                     primary="School Infrastructure"
-                    secondary="Schools are designed and managed to be resilient to climate change impacts, such as extreme weather events, with features like water conservation and renewable energy sources."
+                    secondary="Caps designs and manages schools to be resilient to climate change impacts, such as extreme weather events, with features like water conservation and renewable energy sources."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
                   />
                 </ListItem>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <GroupsIcon color="primary" />
+                    <HandshakeIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
                   <ListItemText
                     primary="Community Engagement"
-                    secondary="Schools serve as hubs for climate action, engaging students, teachers, and the wider community in initiatives like tree planting, waste management, and sustainable gardening."
+                    secondary="Caps serves schools as hubs for climate action, engaging students, teachers, and the wider community in initiatives like tree planting, waste management, and sustainable gardening."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
+                  />
+                </ListItem>
+                <ListItem sx={{ px: 0 }}>
+                  <ListItemIcon>
+                    <LightbulbIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Teacher Training"
+                    secondary="Caps provides educators with training on climate change and how to effectively teach related topics, ensuring they are equipped to guide students."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
                   />
                 </ListItem>
               </List>
-            </Grid>
 
-            <Grid item xs={12} md={6}>
               <Typography
                 variant="h5"
                 component="h2"
                 gutterBottom
-                sx={{ fontWeight: 600 }}
+                sx={{
+                  fontWeight: 600,
+                  mt: { xs: 3, md: 4 },
+                  fontSize: { xs: "1.2rem", sm: "1.3rem", md: "1.4rem" },
+                }}
               >
-                Additional Components
+                Additional Focus Areas
               </Typography>
               <List>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <PersonIcon color="primary" />
-                  </ListItemIcon>
-                  <ListItemText
-                    primary="Teacher Training"
-                    secondary="Educators receive training on climate change and how to effectively teach related topics, ensuring they are equipped to guide students."
-                  />
-                </ListItem>
-                <ListItem>
-                  <ListItemIcon>
-                    <PolicyIcon color="primary" />
+                    <PublicIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
                   <ListItemText
                     primary="Policy and Planning"
-                    secondary="Education systems integrate climate considerations into their policies, budgets, and overall planning processes."
+                    secondary="Caps integrates climate considerations into education systems' policies, budgets, and overall planning processes."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
                   />
                 </ListItem>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <SecurityIcon color="primary" />
+                    <BoltIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
                   <ListItemText
                     primary="Disaster Risk Reduction"
-                    secondary="Schools develop and implement plans for disaster preparedness, ensuring learning continuity during emergencies."
+                    secondary="Caps develops and implements plans for disaster preparedness, ensuring learning continuity during emergencies."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
                   />
                 </ListItem>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <AccountBalanceWalletIcon color="primary" />
+                    <WbIncandescentIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
                   <ListItemText
                     primary="Access to Climate Finance"
-                    secondary="Securing funding for climate-smart education initiatives is crucial for implementing necessary changes and ensuring equitable access to quality education."
+                    secondary="Caps secures funding for climate-smart education initiatives to implement necessary changes and ensure equitable access to quality education."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
                   />
                 </ListItem>
               </List>
             </Grid>
-          </Grid>
 
-          <Box sx={{ mt: 6 }}>
-            <Typography
-              variant="h5"
-              component="h2"
-              gutterBottom
-              sx={{ fontWeight: 600 }}
-            >
-              Benefits of Climate-Smart Schooling
-            </Typography>
-            <List>
-              <ListItem>
-                <ListItemIcon>
-                  <ShieldIcon color="primary" />
-                </ListItemIcon>
-                <ListItemText
-                  primary="Enhanced Climate Resilience"
-                  secondary="Equips individuals with the knowledge and skills to adapt to climate change impacts."
-                />
-              </ListItem>
-              <ListItem>
-                <ListItemIcon>
-                  <TrendingUpIcon color="primary" />
-                </ListItemIcon>
-                <ListItemText
-                  primary="Sustainable Development"
-                  secondary="Promotes environmentally responsible practices and contributes to a greener future."
-                />
-              </ListItem>
-              <ListItem>
-                <ListItemIcon>
-                  <GroupsIcon color="primary" />
-                </ListItemIcon>
-                <ListItemText
-                  primary="Social Equity"
-                  secondary="Ensures that all students, regardless of background, have access to quality education that prepares them for a changing world."
-                />
-              </ListItem>
-              <ListItem>
-                <ListItemIcon>
-                  <WorkIcon color="primary" />
-                </ListItemIcon>
-                <ListItemText
-                  primary="Economic Opportunities"
-                  secondary="Creates a workforce equipped with the skills needed for green jobs and a sustainable economy."
-                />
-              </ListItem>
-            </List>
-          </Box>
+            <Grid item xs={12}>
+              <Typography
+                variant="h5"
+                component="h2"
+                gutterBottom
+                sx={{
+                  fontWeight: 600,
+                  fontSize: { xs: "1.2rem", sm: "1.3rem", md: "1.4rem" },
+                }}
+              >
+                Benefits of Climate-Smart Schooling
+              </Typography>
+              <List>
+                <ListItem sx={{ px: 0 }}>
+                  <ListItemIcon>
+                    <TrendingUpIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Enhanced Climate Resilience"
+                    secondary="Caps equips individuals with the knowledge and skills to adapt to climate change impacts and build resilient communities."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
+                  />
+                </ListItem>
+                <ListItem sx={{ px: 0 }}>
+                  <ListItemIcon>
+                    <SpaIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Sustainable Development"
+                    secondary="Caps promotes environmentally responsible practices and contributes to a greener future through education."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
+                  />
+                </ListItem>
+                <ListItem sx={{ px: 0 }}>
+                  <ListItemIcon>
+                    <NaturePeopleIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Social Equity"
+                    secondary="Caps ensures that all students, regardless of background, have access to quality education that prepares them for a changing world."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
+                  />
+                </ListItem>
+                <ListItem sx={{ px: 0 }}>
+                  <ListItemIcon>
+                    <ScienceIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Economic Opportunities"
+                    secondary="Caps creates a workforce equipped with the skills needed for green jobs and a sustainable economy."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
+                  />
+                </ListItem>
+              </List>
+
+              <Typography
+                variant="body1"
+                paragraph
+                sx={{
+                  textAlign: "justify",
+                  mt: { xs: 3, md: 4 },
+                  fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                }}
+              >
+                Climate-smart schooling represents a comprehensive approach to
+                education that prepares students for the challenges of climate
+                change while fostering sustainable practices and building
+                resilient communities for the future.
+              </Typography>
+            </Grid>
+          </Grid>
         </Paper>
       </Container>
     </Box>

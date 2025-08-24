@@ -21,26 +21,39 @@ import LocalFloristIcon from "@mui/icons-material/LocalFlorist";
 
 const ClimateSmartPlasticManagement = () => {
   return (
-    <Box sx={{ py: 8, bgcolor: "grey.50" }}>
-      <Container maxWidth="lg">
-        <Paper elevation={3} sx={{ p: { xs: 2, md: 6 }, borderRadius: 3 }}>
-          <Box sx={{ textAlign: "center", mb: 6 }}>
+    <Box sx={{ py: { xs: 6, md: 8 }, bgcolor: "grey.50" }}>
+      <Container maxWidth="xl">
+        <Paper elevation={3} sx={{ p: { xs: 3, md: 6 }, borderRadius: 3 }}>
+          <Box sx={{ textAlign: "center", mb: { xs: 4, md: 6 } }}>
             <Typography
               variant="h3"
               component="h1"
               gutterBottom
               align="center"
-              sx={{ fontWeight: 700, color: "primary.main" }}
+              sx={{
+                fontWeight: 700,
+                color: "primary.main",
+                fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.5rem" },
+              }}
             >
               Climate-smart Plastic Management
             </Typography>
-            <Typography variant="h6" color="text.secondary" align="center">
+            <Typography
+              variant="h6"
+              color="text.secondary"
+              align="center"
+              sx={{
+                fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                maxWidth: { xs: "100%", sm: "800px", md: "900px" },
+                mx: "auto",
+              }}
+            >
               Minimizing the environmental impact of plastic throughout its
               lifecycle.
             </Typography>
           </Box>
 
-          <Box sx={{ mb: 6 }}>
+          <Box sx={{ mb: { xs: 4, md: 6 } }}>
             <img
               src="https://placehold.co/1200x500/E0F2F1/004D40?text=Sustainable+plastic+management"
               alt="A visual representation of sustainable plastic management."
@@ -56,7 +69,11 @@ const ClimateSmartPlasticManagement = () => {
           <Typography
             variant="body1"
             paragraph
-            sx={{ mt: 4, textAlign: "justify" }}
+            sx={{
+              mt: { xs: 3, md: 4 },
+              textAlign: "justify",
+              fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+            }}
           >
             CAPS (Climate Adaptation Plan Society) aims at **Climate-smart
             plastic management** by developing strategies to minimize the
@@ -68,42 +85,85 @@ const ClimateSmartPlasticManagement = () => {
             work towards a more sustainable and resilient future.
           </Typography>
 
-          <Grid container spacing={6} sx={{ mt: 6 }}>
+          <Grid
+            container
+            spacing={{ xs: 3, md: 6 }}
+            sx={{ mt: { xs: 4, md: 6 } }}
+          >
             <Grid item xs={12} md={6}>
               <Typography
                 variant="h5"
                 component="h2"
                 gutterBottom
-                sx={{ fontWeight: 600 }}
+                sx={{
+                  fontWeight: 600,
+                  fontSize: { xs: "1.2rem", sm: "1.3rem", md: "1.4rem" },
+                }}
               >
                 Key Aspects of Climate-Smart Plastic Management
               </Typography>
               <List>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <RecyclingIcon color="primary" />
+                    <RecyclingIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
                   <ListItemText
                     primary="Reducing Plastic Consumption"
                     secondary="Minimizing the production and use of single-use plastics and promoting reusable alternatives to encourage responsible consumption."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
                   />
                 </ListItem>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <GavelIcon color="primary" />
+                    <GavelIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
                   <ListItemText
                     primary="Improving Recycling and Waste Management"
                     secondary="Enhancing recycling infrastructure, developing innovative technologies, and implementing effective systems to reduce plastic leakage into the environment."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
                   />
                 </ListItem>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <WbIncandescentIcon color="primary" />
+                    <WbIncandescentIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
                   <ListItemText
                     primary="Transitioning to Sustainable Alternatives"
                     secondary="Exploring and adopting biodegradable or compostable plastics, developing alternative packaging solutions, and investing in research of sustainable materials."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
                   />
                 </ListItem>
               </List>
@@ -114,77 +174,155 @@ const ClimateSmartPlasticManagement = () => {
                 variant="h5"
                 component="h2"
                 gutterBottom
-                sx={{ fontWeight: 600 }}
+                sx={{
+                  fontWeight: 600,
+                  fontSize: { xs: "1.2rem", sm: "1.3rem", md: "1.4rem" },
+                }}
               >
                 Interconnectedness of Plastic Pollution and Climate Change
               </Typography>
               <List>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <LocalFloristIcon color="primary" />
+                    <LocalFloristIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
                   <ListItemText
                     primary="GHG Emissions"
                     secondary="The production, use, and disposal of plastics contribute significantly to greenhouse gas (GHG) emissions, exacerbating climate change."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
                   />
                 </ListItem>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <PublicIcon color="primary" />
+                    <PublicIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
                   <ListItemText
                     primary="Environmental Impacts"
                     secondary="Plastic pollution negatively impacts ecosystems, including oceans, which play a crucial role in regulating the climate."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
                   />
                 </ListItem>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <WbIncandescentIcon color="primary" />
+                    <WbIncandescentIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
                   <ListItemText
                     primary="Synergistic Solutions"
                     secondary="Addressing plastic pollution and climate change together leads to more effective solutions. For example, reducing plastic production also reduces GHG emissions."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
                   />
                 </ListItem>
               </List>
             </Grid>
           </Grid>
 
-          <Box sx={{ mt: 6 }}>
+          <Box sx={{ mt: { xs: 4, md: 6 } }}>
             <Typography
               variant="h5"
               component="h2"
               gutterBottom
-              sx={{ fontWeight: 600 }}
+              sx={{
+                fontWeight: 600,
+                fontSize: { xs: "1.2rem", sm: "1.3rem", md: "1.4rem" },
+              }}
             >
               Specific Actions
             </Typography>
             <List>
-              <ListItem>
+              <ListItem sx={{ px: 0 }}>
                 <ListItemIcon>
-                  <PeopleIcon color="primary" />
+                  <PeopleIcon
+                    color="primary"
+                    sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                  />
                 </ListItemIcon>
                 <ListItemText
                   primary="Individual Actions"
                   secondary="Individuals can reduce their plastic footprint by using reusable bags and water bottles, avoiding single-use plastics, and supporting businesses that prioritize sustainability."
+                  sx={{
+                    "& .MuiListItemText-primary": {
+                      fontWeight: 600,
+                      fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                    },
+                    "& .MuiListItemText-secondary": {
+                      fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                    },
+                  }}
                 />
               </ListItem>
-              <ListItem>
+              <ListItem sx={{ px: 0 }}>
                 <ListItemIcon>
-                  <StoreIcon color="primary" />
+                  <StoreIcon
+                    color="primary"
+                    sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                  />
                 </ListItemIcon>
                 <ListItemText
                   primary="Corporate Actions"
                   secondary="Businesses can adopt sustainable packaging, invest in recycling technologies, and engage consumers in sustainability efforts."
+                  sx={{
+                    "& .MuiListItemText-primary": {
+                      fontWeight: 600,
+                      fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                    },
+                    "& .MuiListItemText-secondary": {
+                      fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                    },
+                  }}
                 />
               </ListItem>
-              <ListItem>
+              <ListItem sx={{ px: 0 }}>
                 <ListItemIcon>
-                  <AssignmentIcon color="primary" />
+                  <AssignmentIcon
+                    color="primary"
+                    sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                  />
                 </ListItemIcon>
                 <ListItemText
                   primary="Policy Interventions"
                   secondary="Governments can implement policies such as Extended Producer Responsibility (EPR), plastic taxes, and regulations to encourage sustainable practices."
+                  sx={{
+                    "& .MuiListItemText-primary": {
+                      fontWeight: 600,
+                      fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                    },
+                    "& .MuiListItemText-secondary": {
+                      fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                    },
+                  }}
                 />
               </ListItem>
             </List>

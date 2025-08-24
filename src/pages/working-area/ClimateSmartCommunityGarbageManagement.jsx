@@ -21,26 +21,39 @@ import CrisisAlertIcon from "@mui/icons-material/CrisisAlert";
 
 const ClimateSmartCommunityGarbageManagement = () => {
   return (
-    <Box sx={{ py: 8, bgcolor: "grey.50" }}>
-      <Container maxWidth="lg">
-        <Paper elevation={3} sx={{ p: { xs: 2, md: 6 }, borderRadius: 3 }}>
-          <Box sx={{ textAlign: "center", mb: 6 }}>
+    <Box sx={{ py: { xs: 6, md: 8 }, bgcolor: "grey.50" }}>
+      <Container maxWidth="xl">
+        <Paper elevation={3} sx={{ p: { xs: 3, md: 6 }, borderRadius: 3 }}>
+          <Box sx={{ textAlign: "center", mb: { xs: 4, md: 6 } }}>
             <Typography
               variant="h3"
               component="h1"
               gutterBottom
               align="center"
-              sx={{ fontWeight: 700, color: "primary.main" }}
+              sx={{
+                fontWeight: 700,
+                color: "primary.main",
+                fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.5rem" },
+              }}
             >
               Climate Smart Community Garbage Management
             </Typography>
-            <Typography variant="h6" color="text.secondary" align="center">
+            <Typography
+              variant="h6"
+              color="text.secondary"
+              align="center"
+              sx={{
+                fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                maxWidth: { xs: "100%", sm: "800px", md: "900px" },
+                mx: "auto",
+              }}
+            >
               Establishing community-based systems to control carbon and methane
               emissions.
             </Typography>
           </Box>
 
-          <Box sx={{ mb: 6 }}>
+          <Box sx={{ mb: { xs: 4, md: 6 } }}>
             <img
               src="https://placehold.co/1200x500/E0F2F1/004D40?text=Community-led+waste+management"
               alt="A community-led waste management initiative."
@@ -56,7 +69,11 @@ const ClimateSmartCommunityGarbageManagement = () => {
           <Typography
             variant="body1"
             paragraph
-            sx={{ mt: 4, textAlign: "justify" }}
+            sx={{
+              mt: { xs: 3, md: 4 },
+              textAlign: "justify",
+              fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+            }}
           >
             As "Cooling the planet" is a burning issue of the present world,
             CAPS (Climate Adaptation Plan Society) aims to control carbon
@@ -68,158 +85,285 @@ const ClimateSmartCommunityGarbageManagement = () => {
             disposal**, contributing to a cleaner and healthier environment.
           </Typography>
 
-          <Grid container spacing={6} sx={{ mt: 6 }}>
+          <Grid
+            container
+            spacing={{ xs: 3, md: 6 }}
+            sx={{ mt: { xs: 4, md: 6 } }}
+          >
             <Grid item xs={12} md={6}>
               <Typography
                 variant="h5"
                 component="h2"
                 gutterBottom
-                sx={{ fontWeight: 600 }}
+                sx={{
+                  fontWeight: 600,
+                  fontSize: { xs: "1.2rem", sm: "1.3rem", md: "1.4rem" },
+                }}
               >
                 Core Functions and Activities
               </Typography>
               <List>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <RecyclingIcon color="primary" />
+                    <RecyclingIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
-                  <ListItemText primary="Waste Reduction" />
+                  <ListItemText
+                    primary="Waste Reduction"
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                    }}
+                  />
                 </ListItem>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <RecyclingIcon color="primary" />
+                    <RecyclingIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
-                  <ListItemText primary="Proper Waste Segregation" />
+                  <ListItemText
+                    primary="Proper Waste Segregation"
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                    }}
+                  />
                 </ListItem>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <RecyclingIcon color="primary" />
+                    <RecyclingIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
-                  <ListItemText primary="Efficient Waste Collection and Disposal" />
+                  <ListItemText
+                    primary="Efficient Waste Collection and Disposal"
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                    }}
+                  />
                 </ListItem>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <GroupsIcon color="primary" />
+                    <HealthAndSafetyIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
-                  <ListItemText primary="Awareness and Education" />
+                  <ListItemText
+                    primary="Public Health Improvement"
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                    }}
+                  />
                 </ListItem>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <GroupsIcon color="primary" />
+                    <GroupsIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
-                  <ListItemText primary="Community Engagement" />
+                  <ListItemText
+                    primary="Community Well-being"
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                    }}
+                  />
                 </ListItem>
-              </List>
-            </Grid>
-
-            <Grid item xs={12} md={6}>
-              <Typography
-                variant="h5"
-                component="h2"
-                gutterBottom
-                sx={{ fontWeight: 600 }}
-              >
-                Key Objectives
-              </Typography>
-              <List>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <LocalFloristIcon color="primary" />
+                    <RecyclingIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
-                  <ListItemText primary="Environmental Protection" />
+                  <ListItemText
+                    primary="Waste Segregation Programs, Composting, and Recycling"
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                    }}
+                  />
                 </ListItem>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <HealthAndSafetyIcon color="primary" />
+                    <PublicIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
-                  <ListItemText primary="Public Health Improvement" />
-                </ListItem>
-                <ListItem>
-                  <ListItemIcon>
-                    <GroupsIcon color="primary" />
-                  </ListItemIcon>
-                  <ListItemText primary="Community Well-being" />
-                </ListItem>
-                <ListItem>
-                  <ListItemIcon>
-                    <RecyclingIcon color="primary" />
-                  </ListItemIcon>
-                  <ListItemText primary="Waste Segregation Programs, Composting, and Recycling" />
-                </ListItem>
-                <ListItem>
-                  <ListItemIcon>
-                    <PublicIcon color="primary" />
-                  </ListItemIcon>
-                  <ListItemText primary="Cleanliness Campaigns and Awareness Programs" />
+                  <ListItemText
+                    primary="Cleanliness Campaigns and Awareness Programs"
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                    }}
+                  />
                 </ListItem>
               </List>
             </Grid>
           </Grid>
 
-          <Box sx={{ mt: 6 }}>
+          <Box sx={{ mt: { xs: 4, md: 6 } }}>
             <Typography
               variant="h5"
               component="h2"
               gutterBottom
-              sx={{ fontWeight: 600 }}
+              sx={{
+                fontWeight: 600,
+                fontSize: { xs: "1.2rem", sm: "1.3rem", md: "1.4rem" },
+              }}
             >
               Key Areas for Methane Emission Control
             </Typography>
             <List>
-              <ListItem>
+              <ListItem sx={{ px: 0 }}>
                 <ListItemIcon>
-                  <GavelIcon color="primary" />
+                  <GavelIcon
+                    color="primary"
+                    sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                  />
                 </ListItemIcon>
                 <ListItemText
                   primary="Waste Management"
                   secondary="Implementing landfill gas capture, waste reduction and recycling, and wastewater treatment."
+                  sx={{
+                    "& .MuiListItemText-primary": {
+                      fontWeight: 600,
+                      fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                    },
+                    "& .MuiListItemText-secondary": {
+                      fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                    },
+                  }}
                 />
               </ListItem>
-              <ListItem>
+              <ListItem sx={{ px: 0 }}>
                 <ListItemIcon>
-                  <LandscapeIcon color="primary" />
+                  <LandscapeIcon
+                    color="primary"
+                    sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                  />
                 </ListItemIcon>
                 <ListItemText
                   primary="Agriculture"
                   secondary="Promoting dietary adjustments and improved waste and land management practices."
+                  sx={{
+                    "& .MuiListItemText-primary": {
+                      fontWeight: 600,
+                      fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                    },
+                    "& .MuiListItemText-secondary": {
+                      fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                    },
+                  }}
                 />
               </ListItem>
             </List>
           </Box>
 
-          <Box sx={{ mt: 6 }}>
+          <Box sx={{ mt: { xs: 4, md: 6 } }}>
             <Typography
               variant="h5"
               component="h2"
               gutterBottom
-              sx={{ fontWeight: 600 }}
+              sx={{
+                fontWeight: 600,
+                fontSize: { xs: "1.2rem", sm: "1.3rem", md: "1.4rem" },
+              }}
             >
               Economic and Social Benefits
             </Typography>
             <List>
-              <ListItem>
+              <ListItem sx={{ px: 0 }}>
                 <ListItemIcon>
-                  <LocalFloristIcon color="primary" />
+                  <LocalFloristIcon
+                    color="primary"
+                    sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                  />
                 </ListItemIcon>
-                <ListItemText primary="Climate Change Mitigation" />
+                <ListItemText
+                  primary="Climate Change Mitigation"
+                  sx={{
+                    "& .MuiListItemText-primary": {
+                      fontWeight: 600,
+                      fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                    },
+                  }}
+                />
               </ListItem>
-              <ListItem>
+              <ListItem sx={{ px: 0 }}>
                 <ListItemIcon>
-                  <CrisisAlertIcon color="primary" />
+                  <CrisisAlertIcon
+                    color="primary"
+                    sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                  />
                 </ListItemIcon>
-                <ListItemText primary="Improved Air Quality" />
+                <ListItemText
+                  primary="Improved Air Quality"
+                  sx={{
+                    "& .MuiListItemText-primary": {
+                      fontWeight: 600,
+                      fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                    },
+                  }}
+                />
               </ListItem>
-              <ListItem>
+              <ListItem sx={{ px: 0 }}>
                 <ListItemIcon>
-                  <GavelIcon color="primary" />
+                  <GavelIcon
+                    color="primary"
+                    sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                  />
                 </ListItemIcon>
-                <ListItemText primary="Economic Opportunities" />
+                <ListItemText
+                  primary="Economic Opportunities"
+                  sx={{
+                    "& .MuiListItemText-primary": {
+                      fontWeight: 600,
+                      fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                    },
+                  }}
+                />
               </ListItem>
-              <ListItem>
+              <ListItem sx={{ px: 0 }}>
                 <ListItemIcon>
-                  <LandscapeIcon color="primary" />
+                  <LandscapeIcon
+                    color="primary"
+                    sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                  />
                 </ListItemIcon>
-                <ListItemText primary="Land Conservation" />
+                <ListItemText
+                  primary="Land Conservation"
+                  sx={{
+                    "& .MuiListItemText-primary": {
+                      fontWeight: 600,
+                      fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                    },
+                  }}
+                />
               </ListItem>
             </List>
           </Box>

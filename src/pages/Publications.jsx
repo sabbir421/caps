@@ -34,13 +34,12 @@ const publications = [
     link: "https://www.facebook.com/share/p/1B5YCC9tqw/",
   },
   {
-    title: "বড় শিক্ষক যখন ক্ষুদে শিক্ষকের ছাত্র!!",
+    title: "বড় শিক্ষক যখন ক্ষুদে শিক্ষকের ছাত্র!!",
     type: "facebook",
     iframe:
       "https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2F61572729269078%2Fvideos%2F1010617047570730%2F&show_text=true&width=267&t=0",
     link: "https://www.facebook.com/share/v/19g2zSP68z/",
   },
-
   {
     title: "মাইন্ড ম্যাথ। ব্রেইন ভালো করে দিনে দিনে...…",
     type: "facebook",
@@ -58,7 +57,7 @@ const publications = [
   },
   {
     title:
-      "কমিউনিটি লার্নিং সেন্টার CLC অভিভাবক মিটিং -এ আমাদের এডমিন ম্যাডাম, লামিয়া খন্দকার।…",
+      "কমিউনিটি লার্নিং সেন্টার CLC অভিভাবক মিটিং -এ আমাদের এডমিন ম্যাডাম, লামিয়া খন্দকার।…",
     type: "facebook",
     iframe:
       "https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2F61572729269078%2Fvideos%2F674685078604606%2F&show_text=true&width=267&t=0",
@@ -103,7 +102,7 @@ const publications = [
   },
   {
     title:
-      "ক্যাপস-এর অধীনে জলবায়ু পরিবর্তন ও এর নেতিবাচক প্রভাব থেকে জীবজগৎ কে বাঁচাতে কাজ করছে এক ঝাঁক নিবেদিত…",
+      "ক্যাপস-এর অধীনে জলবায়ু পরিবর্তন ও এর নেতিবাচক প্রভাব থেকে জীবজগৎ কে বাঁচাতে কাজ করছে এক ঝাঁক নিবেদিত…",
     type: "facebook",
     iframe:
       "https://www.facebook.com/plugins/video.php?height=316&href=https%3A%2F%2Fwww.facebook.com%2F61572729269078%2Fvideos%2F1173940100758759%2F&show_text=true&width=560&t=0",
@@ -115,18 +114,24 @@ function Publications() {
   const theme = useTheme();
 
   return (
-    <Box sx={{ width: "100%", pt: 8 }}>
+    <Box sx={{ width: "100%", pt: 8, minHeight: "100vh" }}>
       {/* Hero Section */}
-      <Box sx={{ py: 8, backgroundColor: "#f8f9fa" }}>
+      <Box sx={{ py: { xs: 6, md: 8 }, backgroundColor: "#f8f9fa" }}>
         <Container maxWidth="xl">
           <Typography
             variant="h2"
             gutterBottom
             sx={{
               textAlign: "center",
-              mb: 4,
+              mb: { xs: 3, md: 4 },
               color: theme.palette.primary.main,
               fontWeight: 700,
+              fontSize: {
+                xs: "1.8rem",
+                sm: "2.2rem",
+                md: "2.5rem",
+                lg: "3rem",
+              },
             }}
           >
             Publications & Success Stories
@@ -135,11 +140,13 @@ function Publications() {
             variant="h5"
             sx={{
               textAlign: "center",
-              mb: 6,
-              maxWidth: "900px",
+              mb: { xs: 4, md: 6 },
+              maxWidth: { xs: "100%", sm: "800px", md: "900px" },
               mx: "auto",
               color: "text.secondary",
               lineHeight: 1.6,
+              fontSize: { xs: "1rem", sm: "1.1rem", md: "1.2rem" },
+              px: { xs: 2, sm: 0 },
             }}
           >
             Explore our latest videos, impact reports, and success stories that
@@ -150,17 +157,26 @@ function Publications() {
       </Box>
 
       {/* Publications Grid */}
-      <Box sx={{ py: 8, backgroundColor: "#fff" }}>
+      <Box sx={{ py: { xs: 6, md: 8 }, backgroundColor: "#fff" }}>
         <Container maxWidth="xl">
           <Typography
             variant="h4"
-            sx={{ fontWeight: 700, mb: 6, textAlign: "center" }}
+            sx={{
+              fontWeight: 700,
+              mb: { xs: 4, md: 6 },
+              textAlign: "center",
+              fontSize: { xs: "1.5rem", sm: "1.8rem", md: "2rem" },
+            }}
           >
             Featured Content
           </Typography>
-          <Grid container spacing={4} justifyContent="center">
+          <Grid
+            container
+            spacing={{ xs: 2, sm: 3, md: 4 }}
+            justifyContent="center"
+          >
             {publications.map((publication, idx) => (
-              <Grid item xs={12} md={6} lg={4} key={`publication-${idx}`}>
+              <Grid item xs={12} sm={6} lg={4} key={`publication-${idx}`}>
                 <Card
                   sx={{
                     height: "100%",
@@ -174,7 +190,7 @@ function Publications() {
                   }}
                 >
                   {publication.type === "facebook" ? (
-                    <Box sx={{ p: 2 }}>
+                    <Box sx={{ p: { xs: 1, sm: 2 } }}>
                       <iframe
                         src={publication.iframe}
                         width="100%"
@@ -204,7 +220,7 @@ function Publications() {
                       }}
                     />
                   )}
-                  <CardContent sx={{ p: 3 }}>
+                  <CardContent sx={{ p: { xs: 2, sm: 3 } }}>
                     <Typography
                       variant="h6"
                       fontWeight={700}
@@ -213,6 +229,8 @@ function Publications() {
                         mb: 2,
                         color: theme.palette.primary.main,
                         lineHeight: 1.3,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                        wordBreak: "break-word",
                       }}
                     >
                       {publication.title}
@@ -224,6 +242,7 @@ function Publications() {
                         sx={{
                           mb: 3,
                           lineHeight: 1.6,
+                          fontSize: { xs: "0.8rem", sm: "0.875rem" },
                         }}
                       >
                         {publication.description}
@@ -238,8 +257,9 @@ function Publications() {
                       sx={{
                         fontWeight: 600,
                         borderRadius: 2,
-                        px: 3,
+                        px: { xs: 2, sm: 3 },
                         py: 1,
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
                       }}
                     >
                       {publication.type === "facebook"
@@ -255,18 +275,35 @@ function Publications() {
       </Box>
 
       {/* Call to Action */}
-      <Box sx={{ py: 8, backgroundColor: "#f8f9fa" }}>
-        <Container maxWidth="md">
-          <Box sx={{ textAlign: "center" }}>
+      <Box sx={{ py: { xs: 6, md: 8 }, backgroundColor: "#f8f9fa" }}>
+        <Container maxWidth="xl">
+          <Box
+            sx={{
+              textAlign: "center",
+              maxWidth: { xs: "100%", sm: "600px", md: "700px" },
+              mx: "auto",
+            }}
+          >
             <Typography
               variant="h4"
-              sx={{ fontWeight: 700, mb: 3, color: theme.palette.primary.main }}
+              sx={{
+                fontWeight: 700,
+                mb: { xs: 2, md: 3 },
+                color: theme.palette.primary.main,
+                fontSize: { xs: "1.5rem", sm: "1.8rem", md: "2rem" },
+              }}
             >
               Stay Connected
             </Typography>
             <Typography
               variant="h6"
-              sx={{ mb: 4, color: "text.secondary", lineHeight: 1.6 }}
+              sx={{
+                mb: { xs: 3, md: 4 },
+                color: "text.secondary",
+                lineHeight: 1.6,
+                fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                px: { xs: 2, sm: 0 },
+              }}
             >
               Follow us on social media for the latest updates, success stories,
               and behind-the-scenes content from our projects.
@@ -277,10 +314,10 @@ function Publications() {
               size="large"
               sx={{
                 fontWeight: 700,
-                px: 5,
-                py: 1.5,
+                px: { xs: 3, sm: 4, md: 5 },
+                py: { xs: 1, sm: 1.5 },
                 borderRadius: 2,
-                fontSize: "1.1rem",
+                fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
               }}
               href="https://www.facebook.com/CAPSBD"
               target="_blank"

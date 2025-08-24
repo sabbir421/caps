@@ -10,55 +10,62 @@ import {
   ListItemIcon,
   ListItemText,
 } from "@mui/material";
-import WavesIcon from "@mui/icons-material/Waves";
+import WaterDropIcon from "@mui/icons-material/WaterDrop";
+import EngineeringIcon from "@mui/icons-material/Engineering";
 import PublicIcon from "@mui/icons-material/Public";
-import AgricultureIcon from "@mui/icons-material/Agriculture";
-import HubIcon from "@mui/icons-material/Hub";
 import HandshakeIcon from "@mui/icons-material/Handshake";
 import SpaIcon from "@mui/icons-material/Spa";
 import GrassIcon from "@mui/icons-material/Grass";
+import LightbulbIcon from "@mui/icons-material/Lightbulb";
+import BoltIcon from "@mui/icons-material/Bolt";
 import WbIncandescentIcon from "@mui/icons-material/WbIncandescent";
+import SchoolIcon from "@mui/icons-material/School";
 import ScienceIcon from "@mui/icons-material/Science";
-import PeopleIcon from "@mui/icons-material/People";
-import ConstructionIcon from "@mui/icons-material/Construction";
-import SettingsIcon from "@mui/icons-material/Settings";
-import WaterDropIcon from "@mui/icons-material/WaterDrop";
 import NaturePeopleIcon from "@mui/icons-material/NaturePeople";
 
 const ClimateSmartCanalAndRiverExcavation = () => {
   return (
-    <Box sx={{ py: 8, bgcolor: "grey.50" }}>
-      <Container maxWidth="lg">
-        <Paper elevation={3} sx={{ p: { xs: 2, md: 6 }, borderRadius: 3 }}>
-          <Box sx={{ textAlign: "center", mb: 6 }}>
+    <Box sx={{ py: { xs: 6, md: 8 }, bgcolor: "grey.50" }}>
+      <Container maxWidth="xl">
+        <Paper elevation={3} sx={{ p: { xs: 3, md: 6 }, borderRadius: 3 }}>
+          <Box sx={{ textAlign: "center", mb: { xs: 4, md: 6 } }}>
             <Typography
               variant="h3"
               component="h1"
               gutterBottom
               align="center"
-              sx={{ fontWeight: 700, color: "primary.main" }}
+              sx={{
+                fontWeight: 700,
+                color: "primary.main",
+                fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.5rem" },
+              }}
             >
-              Climate-smart Canal and River Excavation
+              Climate Smart Canal and River Excavation
             </Typography>
             <Typography
               variant="h6"
               color="text.secondary"
               align="center"
-              sx={{ textAlign: "justify" }}
+              sx={{
+                textAlign: "justify",
+                fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                maxWidth: { xs: "100%", sm: "800px", md: "900px" },
+                mx: "auto",
+              }}
             >
-              CAPS (Climate Adaptation Plan Society) approaches Climate-smart
-              canal and river excavation involves strategically dredging and
-              reshaping waterways to improve water management, enhance
-              resilience to climate change impacts, and potentially mitigate
-              some of those impacts. This approach can help with flood control,
-              drainage, irrigation, and even provide ecosystem benefits.
+              CAPS (Climate Adaptation Plan Society) focuses on creating more
+              resilient and sustainable water systems in the face of climate
+              change. This involves adapting to the impacts of climate change,
+              such as increased droughts, floods, and changes in water quality,
+              while also mitigating greenhouse gas emissions associated with
+              water management.
             </Typography>
           </Box>
 
-          <Box sx={{ mb: 6 }}>
+          <Box sx={{ mb: { xs: 4, md: 6 } }}>
             <img
-              src="https://placehold.co/1200x500/E3F2FD/1565C0?text=Excavating+for+a+Smarter+Future"
-              alt="An image of a river being excavated to improve water management."
+              src="https://placehold.co/1200x500/B3E5FC/01579B?text=Canal+and+River+Excavation"
+              alt="A climate-smart canal and river excavation project with clean water and green surroundings."
               style={{
                 width: "100%",
                 height: "auto",
@@ -68,157 +75,314 @@ const ClimateSmartCanalAndRiverExcavation = () => {
             />
           </Box>
 
-          <Typography variant="body1" paragraph sx={{ textAlign: "justify" }}>
-            Here's a breakdown of how it works:
+          <Typography
+            variant="body1"
+            paragraph
+            sx={{
+              textAlign: "justify",
+              fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+            }}
+          >
+            Key aspects include promoting water conservation, improving water
+            use efficiency, exploring alternative water sources, and
+            implementing climate-smart water management practices.
           </Typography>
 
-          <Grid container spacing={6}>
+          <Grid container spacing={{ xs: 3, md: 6 }}>
             <Grid item xs={12} md={6}>
               <Typography
                 variant="h5"
                 component="h2"
                 gutterBottom
-                sx={{ fontWeight: 600 }}
+                sx={{
+                  fontWeight: 600,
+                  fontSize: { xs: "1.2rem", sm: "1.3rem", md: "1.4rem" },
+                }}
               >
-                1. Improved Water Management:
+                Key Goals of the Program
               </Typography>
               <List>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <WavesIcon color="primary" />
+                    <WaterDropIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
                   <ListItemText
-                    primary="Flood Control"
-                    secondary="Excavating canals and rivers can increase their capacity to carry excess water during heavy rainfall or storm surges, reducing the risk of flooding."
+                    primary="Canal and River Excavation"
+                    secondary="Caps approaches to excavate and revive canals and rivers to improve water flow and support local communities."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
                   />
                 </ListItem>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <WaterDropIcon color="primary" />
+                    <WbIncandescentIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
                   <ListItemText
-                    primary="Drainage"
-                    secondary="Proper excavation can improve drainage in low-lying areas, preventing waterlogging and making land more suitable for agriculture or other uses."
+                    primary="Water Flow Improvement"
+                    secondary="Caps promotes the improvement of water flow in canals and rivers to enhance irrigation and reduce flooding."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
                   />
                 </ListItem>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <AgricultureIcon color="primary" />
+                    <SpaIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
                   <ListItemText
-                    primary="Irrigation"
-                    secondary="Canals can be designed to deliver water more efficiently to farms, especially in arid or semi-arid regions, reducing water waste and improving agricultural productivity."
+                    primary="Water Conservation"
+                    secondary="Caps implements water conservation measures in agriculture, industry, and households to reduce water wastage."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
+                  />
+                </ListItem>
+                <ListItem sx={{ px: 0 }}>
+                  <ListItemIcon>
+                    <LightbulbIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Alternative Water Sources"
+                    secondary="Caps explores and promotes the use of alternative water sources like treated wastewater and desalination."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
+                  />
+                </ListItem>
+                <ListItem sx={{ px: 0 }}>
+                  <ListItemIcon>
+                    <BoltIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Energy-Efficient Water Treatment"
+                    secondary="Caps promotes the use of energy-efficient technologies in water treatment and distribution systems."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
+                  />
+                </ListItem>
+                <ListItem sx={{ px: 0 }}>
+                  <ListItemIcon>
+                    <GrassIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Groundwater Recharge"
+                    secondary="Caps works on projects that enhance groundwater recharge through techniques like percolation tanks and artificial recharge structures."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
+                  />
+                </ListItem>
+              </List>
+
+              <Typography
+                variant="h5"
+                component="h2"
+                gutterBottom
+                sx={{
+                  fontWeight: 600,
+                  mt: { xs: 3, md: 4 },
+                  fontSize: { xs: "1.2rem", sm: "1.3rem", md: "1.4rem" },
+                }}
+              >
+                Climate-Smart Agriculture Practices
+              </Typography>
+              <List>
+                <ListItem sx={{ px: 0 }}>
+                  <ListItemIcon>
+                    <SchoolIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Training and Capacity Building"
+                    secondary="Caps approaches to conduct workshops, training sessions, and field demonstrations to educate farmers on climate-smart agriculture practices, including water-efficient techniques."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
+                  />
+                </ListItem>
+                <ListItem sx={{ px: 0 }}>
+                  <ListItemIcon>
+                    <ScienceIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Research and Development"
+                    secondary="Caps tries to collaborates with scientists and researchers to identify and disseminate best practices in climate-smart agriculture, tailored to specific local contexts."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
+                  />
+                </ListItem>
+                <ListItem sx={{ px: 0 }}>
+                  <ListItemIcon>
+                    <EngineeringIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Promoting Drought-Resistant Varieties"
+                    secondary="Caps encourages the adoption of drought-resistant crop varieties that require less water."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
                   />
                 </ListItem>
               </List>
             </Grid>
 
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12}>
               <Typography
                 variant="h5"
                 component="h2"
                 gutterBottom
-                sx={{ fontWeight: 600 }}
+                sx={{
+                  fontWeight: 600,
+                  fontSize: { xs: "1.2rem", sm: "1.3rem", md: "1.4rem" },
+                }}
               >
-                2. Climate Resilience:
+                Community Engagement and Advocacy
               </Typography>
               <List>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <SpaIcon color="primary" />
+                    <HandshakeIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
                   <ListItemText
-                    primary="Drought Mitigation"
-                    secondary="In some cases, excavated canals can be used to store water during the rainy season, which can then be released during drier periods, providing a buffer against drought."
+                    primary="Community-Based Conservation"
+                    secondary="Caps often involves local communities in the planning, implementation, and monitoring of water conservation and management projects."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
                   />
                 </ListItem>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <WbIncandescentIcon color="primary" />
+                    <PublicIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
                   <ListItemText
-                    primary="Salinity Management"
-                    secondary="In coastal areas, excavation can help manage salinity intrusion by flushing out saltwater and improving drainage of freshwater."
+                    primary="Policy Advocacy"
+                    secondary="Caps advocates for policies that support sustainable water management at local, national, and international levels."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
                   />
                 </ListItem>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <GrassIcon color="primary" />
+                    <NaturePeopleIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
                   <ListItemText
-                    primary="Ecosystem Restoration"
-                    secondary="By carefully reshaping waterways and restoring connectivity, excavation can help improve riverine ecosystems and enhance biodiversity."
-                  />
-                </ListItem>
-              </List>
-            </Grid>
-
-            <Grid item xs={12} md={6}>
-              <Typography
-                variant="h5"
-                component="h2"
-                gutterBottom
-                sx={{ fontWeight: 600 }}
-              >
-                3. Climate Change Mitigation (Indirect):
-              </Typography>
-              <List>
-                <ListItem>
-                  <ListItemIcon>
-                    <NaturePeopleIcon color="primary" />
-                  </ListItemIcon>
-                  <ListItemText
-                    primary="Reduced Greenhouse Gas Emissions"
-                    secondary="Improved water management through excavation can lead to more efficient agricultural practices, potentially reducing greenhouse gas emissions associated with agriculture."
-                  />
-                </ListItem>
-                <ListItem>
-                  <ListItemIcon>
-                    <PublicIcon color="primary" />
-                  </ListItemIcon>
-                  <ListItemText
-                    primary="Carbon Sequestration"
-                    secondary="Restoring wetlands and other riparian areas alongside excavated canals can enhance carbon sequestration, helping to offset greenhouse gas emissions."
-                  />
-                </ListItem>
-              </List>
-            </Grid>
-
-            <Grid item xs={12} md={6}>
-              <Typography
-                variant="h5"
-                component="h2"
-                gutterBottom
-                sx={{ fontWeight: 600 }}
-              >
-                4. Key Considerations:
-              </Typography>
-              <List>
-                <ListItem>
-                  <ListItemIcon>
-                    <ConstructionIcon color="primary" />
-                  </ListItemIcon>
-                  <ListItemText
-                    primary="Planning and Design"
-                    secondary="Careful planning and design are crucial to ensure that excavation projects are effective and avoid unintended consequences, such as increased erosion or disruption of natural water flows."
-                  />
-                </ListItem>
-                <ListItem>
-                  <ListItemIcon>
-                    <PeopleIcon color="primary" />
-                  </ListItemIcon>
-                  <ListItemText
-                    primary="Community Engagement"
-                    secondary="Involving local communities in the planning and implementation of excavation projects is essential to ensure that they are sustainable and meet local needs."
-                  />
-                </ListItem>
-                <ListItem>
-                  <ListItemIcon>
-                    <SettingsIcon color="primary" />
-                  </ListItemIcon>
-                  <ListItemText
-                    primary="Monitoring and Maintenance"
-                    secondary="Regular monitoring and maintenance of excavated canals and rivers are necessary to ensure their continued effectiveness and to address any potential issues that may arise."
+                    primary="Raising Awareness"
+                    secondary="Caps raises public awareness about the importance of water conservation and the impacts of climate change on water resources."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
                   />
                 </ListItem>
               </List>

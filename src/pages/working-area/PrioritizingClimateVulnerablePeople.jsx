@@ -23,16 +23,20 @@ import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
 
 const PrioritizingClimateVulnerablePeople = () => {
   return (
-    <Box sx={{ py: 8, bgcolor: "grey.50" }}>
-      <Container maxWidth="lg">
-        <Paper elevation={3} sx={{ p: { xs: 2, md: 6 }, borderRadius: 3 }}>
-          <Box sx={{ textAlign: "center", mb: 6 }}>
+    <Box sx={{ py: { xs: 6, md: 8 }, bgcolor: "grey.50" }}>
+      <Container maxWidth="xl">
+        <Paper elevation={3} sx={{ p: { xs: 3, md: 6 }, borderRadius: 3 }}>
+          <Box sx={{ textAlign: "center", mb: { xs: 4, md: 6 } }}>
             <Typography
               variant="h3"
               component="h1"
               gutterBottom
               align="center"
-              sx={{ fontWeight: 700, color: "primary.main" }}
+              sx={{
+                fontWeight: 700,
+                color: "primary.main",
+                fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.5rem" },
+              }}
             >
               Prioritizing Climate-Vulnerable People
             </Typography>
@@ -40,14 +44,19 @@ const PrioritizingClimateVulnerablePeople = () => {
               variant="h6"
               color="text.secondary"
               align="center"
-              sx={{ textAlign: "justify" }}
+              sx={{
+                textAlign: "justify",
+                fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                maxWidth: { xs: "100%", sm: "800px", md: "900px" },
+                mx: "auto",
+              }}
             >
               Integrating climate considerations and social protection into
               outsourcing projects.
             </Typography>
           </Box>
 
-          <Box sx={{ mb: 6 }}>
+          <Box sx={{ mb: { xs: 4, md: 6 } }}>
             <img
               src="https://placehold.co/1200x500/E0F2F1/004D40?text=Community+resilience+and+support"
               alt="A group of diverse people from a vulnerable community working together."
@@ -63,7 +72,11 @@ const PrioritizingClimateVulnerablePeople = () => {
           <Typography
             variant="body1"
             paragraph
-            sx={{ mt: 4, textAlign: "justify" }}
+            sx={{
+              mt: { xs: 3, md: 4 },
+              textAlign: "justify",
+              fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+            }}
           >
             CAPS (Climate Adaptation Plan Society) approaches **prioritizing
             climate-vulnerable people** in outsourcing by focusing on creating
@@ -75,42 +88,85 @@ const PrioritizingClimateVulnerablePeople = () => {
             those most at risk from climate change impacts.
           </Typography>
 
-          <Grid container spacing={6} sx={{ mt: 6 }}>
+          <Grid
+            container
+            spacing={{ xs: 3, md: 6 }}
+            sx={{ mt: { xs: 4, md: 6 } }}
+          >
             <Grid item xs={12} md={6}>
               <Typography
                 variant="h5"
                 component="h2"
                 gutterBottom
-                sx={{ fontWeight: 600 }}
+                sx={{
+                  fontWeight: 600,
+                  fontSize: { xs: "1.2rem", sm: "1.3rem", md: "1.4rem" },
+                }}
               >
                 1. Integrate Climate Considerations into Outsourcing
               </Typography>
               <List>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <CrisisAlertIcon color="primary" />
+                    <CrisisAlertIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
                   <ListItemText
                     primary="Risk Assessment"
                     secondary="We conduct thorough climate risk assessments for outsourcing locations, identifying potential impacts on workers and communities from hazards like sea-level rise and extreme weather."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
                   />
                 </ListItem>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <AssignmentTurnedInIcon color="primary" />
+                    <AssignmentTurnedInIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
                   <ListItemText
-                    primary="Mitigation and Adaptation"
-                    secondary="We prioritize projects that contribute to climate change mitigation and adaptation, such as supporting renewable energy or resilient infrastructure."
+                    primary="Climate-Resilient Infrastructure"
+                    secondary="We prioritize outsourcing to locations with climate-resilient infrastructure and disaster preparedness systems to ensure business continuity and worker safety."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
                   />
                 </ListItem>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <AccountTreeIcon color="primary" />
+                    <AccountTreeIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
                   <ListItemText
                     primary="Green Procurement"
                     secondary="We incorporate environmental and social criteria into our procurement processes, favoring suppliers with strong climate commitments and sustainable practices."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
                   />
                 </ListItem>
               </List>
@@ -121,77 +177,155 @@ const PrioritizingClimateVulnerablePeople = () => {
                 variant="h5"
                 component="h2"
                 gutterBottom
-                sx={{ fontWeight: 600 }}
+                sx={{
+                  fontWeight: 600,
+                  fontSize: { xs: "1.2rem", sm: "1.3rem", md: "1.4rem" },
+                }}
               >
                 2. Focus on Decent Work and Social Protection
               </Typography>
               <List>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <HandshakeIcon color="primary" />
+                    <HandshakeIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
                   <ListItemText
                     primary="Just Transition"
                     secondary="We ensure a 'just transition' for workers and communities affected by climate change by providing social protection, decent work opportunities, and retraining programs for new green jobs."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
                   />
                 </ListItem>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <GavelIcon color="primary" />
+                    <GavelIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
                   <ListItemText
                     primary="Fair Labor Practices"
                     secondary="We uphold fair labor standards in outsourcing contracts, including safe working conditions, fair wages, and the right to organize, particularly in climate-vulnerable sectors."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
                   />
                 </ListItem>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <InsightsIcon color="primary" />
+                    <InsightsIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
                   <ListItemText
                     primary="Capacity Building"
                     secondary="We invest in initiatives that empower local communities and workers in climate-vulnerable regions to adapt to climate change and participate in the green economy."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
                   />
                 </ListItem>
               </List>
             </Grid>
           </Grid>
 
-          <Box sx={{ mt: 6 }}>
+          <Box sx={{ mt: { xs: 4, md: 6 } }}>
             <Typography
               variant="h5"
               component="h2"
               gutterBottom
-              sx={{ fontWeight: 600 }}
+              sx={{
+                fontWeight: 600,
+                fontSize: { xs: "1.2rem", sm: "1.3rem", md: "1.4rem" },
+              }}
             >
               3. Transparency and Accountability
             </Typography>
             <List>
-              <ListItem>
+              <ListItem sx={{ px: 0 }}>
                 <ListItemIcon>
-                  <GroupsIcon color="primary" />
+                  <GroupsIcon
+                    color="primary"
+                    sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                  />
                 </ListItemIcon>
                 <ListItemText
                   primary="Stakeholder Engagement"
                   secondary="We engage with local communities, workers, and civil society organizations in the design and implementation of projects to ensure they are aligned with local needs and priorities."
+                  sx={{
+                    "& .MuiListItemText-primary": {
+                      fontWeight: 600,
+                      fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                    },
+                    "& .MuiListItemText-secondary": {
+                      fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                    },
+                  }}
                 />
               </ListItem>
-              <ListItem>
+              <ListItem sx={{ px: 0 }}>
                 <ListItemIcon>
-                  <PolicyIcon color="primary" />
+                  <PolicyIcon
+                    color="primary"
+                    sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                  />
                 </ListItemIcon>
                 <ListItemText
                   primary="Monitoring and Evaluation"
                   secondary="We establish robust frameworks to track the social and environmental impacts of outsourcing projects, focusing on the well-being of climate-vulnerable populations."
+                  sx={{
+                    "& .MuiListItemText-primary": {
+                      fontWeight: 600,
+                      fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                    },
+                    "& .MuiListItemText-secondary": {
+                      fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                    },
+                  }}
                 />
               </ListItem>
-              <ListItem>
+              <ListItem sx={{ px: 0 }}>
                 <ListItemIcon>
-                  <MonetizationOnIcon color="primary" />
+                  <MonetizationOnIcon
+                    color="primary"
+                    sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                  />
                 </ListItemIcon>
                 <ListItemText
                   primary="Climate Finance"
                   secondary="We ensure that climate finance is directed towards projects that directly benefit climate-vulnerable populations and support their adaptation and resilience efforts."
+                  sx={{
+                    "& .MuiListItemText-primary": {
+                      fontWeight: 600,
+                      fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                    },
+                    "& .MuiListItemText-secondary": {
+                      fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                    },
+                  }}
                 />
               </ListItem>
             </List>

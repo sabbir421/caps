@@ -135,16 +135,28 @@ const RenewableEnergy = () => {
             zIndex: 1,
           }}
         />
-        <Container maxWidth="md" sx={{ position: "relative", zIndex: 2 }}>
+        <Container maxWidth="xl" sx={{ position: "relative", zIndex: 2 }}>
           <Typography
             variant="h4"
-            sx={{ fontWeight: 700, mb: 3, color: "white" }}
+            sx={{
+              fontWeight: 700,
+              mb: { xs: 2, md: 3 },
+              color: "white",
+              fontSize: { xs: "1.5rem", sm: "1.8rem", md: "2rem" },
+            }}
           >
             Empowering Rural Communities Through Renewable Energy
           </Typography>
           <Typography
             variant="body1"
-            sx={{ lineHeight: 1.8, color: "white", textAlign: "justify" }}
+            sx={{
+              lineHeight: 1.8,
+              color: "white",
+              textAlign: "justify",
+              fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+              maxWidth: { xs: "100%", sm: "800px", md: "900px" },
+              mx: "auto",
+            }}
           >
             We bring clean, reliable, and affordable energy to remote villages,
             improving quality of life and supporting sustainable development.
@@ -153,16 +165,20 @@ const RenewableEnergy = () => {
       </Box>
 
       {/* Programs Section */}
-      <Box sx={{ py: 6 }}>
-        <Container maxWidth="lg">
+      <Box sx={{ py: { xs: 6, md: 8 } }}>
+        <Container maxWidth="xl">
           <Typography
             variant="h4"
             align="center"
-            sx={{ fontWeight: 700, mb: 6 }}
+            sx={{
+              fontWeight: 700,
+              mb: { xs: 4, md: 6 },
+              fontSize: { xs: "1.5rem", sm: "1.8rem", md: "2rem" },
+            }}
           >
             Our Renewable Energy Programs
           </Typography>
-          <Grid container spacing={4} justifyContent="center">
+          <Grid container spacing={{ xs: 3, md: 4 }} justifyContent="center">
             {programs.map(
               ({ title, description, icon: Icon, image, highlights }, i) => (
                 <Grid key={i} item xs={12} sm={6} md={4}>
@@ -190,42 +206,63 @@ const RenewableEnergy = () => {
                         sx={{
                           borderTopLeftRadius: 16,
                           borderTopRightRadius: 16,
+                          objectFit: "cover",
                         }}
                       />
                       <Box
                         sx={{
                           position: "absolute",
                           top: 16,
-                          left: "50%",
-                          transform: "translateX(-50%)",
+                          left: 16,
                           bgcolor: theme.palette.primary.main,
                           borderRadius: "50%",
-                          width: 48,
-                          height: 48,
+                          width: { xs: 40, md: 48 },
+                          height: { xs: 40, md: 48 },
                           display: "flex",
                           alignItems: "center",
                           justifyContent: "center",
                           boxShadow: theme.shadows[4],
                         }}
                       >
-                        <Icon sx={{ color: "#fff", fontSize: 28 }} />
+                        <Icon
+                          sx={{
+                            color: "white",
+                            fontSize: { xs: "1.5rem", md: "1.8rem" },
+                          }}
+                        />
                       </Box>
                     </Box>
-                    <CardContent sx={{ flexGrow: 1, px: 3, pt: 3, pb: 4 }}>
-                      <Typography variant="h6" sx={{ fontWeight: 700, mb: 1 }}>
+
+                    <CardContent
+                      sx={{ flexGrow: 1, px: { xs: 2, md: 3 }, pt: 3, pb: 4 }}
+                    >
+                      <Typography
+                        variant="h6"
+                        sx={{
+                          fontWeight: 700,
+                          mb: 1,
+                          color: theme.palette.text.primary,
+                          fontSize: { xs: "1rem", sm: "1.1rem", md: "1.2rem" },
+                        }}
+                      >
                         {title}
                       </Typography>
                       <Typography
                         variant="body2"
-                        sx={{ color: "text.secondary", mb: 2 }}
+                        sx={{
+                          color: theme.palette.text.secondary,
+                          mb: 2,
+                          minHeight: 48,
+                          fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                        }}
                       >
                         {description}
                       </Typography>
                       <List
                         dense
-                        sx={{ display: "inline-block", textAlign: "left" }}
+                        sx={{ pt: 0, maxHeight: 140, overflowY: "auto" }}
                       >
-                        {highlights.map((item, idx) => (
+                        {highlights.map((highlight, idx) => (
                           <ListItem key={idx} sx={{ px: 0 }}>
                             <ListItemIcon sx={{ minWidth: 30 }}>
                               <Box
@@ -237,7 +274,18 @@ const RenewableEnergy = () => {
                                 }}
                               />
                             </ListItemIcon>
-                            <ListItemText primary={item} />
+                            <ListItemText
+                              primary={highlight}
+                              sx={{
+                                "& .MuiListItemText-primary": {
+                                  fontSize: {
+                                    xs: "0.75rem",
+                                    sm: "0.8rem",
+                                    md: "0.875rem",
+                                  },
+                                },
+                              }}
+                            />
                           </ListItem>
                         ))}
                       </List>
@@ -251,21 +299,25 @@ const RenewableEnergy = () => {
       </Box>
 
       {/* Impact Section */}
-      <Box sx={{ py: 10, backgroundColor: "#f9f9f9" }}>
-        <Container maxWidth="lg">
+      <Box sx={{ py: { xs: 6, md: 10 }, backgroundColor: "#f9f9f9" }}>
+        <Container maxWidth="xl">
           <Typography
             variant="h4"
             align="center"
-            sx={{ fontWeight: 700, mb: 6 }}
+            sx={{
+              fontWeight: 700,
+              mb: { xs: 4, md: 6 },
+              fontSize: { xs: "1.5rem", sm: "1.8rem", md: "2rem" },
+            }}
           >
             Our Impact
           </Typography>
-          <Grid container spacing={4} justifyContent="center">
+          <Grid container spacing={{ xs: 3, md: 4 }} justifyContent="center">
             {impactStats.map(({ number, label, icon: Icon }, index) => (
               <Grid key={index} item xs={12} sm={6} md={3}>
                 <Card
                   sx={{
-                    p: 3,
+                    p: { xs: 2, md: 3 },
                     textAlign: "center",
                     boxShadow: theme.shadows[3],
                     borderRadius: 4,
@@ -273,17 +325,26 @@ const RenewableEnergy = () => {
                 >
                   <Icon
                     sx={{
-                      fontSize: 48,
+                      fontSize: { xs: 40, md: 48 },
                       color: theme.palette.primary.main,
                       mb: 1,
                     }}
                   />
-                  <Typography variant="h5" sx={{ fontWeight: 700 }}>
+                  <Typography
+                    variant="h5"
+                    sx={{
+                      fontWeight: 700,
+                      fontSize: { xs: "1.3rem", sm: "1.5rem", md: "1.8rem" },
+                    }}
+                  >
                     {number}
                   </Typography>
                   <Typography
                     variant="subtitle1"
-                    sx={{ color: "text.secondary" }}
+                    sx={{
+                      color: "text.secondary",
+                      fontSize: { xs: "0.8rem", sm: "0.875rem", md: "1rem" },
+                    }}
                   >
                     {label}
                   </Typography>
@@ -295,21 +356,25 @@ const RenewableEnergy = () => {
       </Box>
 
       {/* Services Section */}
-      <Box sx={{ py: 10 }}>
-        <Container maxWidth="lg">
+      <Box sx={{ py: { xs: 6, md: 10 } }}>
+        <Container maxWidth="xl">
           <Typography
             variant="h4"
             align="center"
-            sx={{ fontWeight: 700, mb: 6 }}
+            sx={{
+              fontWeight: 700,
+              mb: { xs: 4, md: 6 },
+              fontSize: { xs: "1.5rem", sm: "1.8rem", md: "2rem" },
+            }}
           >
             Community Services
           </Typography>
-          <Grid container spacing={4} justifyContent="center">
+          <Grid container spacing={{ xs: 3, md: 4 }} justifyContent="center">
             {services.map(({ title, icon: Icon, description }, index) => (
               <Grid key={index} item xs={12} sm={6} md={4}>
                 <Card
                   sx={{
-                    p: 3,
+                    p: { xs: 2, md: 3 },
                     height: "100%",
                     boxShadow: theme.shadows[2],
                     borderRadius: 4,
@@ -318,17 +383,27 @@ const RenewableEnergy = () => {
                 >
                   <Icon
                     sx={{
-                      fontSize: 36,
+                      fontSize: { xs: 32, md: 36 },
                       color: theme.palette.primary.main,
                       mb: 1,
                     }}
                   />
-                  <Typography variant="h6" sx={{ fontWeight: 700 }}>
+                  <Typography
+                    variant="h6"
+                    sx={{
+                      fontWeight: 700,
+                      fontSize: { xs: "1rem", sm: "1.1rem", md: "1.2rem" },
+                    }}
+                  >
                     {title}
                   </Typography>
                   <Typography
                     variant="body2"
-                    sx={{ color: "text.secondary", mt: 1 }}
+                    sx={{
+                      color: "text.secondary",
+                      mt: 1,
+                      fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                    }}
                   >
                     {description}
                   </Typography>
@@ -342,32 +417,54 @@ const RenewableEnergy = () => {
       {/* Call to Action */}
       <Box
         sx={{
-          py: 10,
+          py: { xs: 6, md: 10 },
           textAlign: "center",
         }}
       >
-        <Container maxWidth="sm">
-          <Typography variant="h4" fontWeight={700} gutterBottom>
-            Join the Energy Revolution
-          </Typography>
-          <Typography variant="body1" mb={4} color="text.secondary">
-            Help us bring light, power, and progress to every rural household.
-            Your contribution fuels sustainable development and reduces global
-            emissions.
-          </Typography>
-          <Chip
-            label="Support Clean Energy Projects"
+        <Container maxWidth="xl">
+          <Box
             sx={{
-              fontSize: "1rem",
-              p: 2,
-              backgroundColor: theme.palette.primary.main,
-              color: "white",
-              cursor: "pointer",
-              "&:hover": {
-                backgroundColor: theme.palette.primary.dark,
-              },
+              maxWidth: { xs: "100%", sm: "600px", md: "700px" },
+              mx: "auto",
             }}
-          />
+          >
+            <Typography
+              variant="h4"
+              fontWeight={700}
+              gutterBottom
+              sx={{
+                fontSize: { xs: "1.5rem", sm: "1.8rem", md: "2rem" },
+              }}
+            >
+              Join the Energy Revolution
+            </Typography>
+            <Typography
+              variant="body1"
+              mb={4}
+              color="text.secondary"
+              sx={{
+                fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                px: { xs: 2, sm: 0 },
+              }}
+            >
+              Help us bring light, power, and progress to every rural household.
+              Your contribution fuels sustainable development and reduces global
+              emissions.
+            </Typography>
+            <Chip
+              label="Support Clean Energy Projects"
+              sx={{
+                fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                p: { xs: 1.5, md: 2 },
+                backgroundColor: theme.palette.primary.main,
+                color: "white",
+                cursor: "pointer",
+                "&:hover": {
+                  backgroundColor: theme.palette.primary.dark,
+                },
+              }}
+            />
+          </Box>
         </Container>
       </Box>
     </Box>

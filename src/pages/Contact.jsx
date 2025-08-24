@@ -1,13 +1,15 @@
 import React from "react";
-import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
-import Typography from "@mui/material/Typography";
-import Grid from "@mui/material/Grid";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Button from "@mui/material/Button";
-import { styled } from "@mui/material/styles";
+import {
+  Box,
+  Container,
+  Typography,
+  Grid,
+  Card,
+  CardContent,
+  Button,
+  Avatar,
+  Stack,
+} from "@mui/material";
 import {
   Email,
   Phone,
@@ -17,561 +19,282 @@ import {
   Twitter,
   Instagram,
   LinkedIn,
+  Navigation,
 } from "@mui/icons-material";
 
-const HeroSection = styled(Box)(({ theme }) => ({
-  background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.primary.dark} 100%)`,
-  color: "white",
-  padding: theme.spacing(15, 0),
-  textAlign: "center",
-  position: "relative",
-  "&::before": {
-    content: '""',
-    position: "absolute",
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    background:
-      "url('https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')",
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    opacity: 0.1,
+const contactInfo = [
+  {
+    icon: <Email />,
+    title: "Email Us",
+    value: "capsbd25@gmail.com",
+    subtitle: "We usually respond within 24 hours",
+    color: "#3B82F6",
   },
-}));
-
-const ContactCard = styled(Card)(({ theme }) => ({
-  height: "100%",
-  borderRadius: 16,
-  boxShadow: "0 8px 32px rgba(0,0,0,0.1)",
-  transition: "all 0.3s ease",
-  border: "1px solid rgba(255,255,255,0.2)",
-  background: "rgba(255,255,255,0.95)",
-  backdropFilter: "blur(10px)",
-  "&:hover": {
-    transform: "translateY(-8px)",
-    boxShadow: "0 16px 48px rgba(0,0,0,0.15)",
+  {
+    icon: <Phone />,
+    title: "Call Us",
+    value: "+8801704422997",
+    subtitle: "Mon-Fri, 9AM - 6PM",
+    color: "#10B981",
   },
-}));
-
-const TeamCard = styled(Card)(({ theme }) => ({
-  height: "100%",
-  borderRadius: 20,
-  overflow: "hidden",
-  boxShadow: "0 12px 40px rgba(0,0,0,0.1)",
-  transition: "all 0.3s ease",
-  "&:hover": {
-    transform: "translateY(-12px) scale(1.02)",
-    boxShadow: "0 20px 60px rgba(0,0,0,0.15)",
+  {
+    icon: <LocationOn />,
+    title: "Visit Us",
+    value: "Purba Basabat, Bottalar Mor, Ward 08",
+    subtitle: "Sadar Bagerhat, Bangladesh",
+    color: "#8B5CF6",
   },
-}));
+];
 
-const InfoCard = styled(Card)(({ theme }) => ({
-  borderRadius: 16,
-  padding: theme.spacing(4),
-  boxShadow: "0 8px 32px rgba(0,0,0,0.08)",
-  border: "1px solid rgba(0,0,0,0.05)",
-  background: "linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%)",
-}));
-
-const SocialButton = styled(Button)(({ theme }) => ({
-  minWidth: 48,
-  height: 48,
-  borderRadius: "50%",
-  margin: theme.spacing(0.5),
-  transition: "all 0.3s ease",
-  "&:hover": {
-    transform: "scale(1.1)",
+const teamMembers = [
+  {
+    name: "Dr. Sarah Johnson",
+    role: "Executive Director",
+    email: "sarah.johnson@greenfutureinitiative.org",
+    desc: "15+ years experience in environmental conservation and sustainable development.",
+    img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+    featured: true,
   },
-}));
+  {
+    name: "Michael Chen",
+    role: "Program Director",
+    email: "michael.chen@greenfutureinitiative.org",
+    desc: "Expert in community development & sustainable agriculture.",
+    img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+  },
+  {
+    name: "Maria Rodriguez",
+    role: "Education Coordinator",
+    email: "maria.rodriguez@greenfutureinitiative.org",
+    desc: "Dedicated to improving educational access in rural areas.",
+    img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+  },
+];
+
+const socialLinks = [
+  { icon: <Facebook />, color: "#1877F2", name: "Facebook" },
+  { icon: <Twitter />, color: "#1DA1F2", name: "Twitter" },
+  { icon: <Instagram />, color: "#E4405F", name: "Instagram" },
+  { icon: <LinkedIn />, color: "#0A66C2", name: "LinkedIn" },
+];
 
 function Contact() {
   return (
-    <Box sx={{ width: "100%" }}>
+    <Box sx={{ bgcolor: "#F9FAFB", minHeight: "100vh" }}>
       {/* Hero Section */}
-      <HeroSection>
-        <Container maxWidth="lg">
-          <Typography
-            variant="h1"
-            sx={{
-              fontWeight: 800,
-              mb: 3,
-              fontSize: { xs: "2.5rem", md: "4rem" },
-              position: "relative",
-              zIndex: 1,
-            }}
-          >
-            Get In Touch
+      <Box
+        sx={{
+          background:
+            "linear-gradient(135deg, #3B82F6 0%, #8B5CF6 50%, #3B82F6 100%)",
+          py: { xs: 6, md: 12 },
+          textAlign: "center",
+          color: "white",
+        }}
+      >
+        <Container maxWidth="xl">
+          <Typography variant="h3" sx={{ fontWeight: 700, mb: 2 }}>
+            Connect With Us
           </Typography>
-          <Typography
-            variant="h5"
-            sx={{
-              mb: 6,
-              opacity: 0.9,
-              maxWidth: 600,
-              mx: "auto",
-              position: "relative",
-              zIndex: 1,
-              fontWeight: 300,
-            }}
-          >
-            Ready to make a difference? Connect with us to learn more about our
-            programs, volunteer opportunities, or ways to support our mission.
+          <Typography sx={{ fontSize: { xs: "0.95rem", md: "1.1rem" } }}>
+            Have questions or want to get involved? Reach out today and join our
+            mission to make a positive impact.
           </Typography>
-          <Box
-            sx={{
-              display: "flex",
-              gap: 2,
-              justifyContent: "center",
-              flexWrap: "wrap",
-            }}
-          ></Box>
-        </Container>
-      </HeroSection>
-
-      {/* Quick Contact Info */}
-      <Box sx={{ py: 8, backgroundColor: "#f8f9fa" }}>
-        <Container maxWidth="lg">
-          <Grid container spacing={4}>
-            <Grid item xs={12} md={4}>
-              <ContactCard>
-                <CardContent sx={{ textAlign: "center", p: 4 }}>
-                  <Box
-                    sx={{
-                      width: 80,
-                      height: 80,
-                      borderRadius: "50%",
-                      backgroundColor: "primary.main",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      mx: "auto",
-                      mb: 3,
-                    }}
-                  >
-                    <Email sx={{ fontSize: 40, color: "white" }} />
-                  </Box>
-                  <Typography
-                    variant="h6"
-                    gutterBottom
-                    sx={{ fontWeight: 600 }}
-                  >
-                    Email Us
-                  </Typography>
-                  <Typography variant="body1" color="text.secondary" paragraph>
-                    capsbd25@gmail.com
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    We typically respond within 24 hours
-                  </Typography>
-                </CardContent>
-              </ContactCard>
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <ContactCard>
-                <CardContent sx={{ textAlign: "center", p: 4 }}>
-                  <Box
-                    sx={{
-                      width: 80,
-                      height: 80,
-                      borderRadius: "50%",
-                      backgroundColor: "primary.main",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      mx: "auto",
-                      mb: 3,
-                    }}
-                  >
-                    <Phone sx={{ fontSize: 40, color: "white" }} />
-                  </Box>
-                  <Typography
-                    variant="h6"
-                    gutterBottom
-                    sx={{ fontWeight: 600 }}
-                  >
-                    Call Us
-                  </Typography>
-                  <Typography variant="body1" color="text.secondary" paragraph>
-                    +8801704422997
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    Monday - Friday, 9 AM - 6 PM
-                  </Typography>
-                </CardContent>
-              </ContactCard>
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <ContactCard>
-                <CardContent sx={{ textAlign: "center", p: 4 }}>
-                  <Box
-                    sx={{
-                      width: 80,
-                      height: 80,
-                      borderRadius: "50%",
-                      backgroundColor: "primary.main",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      mx: "auto",
-                      mb: 3,
-                    }}
-                  >
-                    <LocationOn sx={{ fontSize: 40, color: "white" }} />
-                  </Box>
-                  <Typography
-                    variant="h6"
-                    gutterBottom
-                    sx={{ fontWeight: 600 }}
-                  >
-                    Visit Us
-                  </Typography>
-                  <Typography variant="body1" color="text.secondary" paragraph>
-                    Purba Basabat, Bottalar Mor Ward no-08, Sadar Bagerhat.
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    Bangladesh
-                  </Typography>
-                </CardContent>
-              </ContactCard>
-            </Grid>
-          </Grid>
         </Container>
       </Box>
 
-      {/* Team Section */}
-      <Box sx={{ py: 8, backgroundColor: "white" }}>
-        <Container maxWidth="lg">
-          <Typography
-            variant="h2"
-            sx={{
-              textAlign: "center",
-              mb: 2,
-              fontWeight: 700,
-              color: "primary.main",
-            }}
-          >
-            Meet Our Team
-          </Typography>
-          <Typography
-            variant="h6"
-            sx={{
-              textAlign: "center",
-              mb: 8,
-              color: "text.secondary",
-              maxWidth: 600,
-              mx: "auto",
-            }}
-          >
-            Our dedicated team is here to help you get involved and make a
-            difference
-          </Typography>
-          <Grid container spacing={4}>
-            <Grid item xs={12} md={4}>
-              <TeamCard>
-                <CardMedia
-                  component="img"
-                  height="320"
-                  image="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-                  alt="Executive Director"
-                />
-                <CardContent sx={{ p: 4, textAlign: "center" }}>
-                  <Typography
-                    variant="h5"
-                    gutterBottom
-                    sx={{ fontWeight: 700 }}
-                  >
-                    Dr. Sarah Johnson
-                  </Typography>
-                  <Typography
-                    variant="subtitle1"
-                    color="primary"
-                    gutterBottom
-                    sx={{ fontWeight: 600 }}
-                  >
-                    Executive Director
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary" paragraph>
-                    sarah.johnson@greenfutureinitiative.org
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary" paragraph>
-                    15+ years experience in environmental conservation and rural
-                    development.
-                  </Typography>
-                  <Box
-                    sx={{ display: "flex", justifyContent: "center", gap: 1 }}
-                  >
-                    <SocialButton variant="outlined" size="small">
-                      <Email />
-                    </SocialButton>
-                    <SocialButton variant="outlined" size="small">
-                      <Phone />
-                    </SocialButton>
-                  </Box>
-                </CardContent>
-              </TeamCard>
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <TeamCard>
-                <CardMedia
-                  component="img"
-                  height="320"
-                  image="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-                  alt="Program Director"
-                />
-                <CardContent sx={{ p: 4, textAlign: "center" }}>
-                  <Typography
-                    variant="h5"
-                    gutterBottom
-                    sx={{ fontWeight: 700 }}
-                  >
-                    Michael Chen
-                  </Typography>
-                  <Typography
-                    variant="subtitle1"
-                    color="primary"
-                    gutterBottom
-                    sx={{ fontWeight: 600 }}
-                  >
-                    Program Director
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary" paragraph>
-                    michael.chen@greenfutureinitiative.org
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary" paragraph>
-                    Expert in community development and sustainable agriculture
-                    practices.
-                  </Typography>
-                  <Box
-                    sx={{ display: "flex", justifyContent: "center", gap: 1 }}
-                  >
-                    <SocialButton variant="outlined" size="small">
-                      <Email />
-                    </SocialButton>
-                    <SocialButton variant="outlined" size="small">
-                      <Phone />
-                    </SocialButton>
-                  </Box>
-                </CardContent>
-              </TeamCard>
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <TeamCard>
-                <CardMedia
-                  component="img"
-                  height="320"
-                  image="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80"
-                  alt="Education Coordinator"
-                />
-                <CardContent sx={{ p: 4, textAlign: "center" }}>
-                  <Typography
-                    variant="h5"
-                    gutterBottom
-                    sx={{ fontWeight: 700 }}
-                  >
-                    Maria Rodriguez
-                  </Typography>
-                  <Typography
-                    variant="subtitle1"
-                    color="primary"
-                    gutterBottom
-                    sx={{ fontWeight: 600 }}
-                  >
-                    Education Coordinator
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary" paragraph>
-                    maria.rodriguez@greenfutureinitiative.org
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary" paragraph>
-                    Dedicated to improving educational access and quality in
-                    rural areas.
-                  </Typography>
-                  <Box
-                    sx={{ display: "flex", justifyContent: "center", gap: 1 }}
-                  >
-                    <SocialButton variant="outlined" size="small">
-                      <Email />
-                    </SocialButton>
-                    <SocialButton variant="outlined" size="small">
-                      <Phone />
-                    </SocialButton>
-                  </Box>
-                </CardContent>
-              </TeamCard>
-            </Grid>
-          </Grid>
-        </Container>
-      </Box>
-
-      {/* Office Hours & Location */}
-      <Box sx={{ py: 8, backgroundColor: "#f8f9fa" }}>
-        <Container maxWidth="lg">
-          <Typography
-            variant="h2"
-            sx={{
-              textAlign: "center",
-              mb: 2,
-              fontWeight: 700,
-              color: "primary.main",
-            }}
-          >
-            Office Hours & Location
-          </Typography>
-          <Typography
-            variant="h6"
-            sx={{
-              textAlign: "center",
-              mb: 8,
-              color: "text.secondary",
-              maxWidth: 600,
-              mx: "auto",
-            }}
-          >
-            Find us when it's convenient for you
-          </Typography>
-          <Grid container spacing={4}>
-            <Grid item xs={12} md={6}>
-              <InfoCard>
-                <Box sx={{ display: "flex", alignItems: "center", mb: 3 }}>
-                  <AccessTime
-                    sx={{ fontSize: 40, color: "primary.main", mr: 2 }}
-                  />
-                  <Typography variant="h5" sx={{ fontWeight: 600 }}>
-                    Office Hours
-                  </Typography>
-                </Box>
-                <Typography
-                  variant="body1"
-                  paragraph
-                  sx={{ fontSize: "1.1rem" }}
-                >
-                  <strong>Monday - Friday:</strong> 9:00 AM - 6:00 PM
-                </Typography>
-                <Typography
-                  variant="body1"
-                  paragraph
-                  sx={{ fontSize: "1.1rem" }}
-                >
-                  <strong>Saturday:</strong> 9:00 AM - 6:00 PM
-                </Typography>
-                <Typography
-                  variant="body1"
-                  paragraph
-                  sx={{ fontSize: "1.1rem" }}
-                ></Typography>
+      {/* Contact Info */}
+      <Container maxWidth="xl" sx={{ py: { xs: 4, md: 8 } }}>
+        <Grid container spacing={3}>
+          {contactInfo.map((item, i) => (
+            <Grid item xs={12} md={4} key={i}>
+              <Card
+                sx={{
+                  textAlign: "center",
+                  p: 3,
+                  "&:hover": { boxShadow: 6, transform: "translateY(-4px)" },
+                  transition: "0.3s ease",
+                }}
+              >
                 <Box
                   sx={{
-                    mt: 3,
-                    p: 3,
-                    backgroundColor: "primary.light",
-                    borderRadius: 2,
+                    width: 64,
+                    height: 64,
+                    borderRadius: "50%",
+                    bgcolor: item.color,
+                    color: "white",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    mx: "auto",
+                    mb: 2,
+                    fontSize: 32,
                   }}
                 >
-                  <Typography
-                    variant="h6"
-                    gutterBottom
-                    sx={{ fontWeight: 600 }}
-                  >
-                    Emergency Contact
-                  </Typography>
-                  <Typography variant="body1" sx={{ fontWeight: 600 }}>
-                    +8801704422997
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    Available 24/7 for urgent matters
-                  </Typography>
+                  {item.icon}
                 </Box>
-              </InfoCard>
+                <Typography variant="h6" sx={{ fontWeight: 700, mb: 1 }}>
+                  {item.title}
+                </Typography>
+                <Typography sx={{ mb: 0.5 }}>{item.value}</Typography>
+                <Typography color="text.secondary">{item.subtitle}</Typography>
+              </Card>
             </Grid>
-            <Grid item xs={12} md={6}>
-              <InfoCard>
-                <Box sx={{ display: "flex", alignItems: "center", mb: 3 }}>
-                  <LocationOn
-                    sx={{ fontSize: 40, color: "primary.main", mr: 2 }}
-                  />
-                  <Typography variant="h5" sx={{ fontWeight: 600 }}>
-                    Location & Directions
-                  </Typography>
-                </Box>
-                <Typography
-                  variant="body1"
-                  paragraph
-                  sx={{ fontSize: "1.1rem" }}
-                >
-                  <strong>Address:</strong>
-                  Purba Basabat, Bottalar Mor Ward no-08, Sadar Bagerhat.
-                  <br />
-                  Bangladesh
+          ))}
+        </Grid>
+      </Container>
+
+      {/* Team Section */}
+      <Container maxWidth="xl" sx={{ py: { xs: 4, md: 8 } }}>
+        <Typography
+          variant="h4"
+          sx={{ fontWeight: 700, mb: 4, textAlign: "center" }}
+        >
+          Meet Our Team
+        </Typography>
+        <Grid container spacing={4}>
+          {teamMembers.map((member, i) => (
+            <Grid item xs={12} sm={6} md={4} key={i}>
+              <Card sx={{ p: 3, textAlign: "center" }}>
+                <Avatar
+                  src={member.img}
+                  alt={member.name}
+                  sx={{ width: 120, height: 120, mx: "auto", mb: 2 }}
+                />
+                <Typography variant="h6" sx={{ fontWeight: 700 }}>
+                  {member.name}
+                </Typography>
+                <Typography color="primary" sx={{ mb: 1 }}>
+                  {member.role}
                 </Typography>
                 <Typography
-                  variant="body1"
-                  paragraph
-                  sx={{ fontSize: "1.1rem" }}
-                ></Typography>
-                <Button
-                  variant="contained"
-                  size="large"
-                  sx={{
-                    mt: 2,
-                    px: 4,
-                    py: 1.5,
-                    borderRadius: 3,
-                    fontWeight: 600,
-                  }}
+                  variant="body2"
+                  color="text.secondary"
+                  sx={{ mb: 1 }}
                 >
-                  Get Directions
-                </Button>
-              </InfoCard>
+                  {member.email}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  {member.desc}
+                </Typography>
+              </Card>
             </Grid>
+          ))}
+        </Grid>
+      </Container>
+
+      {/* Office Hours & Location */}
+      <Container maxWidth="xl" sx={{ py: { xs: 4, md: 8 } }}>
+        <Grid container spacing={4}>
+          {/* Office Hours */}
+          <Grid item xs={12} md={6}>
+            <Card sx={{ p: 3 }}>
+              <Stack direction="row" spacing={2} alignItems="center" mb={3}>
+                <AccessTime sx={{ color: "#3B82F6", fontSize: 32 }} />
+                <Typography variant="h6" sx={{ fontWeight: 700 }}>
+                  Office Hours
+                </Typography>
+              </Stack>
+              <Stack spacing={1}>
+                <Stack direction="row" justifyContent="space-between">
+                  <Typography fontWeight={600}>Mon - Fri:</Typography>
+                  <Typography color="text.secondary">9AM - 6PM</Typography>
+                </Stack>
+                <Stack direction="row" justifyContent="space-between">
+                  <Typography fontWeight={600}>Saturday:</Typography>
+                  <Typography color="text.secondary">9AM - 6PM</Typography>
+                </Stack>
+              </Stack>
+              <Box
+                sx={{
+                  mt: 3,
+                  bgcolor: "#FEF2F2",
+                  p: 2,
+                  borderRadius: 2,
+                  border: "1px solid #FECACA",
+                  textAlign: "center",
+                }}
+              >
+                <Typography fontWeight={700} mb={1}>
+                  Emergency Contact
+                </Typography>
+                <Typography color="error" fontWeight={700}>
+                  +8801704422997
+                </Typography>
+                <Typography color="text.secondary">Available 24/7</Typography>
+              </Box>
+            </Card>
           </Grid>
+
+          {/* Location */}
+          <Grid item xs={12} md={6}>
+            <Card sx={{ p: 3, textAlign: "center" }}>
+              <Stack
+                direction="row"
+                spacing={2}
+                alignItems="center"
+                justifyContent="center"
+                mb={3}
+              >
+                <LocationOn sx={{ color: "#8B5CF6", fontSize: 32 }} />
+                <Typography variant="h6" sx={{ fontWeight: 700 }}>
+                  Our Location
+                </Typography>
+              </Stack>
+              <Typography sx={{ mb: 3 }}>
+                Purba Basabat, Bottalar Mor Ward 08, Sadar Bagerhat, Bangladesh
+              </Typography>
+              <Button
+                variant="contained"
+                startIcon={<Navigation />}
+                sx={{
+                  background:
+                    "linear-gradient(135deg, #8B5CF6 0%, #3B82F6 100%)",
+                  "&:hover": {
+                    background:
+                      "linear-gradient(135deg, #7C3AED 0%, #2563EB 100%)",
+                  },
+                }}
+              >
+                Get Directions
+              </Button>
+            </Card>
+          </Grid>
+        </Grid>
+      </Container>
+
+      {/* Social Media */}
+      <Box sx={{ py: { xs: 4, md: 8 }, textAlign: "center" }}>
+        <Container maxWidth="xl">
+          <Typography variant="h4" sx={{ fontWeight: 700, mb: 3 }}>
+            Follow Our Journey
+          </Typography>
+          <Stack
+            direction="row"
+            spacing={2}
+            justifyContent="center"
+            flexWrap="wrap"
+          >
+            {socialLinks.map((social, i) => (
+              <Button
+                key={i}
+                sx={{
+                  bgcolor: social.color,
+                  borderRadius: "50%",
+                  width: 56,
+                  height: 56,
+                  minWidth: 56,
+                  "&:hover": {
+                    transform: "scale(1.1)",
+                    filter: "brightness(0.9)",
+                  },
+                }}
+              >
+                {social.icon}
+              </Button>
+            ))}
+          </Stack>
         </Container>
       </Box>
-
-      {/* Social Media & Newsletter */}
-      {/* <Box sx={{ py: 8, backgroundColor: "white" }}>
-        <Container maxWidth="lg">
-          <Typography
-            variant="h2"
-            sx={{
-              textAlign: "center",
-              mb: 2,
-              fontWeight: 700,
-              color: "primary.main",
-            }}
-          >
-            Stay Connected
-          </Typography>
-          <Typography
-            variant="h6"
-            sx={{
-              textAlign: "center",
-              mb: 6,
-              color: "text.secondary",
-              maxWidth: 600,
-              mx: "auto",
-            }}
-          >
-            Follow us on social media and stay updated with our latest
-            initiatives
-          </Typography>
-          <Box sx={{ textAlign: "center" }}>
-            <Box
-              sx={{ display: "flex", justifyContent: "center", gap: 2, mb: 4 }}
-            >
-              <SocialButton
-                variant="contained"
-                sx={{ backgroundColor: "#1877f2" }}
-              >
-                <Facebook />
-              </SocialButton>
-            </Box>
-            <Typography variant="body1" color="text.secondary">
-              Join our community of changemakers and stay informed about our
-              impact
-            </Typography>
-          </Box>
-        </Container>
-      </Box> */}
     </Box>
   );
 }

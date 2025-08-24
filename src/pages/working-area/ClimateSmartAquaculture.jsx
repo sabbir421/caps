@@ -10,54 +10,62 @@ import {
   ListItemIcon,
   ListItemText,
 } from "@mui/material";
-import SpaIcon from "@mui/icons-material/Spa";
-import WavesIcon from "@mui/icons-material/Waves";
-import PublicIcon from "@mui/icons-material/Public";
-import ScienceIcon from "@mui/icons-material/Science";
-import PeopleIcon from "@mui/icons-material/People";
-import AgricultureIcon from "@mui/icons-material/Agriculture";
-import HandshakeIcon from "@mui/icons-material/Handshake";
-import ShowChartIcon from "@mui/icons-material/ShowChart";
-import LightbulbIcon from "@mui/icons-material/Lightbulb";
 import WaterDropIcon from "@mui/icons-material/WaterDrop";
+import AgricultureIcon from "@mui/icons-material/Agriculture";
+import PublicIcon from "@mui/icons-material/Public";
+import HandshakeIcon from "@mui/icons-material/Handshake";
+import SpaIcon from "@mui/icons-material/Spa";
+import GrassIcon from "@mui/icons-material/Grass";
+import LightbulbIcon from "@mui/icons-material/Lightbulb";
+import BoltIcon from "@mui/icons-material/Bolt";
+import WbIncandescentIcon from "@mui/icons-material/WbIncandescent";
+import SchoolIcon from "@mui/icons-material/School";
+import ScienceIcon from "@mui/icons-material/Science";
 import NaturePeopleIcon from "@mui/icons-material/NaturePeople";
-import GavelIcon from "@mui/icons-material/Gavel";
-import HubIcon from "@mui/icons-material/Hub";
 
 const ClimateSmartAquaculture = () => {
   return (
-    <Box sx={{ py: 8, bgcolor: "grey.50" }}>
-      <Container maxWidth="lg">
-        <Paper elevation={3} sx={{ p: { xs: 2, md: 6 }, borderRadius: 3 }}>
-          <Box sx={{ textAlign: "center", mb: 6 }}>
+    <Box sx={{ py: { xs: 6, md: 8 }, bgcolor: "grey.50" }}>
+      <Container maxWidth="xl">
+        <Paper elevation={3} sx={{ p: { xs: 3, md: 6 }, borderRadius: 3 }}>
+          <Box sx={{ textAlign: "center", mb: { xs: 4, md: 6 } }}>
             <Typography
               variant="h3"
               component="h1"
               gutterBottom
               align="center"
-              sx={{ fontWeight: 700, color: "primary.main" }}
+              sx={{
+                fontWeight: 700,
+                color: "primary.main",
+                fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.5rem" },
+              }}
             >
-              Climate-smart aquaculture
+              Climate Smart Aquaculture
             </Typography>
             <Typography
               variant="h6"
               color="text.secondary"
               align="center"
-              sx={{ textAlign: "justify" }}
+              sx={{
+                textAlign: "justify",
+                fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                maxWidth: { xs: "100%", sm: "800px", md: "900px" },
+                mx: "auto",
+              }}
             >
-              CAPS (Climate Adaptation Plan Society) approaches Climate-smart
-              aquaculture (CSA) as a sustainable approach to fish farming that
-              aims to increase productivity, enhance resilience to climate
-              change, and reduce greenhouse gas emissions. It involves
-              integrating strategies for both adapting to climate change impacts
-              and mitigating its effects on aquaculture systems.
+              CAPS (Climate Adaptation Plan Society) focuses on creating more
+              resilient and sustainable aquaculture systems in the face of
+              climate change. This involves adapting to the impacts of climate
+              change, such as increased water temperature, ocean acidification,
+              and extreme weather events, while also mitigating greenhouse gas
+              emissions associated with aquaculture practices.
             </Typography>
           </Box>
 
-          <Box sx={{ mb: 6 }}>
+          <Box sx={{ mb: { xs: 4, md: 6 } }}>
             <img
-              src="https://placehold.co/1200x500/C8E6C9/1B5E20?text=Sustainable+Aquaculture"
-              alt="An aquaculture farm with clean, sustainable practices."
+              src="https://placehold.co/1200x500/B3E5FC/01579B?text=Sustainable+Aquaculture"
+              alt="A climate-smart aquaculture facility with clean water and sustainable fish farming."
               style={{
                 width: "100%",
                 height: "auto",
@@ -67,91 +75,235 @@ const ClimateSmartAquaculture = () => {
             />
           </Box>
 
-          <Grid container spacing={6}>
+          <Typography
+            variant="body1"
+            paragraph
+            sx={{
+              textAlign: "justify",
+              fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+            }}
+          >
+            Key aspects include promoting sustainable aquaculture practices,
+            improving water quality management, exploring alternative feed
+            sources, and implementing climate-smart aquaculture techniques.
+          </Typography>
+
+          <Grid container spacing={{ xs: 3, md: 6 }}>
             <Grid item xs={12} md={6}>
               <Typography
                 variant="h5"
                 component="h2"
                 gutterBottom
-                sx={{ fontWeight: 600 }}
+                sx={{
+                  fontWeight: 600,
+                  fontSize: { xs: "1.2rem", sm: "1.3rem", md: "1.4rem" },
+                }}
               >
-                Key Goals of Climate-Smart Aquaculture
+                Key Goals of the Program
               </Typography>
               <List>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <ShowChartIcon color="primary" />
+                    <WaterDropIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
                   <ListItemText
-                    primary="Increased Productivity and Efficiency"
-                    secondary="CSA aims to improve fish farming practices to increase yields and profitability, ensuring food security and livelihoods for aquaculture farmers."
+                    primary="Sustainable Aquaculture"
+                    secondary="Caps approaches to promote sustainable aquaculture practices that minimize environmental impact and maximize productivity."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
                   />
                 </ListItem>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <SpaIcon color="primary" />
+                    <WbIncandescentIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
                   <ListItemText
-                    primary="Enhanced Resilience and Adaptation"
-                    secondary="CSA focuses on building the capacity of aquaculture systems to withstand the impacts of climate change, such as rising water temperatures, extreme weather events, and changing water quality."
+                    primary="Water Quality Management"
+                    secondary="Caps promotes the improvement of water quality in aquaculture systems to enhance fish health and productivity."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
                   />
                 </ListItem>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <NaturePeopleIcon color="primary" />
+                    <SpaIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
                   <ListItemText
-                    primary="Reduced Greenhouse Gas Emissions"
-                    secondary="CSA seeks to minimize the environmental footprint of aquaculture by reducing emissions of greenhouse gases, contributing to global climate change mitigation efforts."
+                    primary="Alternative Feed Sources"
+                    secondary="Caps implements research and development of alternative feed sources to reduce dependency on wild fish stocks."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
+                  />
+                </ListItem>
+                <ListItem sx={{ px: 0 }}>
+                  <ListItemIcon>
+                    <LightbulbIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Climate-Resilient Species"
+                    secondary="Caps explores and promotes the use of climate-resilient fish species that can adapt to changing environmental conditions."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
+                  />
+                </ListItem>
+                <ListItem sx={{ px: 0 }}>
+                  <ListItemIcon>
+                    <BoltIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Energy-Efficient Systems"
+                    secondary="Caps promotes the use of energy-efficient technologies in aquaculture systems to reduce carbon footprint."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
+                  />
+                </ListItem>
+                <ListItem sx={{ px: 0 }}>
+                  <ListItemIcon>
+                    <GrassIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Integrated Aquaculture"
+                    secondary="Caps works on projects that integrate aquaculture with agriculture and other farming systems for better resource utilization."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
                   />
                 </ListItem>
               </List>
-            </Grid>
 
-            <Grid item xs={12} md={6}>
               <Typography
                 variant="h5"
                 component="h2"
                 gutterBottom
-                sx={{ fontWeight: 600 }}
+                sx={{
+                  fontWeight: 600,
+                  mt: { xs: 3, md: 4 },
+                  fontSize: { xs: "1.2rem", sm: "1.3rem", md: "1.4rem" },
+                }}
               >
-                How it Works
+                Climate-Smart Aquaculture Practices
               </Typography>
               <List>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <GavelIcon color="primary" />
+                    <SchoolIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
                   <ListItemText
-                    primary="Hard and Soft Technologies"
-                    secondary="CSA utilizes both physical or infrastructural assets (like climate-resilient pond construction or improved water management systems) and soft technologies (like knowledge-sharing, advisory services, and early warning systems)."
+                    primary="Training and Capacity Building"
+                    secondary="Caps approaches to conduct workshops, training sessions, and field demonstrations to educate farmers on climate-smart aquaculture practices."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
                   />
                 </ListItem>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <PublicIcon color="primary" />
+                    <ScienceIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
                   <ListItemText
-                    primary="Integration of Adaptation and Mitigation"
-                    secondary="CSA emphasizes the strategic alignment of adaptation and mitigation measures. For example, using climate-resilient fish species can both reduce the impact of climate change on production and potentially lower emissions."
+                    primary="Research and Development"
+                    secondary="Caps tries to collaborates with scientists and researchers to identify and disseminate best practices in climate-smart aquaculture."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
                   />
                 </ListItem>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <PeopleIcon color="primary" />
+                    <AgricultureIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
                   <ListItemText
-                    primary="Stakeholder Engagement"
-                    secondary="Successful implementation of CSA requires active participation and collaboration among various stakeholders, including farmers, researchers, policymakers, and extension agencies."
-                  />
-                </ListItem>
-                <ListItem>
-                  <ListItemIcon>
-                    <WaterDropIcon color="primary" />
-                  </ListItemIcon>
-                  <ListItemText
-                    primary="Diversification"
-                    secondary="Introducing climate-resilient species and diversifying aquaculture production systems can enhance resilience and reduce reliance on a single species or system."
+                    primary="Promoting Sustainable Practices"
+                    secondary="Caps encourages the adoption of sustainable aquaculture practices that minimize environmental impact."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
                   />
                 </ListItem>
               </List>
@@ -162,54 +314,75 @@ const ClimateSmartAquaculture = () => {
                 variant="h5"
                 component="h2"
                 gutterBottom
-                sx={{ fontWeight: 600 }}
+                sx={{
+                  fontWeight: 600,
+                  fontSize: { xs: "1.2rem", sm: "1.3rem", md: "1.4rem" },
+                }}
               >
-                Examples of Climate-Smart Aquaculture Practices
+                Community Engagement and Advocacy
               </Typography>
               <List>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <AgricultureIcon color="primary" />
+                    <HandshakeIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
                   <ListItemText
-                    primary="Integrated Farming"
-                    secondary="Combining fish farming with other agricultural activities, like rice cultivation, can improve resource use efficiency and reduce reliance on external inputs."
+                    primary="Community-Based Aquaculture"
+                    secondary="Caps often involves local communities in the planning, implementation, and monitoring of sustainable aquaculture projects."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
                   />
                 </ListItem>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <WavesIcon color="primary" />
+                    <PublicIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
                   <ListItemText
-                    primary="Water Management"
-                    secondary="Implementing efficient water management systems, such as rainwater harvesting or recirculating aquaculture systems, can improve water use and reduce vulnerability to droughts."
+                    primary="Policy Advocacy"
+                    secondary="Caps advocates for policies that support sustainable aquaculture management at local, national, and international levels."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
                   />
                 </ListItem>
-                <ListItem>
+                <ListItem sx={{ px: 0 }}>
                   <ListItemIcon>
-                    <NaturePeopleIcon color="primary" />
+                    <NaturePeopleIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
                   </ListItemIcon>
                   <ListItemText
-                    primary="Climate-Resilient Species"
-                    secondary="Utilizing fish species that are better adapted to changing climate conditions, such as air-breathing fish, can enhance resilience and productivity."
-                  />
-                </ListItem>
-                <ListItem>
-                  <ListItemIcon>
-                    <HubIcon color="primary" />
-                  </ListItemIcon>
-                  <ListItemText
-                    primary="Diversification of Species"
-                    secondary="Introducing new, climate-resilient species can reduce the risk associated with relying on a single species."
-                  />
-                </ListItem>
-                <ListItem>
-                  <ListItemIcon>
-                    <LightbulbIcon color="primary" />
-                  </ListItemIcon>
-                  <ListItemText
-                    primary="Improved Feed Management"
-                    secondary="Optimizing feed types and feeding strategies can reduce feed costs and improve feed conversion efficiency, thereby lowering the environmental impact of aquaculture."
+                    primary="Raising Awareness"
+                    secondary="Caps raises public awareness about the importance of sustainable aquaculture and the impacts of climate change on aquatic resources."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
                   />
                 </ListItem>
               </List>

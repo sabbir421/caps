@@ -1,170 +1,412 @@
-import React from 'react';
-import { Box, Container, Typography, Paper, Grid, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
-import WavesIcon from '@mui/icons-material/Waves';
-import LocalFloristIcon from '@mui/icons-material/LocalFlorist';
-import PolicyIcon from '@mui/icons-material/Policy';
-import SchoolIcon from '@mui/icons-material/School';
-import GavelIcon from '@mui/icons-material/Gavel';
-import ScienceIcon from '@mui/icons-material/Science';
-import PublicIcon from '@mui/icons-material/Public';
-import GroupsIcon from '@mui/icons-material/Groups';
-import HandshakeIcon from '@mui/icons-material/Handshake';
-import CrisisAlertIcon from '@mui/icons-material/CrisisAlert';
+import React from "react";
+import {
+  Box,
+  Container,
+  Typography,
+  Paper,
+  Grid,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+} from "@mui/material";
+import WaterDropIcon from "@mui/icons-material/WaterDrop";
+import ScienceIcon from "@mui/icons-material/Science";
+import PublicIcon from "@mui/icons-material/Public";
+import HandshakeIcon from "@mui/icons-material/Handshake";
+import SpaIcon from "@mui/icons-material/Spa";
+import GrassIcon from "@mui/icons-material/Grass";
+import LightbulbIcon from "@mui/icons-material/Lightbulb";
+import BoltIcon from "@mui/icons-material/Bolt";
+import WbIncandescentIcon from "@mui/icons-material/WbIncandescent";
+import SchoolIcon from "@mui/icons-material/School";
+import NaturePeopleIcon from "@mui/icons-material/NaturePeople";
+import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 
 const ClimateSmartAdaptationForSeaSpecies = () => {
-    return (
-        <Box sx={{ py: 8, bgcolor: 'grey.50' }}>
-            <Container maxWidth="lg">
-                <Paper elevation={3} sx={{ p: { xs: 2, md: 6 }, borderRadius: 3 }}>
-                    <Box sx={{ textAlign: 'center', mb: 6 }}>
-                        <Typography variant="h3" component="h1" gutterBottom align="center" sx={{ fontWeight: 700, color: 'primary.main' }}>
-                            Climate-smart Adaptation for Sea Species
-                        </Typography>
-                        <Typography variant="h6" color="text.secondary" align="center">
-                            Strategies for building resilience in marine ecosystems.
-                        </Typography>
-                    </Box>
+  return (
+    <Box sx={{ py: { xs: 6, md: 8 }, bgcolor: "grey.50" }}>
+      <Container maxWidth="xl">
+        <Paper elevation={3} sx={{ p: { xs: 3, md: 6 }, borderRadius: 3 }}>
+          <Box sx={{ textAlign: "center", mb: { xs: 4, md: 6 } }}>
+            <Typography
+              variant="h3"
+              component="h1"
+              gutterBottom
+              align="center"
+              sx={{
+                fontWeight: 700,
+                color: "primary.main",
+                fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.5rem" },
+              }}
+            >
+              Climate Smart Adaptation for Sea Species
+            </Typography>
+            <Typography
+              variant="h6"
+              color="text.secondary"
+              align="center"
+              sx={{
+                textAlign: "justify",
+                fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                maxWidth: { xs: "100%", sm: "800px", md: "900px" },
+                mx: "auto",
+              }}
+            >
+              CAPS (Climate Adaptation Plan Society) focuses on developing
+              climate-smart adaptation strategies for marine species to ensure
+              their survival and resilience in the face of climate change. This
+              involves understanding the impacts of ocean acidification, rising
+              sea temperatures, and changing ocean currents on marine ecosystems
+              and implementing conservation measures.
+            </Typography>
+          </Box>
 
-                    <Box sx={{ mb: 6 }}>
-                        <img 
-                            src="https://placehold.co/1200x500/E0F2F1/004D40?text=Protecting+Marine+Ecosystems" 
-                            alt="A vibrant marine ecosystem with fish and coral." 
-                            style={{ 
-                                width: '100%', 
-                                height: 'auto', 
-                                borderRadius: '12px', 
-                                boxShadow: '0px 8px 16px rgba(0, 0, 0, 0.1)' 
-                            }} 
-                        />
-                    </Box>
-                    
-                    <Typography variant="body1" paragraph sx={{ mt: 4 }}>
-                        CAPS (Climate Adaptation Plan Society) approaches **Climate-smart adaptation for sea species** by implementing strategies that build resilience and promote sustainable practices in marine ecosystems to mitigate the impacts of climate change. This includes protecting critical habitats, managing fisheries sustainably, and fostering adaptive capacity in coastal communities.
-                    </Typography>
+          <Box sx={{ mb: { xs: 4, md: 6 } }}>
+            <img
+              src="https://placehold.co/1200x500/B3E5FC/01579B?text=Climate+Smart+Adaptation+for+Sea+Species"
+              alt="A climate-smart adaptation program for marine species and ocean conservation."
+              style={{
+                width: "100%",
+                height: "auto",
+                borderRadius: "12px",
+                boxShadow: "0px 8px 16px rgba(0, 0, 0, 0.1)",
+              }}
+            />
+          </Box>
 
-                    <Grid container spacing={6} sx={{ mt: 6 }}>
-                        <Grid item xs={12} md={6}>
-                            <Typography variant="h5" component="h2" gutterBottom sx={{ fontWeight: 600 }}>
-                                1. Protecting Critical Habitats
-                            </Typography>
-                            <List>
-                                <ListItem>
-                                    <ListItemIcon><WavesIcon color="primary" /></ListItemIcon>
-                                    <ListItemText
-                                        primary="Marine Protected Areas (MPAs)"
-                                        secondary="Establishing and managing MPAs, including climate refugia, to safeguard biodiversity hotspots and provide a buffer against climate change effects."
-                                    />
-                                </ListItem>
-                                <ListItem>
-                                    <ListItemIcon><LocalFloristIcon color="primary" /></ListItemIcon>
-                                    <ListItemText
-                                        primary="Ecosystem-based Management"
-                                        secondary="Adopting approaches that consider the interconnectedness of marine life and their environment is crucial for effective conservation."
-                                    />
-                                </ListItem>
-                            </List>
-                        </Grid>
-                        
-                        <Grid item xs={12} md={6}>
-                            <Typography variant="h5" component="h2" gutterBottom sx={{ fontWeight: 600 }}>
-                                2. Sustainable Fisheries Management
-                            </Typography>
-                            <List>
-                                <ListItem>
-                                    <ListItemIcon><SchoolIcon color="primary" /></ListItemIcon>
-                                    <ListItemText
-                                        primary="Adaptive Management"
-                                        secondary="Implementing adaptive management strategies in fisheries, such as adjusting catch limits and fishing seasons based on scientific data, to maintain healthy fish populations."
-                                    />
-                                </ListItem>
-                                <ListItem>
-                                    <ListItemIcon><GavelIcon color="primary" /></ListItemIcon>
-                                    <ListItemText
-                                        primary="Climate-Smart Aquaculture"
-                                        secondary="Promoting sustainable aquaculture practices that minimize environmental impact and enhance the resilience of aquatic food systems."
-                                    />
-                                </ListItem>
-                            </List>
-                        </Grid>
-                    </Grid>
+          <Typography
+            variant="body1"
+            paragraph
+            sx={{
+              textAlign: "justify",
+              fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+            }}
+          >
+            Our comprehensive approach addresses the unique challenges faced by
+            marine species in a changing climate, focusing on conservation,
+            research, and sustainable management practices.
+          </Typography>
 
-                    <Grid container spacing={6} sx={{ mt: 6 }}>
-                        <Grid item xs={12} md={6}>
-                            <Typography variant="h5" component="h2" gutterBottom sx={{ fontWeight: 600 }}>
-                                3. Building Adaptive Capacity
-                            </Typography>
-                            <List>
-                                <ListItem>
-                                    <ListItemIcon><PublicIcon color="primary" /></ListItemIcon>
-                                    <ListItemText
-                                        primary="Coastal Adaptation"
-                                        secondary="Implementing measures like restoring natural habitats and constructing engineered structures to mitigate the impacts of sea-level rise and storms."
-                                    />
-                                </ListItem>
-                                <ListItem>
-                                    <ListItemIcon><HandshakeIcon color="primary" /></ListItemIcon>
-                                    <ListItemText
-                                        primary="Diversification"
-                                        secondary="Encouraging diversification of livelihoods in coastal communities to reduce dependence on climate-sensitive sectors like fishing."
-                                    />
-                                </ListItem>
-                                <ListItem>
-                                    <ListItemIcon><GroupsIcon color="primary" /></ListItemIcon>
-                                    <ListItemText
-                                        primary="Community Engagement"
-                                        secondary="Involving local communities in the planning and implementation of adaptation strategies to ensure effectiveness and social equity."
-                                    />
-                                </ListItem>
-                            </List>
-                        </Grid>
-                        <Grid item xs={12} md={6}>
-                            <Typography variant="h5" component="h2" gutterBottom sx={{ fontWeight: 600 }}>
-                                4. Addressing Climate Change Impacts
-                            </Typography>
-                            <List>
-                                <ListItem>
-                                    <ListItemIcon><CrisisAlertIcon color="primary" /></ListItemIcon>
-                                    <ListItemText
-                                        primary="Reducing Greenhouse Gas Emissions"
-                                        secondary="Mitigation efforts to reduce greenhouse gas emissions are crucial for slowing down the rate of climate change and its impacts on marine ecosystems."
-                                    />
-                                </ListItem>
-                                <ListItem>
-                                    <ListItemIcon><ScienceIcon color="primary" /></ListItemIcon>
-                                    <ListItemText
-                                        primary="Research and Monitoring"
-                                        secondary="Investing in research to better understand the impacts of climate change on marine species and ecosystems, and developing effective monitoring systems."
-                                    />
-                                </ListItem>
-                            </List>
-                        </Grid>
-                    </Grid>
-                    
-                    <Box sx={{ mt: 6 }}>
-                        <Typography variant="h5" component="h2" gutterBottom sx={{ fontWeight: 600 }}>
-                            5. Integrating Climate Considerations
-                        </Typography>
-                        <List>
-                            <ListItem>
-                                <ListItemIcon><PolicyIcon color="primary" /></ListItemIcon>
-                                <ListItemText
-                                    primary="Climate-Smart Marine Spatial Planning (MSP)"
-                                    secondary="Integrating climate change considerations into marine spatial planning processes can help optimize the use of marine space for various activities while ensuring the protection of ecosystems."
-                                />
-                            </ListItem>
-                            <ListItem>
-                                <ListItemIcon><HandshakeIcon color="primary" /></ListItemIcon>
-                                <ListItemText
-                                    primary="Cross-Sectoral Collaboration"
-                                    secondary="Fostering collaboration among different sectors, including fisheries, aquaculture, tourism, and coastal management, is essential for developing comprehensive adaptation strategies."
-                                />
-                            </ListItem>
-                        </List>
-                    </Box>
-                </Paper>
-            </Container>
-        </Box>
-    );
+          <Grid container spacing={{ xs: 3, md: 6 }}>
+            <Grid item xs={12} md={6}>
+              <Typography
+                variant="h5"
+                component="h2"
+                gutterBottom
+                sx={{
+                  fontWeight: 600,
+                  fontSize: { xs: "1.2rem", sm: "1.3rem", md: "1.4rem" },
+                }}
+              >
+                Key Adaptation Strategies
+              </Typography>
+              <List>
+                <ListItem sx={{ px: 0 }}>
+                  <ListItemIcon>
+                    <WaterDropIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Ocean Acidification Monitoring"
+                    secondary="Caps monitors and studies the effects of ocean acidification on marine species and develops adaptation strategies."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
+                  />
+                </ListItem>
+                <ListItem sx={{ px: 0 }}>
+                  <ListItemIcon>
+                    <ScienceIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Temperature Adaptation Research"
+                    secondary="Caps researches how marine species adapt to rising sea temperatures and develops conservation measures."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
+                  />
+                </ListItem>
+                <ListItem sx={{ px: 0 }}>
+                  <ListItemIcon>
+                    <TrendingUpIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Habitat Restoration"
+                    secondary="Caps works on restoring and protecting critical marine habitats that support diverse sea species."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
+                  />
+                </ListItem>
+                <ListItem sx={{ px: 0 }}>
+                  <ListItemIcon>
+                    <LightbulbIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Sustainable Fishing Practices"
+                    secondary="Caps promotes sustainable fishing methods that minimize impact on marine species and their habitats."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
+                  />
+                </ListItem>
+                <ListItem sx={{ px: 0 }}>
+                  <ListItemIcon>
+                    <SpaIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Marine Protected Areas"
+                    secondary="Caps advocates for and helps establish marine protected areas to safeguard vulnerable sea species."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
+                  />
+                </ListItem>
+              </List>
+
+              <Typography
+                variant="h5"
+                component="h2"
+                gutterBottom
+                sx={{
+                  fontWeight: 600,
+                  mt: { xs: 3, md: 4 },
+                  fontSize: { xs: "1.2rem", sm: "1.3rem", md: "1.4rem" },
+                }}
+              >
+                Conservation and Research
+              </Typography>
+              <List>
+                <ListItem sx={{ px: 0 }}>
+                  <ListItemIcon>
+                    <SchoolIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Species Monitoring"
+                    secondary="Caps conducts regular monitoring of marine species populations to track changes and identify threats."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
+                  />
+                </ListItem>
+                <ListItem sx={{ px: 0 }}>
+                  <ListItemIcon>
+                    <GrassIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Ecosystem Restoration"
+                    secondary="Caps works on restoring damaged marine ecosystems to support healthy sea species populations."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
+                  />
+                </ListItem>
+                <ListItem sx={{ px: 0 }}>
+                  <ListItemIcon>
+                    <WbIncandescentIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Climate Resilience Research"
+                    secondary="Caps researches how marine species can build resilience to climate change impacts."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
+                  />
+                </ListItem>
+              </List>
+            </Grid>
+
+            <Grid item xs={12}>
+              <Typography
+                variant="h5"
+                component="h2"
+                gutterBottom
+                sx={{
+                  fontWeight: 600,
+                  fontSize: { xs: "1.2rem", sm: "1.3rem", md: "1.4rem" },
+                }}
+              >
+                Community Engagement and Policy
+              </Typography>
+              <List>
+                <ListItem sx={{ px: 0 }}>
+                  <ListItemIcon>
+                    <HandshakeIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Fisher Community Partnerships"
+                    secondary="Caps collaborates with fishing communities to develop sustainable practices that protect sea species."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
+                  />
+                </ListItem>
+                <ListItem sx={{ px: 0 }}>
+                  <ListItemIcon>
+                    <PublicIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Policy Advocacy"
+                    secondary="Caps advocates for policies that protect marine species and promote sustainable ocean management."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
+                  />
+                </ListItem>
+                <ListItem sx={{ px: 0 }}>
+                  <ListItemIcon>
+                    <NaturePeopleIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Public Awareness"
+                    secondary="Caps raises public awareness about the importance of marine species and the threats they face from climate change."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
+                  />
+                </ListItem>
+                <ListItem sx={{ px: 0 }}>
+                  <ListItemIcon>
+                    <BoltIcon
+                      color="primary"
+                      sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
+                    />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Emergency Response"
+                    secondary="Caps develops emergency response plans for marine species affected by climate-related disasters."
+                    sx={{
+                      "& .MuiListItemText-primary": {
+                        fontWeight: 600,
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                      },
+                      "& .MuiListItemText-secondary": {
+                        fontSize: { xs: "0.8rem", sm: "0.875rem" },
+                      },
+                    }}
+                  />
+                </ListItem>
+              </List>
+
+              <Typography
+                variant="body1"
+                paragraph
+                sx={{
+                  textAlign: "justify",
+                  mt: { xs: 3, md: 4 },
+                  fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                }}
+              >
+                Through these comprehensive strategies, we work to ensure the
+                survival and resilience of marine species in the face of climate
+                change, protecting the biodiversity and health of our oceans for
+                future generations.
+              </Typography>
+            </Grid>
+          </Grid>
+        </Paper>
+      </Container>
+    </Box>
+  );
 };
 
 export default ClimateSmartAdaptationForSeaSpecies;
