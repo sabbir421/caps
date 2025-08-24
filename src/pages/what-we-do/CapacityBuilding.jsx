@@ -13,6 +13,7 @@ import {
   ListItemIcon,
   ListItemText,
   useTheme,
+  useMediaQuery,
 } from "@mui/material";
 import {
   Nature,
@@ -26,6 +27,7 @@ import {
 
 const CapacityBuilding = () => {
   const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   const programs = [
     {
@@ -100,7 +102,7 @@ const CapacityBuilding = () => {
         sx={{
           bgcolor: theme.palette.primary.main,
           color: "white",
-          py: 10,
+          py: { xs: 6, md: 10 },
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
@@ -108,13 +110,14 @@ const CapacityBuilding = () => {
           textAlign: "center",
         }}
       >
-        <Container maxWidth="md">
+        <Container maxWidth="xl">
           <Typography
             variant="h1"
             sx={{
               fontWeight: 700,
-              mb: 3,
-              fontSize: { xs: "2.5rem", md: "3.5rem" },
+              mb: { xs: 2, md: 3 },
+              fontSize: { xs: "2rem", sm: "2.5rem", md: "3rem", lg: "3.5rem" },
+              lineHeight: 1.2,
             }}
           >
             Capacity Building
@@ -122,10 +125,14 @@ const CapacityBuilding = () => {
           <Typography
             variant="h6"
             sx={{
-              mb: 4,
+              mb: { xs: 3, md: 4 },
               opacity: 0.9,
               lineHeight: 1.6,
               textAlign: "justify",
+              fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+              maxWidth: { xs: "100%", sm: "600px", md: "700px" },
+              mx: "auto",
+              px: { xs: 2, sm: 0 },
             }}
           >
             Empowering communities through comprehensive training, skill
@@ -138,36 +145,38 @@ const CapacityBuilding = () => {
             alt="Capacity Building"
             sx={{
               width: "100%",
-              maxWidth: 600,
-              borderRadius: 4,
+              maxWidth: { xs: "100%", sm: "500px", md: "600px" },
+              borderRadius: { xs: 2, md: 4 },
               boxShadow: "0px 20px 40px rgba(0, 0, 0, 0.2)",
               mx: "auto",
               display: "block",
+              height: "auto",
             }}
           />
         </Container>
       </Box>
 
       {/* Impact Statistics */}
-      <Box sx={{ py: 8, backgroundColor: "#f9f9f9" }}>
-        <Container maxWidth="lg">
+      <Box sx={{ py: { xs: 6, md: 8 }, backgroundColor: "#f9f9f9" }}>
+        <Container maxWidth="xl">
           <Typography
             variant="h2"
             sx={{
               textAlign: "center",
               fontWeight: 700,
-              mb: 6,
+              mb: { xs: 4, md: 6 },
+              fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.5rem" },
             }}
           >
             Capacity Building Impact
           </Typography>
-          <Grid container spacing={4} justifyContent="center">
+          <Grid container spacing={{ xs: 3, md: 4 }} justifyContent="center">
             {impactStats.map((stat, index) => (
               <Grid item xs={12} sm={6} md={3} key={index}>
                 <Box
                   sx={{
                     textAlign: "center",
-                    p: 3,
+                    p: { xs: 2, md: 3 },
                     borderRadius: 3,
                     backgroundColor: "white",
                     boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
@@ -183,20 +192,33 @@ const CapacityBuilding = () => {
                       display: "inline-flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      width: 70,
-                      height: 70,
+                      width: { xs: 60, md: 70 },
+                      height: { xs: 60, md: 70 },
                       borderRadius: "50%",
                       backgroundColor: theme.palette.primary.main,
                       color: "white",
-                      mb: 2,
+                      mb: { xs: 1.5, md: 2 },
                     }}
                   >
-                    <stat.icon sx={{ fontSize: 34 }} />
+                    <stat.icon sx={{ fontSize: { xs: 28, md: 34 } }} />
                   </Box>
-                  <Typography variant="h4" sx={{ fontWeight: 700, mb: 1 }}>
+                  <Typography
+                    variant="h4"
+                    sx={{
+                      fontWeight: 700,
+                      mb: 1,
+                      fontSize: { xs: "1.8rem", sm: "2rem", md: "2.2rem" },
+                    }}
+                  >
                     {stat.number}
                   </Typography>
-                  <Typography variant="subtitle1" color="textSecondary">
+                  <Typography
+                    variant="subtitle1"
+                    color="textSecondary"
+                    sx={{
+                      fontSize: { xs: "0.85rem", sm: "0.9rem", md: "1rem" },
+                    }}
+                  >
                     {stat.label}
                   </Typography>
                 </Box>
@@ -207,21 +229,22 @@ const CapacityBuilding = () => {
       </Box>
 
       {/* Programs */}
-      <Box sx={{ py: 8 }}>
-        <Container maxWidth="lg">
+      <Box sx={{ py: { xs: 6, md: 8 } }}>
+        <Container maxWidth="xl">
           <Typography
             variant="h2"
             sx={{
               textAlign: "center",
               fontWeight: 700,
-              mb: 6,
+              mb: { xs: 4, md: 6 },
+              fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.5rem" },
             }}
           >
             Our Capacity Building Programs
           </Typography>
-          <Grid container spacing={4} justifyContent="center">
+          <Grid container spacing={{ xs: 3, md: 4 }} justifyContent="center">
             {programs.map((program, index) => (
-              <Grid item xs={12} sm={8} md={5} key={index}>
+              <Grid item xs={12} sm={6} md={6} lg={5} key={index}>
                 <Card
                   sx={{
                     height: "100%",
@@ -235,17 +258,18 @@ const CapacityBuilding = () => {
                 >
                   <CardMedia
                     component="img"
-                    height="200"
+                    height={isMobile ? "180" : "200"}
                     image={program.image}
                     alt={program.title}
+                    sx={{ objectFit: "cover" }}
                   />
-                  <CardContent sx={{ p: 3 }}>
+                  <CardContent sx={{ p: { xs: 2, md: 3 } }}>
                     <Box
                       sx={{
                         display: "flex",
                         flexDirection: "column",
                         alignItems: "center",
-                        mb: 2,
+                        mb: { xs: 1.5, md: 2 },
                       }}
                     >
                       <Box
@@ -253,20 +277,27 @@ const CapacityBuilding = () => {
                           display: "flex",
                           alignItems: "center",
                           justifyContent: "center",
-                          width: 50,
-                          height: 50,
+                          width: { xs: 45, md: 50 },
+                          height: { xs: 45, md: 50 },
                           borderRadius: "50%",
                           backgroundColor: theme.palette.primary.main,
                           color: "white",
                           mb: 1,
                         }}
                       >
-                        <program.icon />
+                        <program.icon sx={{ fontSize: { xs: 20, md: 24 } }} />
                       </Box>
                       <Typography
                         variant="h5"
                         component="h3"
-                        sx={{ fontWeight: 600 }}
+                        sx={{
+                          fontWeight: 600,
+                          fontSize: {
+                            xs: "1.2rem",
+                            sm: "1.3rem",
+                            md: "1.4rem",
+                          },
+                        }}
                       >
                         {program.title}
                       </Typography>
@@ -274,9 +305,11 @@ const CapacityBuilding = () => {
                     <Typography
                       variant="body1"
                       sx={{
-                        mb: 3,
+                        mb: { xs: 2, md: 3 },
                         color: theme.palette.text.secondary,
                         lineHeight: 1.6,
+                        fontSize: { xs: "0.85rem", sm: "0.9rem", md: "1rem" },
+                        textAlign: "justify",
                       }}
                     >
                       {program.description}
@@ -284,11 +317,11 @@ const CapacityBuilding = () => {
                     <List dense sx={{ textAlign: "left" }}>
                       {program.details.map((detail, detailIndex) => (
                         <ListItem key={detailIndex} sx={{ px: 0 }}>
-                          <ListItemIcon sx={{ minWidth: 30 }}>
+                          <ListItemIcon sx={{ minWidth: { xs: 25, md: 30 } }}>
                             <Box
                               sx={{
-                                width: 6,
-                                height: 6,
+                                width: { xs: 5, md: 6 },
+                                height: { xs: 5, md: 6 },
                                 borderRadius: "50%",
                                 backgroundColor: theme.palette.primary.main,
                               }}
@@ -297,7 +330,11 @@ const CapacityBuilding = () => {
                           <ListItemText
                             primary={detail}
                             primaryTypographyProps={{
-                              fontSize: "0.9rem",
+                              fontSize: {
+                                xs: "0.8rem",
+                                sm: "0.85rem",
+                                md: "0.9rem",
+                              },
                               color: theme.palette.text.secondary,
                             }}
                           />
@@ -315,17 +352,34 @@ const CapacityBuilding = () => {
       {/* Call to Action */}
       <Box
         sx={{
-          py: 8,
+          py: { xs: 6, md: 8 },
           bgcolor: theme.palette.primary.main,
           color: "white",
           textAlign: "center",
         }}
       >
-        <Container maxWidth="sm">
-          <Typography variant="h3" sx={{ fontWeight: 700, mb: 3 }}>
+        <Container maxWidth="xl">
+          <Typography
+            variant="h3"
+            sx={{
+              fontWeight: 700,
+              mb: { xs: 2, md: 3 },
+              fontSize: { xs: "1.5rem", sm: "1.8rem", md: "2rem" },
+            }}
+          >
             Support Capacity Building
           </Typography>
-          <Typography variant="h6" sx={{ mb: 4, opacity: 0.9 }}>
+          <Typography
+            variant="h6"
+            sx={{
+              mb: { xs: 3, md: 4 },
+              opacity: 0.9,
+              fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+              maxWidth: { xs: "100%", sm: "500px", md: "600px" },
+              mx: "auto",
+              px: { xs: 2, sm: 0 },
+            }}
+          >
             Building capacity is building the future. Help us empower
             communities.
           </Typography>
@@ -334,8 +388,8 @@ const CapacityBuilding = () => {
             sx={{
               backgroundColor: "rgba(255, 255, 255, 0.2)",
               color: "white",
-              fontSize: "1.1rem",
-              padding: "12px 24px",
+              fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+              padding: { xs: "8px 16px", md: "12px 24px" },
               "&:hover": {
                 backgroundColor: "rgba(255, 255, 255, 0.3)",
               },

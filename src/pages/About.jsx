@@ -8,6 +8,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Chip from "@mui/material/Chip";
 import Button from "@mui/material/Button";
+import Avatar from "@mui/material/Avatar";
 import { styled } from "@mui/material/styles";
 import Fade from "@mui/material/Fade";
 
@@ -146,177 +147,183 @@ function About() {
           >
             <Grid item xs={12} md={6}>
               <Fade in timeout={1000}>
-                <Box>
-                  <Typography
-                    variant="h4"
-                    gutterBottom
-                    sx={{
-                      color: "primary.main",
-                      fontWeight: "bold",
-                      mb: { xs: 2, md: 4 },
-                      fontSize: { xs: "1.5rem", sm: "1.8rem", md: "2rem" },
-                    }}
-                  >
-                    Our Goals
-                  </Typography>
-                  <Typography
-                    variant="body1"
-                    paragraph
-                    sx={{
-                      fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
-                      lineHeight: 1.8,
-                      mb: 4,
-                      color: "text.primary",
-                      textAlign: "justify",
-                    }}
-                  >
-                    Caps || Climate Adaptation Plan Society has designed a
-                    comprehensive strategy to help communities as well as
-                    societies adapt to the impacts of climate change. The
-                    Society outlines strategies and actions, takes to prepare
-                    for and adjust to the unavoidable impacts of climate change.
-                    These plans aim to reduce vulnerability, build resilience,
-                    and integrate adaptation into various sectors and levels of
-                    governance. They often involve a combination of
-                    infrastructural, institutional, behavioral, and nature-based
-                    solutions. Our specialty is in the point.... <br /> <br />
-                    A. Limited cost, service more <br />
-                    B. Small work, total solution <br />
-                    C. Area small, full support, achievement 100%
-                    <br /> <br />
-                    Based on the point <strong>B+C,</strong> we declare a small
-                    community having Min20, Max50 houses and then following the
-                    point A we emphasize on cost management and try to be a
-                    sustainable Development Partner providing more social
-                    development support within our limit for the people of the
-                    country specially, coastal districts, as a whole Lower
-                    Southern Part of Bangladesh that can be go under water for
-                    climate change impact predicted by Scientists. <br /> <br />
-                    Education Program is the Mother program of all programs,
-                    bearing the sense, Caps takes Climate Smart Education
-                    program first among the 40 programs of Climate Adaptation
-                    Plan sothat all the programs can be launched fruitfully one
-                    after one through Education program as guardians make
-                    connections and keep the connections with Educational
-                    Institutions. Based on B+C, Caps sets up a CLC-Community
-                    Learning Centre in the proposed community for all types of
-                    Education, for all age's people. Caps works in the root of
-                    climate change impact and under goes Nature Based Solution
-                    for sustainable development of the most vulnerable coastal
-                    poor people of southern part of Bangladesh. It's our Goal.{" "}
-                    <br /> <br />
-                    <strong>
-                      Key components of Climate Adaptation Plan Society:
-                    </strong>{" "}
-                    <br />
-                    <b>Vulnerability Assessment:</b> <br /> Identifying
-                    communities and sectors most at risk from climate change
-                    impacts like sea-level rise, extreme weather events, and
-                    water scarcity. <br />
-                    <b>Adaptation Strategies:</b> <br /> Developing and
-                    implementing measures to reduce vulnerability and build
-                    resilience. <br /> This can include: <br /> Infrastructural:
-                    Building seawalls, flood defenses, and resilient
-                    infrastructure. <br />
-                    Institutional: Developing new insurance schemes, early
-                    warning systems, and climate-resilient building codes.{" "}
-                    <br />
-                    Behavioral: Changing crop planting times, promoting water
-                    conservation, and adopting climate-smart agricultural
-                    practices. <br /> Nature-based Solutions: Utilizing green
-                    infrastructure, restoring wetlands, and promoting
-                    sustainable land management. <br /> Integration into
-                    Planning: Incorporating climate adaptation considerations
-                    into national and local development plans, policies, and
-                    programs. <br /> Stakeholder Engagement: Involving
-                    vulnerable communities, local governments, civil society
-                    organizations, and other stakeholders in the planning and
-                    implementation process. <br />{" "}
-                    <b>Monitoring and Evaluation:</b> <br /> Tracking the
-                    effectiveness of adaptation measures and making adjustments
-                    as needed. <br /> <br />{" "}
-                    <b>Examples of Climate Adaptation Plans:</b> <br />{" "}
-                    <b>National Adaptation Plans (NAPs):</b> These are
-                    country-led strategies that outline how countries will adapt
-                    to climate change in the medium and long term. <br />{" "}
-                    <b>Community-Based Adaptation (CBA):</b> <br />
-                    These initiatives empower vulnerable communities to adapt to
-                    climate change impacts through participatory planning and
-                    action. <br />
-                    <b>City-Level Adaptation Plans: </b> <br /> Many cities are
-                    developing their own plans to address climate risks specific
-                    to their urban environment. <br /> <br />
-                    <b>Importance of Climate Adaptation Plans:</b> <br />
-                    <b>Reducing Vulnerability:</b> <br /> Adaptation plans help
-                    communities and societies become more resilient to the
-                    impacts of climate change. <br />
-                    <b>
-                      Protecting Livelihoods and Infrastructure:
-                    </b> <br /> Adaptation measures can safeguard livelihoods,
-                    infrastructure, and economic activity. <br /> Building
-                    <b>Building a Sustainable Future:</b> <br /> Climate
-                    adaptation is crucial for achieving sustainable development
-                    goals and ensuring a healthy planet for future generations.
-                  </Typography>
-                  <Typography
-                    variant="body1"
-                    paragraph
-                    sx={{
-                      fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
-                      lineHeight: 1.8,
-                      color: "text.primary",
-                      textAlign: "justify",
-                    }}
-                  >
-                    Since our founding, we've worked with over 50 rural
-                    communities across the country, implementing innovative
-                    solutions for environmental conservation and community
-                    development.
-                  </Typography>
+                <Container>
+                  <Box>
+                    <Typography
+                      variant="h4"
+                      gutterBottom
+                      sx={{
+                        color: "primary.main",
+                        fontWeight: "bold",
+                        mb: { xs: 2, md: 4 },
+                        fontSize: { xs: "1.5rem", sm: "1.8rem", md: "2rem" },
+                      }}
+                    >
+                      Our Goals
+                    </Typography>
+                    <Typography
+                      variant="body1"
+                      paragraph
+                      sx={{
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                        lineHeight: 1.8,
+                        mb: 4,
+                        color: "text.primary",
+                        textAlign: "justify",
+                      }}
+                    >
+                      Caps || Climate Adaptation Plan Society has designed a
+                      comprehensive strategy to help communities as well as
+                      societies adapt to the impacts of climate change. The
+                      Society outlines strategies and actions, takes to prepare
+                      for and adjust to the unavoidable impacts of climate
+                      change. These plans aim to reduce vulnerability, build
+                      resilience, and integrate adaptation into various sectors
+                      and levels of governance. They often involve a combination
+                      of infrastructural, institutional, behavioral, and
+                      nature-based solutions. Our specialty is in the point....{" "}
+                      <br /> <br />
+                      A. Limited cost, service more <br />
+                      B. Small work, total solution <br />
+                      C. Area small, full support, achievement 100%
+                      <br /> <br />
+                      Based on the point <strong>B+C,</strong> we declare a
+                      small community having Min20, Max50 houses and then
+                      following the point A we emphasize on cost management and
+                      try to be a sustainable Development Partner providing more
+                      social development support within our limit for the people
+                      of the country specially, coastal districts, as a whole
+                      Lower Southern Part of Bangladesh that can be go under
+                      water for climate change impact predicted by Scientists.{" "}
+                      <br /> <br />
+                      Education Program is the Mother program of all programs,
+                      bearing the sense, <strong>Caps</strong> takes{" "}
+                      <strong> Climate Smart Education </strong> program first
+                      among the 40 programs of Climate Adaptation Plan sothat
+                      all the programs can be launched fruitfully one after one
+                      through Education program as guardians make connections
+                      and keep the connections with Educational Institutions.
+                      Based on B+C, Caps sets up a CLC-Community Learning Centre
+                      in the proposed community for all types of Education, for
+                      all age's people. Caps works in the root of climate change
+                      impact and under goes Nature Based Solution for
+                      sustainable development of the most vulnerable coastal
+                      poor people of southern part of Bangladesh. It's our Goal.{" "}
+                      <br /> <br />
+                      <strong>
+                        Key components of Climate Adaptation Plan Society:
+                      </strong>{" "}
+                      <br />
+                      <b>Vulnerability Assessment:</b> <br /> Identifying
+                      communities and sectors most at risk from climate change
+                      impacts like sea-level rise, extreme weather events, and
+                      water scarcity. <br />
+                      <b>Adaptation Strategies:</b> <br /> Developing and
+                      implementing measures to reduce vulnerability and build
+                      resilience. <br /> This can include <br />{" "}
+                      Infrastructural: Building seawalls, flood defenses, and
+                      resilient infrastructure. <br />
+                      Institutional: Developing new insurance schemes, early
+                      warning systems, and climate-resilient building codes.{" "}
+                      <br />
+                      Behavioral: Changing crop planting times, promoting water
+                      conservation, and adopting climate-smart agricultural
+                      practices. <br /> Nature-based Solutions: Utilizing green
+                      infrastructure, restoring wetlands, and promoting
+                      sustainable land management. <br /> Integration into
+                      Planning: Incorporating climate adaptation considerations
+                      into national and local development plans, policies, and
+                      programs. <br /> Stakeholder Engagement: Involving
+                      vulnerable communities, local governments, civil society
+                      organizations, and other stakeholders in the planning and
+                      implementation process. <br />{" "}
+                      <b>Monitoring and Evaluation:</b> <br /> Tracking the
+                      effectiveness of adaptation measures and making
+                      adjustments as needed. <br /> <br />{" "}
+                      <b>Examples of Climate Adaptation Plans:</b> <br />{" "}
+                      <b>National Adaptation Plans (NAPs):</b> These are
+                      country-led strategies that outline how countries will
+                      adapt to climate change in the medium and long term.{" "}
+                      <br /> <b>Community-Based Adaptation (CBA):</b> <br />
+                      These initiatives empower vulnerable communities to adapt
+                      to climate change impacts through participatory planning
+                      and action. <br />
+                      <b>City-Level Adaptation Plans: </b> <br /> Many cities
+                      are developing their own plans to address climate risks
+                      specific to their urban environment. <br /> <br />
+                      <b>Importance of Climate Adaptation Plans:</b> <br />
+                      <b>Reducing Vulnerability:</b> <br /> Adaptation plans
+                      help communities and societies become more resilient to
+                      the impacts of climate change. <br />
+                      <b>
+                        Protecting Livelihoods and Infrastructure:
+                      </b> <br /> Adaptation measures can safeguard livelihoods,
+                      infrastructure, and economic activity. <br />
+                      <b>Building a Sustainable Future:</b> <br /> Climate
+                      adaptation is crucial for achieving sustainable
+                      development goals and ensuring a healthy planet for future
+                      generations.
+                    </Typography>
+                    <Typography
+                      variant="body1"
+                      paragraph
+                      sx={{
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                        lineHeight: 1.8,
+                        color: "text.primary",
+                        textAlign: "justify",
+                      }}
+                    >
+                      Since our founding, we've worked with over 50 rural
+                      communities across the country, implementing innovative
+                      solutions for environmental conservation and community
+                      development.
+                    </Typography>
 
-                  <Box sx={{ mt: { xs: 3, md: 5 } }}>
-                    <Chip
-                      label="Climate Action"
-                      color="primary"
-                      sx={{
-                        mr: { xs: 1, sm: 2 },
-                        mb: 2,
-                        fontSize: { xs: "0.8rem", sm: "1rem" },
-                        py: 1,
-                      }}
-                    />
-                    <Chip
-                      label="Education"
-                      color="secondary"
-                      sx={{
-                        mr: { xs: 1, sm: 2 },
-                        mb: 2,
-                        fontSize: { xs: "0.8rem", sm: "1rem" },
-                        py: 1,
-                      }}
-                    />
-                    <Chip
-                      label="Healthcare"
-                      color="success"
-                      sx={{
-                        mr: { xs: 1, sm: 2 },
-                        mb: 2,
-                        fontSize: { xs: "0.8rem", sm: "1rem" },
-                        py: 1,
-                      }}
-                    />
-                    <Chip
-                      label="Rural Development"
-                      color="info"
-                      sx={{
-                        mr: { xs: 1, sm: 2 },
-                        mb: 2,
-                        fontSize: { xs: "0.8rem", sm: "1rem" },
-                        py: 1,
-                      }}
-                    />
+                    <Box sx={{ mt: { xs: 3, md: 5 } }}>
+                      <Chip
+                        label="Climate Action"
+                        color="primary"
+                        sx={{
+                          mr: { xs: 1, sm: 2 },
+                          mb: 2,
+                          fontSize: { xs: "0.8rem", sm: "1rem" },
+                          py: 1,
+                        }}
+                      />
+                      <Chip
+                        label="Education"
+                        color="secondary"
+                        sx={{
+                          mr: { xs: 1, sm: 2 },
+                          mb: 2,
+                          fontSize: { xs: "0.8rem", sm: "1rem" },
+                          py: 1,
+                        }}
+                      />
+                      <Chip
+                        label="Healthcare"
+                        color="success"
+                        sx={{
+                          mr: { xs: 1, sm: 2 },
+                          mb: 2,
+                          fontSize: { xs: "0.8rem", sm: "1rem" },
+                          py: 1,
+                        }}
+                      />
+                      <Chip
+                        label="Rural Development"
+                        color="info"
+                        sx={{
+                          mr: { xs: 1, sm: 2 },
+                          mb: 2,
+                          fontSize: { xs: "0.8rem", sm: "1rem" },
+                          py: 1,
+                        }}
+                      />
+                    </Box>
                   </Box>
-                </Box>
+                </Container>
               </Fade>
             </Grid>
 
@@ -657,6 +664,633 @@ function About() {
         </Container>
       </AltSectionBox>
 
+      {/* Team Section */}
+      <AltSectionBox sx={{ width: "100%" }}>
+        <Container maxWidth="xl">
+          <Typography
+            variant="h3"
+            gutterBottom
+            sx={{
+              textAlign: "center",
+              color: "primary.main",
+              mb: { xs: 4, md: 8 },
+              fontWeight: "bold",
+              fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.5rem" },
+            }}
+          >
+            Meet Our Team
+          </Typography>
+
+          <Typography
+            variant="body1"
+            sx={{
+              textAlign: "center",
+              fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+              lineHeight: 1.8,
+              color: "text.secondary",
+              maxWidth: "800px",
+              mx: "auto",
+              mb: { xs: 4, md: 6 },
+            }}
+          >
+            Our dedicated team of professionals brings together diverse
+            expertise in climate action, community development, education, and
+            sustainable practices to drive positive change.
+          </Typography>
+
+          <Grid container spacing={{ xs: 3, md: 4 }} justifyContent="center">
+            {/* Executive Director */}
+            <Grid item xs={12} md={6}>
+              <Card
+                sx={{
+                  p: { xs: 3, md: 4 },
+                  textAlign: "center",
+                  height: "100%",
+                  "&:hover": {
+                    boxShadow: 8,
+                    transform: "translateY(-4px)",
+                    transition: "all 0.3s ease",
+                  },
+                  transition: "all 0.3s ease",
+                  borderRadius: 3,
+                  background:
+                    "linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)",
+                }}
+              >
+                <Avatar
+                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                  alt="Director General"
+                  sx={{
+                    width: { xs: 120, md: 140 },
+                    height: { xs: 120, md: 140 },
+                    mx: "auto",
+                    mb: 3,
+                    boxShadow: 4,
+                    border: "4px solid white",
+                  }}
+                />
+                <Typography
+                  variant="h4"
+                  sx={{
+                    fontWeight: 700,
+                    mb: 1,
+                    fontSize: { xs: "1.3rem", sm: "1.5rem", md: "1.6rem" },
+                  }}
+                >
+                  Muhammad Asaduzzaman
+                </Typography>
+                <Typography
+                  color="primary"
+                  sx={{
+                    mb: 2,
+                    fontSize: { xs: "1rem", sm: "1.1rem" },
+                    fontWeight: 600,
+                  }}
+                >
+                  Director General
+                </Typography>
+                <Typography
+                  variant="body2"
+                  color="text.secondary"
+                  sx={{
+                    fontSize: { xs: "0.85rem", sm: "0.9rem" },
+                    lineHeight: 1.6,
+                    mb: 2,
+                  }}
+                >
+                  muhammad.asaduzzaman@capsbd.org
+                </Typography>
+                <Typography
+                  variant="body2"
+                  color="text.secondary"
+                  sx={{
+                    fontSize: { xs: "0.85rem", sm: "0.9rem" },
+                    lineHeight: 1.6,
+                  }}
+                >
+                  Leading the overall strategic direction and management of
+                  CAPS. Overseeing all programs and ensuring organizational
+                  excellence.
+                </Typography>
+              </Card>
+            </Grid>
+
+            {/* Program Director */}
+            <Grid item xs={12} md={6}>
+              <Card
+                sx={{
+                  p: { xs: 3, md: 4 },
+                  textAlign: "center",
+                  height: "100%",
+                  "&:hover": {
+                    boxShadow: 8,
+                    transform: "translateY(-4px)",
+                    transition: "all 0.3s ease",
+                  },
+                  transition: "all 0.3s ease",
+                  borderRadius: 3,
+                  background:
+                    "linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)",
+                }}
+              >
+                <Avatar
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                  alt="Chairperson"
+                  sx={{
+                    width: { xs: 120, md: 140 },
+                    height: { xs: 120, md: 140 },
+                    mx: "auto",
+                    mb: 3,
+                    boxShadow: 4,
+                    border: "4px solid white",
+                  }}
+                />
+                <Typography
+                  variant="h4"
+                  sx={{
+                    fontWeight: 700,
+                    mb: 1,
+                    fontSize: { xs: "1.3rem", sm: "1.5rem", md: "1.6rem" },
+                  }}
+                >
+                  Muhammad Golam Sarwar
+                </Typography>
+                <Typography
+                  color="primary"
+                  sx={{
+                    mb: 2,
+                    fontSize: { xs: "1rem", sm: "1.1rem" },
+                    fontWeight: 600,
+                  }}
+                >
+                  Chairperson
+                </Typography>
+                <Typography
+                  variant="body2"
+                  color="text.secondary"
+                  sx={{
+                    fontSize: { xs: "0.85rem", sm: "0.9rem" },
+                    lineHeight: 1.6,
+                    mb: 2,
+                  }}
+                >
+                  muhammad.golam.sarwar@capsbd.org
+                </Typography>
+                <Typography
+                  variant="body2"
+                  color="text.secondary"
+                  sx={{
+                    fontSize: { xs: "0.85rem", sm: "0.9rem" },
+                    lineHeight: 1.6,
+                  }}
+                >
+                  Providing strategic leadership and governance oversight.
+                  Ensuring CAPS mission alignment and sustainable growth.
+                </Typography>
+              </Card>
+            </Grid>
+
+            {/* Education Coordinator */}
+            <Grid item xs={12} sm={6} md={4}>
+              <Card
+                sx={{
+                  p: { xs: 3, md: 4 },
+                  textAlign: "center",
+                  height: "100%",
+                  "&:hover": {
+                    boxShadow: 6,
+                    transform: "translateY(-4px)",
+                    transition: "all 0.3s ease",
+                  },
+                  transition: "all 0.3s ease",
+                  borderRadius: 3,
+                }}
+              >
+                <Avatar
+                  src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                  alt="Director, Education & Training"
+                  sx={{
+                    width: { xs: 100, md: 120 },
+                    height: { xs: 100, md: 120 },
+                    mx: "auto",
+                    mb: 3,
+                    boxShadow: 3,
+                    border: "3px solid white",
+                  }}
+                />
+                <Typography
+                  variant="h5"
+                  sx={{
+                    fontWeight: 700,
+                    mb: 1,
+                    fontSize: { xs: "1.1rem", sm: "1.2rem", md: "1.3rem" },
+                  }}
+                >
+                  Taslima Khanam
+                </Typography>
+                <Typography
+                  color="primary"
+                  sx={{
+                    mb: 2,
+                    fontSize: { xs: "0.9rem", sm: "1rem" },
+                    fontWeight: 600,
+                  }}
+                >
+                  Director, Education & Training
+                </Typography>
+                <Typography
+                  variant="body2"
+                  color="text.secondary"
+                  sx={{
+                    fontSize: { xs: "0.8rem", sm: "0.85rem" },
+                    lineHeight: 1.5,
+                    mb: 2,
+                  }}
+                >
+                  taslima.khanam@capsbd.org
+                </Typography>
+                <Typography
+                  variant="body2"
+                  color="text.secondary"
+                  sx={{
+                    fontSize: { xs: "0.8rem", sm: "0.85rem" },
+                    lineHeight: 1.5,
+                  }}
+                >
+                  Leading climate-smart education initiatives and capacity
+                  building programs for sustainable community development.
+                </Typography>
+              </Card>
+            </Grid>
+
+            {/* Climate Action Specialist */}
+            <Grid item xs={12} sm={6} md={4}>
+              <Card
+                sx={{
+                  p: { xs: 3, md: 4 },
+                  textAlign: "center",
+                  height: "100%",
+                  "&:hover": {
+                    boxShadow: 6,
+                    transform: "translateY(-4px)",
+                    transition: "all 0.3s ease",
+                  },
+                  transition: "all 0.3s ease",
+                  borderRadius: 3,
+                }}
+              >
+                <Avatar
+                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                  alt="Executive Director"
+                  sx={{
+                    width: { xs: 100, md: 120 },
+                    height: { xs: 100, md: 120 },
+                    mx: "auto",
+                    mb: 3,
+                    boxShadow: 3,
+                    border: "3px solid white",
+                  }}
+                />
+                <Typography
+                  variant="h5"
+                  sx={{
+                    fontWeight: 700,
+                    mb: 1,
+                    fontSize: { xs: "1.1rem", sm: "1.2rem", md: "1.3rem" },
+                  }}
+                >
+                  M. Nasir Hossain Panchayet
+                </Typography>
+                <Typography
+                  color="primary"
+                  sx={{
+                    mb: 2,
+                    fontSize: { xs: "0.9rem", sm: "1rem" },
+                    fontWeight: 600,
+                  }}
+                >
+                  Executive Director
+                </Typography>
+                <Typography
+                  variant="body2"
+                  color="text.secondary"
+                  sx={{
+                    fontSize: { xs: "0.8rem", sm: "0.85rem" },
+                    lineHeight: 1.5,
+                    mb: 2,
+                  }}
+                >
+                  nasir.hossain@capsbd.org
+                </Typography>
+                <Typography
+                  variant="body2"
+                  color="text.secondary"
+                  sx={{
+                    fontSize: { xs: "0.8rem", sm: "0.85rem" },
+                    lineHeight: 1.5,
+                  }}
+                >
+                  Managing day-to-day operations and implementing strategic
+                  initiatives for climate adaptation and community resilience.
+                </Typography>
+              </Card>
+            </Grid>
+
+            {/* Community Outreach Manager */}
+            <Grid item xs={12} sm={6} md={4}>
+              <Card
+                sx={{
+                  p: { xs: 3, md: 4 },
+                  textAlign: "center",
+                  height: "100%",
+                  "&:hover": {
+                    boxShadow: 6,
+                    transform: "translateY(-4px)",
+                    transition: "all 0.3s ease",
+                  },
+                  transition: "all 0.3s ease",
+                  borderRadius: 3,
+                }}
+              >
+                <Avatar
+                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                  alt="Executive Director"
+                  sx={{
+                    width: { xs: 100, md: 120 },
+                    height: { xs: 100, md: 120 },
+                    mx: "auto",
+                    mb: 3,
+                    boxShadow: 3,
+                    border: "3px solid white",
+                  }}
+                />
+                <Typography
+                  variant="h5"
+                  sx={{
+                    fontWeight: 700,
+                    mb: 1,
+                    fontSize: { xs: "1.1rem", sm: "1.2rem", md: "1.3rem" },
+                  }}
+                >
+                  Muhammad Siddikur Rahman Khokon
+                </Typography>
+                <Typography
+                  color="primary"
+                  sx={{
+                    mb: 2,
+                    fontSize: { xs: "0.9rem", sm: "1rem" },
+                    fontWeight: 600,
+                  }}
+                >
+                  Executive Director
+                </Typography>
+                <Typography
+                  variant="body2"
+                  color="text.secondary"
+                  sx={{
+                    fontSize: { xs: "0.8rem", sm: "0.85rem" },
+                    lineHeight: 1.5,
+                    mb: 2,
+                  }}
+                >
+                  siddikur.rahman@capsbd.org
+                </Typography>
+                <Typography
+                  variant="body2"
+                  color="text.secondary"
+                  sx={{
+                    fontSize: { xs: "0.8rem", sm: "0.85rem" },
+                    lineHeight: 1.5,
+                  }}
+                >
+                  Coordinating executive operations and strategic planning for
+                  sustainable development and climate resilience programs.
+                </Typography>
+              </Card>
+            </Grid>
+
+            {/* Director, Administration & Operation */}
+            <Grid item xs={12} sm={6} md={4}>
+              <Card
+                sx={{
+                  p: { xs: 3, md: 4 },
+                  textAlign: "center",
+                  height: "100%",
+                  "&:hover": {
+                    boxShadow: 6,
+                    transform: "translateY(-4px)",
+                    transition: "all 0.3s ease",
+                  },
+                  transition: "all 0.3s ease",
+                  borderRadius: 3,
+                }}
+              >
+                <Avatar
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                  alt="Director, Administration & Operation"
+                  sx={{
+                    width: { xs: 100, md: 120 },
+                    height: { xs: 100, md: 120 },
+                    mx: "auto",
+                    mb: 3,
+                    boxShadow: 3,
+                    border: "3px solid white",
+                  }}
+                />
+                <Typography
+                  variant="h5"
+                  sx={{
+                    fontWeight: 700,
+                    mb: 1,
+                    fontSize: { xs: "1.1rem", sm: "1.2rem", md: "1.3rem" },
+                  }}
+                >
+                  Muhammad Kakaria Hossain
+                </Typography>
+                <Typography
+                  color="primary"
+                  sx={{
+                    mb: 2,
+                    fontSize: { xs: "0.9rem", sm: "1rem" },
+                    fontWeight: 600,
+                  }}
+                >
+                  Director, Administration & Operation
+                </Typography>
+                <Typography
+                  variant="body2"
+                  color="text.secondary"
+                  sx={{
+                    fontSize: { xs: "0.8rem", sm: "0.85rem" },
+                    lineHeight: 1.5,
+                    mb: 2,
+                  }}
+                >
+                  kakaria.hossain@capsbd.org
+                </Typography>
+                <Typography
+                  variant="body2"
+                  color="text.secondary"
+                  sx={{
+                    fontSize: { xs: "0.8rem", sm: "0.85rem" },
+                    lineHeight: 1.5,
+                  }}
+                >
+                  Managing administrative functions and operational efficiency
+                  to support CAPS programs and initiatives.
+                </Typography>
+              </Card>
+            </Grid>
+
+            {/* Director, Community Mobilization */}
+            <Grid item xs={12} sm={6} md={4}>
+              <Card
+                sx={{
+                  p: { xs: 3, md: 4 },
+                  textAlign: "center",
+                  height: "100%",
+                  "&:hover": {
+                    boxShadow: 6,
+                    transform: "translateY(-4px)",
+                    transition: "all 0.3s ease",
+                  },
+                  transition: "all 0.3s ease",
+                  borderRadius: 3,
+                }}
+              >
+                <Avatar
+                  src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                  alt="Director, Community Mobilization"
+                  sx={{
+                    width: { xs: 100, md: 120 },
+                    height: { xs: 100, md: 120 },
+                    mx: "auto",
+                    mb: 3,
+                    boxShadow: 3,
+                    border: "3px solid white",
+                  }}
+                />
+                <Typography
+                  variant="h5"
+                  sx={{
+                    fontWeight: 700,
+                    mb: 1,
+                    fontSize: { xs: "1.1rem", sm: "1.2rem", md: "1.3rem" },
+                  }}
+                >
+                  Mst. Morshada
+                </Typography>
+                <Typography
+                  color="primary"
+                  sx={{
+                    mb: 2,
+                    fontSize: { xs: "0.9rem", sm: "1rem" },
+                    fontWeight: 600,
+                  }}
+                >
+                  Director, Community Mobilization
+                </Typography>
+                <Typography
+                  variant="body2"
+                  color="text.secondary"
+                  sx={{
+                    fontSize: { xs: "0.8rem", sm: "0.85rem" },
+                    lineHeight: 1.5,
+                    mb: 2,
+                  }}
+                >
+                  morshada@capsbd.org
+                </Typography>
+                <Typography
+                  variant="body2"
+                  color="text.secondary"
+                  sx={{
+                    fontSize: { xs: "0.8rem", sm: "0.85rem" },
+                    lineHeight: 1.5,
+                  }}
+                >
+                  Engaging communities and building partnerships for effective
+                  climate adaptation and sustainable development initiatives.
+                </Typography>
+              </Card>
+            </Grid>
+
+            {/* Director, Project Management */}
+            <Grid item xs={12} sm={6} md={4}>
+              <Card
+                sx={{
+                  p: { xs: 3, md: 4 },
+                  textAlign: "center",
+                  height: "100%",
+                  "&:hover": {
+                    boxShadow: 6,
+                    transform: "translateY(-4px)",
+                    transition: "all 0.3s ease",
+                  },
+                  transition: "all 0.3s ease",
+                  borderRadius: 3,
+                }}
+              >
+                <Avatar
+                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                  alt="Director, Project Management"
+                  sx={{
+                    width: { xs: 100, md: 120 },
+                    height: { xs: 100, md: 120 },
+                    mx: "auto",
+                    mb: 3,
+                    boxShadow: 3,
+                    border: "3px solid white",
+                  }}
+                />
+                <Typography
+                  variant="h5"
+                  sx={{
+                    fontWeight: 700,
+                    mb: 1,
+                    fontSize: { xs: "1.1rem", sm: "1.2rem", md: "1.3rem" },
+                  }}
+                >
+                  Muhammad Al Mamun Hawlader
+                </Typography>
+                <Typography
+                  color="primary"
+                  sx={{
+                    mb: 2,
+                    fontSize: { xs: "0.9rem", sm: "1rem" },
+                    fontWeight: 600,
+                  }}
+                >
+                  Director, Project Management
+                </Typography>
+                <Typography
+                  variant="body2"
+                  color="text.secondary"
+                  sx={{
+                    fontSize: { xs: "0.8rem", sm: "0.85rem" },
+                    lineHeight: 1.5,
+                    mb: 2,
+                  }}
+                >
+                  al.mamun@capsbd.org
+                </Typography>
+                <Typography
+                  variant="body2"
+                  color="text.secondary"
+                  sx={{
+                    fontSize: { xs: "0.8rem", sm: "0.85rem" },
+                    lineHeight: 1.5,
+                  }}
+                >
+                  Overseeing project planning, implementation, and monitoring to
+                  ensure successful delivery of climate adaptation programs.
+                </Typography>
+              </Card>
+            </Grid>
+          </Grid>
+        </Container>
+      </AltSectionBox>
+
       {/* Testimonials Section */}
       <SectionBox sx={{ width: "100%", backgroundColor: "#e3f2fd" }}>
         <Container maxWidth="xl" sx={{ textAlign: "center" }}>
@@ -730,73 +1364,6 @@ function About() {
       </SectionBox>
 
       {/* Call to Action Section */}
-      <AltSectionBox
-        sx={{ width: "100%", pt: { xs: 8, md: 10 }, pb: { xs: 8, md: 10 } }}
-      >
-        <Container maxWidth="xl" sx={{ textAlign: "center" }}>
-          <Box
-            sx={{
-              maxWidth: { xs: "100%", sm: "600px", md: "700px" },
-              mx: "auto",
-            }}
-          >
-            <Typography
-              variant="h4"
-              gutterBottom
-              sx={{
-                color: "primary.main",
-                fontWeight: "bold",
-                mb: { xs: 2, md: 4 },
-                fontSize: { xs: "1.5rem", sm: "1.8rem", md: "2rem" },
-              }}
-            >
-              Join Us in Making a Difference
-            </Typography>
-            <Typography
-              variant="h6"
-              color="text.secondary"
-              paragraph
-              sx={{
-                fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
-                mb: { xs: 3, md: 4 },
-                px: { xs: 2, sm: 0 },
-              }}
-            >
-              Your support helps us bring sustainable change to rural
-              communities. Volunteer, donate, or partner with us today.
-            </Typography>
-            <Button
-              variant="contained"
-              size="large"
-              sx={{
-                px: { xs: 4, sm: 5, md: 6 },
-                py: { xs: 1.2, sm: 1.5, md: 1.8 },
-                fontWeight: 700,
-                borderRadius: 3,
-                mr: { xs: 2, sm: 3 },
-                fontSize: { xs: "0.9rem", sm: "1rem" },
-              }}
-              href="/volunteer"
-            >
-              Volunteer
-            </Button>
-            <Button
-              variant="outlined"
-              size="large"
-              sx={{
-                px: { xs: 4, sm: 5, md: 6 },
-                py: { xs: 1.2, sm: 1.5, md: 1.8 },
-                fontWeight: 700,
-                borderRadius: 3,
-                fontSize: { xs: "0.9rem", sm: "1rem" },
-              }}
-              href="/donate"
-            >
-              Donate
-            </Button>
-          </Box>
-        </Container>
-      </AltSectionBox>
     </Box>
   );
 }

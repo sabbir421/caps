@@ -5,10 +5,10 @@ import {
   Typography,
   Grid,
   Card,
-  CardContent,
   Button,
   Avatar,
   Stack,
+  Divider,
 } from "@mui/material";
 import {
   Email,
@@ -48,34 +48,71 @@ const contactInfo = [
 
 const teamMembers = [
   {
-    name: "Dr. Sarah Johnson",
-    role: "Executive Director",
-    email: "sarah.johnson@greenfutureinitiative.org",
-    desc: "15+ years experience in environmental conservation and sustainable development.",
-    img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+    name: "Muhammad Asaduzzaman",
+    role: "Director General",
+    email: "muhammad.asaduzzaman@capsbd.org",
+    desc: "Leading the overall strategic direction and management of CAPS. Overseeing all programs and ensuring organizational excellence.",
+    img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
     featured: true,
   },
   {
-    name: "Michael Chen",
-    role: "Program Director",
-    email: "michael.chen@greenfutureinitiative.org",
-    desc: "Expert in community development & sustainable agriculture.",
+    name: "Muhammad Golam Sarwar",
+    role: "Chairperson",
+    email: "muhammad.golam.sarwar@capsbd.org",
+    desc: "Providing strategic leadership and governance oversight. Ensuring CAPS mission alignment and sustainable growth.",
+    img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+  },
+  {
+    name: "Taslima Khanam",
+    role: "Director, Education & Training",
+    email: "taslima.khanam@capsbd.org",
+    desc: "Leading climate-smart education initiatives and capacity building programs for sustainable community development.",
+    img: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+  },
+  {
+    name: "M. Nasir Hossain Panchayet",
+    role: "Executive Director",
+    email: "nasir.hossain@capsbd.org",
+    desc: "Managing day-to-day operations and implementing strategic initiatives for climate adaptation and community resilience.",
     img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
   },
   {
-    name: "Maria Rodriguez",
-    role: "Education Coordinator",
-    email: "maria.rodriguez@greenfutureinitiative.org",
-    desc: "Dedicated to improving educational access in rural areas.",
-    img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+    name: "Muhammad Siddikur Rahman Khokon",
+    role: "Executive Director",
+    email: "siddikur.rahman@capsbd.org",
+    desc: "Coordinating executive operations and strategic planning for sustainable development and climate resilience programs.",
+    img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+  },
+  {
+    name: "Muhammad Kakaria Hossain",
+    role: "Director, Administration & Operation",
+    email: "kakaria.hossain@capsbd.org",
+    desc: "Managing administrative functions and operational efficiency to support CAPS programs and initiatives.",
+    img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+  },
+  {
+    name: "Mst. Morshada",
+    role: "Director, Community Mobilization",
+    email: "morshada@capsbd.org",
+    desc: "Engaging communities and building partnerships for effective climate adaptation and sustainable development initiatives.",
+    img: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+  },
+  {
+    name: "Muhammad Al Mamun Hawlader",
+    role: "Director, Project Management",
+    email: "al.mamun@capsbd.org",
+    desc: "Overseeing project planning, implementation, and monitoring to ensure successful delivery of climate adaptation programs.",
+    img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
   },
 ];
 
 const socialLinks = [
-  { icon: <Facebook />, color: "#1877F2", name: "Facebook" },
-  { icon: <Twitter />, color: "#1DA1F2", name: "Twitter" },
-  { icon: <Instagram />, color: "#E4405F", name: "Instagram" },
-  { icon: <LinkedIn />, color: "#0A66C2", name: "LinkedIn" },
+  {
+    icon: <Facebook />,
+    color: "white",
+    name: "Facebook",
+    url: "https://www.facebook.com/share/1RbthrbeBQ/",
+  },
 ];
 
 function Contact() {
@@ -86,16 +123,32 @@ function Contact() {
         sx={{
           background:
             "linear-gradient(135deg, #3B82F6 0%, #8B5CF6 50%, #3B82F6 100%)",
-          py: { xs: 6, md: 12 },
+          py: { xs: 8, md: 12 },
           textAlign: "center",
           color: "white",
         }}
       >
         <Container maxWidth="xl">
-          <Typography variant="h3" sx={{ fontWeight: 700, mb: 2 }}>
+          <Typography
+            variant="h3"
+            sx={{
+              color: "white",
+              fontWeight: 700,
+              mb: 3,
+              fontSize: { xs: "2rem", sm: "2.5rem", md: "3rem" },
+            }}
+          >
             Connect With Us
           </Typography>
-          <Typography sx={{ fontSize: { xs: "0.95rem", md: "1.1rem" } }}>
+          <Typography
+            sx={{
+              fontSize: { xs: "1rem", md: "1.2rem" },
+              maxWidth: "800px",
+              mx: "auto",
+              lineHeight: 1.6,
+              color: "white",
+            }}
+          >
             Have questions or want to get involved? Reach out today and join our
             mission to make a positive impact.
           </Typography>
@@ -103,22 +156,40 @@ function Contact() {
       </Box>
 
       {/* Contact Info */}
-      <Container maxWidth="xl" sx={{ py: { xs: 4, md: 8 } }}>
-        <Grid container spacing={3}>
+      <Container maxWidth="xl" sx={{ py: { xs: 6, md: 10 } }}>
+        <Typography
+          variant="h4"
+          sx={{
+            fontWeight: 700,
+            mb: 6,
+            textAlign: "center",
+            fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.5rem" },
+          }}
+        >
+          Get In Touch
+        </Typography>
+
+        <Grid container spacing={4} justifyContent="center">
           {contactInfo.map((item, i) => (
-            <Grid item xs={12} md={4} key={i}>
+            <Grid item xs={12} sm={6} md={4} key={i}>
               <Card
                 sx={{
                   textAlign: "center",
-                  p: 3,
-                  "&:hover": { boxShadow: 6, transform: "translateY(-4px)" },
-                  transition: "0.3s ease",
+                  p: 4,
+                  height: "100%",
+                  "&:hover": {
+                    boxShadow: 8,
+                    transform: "translateY(-8px)",
+                    transition: "all 0.3s ease",
+                  },
+                  transition: "all 0.3s ease",
+                  borderRadius: 3,
                 }}
               >
                 <Box
                   sx={{
-                    width: 64,
-                    height: 64,
+                    width: 80,
+                    height: 80,
                     borderRadius: "50%",
                     bgcolor: item.color,
                     color: "white",
@@ -126,17 +197,38 @@ function Contact() {
                     alignItems: "center",
                     justifyContent: "center",
                     mx: "auto",
-                    mb: 2,
-                    fontSize: 32,
+                    mb: 3,
+                    fontSize: 36,
+                    boxShadow: 3,
                   }}
                 >
                   {item.icon}
                 </Box>
-                <Typography variant="h6" sx={{ fontWeight: 700, mb: 1 }}>
+                <Typography
+                  variant="h6"
+                  sx={{
+                    fontWeight: 700,
+                    mb: 2,
+                    fontSize: { xs: "1.1rem", sm: "1.2rem" },
+                  }}
+                >
                   {item.title}
                 </Typography>
-                <Typography sx={{ mb: 0.5 }}>{item.value}</Typography>
-                <Typography color="text.secondary">{item.subtitle}</Typography>
+                <Typography
+                  sx={{
+                    mb: 1,
+                    fontSize: { xs: "0.95rem", sm: "1rem" },
+                    fontWeight: 500,
+                  }}
+                >
+                  {item.value}
+                </Typography>
+                <Typography
+                  color="text.secondary"
+                  sx={{ fontSize: { xs: "0.85rem", sm: "0.9rem" } }}
+                >
+                  {item.subtitle}
+                </Typography>
               </Card>
             </Grid>
           ))}
@@ -144,115 +236,370 @@ function Contact() {
       </Container>
 
       {/* Team Section */}
-      <Container maxWidth="xl" sx={{ py: { xs: 4, md: 8 } }}>
+      <Container maxWidth="xl" sx={{ py: { xs: 6, md: 10 } }}>
         <Typography
           variant="h4"
-          sx={{ fontWeight: 700, mb: 4, textAlign: "center" }}
+          sx={{
+            fontWeight: 700,
+            mb: 6,
+            textAlign: "center",
+            fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.5rem" },
+          }}
         >
           Meet Our Team
         </Typography>
-        <Grid container spacing={4}>
-          {teamMembers.map((member, i) => (
-            <Grid item xs={12} sm={6} md={4} key={i}>
-              <Card sx={{ p: 3, textAlign: "center" }}>
-                <Avatar
-                  src={member.img}
-                  alt={member.name}
-                  sx={{ width: 120, height: 120, mx: "auto", mb: 2 }}
-                />
-                <Typography variant="h6" sx={{ fontWeight: 700 }}>
-                  {member.name}
-                </Typography>
-                <Typography color="primary" sx={{ mb: 1 }}>
-                  {member.role}
-                </Typography>
-                <Typography
-                  variant="body2"
-                  color="text.secondary"
-                  sx={{ mb: 1 }}
+
+        <Grid container spacing={4} justifyContent="center">
+          {/* Featured Team Member */}
+          {teamMembers
+            .filter((m) => m.featured)
+            .map((member, i) => (
+              <Grid item xs={12} key={i}>
+                <Card
+                  sx={{
+                    p: 6,
+                    textAlign: "center",
+                    boxShadow: 6,
+                    borderRadius: 4,
+                    maxWidth: "800px",
+                    mx: "auto",
+                    background:
+                      "linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)",
+                  }}
                 >
-                  {member.email}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  {member.desc}
-                </Typography>
-              </Card>
-            </Grid>
-          ))}
+                  <Avatar
+                    src={member.img}
+                    alt={member.name}
+                    sx={{
+                      width: 160,
+                      height: 160,
+                      mx: "auto",
+                      mb: 3,
+                      boxShadow: 4,
+                      border: "4px solid white",
+                    }}
+                  />
+                  <Typography
+                    variant="h4"
+                    sx={{
+                      fontWeight: 700,
+                      mb: 2,
+                      fontSize: { xs: "1.5rem", sm: "1.8rem", md: "2rem" },
+                    }}
+                  >
+                    {member.name}
+                  </Typography>
+                  <Typography
+                    color="primary"
+                    sx={{
+                      mb: 2,
+                      fontSize: { xs: "1rem", sm: "1.1rem" },
+                      fontWeight: 600,
+                    }}
+                  >
+                    {member.role}
+                  </Typography>
+                  <Typography
+                    variant="body1"
+                    color="text.secondary"
+                    sx={{
+                      mb: 2,
+                      fontSize: { xs: "0.9rem", sm: "1rem" },
+                    }}
+                  >
+                    {member.email}
+                  </Typography>
+                  <Typography
+                    variant="body1"
+                    color="text.secondary"
+                    sx={{
+                      fontSize: { xs: "0.9rem", sm: "1rem" },
+                      lineHeight: 1.6,
+                      maxWidth: "600px",
+                      mx: "auto",
+                    }}
+                  >
+                    {member.desc}
+                  </Typography>
+                </Card>
+              </Grid>
+            ))}
+
+          {/* Other Team Members */}
+          <Grid item xs={12}>
+            <Divider sx={{ my: 4 }} />
+            <Typography
+              variant="h5"
+              sx={{
+                fontWeight: 600,
+                mb: 4,
+                textAlign: "center",
+                fontSize: { xs: "1.3rem", sm: "1.5rem" },
+              }}
+            >
+              Our Leadership Team
+            </Typography>
+          </Grid>
+
+          {teamMembers
+            .filter((m) => !m.featured)
+            .map((member, i) => (
+              <Grid item xs={12} sm={6} md={4} key={i}>
+                <Card
+                  sx={{
+                    p: 4,
+                    textAlign: "center",
+                    height: "100%",
+                    "&:hover": {
+                      boxShadow: 6,
+                      transform: "translateY(-4px)",
+                      transition: "all 0.3s ease",
+                    },
+                    transition: "all 0.3s ease",
+                    borderRadius: 3,
+                  }}
+                >
+                  <Avatar
+                    src={member.img}
+                    alt={member.name}
+                    sx={{
+                      width: 120,
+                      height: 120,
+                      mx: "auto",
+                      mb: 3,
+                      boxShadow: 3,
+                      border: "3px solid white",
+                    }}
+                  />
+                  <Typography
+                    variant="h6"
+                    sx={{
+                      fontWeight: 700,
+                      mb: 2,
+                      fontSize: { xs: "1.1rem", sm: "1.2rem" },
+                    }}
+                  >
+                    {member.name}
+                  </Typography>
+                  <Typography
+                    color="primary"
+                    sx={{
+                      mb: 2,
+                      fontSize: { xs: "0.9rem", sm: "1rem" },
+                      fontWeight: 600,
+                    }}
+                  >
+                    {member.role}
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    color="text.secondary"
+                    sx={{
+                      mb: 2,
+                      fontSize: { xs: "0.8rem", sm: "0.85rem" },
+                    }}
+                  >
+                    {member.email}
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    color="text.secondary"
+                    sx={{
+                      fontSize: { xs: "0.8rem", sm: "0.85rem" },
+                      lineHeight: 1.5,
+                    }}
+                  >
+                    {member.desc}
+                  </Typography>
+                </Card>
+              </Grid>
+            ))}
         </Grid>
       </Container>
 
       {/* Office Hours & Location */}
-      <Container maxWidth="xl" sx={{ py: { xs: 4, md: 8 } }}>
-        <Grid container spacing={4}>
+      <Container maxWidth="xl" sx={{ py: { xs: 6, md: 10 } }}>
+        <Typography
+          variant="h4"
+          sx={{
+            fontWeight: 700,
+            mb: 6,
+            textAlign: "center",
+            fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.5rem" },
+          }}
+        >
+          Office Information
+        </Typography>
+
+        <Grid container spacing={4} justifyContent="center">
           {/* Office Hours */}
           <Grid item xs={12} md={6}>
-            <Card sx={{ p: 3 }}>
-              <Stack direction="row" spacing={2} alignItems="center" mb={3}>
-                <AccessTime sx={{ color: "#3B82F6", fontSize: 32 }} />
-                <Typography variant="h6" sx={{ fontWeight: 700 }}>
+            <Card sx={{ p: 4, height: "100%", borderRadius: 3 }}>
+              <Stack
+                direction="row"
+                spacing={2}
+                alignItems="center"
+                justifyContent="center"
+                mb={4}
+              >
+                <AccessTime sx={{ color: "#3B82F6", fontSize: 36 }} />
+                <Typography
+                  variant="h5"
+                  sx={{
+                    fontWeight: 700,
+                    fontSize: { xs: "1.3rem", sm: "1.5rem" },
+                  }}
+                >
                   Office Hours
                 </Typography>
               </Stack>
-              <Stack spacing={1}>
-                <Stack direction="row" justifyContent="space-between">
-                  <Typography fontWeight={600}>Mon - Fri:</Typography>
-                  <Typography color="text.secondary">9AM - 6PM</Typography>
+              <Stack spacing={2} sx={{ mb: 4 }}>
+                <Stack
+                  direction="row"
+                  justifyContent="space-between"
+                  alignItems="center"
+                >
+                  <Typography
+                    fontWeight={600}
+                    sx={{ fontSize: { xs: "0.95rem", sm: "1rem" } }}
+                  >
+                    Monday - Friday:
+                  </Typography>
+                  <Typography
+                    color="text.secondary"
+                    sx={{ fontSize: { xs: "0.9rem", sm: "0.95rem" } }}
+                  >
+                    9:00 AM - 6:00 PM
+                  </Typography>
                 </Stack>
-                <Stack direction="row" justifyContent="space-between">
-                  <Typography fontWeight={600}>Saturday:</Typography>
-                  <Typography color="text.secondary">9AM - 6PM</Typography>
+                <Stack
+                  direction="row"
+                  justifyContent="space-between"
+                  alignItems="center"
+                >
+                  <Typography
+                    fontWeight={600}
+                    sx={{ fontSize: { xs: "0.95rem", sm: "1rem" } }}
+                  >
+                    Saturday:
+                  </Typography>
+                  <Typography
+                    color="text.secondary"
+                    sx={{ fontSize: { xs: "0.9rem", sm: "0.95rem" } }}
+                  >
+                    9:00 AM - 6:00 PM
+                  </Typography>
+                </Stack>
+                <Stack
+                  direction="row"
+                  justifyContent="space-between"
+                  alignItems="center"
+                >
+                  <Typography
+                    fontWeight={600}
+                    sx={{ fontSize: { xs: "0.95rem", sm: "1rem" } }}
+                  >
+                    Sunday:
+                  </Typography>
+                  <Typography
+                    color="text.secondary"
+                    sx={{ fontSize: { xs: "0.9rem", sm: "0.95rem" } }}
+                  >
+                    Closed
+                  </Typography>
                 </Stack>
               </Stack>
               <Box
                 sx={{
-                  mt: 3,
                   bgcolor: "#FEF2F2",
-                  p: 2,
-                  borderRadius: 2,
-                  border: "1px solid #FECACA",
+                  p: 3,
+                  borderRadius: 3,
+                  border: "2px solid #FECACA",
                   textAlign: "center",
                 }}
               >
-                <Typography fontWeight={700} mb={1}>
+                <Typography
+                  fontWeight={700}
+                  mb={1}
+                  sx={{ fontSize: { xs: "1rem", sm: "1.1rem" } }}
+                >
                   Emergency Contact
                 </Typography>
-                <Typography color="error" fontWeight={700}>
+                <Typography
+                  color="error"
+                  fontWeight={700}
+                  sx={{ fontSize: { xs: "1.1rem", sm: "1.2rem" } }}
+                >
                   +8801704422997
                 </Typography>
-                <Typography color="text.secondary">Available 24/7</Typography>
+                <Typography
+                  color="text.secondary"
+                  sx={{ fontSize: { xs: "0.85rem", sm: "0.9rem" } }}
+                >
+                  Available 24/7
+                </Typography>
               </Box>
             </Card>
           </Grid>
 
           {/* Location */}
           <Grid item xs={12} md={6}>
-            <Card sx={{ p: 3, textAlign: "center" }}>
+            <Card
+              sx={{
+                p: 4,
+                textAlign: "center",
+                height: "100%",
+                borderRadius: 3,
+              }}
+            >
               <Stack
                 direction="row"
                 spacing={2}
                 alignItems="center"
                 justifyContent="center"
-                mb={3}
+                mb={4}
               >
-                <LocationOn sx={{ color: "#8B5CF6", fontSize: 32 }} />
-                <Typography variant="h6" sx={{ fontWeight: 700 }}>
+                <LocationOn sx={{ color: "#8B5CF6", fontSize: 36 }} />
+                <Typography
+                  variant="h5"
+                  sx={{
+                    fontWeight: 700,
+                    fontSize: { xs: "1.3rem", sm: "1.5rem" },
+                  }}
+                >
                   Our Location
                 </Typography>
               </Stack>
-              <Typography sx={{ mb: 3 }}>
-                Purba Basabat, Bottalar Mor Ward 08, Sadar Bagerhat, Bangladesh
+              <Typography
+                sx={{
+                  mb: 4,
+                  fontSize: { xs: "0.95rem", sm: "1rem" },
+                  lineHeight: 1.6,
+                }}
+              >
+                Purba Basabat, Bottalar Mor Ward 08
+                <br />
+                Sadar Bagerhat, Bangladesh
               </Typography>
               <Button
                 variant="contained"
                 startIcon={<Navigation />}
+                size="large"
                 sx={{
                   background:
                     "linear-gradient(135deg, #8B5CF6 0%, #3B82F6 100%)",
+                  px: 4,
+                  py: 1.5,
+                  borderRadius: 3,
+                  fontSize: { xs: "0.9rem", sm: "1rem" },
+                  fontWeight: 600,
                   "&:hover": {
                     background:
                       "linear-gradient(135deg, #7C3AED 0%, #2563EB 100%)",
+                    transform: "translateY(-2px)",
+                    boxShadow: 4,
                   },
+                  transition: "all 0.3s ease",
                 }}
               >
                 Get Directions
@@ -263,30 +610,56 @@ function Contact() {
       </Container>
 
       {/* Social Media */}
-      <Box sx={{ py: { xs: 4, md: 8 }, textAlign: "center" }}>
+      <Box sx={{ py: { xs: 6, md: 10 }, textAlign: "center" }}>
         <Container maxWidth="xl">
-          <Typography variant="h4" sx={{ fontWeight: 700, mb: 3 }}>
+          <Typography
+            variant="h4"
+            sx={{
+              fontWeight: 700,
+              mb: 4,
+              fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.5rem" },
+            }}
+          >
             Follow Our Journey
+          </Typography>
+          <Typography
+            sx={{
+              mb: 4,
+              fontSize: { xs: "0.95rem", sm: "1rem" },
+              color: "text.secondary",
+              maxWidth: "600px",
+              mx: "auto",
+            }}
+          >
+            Stay connected with us on social media to get the latest updates
+            about our projects and initiatives.
           </Typography>
           <Stack
             direction="row"
-            spacing={2}
+            spacing={3}
             justifyContent="center"
             flexWrap="wrap"
+            sx={{ gap: { xs: 2, sm: 3 } }}
           >
             {socialLinks.map((social, i) => (
               <Button
                 key={i}
+                component="a"
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 sx={{
                   bgcolor: social.color,
                   borderRadius: "50%",
-                  width: 56,
-                  height: 56,
-                  minWidth: 56,
+                  width: 64,
+                  height: 64,
+                  minWidth: 64,
                   "&:hover": {
                     transform: "scale(1.1)",
                     filter: "brightness(0.9)",
+                    boxShadow: 4,
                   },
+                  transition: "all 0.3s ease",
                 }}
               >
                 {social.icon}
