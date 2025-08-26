@@ -126,15 +126,15 @@ const TeamsPage = () => {
   const [expandedCards, setExpandedCards] = useState({});
 
   const toggleExpanded = (index) => {
-    setExpandedCards(prev => ({
+    setExpandedCards((prev) => ({
       ...prev,
-      [index]: !prev[index]
+      [index]: !prev[index],
     }));
   };
 
   const truncateText = (text, maxLength = 120) => {
     if (text.length <= maxLength) return text;
-    return text.substring(0, maxLength) + '...';
+    return text.substring(0, maxLength) + "...";
   };
 
   // Team Members Data
@@ -361,7 +361,15 @@ const TeamsPage = () => {
                 <Zoom in timeout={500 + index * 100}>
                   <Box sx={{ maxWidth: "600px", mx: "auto" }}>
                     <EnhancedTeamCard>
-                      <CardContent sx={{ textAlign: "center", p: 4, flexGrow: 1, display: "flex", flexDirection: "column" }}>
+                      <CardContent
+                        sx={{
+                          textAlign: "center",
+                          p: 4,
+                          flexGrow: 1,
+                          display: "flex",
+                          flexDirection: "column",
+                        }}
+                      >
                         <EnhancedAvatar
                           className="avatar"
                           src={member.img}
@@ -407,19 +415,19 @@ const TeamsPage = () => {
                           }}
                         />
 
-                                                 <Box sx={{ mb: 3 }}>
-                           <Typography
-                             variant="body1"
-                             sx={{
-                               color: "#666",
-                               lineHeight: 1.6,
-                               fontSize: "1rem",
-                               textAlign: "justify",
-                             }}
-                           >
-                             {member.description}
-                           </Typography>
-                         </Box>
+                        <Box sx={{ mb: 3 }}>
+                          <Typography
+                            variant="body1"
+                            sx={{
+                              color: "#666",
+                              lineHeight: 1.6,
+                              fontSize: "1rem",
+                              textAlign: "justify",
+                            }}
+                          >
+                            {member.description}
+                          </Typography>
+                        </Box>
 
                         <Divider
                           sx={{ my: 2, borderColor: "rgba(0,0,0,0.08)" }}
@@ -472,7 +480,15 @@ const TeamsPage = () => {
               <Grid item xs={12} md={6} lg={4} key={index}>
                 <Zoom in timeout={500 + index * 100}>
                   <EnhancedTeamCard>
-                    <CardContent sx={{ textAlign: "center", p: 4, flexGrow: 1, display: "flex", flexDirection: "column" }}>
+                    <CardContent
+                      sx={{
+                        textAlign: "center",
+                        p: 4,
+                        flexGrow: 1,
+                        display: "flex",
+                        flexDirection: "column",
+                      }}
+                    >
                       <EnhancedAvatar
                         className="avatar"
                         src={member.img}
@@ -517,43 +533,42 @@ const TeamsPage = () => {
                         }}
                       />
 
-                                             <Box sx={{ mb: 3 }}>
-                         <Typography
-                           variant="body2"
-                           sx={{
-                             color: "#666",
-                             lineHeight: 1.6,
-                             fontSize: "0.95rem",
-                             minHeight: "4rem",
-                             textAlign: "justify",
-                           }}
-                         >
-                           {expandedCards[index] 
-                             ? member.description 
-                             : truncateText(member.description, 100)
-                           }
-                         </Typography>
-                         {member.description.length > 100 && (
-                           <Button
-                             onClick={() => toggleExpanded(index)}
-                             sx={{
-                               mt: 1,
-                               color: "#667eea",
-                               textTransform: "none",
-                               fontSize: "0.85rem",
-                               fontWeight: 600,
-                               p: 0,
-                               minWidth: "auto",
-                               "&:hover": {
-                                 backgroundColor: "transparent",
-                                 textDecoration: "underline",
-                               },
-                             }}
-                           >
-                             {expandedCards[index] ? "Read Less" : "Read More"}
-                           </Button>
-                         )}
-                       </Box>
+                      <Box sx={{ mb: 3 }}>
+                        <Typography
+                          variant="body2"
+                          sx={{
+                            color: "#666",
+                            lineHeight: 1.6,
+                            fontSize: "0.95rem",
+                            minHeight: "4rem",
+                            textAlign: "justify",
+                          }}
+                        >
+                          {expandedCards[index]
+                            ? member.description
+                            : truncateText(member.description, 100)}
+                        </Typography>
+                        {member.description.length > 100 && (
+                          <Button
+                            onClick={() => toggleExpanded(index)}
+                            sx={{
+                              mt: 1,
+                              color: "#667eea",
+                              textTransform: "none",
+                              fontSize: "0.85rem",
+                              fontWeight: 600,
+                              p: 0,
+                              minWidth: "auto",
+                              "&:hover": {
+                                backgroundColor: "transparent",
+                                textDecoration: "underline",
+                              },
+                            }}
+                          >
+                            {expandedCards[index] ? "Read Less" : "Read More"}
+                          </Button>
+                        )}
+                      </Box>
 
                       <Divider
                         sx={{ my: 2, borderColor: "rgba(0,0,0,0.08)" }}
