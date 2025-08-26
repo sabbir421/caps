@@ -200,7 +200,7 @@ const TeamsPage = () => {
       department: "Climate Finance",
       description:
         "Leading climate finance initiatives and resource mobilization strategies for sustainable development projects.",
-      img: undefined,
+      img: masudImg,
       avatar: "MRM",
       icon: Business,
     },
@@ -279,7 +279,7 @@ const TeamsPage = () => {
       department: "Community Mobilization",
       description:
         "Engaging communities and building partnerships for effective climate adaptation and sustainable development initiatives.",
-      img: morshedaImg,
+      img: undefined,
       avatar: "MM",
       icon: Psychology,
     },
