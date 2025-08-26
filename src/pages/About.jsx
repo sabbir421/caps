@@ -11,7 +11,7 @@ import Button from "@mui/material/Button";
 import Avatar from "@mui/material/Avatar";
 import { styled } from "@mui/material/styles";
 import Fade from "@mui/material/Fade";
-import asad2 from "../assets/asad2.jpeg";
+import asad2 from "../assets/asad3.jpeg";
 import nasirImg from "../assets/nasir.jpeg";
 import khokonImg from "../assets/khokon.jpeg";
 import jakariaImg from "../assets/jakaria.jpeg";
