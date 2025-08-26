@@ -33,6 +33,9 @@ import morshedaImg from "../assets/morsheda.jpeg";
 import taslimaImg from "../assets/taslima.png";
 import masudImg from "../assets/masud.jpeg";
 import mamunImg from "../assets/mamun.jpeg";
+import sabrinaImg from "../assets/sabrina.jpeg";
+import mahfuzaImg from "../assets/mahfuza.jpeg";
+import asadImg3 from "../assets/asad3.jpeg";
 
 // Styled components for modern design
 const HeroSection = styled(Box)(({ theme }) => ({
@@ -175,7 +178,7 @@ const TeamsPage = () => {
       department: "Leadership",
       description:
         "Leading the overall strategic direction and management of CAPS. Overseeing all programs and ensuring organizational excellence.",
-      img: asad2,
+      img: asadImg3,
       avatar: "MA",
       icon: Business,
     },
@@ -197,7 +200,7 @@ const TeamsPage = () => {
       department: "Climate Finance",
       description:
         "Leading climate finance initiatives and resource mobilization strategies for sustainable development projects.",
-      img: masudImg,
+      img: undefined,
       avatar: "MRM",
       icon: Business,
     },
@@ -216,13 +219,35 @@ const TeamsPage = () => {
     {
       name: "M. Nasir Hossain Panchayet",
       position: "Executive Director",
-      email: "nasir.hossain@capsbd.org",
+      email: "nasir.hossain@capsbd.com",
       department: "Executive",
       description:
         "Managing day-to-day operations and implementing strategic initiatives for climate adaptation and community resilience.",
       img: nasirImg,
       avatar: "NHP",
       icon: Business,
+    },
+    {
+      name: "Sabrina Akter",
+      position: "Director Community Learning Research.",
+      email: "sabrina.akter@capsbd.com",
+      department: "Community Learning",
+      description:
+        "Managing day-to-day operations and implementing strategic initiatives for climate adaptation and community resilience.",
+      img: sabrinaImg,
+      avatar: "SA",
+      icon: School,
+    },
+    {
+      name: "Mahfuza Akter",
+      position: "Director, Climate Smart Education",
+      email: "mahfuza.akter@capsbd.com",
+      department: "Community Learning",
+      description:
+        "Managing day-to-day operations and implementing strategic initiatives for climate adaptation and community resilience.",
+      img: mahfuzaImg,
+      avatar: "MA",
+      icon: School,
     },
 
     {
@@ -316,7 +341,7 @@ const TeamsPage = () => {
                 icon={<Group />}
                 label={`${teamMembers.length} Team Members`}
                 sx={{
-                  backgroundColor: "rgba(255,255,255,0.2)",
+                  backgroundColor: "rgba(255, 255, 255, 0.2)",
                   color: "white",
                   fontWeight: 600,
                 }}
