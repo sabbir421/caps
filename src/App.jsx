@@ -9,6 +9,7 @@ import WorkingArea from "./pages/WorkingArea";
 import WhatWeDo from "./pages/WhatWeDo";
 import Publications from "./pages/Publications";
 import Contact from "./pages/Contact";
+import TeamsPage from "./pages/TeamsPage";
 
 // Working Area Sub-pages
 import ClimateAction from "./pages/working-area/ClimateAction";
@@ -211,6 +212,7 @@ function App() {
           <Route path="/what-we-do/partnerships" element={<Partnerships />} />
 
           <Route path="/publications" element={<Publications />} />
+          <Route path="/teams" element={<TeamsPage />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </Box>

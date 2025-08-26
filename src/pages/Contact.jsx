@@ -46,63 +46,97 @@ const contactInfo = [
   },
 ];
 
+import asad2 from "../assets/asad2.jpeg";
+import nasirImg from "../assets/nasir.jpeg";
+import khokonImg from "../assets/khokon.jpeg";
+import jakariaImg from "../assets/jakaria.jpeg";
+import morshedaImg from "../assets/morsheda.jpeg";
+import taslimaImg from "../assets/taslima.png";
+import masudImg from "../assets/masud.jpeg";
+import mamunImg from "../assets/mamun.jpeg";
+
 const teamMembers = [
   {
     name: "Muhammad Asaduzzaman",
     role: "Director General",
     email: "muhammad.asaduzzaman@capsbd.org",
     desc: "Leading the overall strategic direction and management of CAPS. Overseeing all programs and ensuring organizational excellence.",
-    img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+    img: asad2,
+    avatar: "MA",
     featured: true,
+    department: "Leadership",
   },
   {
     name: "Muhammad Golam Sarwar",
     role: "Chairperson",
     email: "muhammad.golam.sarwar@capsbd.org",
     desc: "Providing strategic leadership and governance oversight. Ensuring CAPS mission alignment and sustainable growth.",
-    img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+    img: undefined,
+    avatar: "MGS",
+    department: "Leadership",
+  },
+  {
+    name: "Masudur Rahman Milton",
+    role: "Director, Climate Finance & Resource Mobilization",
+    email: "masudur.rahman@capsbd.com",
+    desc: "Leading climate finance initiatives and resource mobilization strategies for sustainable development projects.",
+    img: masudImg,
+    avatar: "MRM",
+    department: "Climate Action",
   },
   {
     name: "Taslima Khanam",
     role: "Director, Education & Training",
     email: "taslima.khanam@capsbd.org",
     desc: "Leading climate-smart education initiatives and capacity building programs for sustainable community development.",
-    img: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+    img: taslimaImg,
+    avatar: "TK",
+    department: "Education & Training",
   },
   {
     name: "M. Nasir Hossain Panchayet",
     role: "Executive Director",
     email: "nasir.hossain@capsbd.org",
     desc: "Managing day-to-day operations and implementing strategic initiatives for climate adaptation and community resilience.",
-    img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+    img: nasirImg,
+    avatar: "NHP",
+    department: "Executive",
   },
   {
     name: "Muhammad Siddikur Rahman Khokon",
     role: "Executive Director",
-    email: "siddikur.rahman@capsbd.org",
+    email: "siddikur.rahman@capsbd.com",
     desc: "Coordinating executive operations and strategic planning for sustainable development and climate resilience programs.",
-    img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+    img: khokonImg,
+    avatar: "MSRK",
+    department: "Executive",
   },
   {
-    name: "Muhammad Kakaria Hossain",
+    name: "Muhammad Jakaria Hossain",
     role: "Director, Administration & Operation",
-    email: "kakaria.hossain@capsbd.org",
+    email: "jakaria.hossain@capsbd.com",
     desc: "Managing administrative functions and operational efficiency to support CAPS programs and initiatives.",
-    img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+    img: jakariaImg,
+    avatar: "MJH",
+    department: "Administration & Operation",
   },
   {
     name: "Mst. Morshada",
     role: "Director, Community Mobilization",
-    email: "morshada@capsbd.org",
+    email: "morshada@capsbd.com",
     desc: "Engaging communities and building partnerships for effective climate adaptation and sustainable development initiatives.",
-    img: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+    img: morshedaImg,
+    avatar: "MM",
+    department: "Community Mobilization",
   },
   {
     name: "Muhammad Al Mamun Hawlader",
     role: "Director, Project Management",
-    email: "al.mamun@capsbd.org",
+    email: "al.mamun@capsbd.com",
     desc: "Overseeing project planning, implementation, and monitoring to ensure successful delivery of climate adaptation programs.",
-    img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+    img: mamunImg,
+    avatar: "MAH",
+    department: "Project Management",
   },
 ];
 
@@ -277,8 +311,14 @@ function Contact() {
                       mb: 3,
                       boxShadow: 4,
                       border: "4px solid white",
+                      fontSize: "3rem",
+                      fontWeight: 600,
+                      background:
+                        "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
                     }}
-                  />
+                  >
+                    {member.avatar}
+                  </Avatar>
                   <Typography
                     variant="h4"
                     sx={{
@@ -369,8 +409,14 @@ function Contact() {
                       mb: 3,
                       boxShadow: 3,
                       border: "3px solid white",
+                      fontSize: "2rem",
+                      fontWeight: 600,
+                      background:
+                        "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
                     }}
-                  />
+                  >
+                    {member.avatar}
+                  </Avatar>
                   <Typography
                     variant="h6"
                     sx={{

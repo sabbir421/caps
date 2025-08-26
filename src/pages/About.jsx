@@ -11,6 +11,14 @@ import Button from "@mui/material/Button";
 import Avatar from "@mui/material/Avatar";
 import { styled } from "@mui/material/styles";
 import Fade from "@mui/material/Fade";
+import asad2 from "../assets/asad2.jpeg";
+import nasirImg from "../assets/nasir.jpeg";
+import khokonImg from "../assets/khokon.jpeg";
+import jakariaImg from "../assets/jakaria.jpeg";
+import morshedaImg from "../assets/morsheda.jpeg";
+import taslimaImg from "../assets/taslima.png";
+import masudImg from "../assets/masud.jpeg";
+import mamunImg from "../assets/mamun.jpeg";
 
 const SectionBox = styled(Box)(({ theme }) => ({
   padding: theme.spacing(12, 0),
@@ -81,7 +89,160 @@ const TestimonialCard = styled(Card)(({ theme }) => ({
   margin: "auto",
 }));
 
+// Team card styling (same as Teams page)
+const AboutTeamCard = styled(Card)(({ theme }) => ({
+  height: "100%",
+  background: "linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%)",
+  border: "1px solid rgba(0,0,0,0.08)",
+  borderRadius: "16px",
+  transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+  position: "relative",
+  overflow: "hidden",
+  "&::before": {
+    content: '""',
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    height: "4px",
+    background: "linear-gradient(90deg, #667eea 0%, #764ba2 100%)",
+  },
+  "&:hover": {
+    transform: "translateY(-12px)",
+    boxShadow: "0 20px 40px rgba(0,0,0,0.15)",
+    "& .avatar": {
+      transform: "scale(1.1)",
+    },
+  },
+}));
+
+const AboutAvatar = styled(Avatar)(({ theme }) => ({
+  width: 100,
+  height: 100,
+  margin: "0 auto 20px",
+  border: "4px solid #fff",
+  boxShadow: "0 8px 24px rgba(0,0,0,0.15)",
+  transition: "transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+  fontSize: "2rem",
+  fontWeight: 600,
+  background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+  "& img": {
+    objectFit: "cover",
+  },
+}));
+
+const SectionHeader = styled(Box)(({ theme }) => ({
+  textAlign: "center",
+  marginBottom: theme.spacing(6),
+  position: "relative",
+  "&::after": {
+    content: '""',
+    position: "absolute",
+    bottom: "-16px",
+    left: "50%",
+    transform: "translateX(-50%)",
+    width: "60px",
+    height: "4px",
+    background: "linear-gradient(90deg, #667eea 0%, #764ba2 100%)",
+    borderRadius: "2px",
+  },
+}));
+
 function About() {
+  // Team Members Data (same as Teams page)
+  const teamMembers = [
+    {
+      name: "Muhammad Asaduzzaman",
+      position: "Director General",
+      email: "muhammad.asaduzzaman@capsbd.org",
+      department: "Leadership",
+      description:
+        "Leading the overall strategic direction and management of CAPS. Overseeing all programs and ensuring organizational excellence.",
+      img: asad2,
+      avatar: "MA",
+    },
+    {
+      name: "Muhammad Golam Sarwar",
+      position: "Chairperson",
+      email: "muhammad.golam.sarwar@capsbd.org",
+      department: "Leadership",
+      description:
+        "Providing strategic leadership and governance oversight. Ensuring CAPS mission alignment and sustainable growth.",
+      img: undefined,
+      avatar: "MGS",
+    },
+    {
+      name: "Md. Masud Rana Milton",
+      position: "Director, Climate Finance & Resource Mobilization",
+      email: "masud.hossain@capsbd.org",
+      department: "Climate Finance",
+      description:
+        "Leading climate finance initiatives and resource mobilization strategies for sustainable development projects.",
+      img: masudImg,
+      avatar: "MRM",
+    },
+    {
+      name: "Taslima Khanam",
+      position: "Director, Education & Training",
+      email: "taslima.khanam@capsbd.org",
+      department: "Education & Training",
+      description:
+        "Leading climate-smart education initiatives and capacity building programs for sustainable community development.",
+      img: taslimaImg,
+      avatar: "TK",
+    },
+    {
+      name: "M. Nasir Hossain Panchayet",
+      position: "Executive Director",
+      email: "nasir.hossain@capsbd.org",
+      department: "Executive",
+      description:
+        "Managing day-to-day operations and implementing strategic initiatives for climate adaptation and community resilience.",
+      img: nasirImg,
+      avatar: "NHP",
+    },
+    {
+      name: "Muhammad Siddikur Rahman Khokon",
+      position: "Executive Director",
+      email: "siddikur.rahman@capsbd.com",
+      department: "Executive",
+      description:
+        "Coordinating executive operations and strategic planning for sustainable development and climate resilience programs.",
+      img: khokonImg,
+      avatar: "MSRK",
+    },
+    {
+      name: "Muhammad Jakaria Hossain",
+      position: "Director, Administration & Operation",
+      email: "jakaria.hossain@capsbd.com",
+      department: "Administration & Operation",
+      description:
+        "Managing administrative functions and operational efficiency to support CAPS programs and initiatives.",
+      img: jakariaImg,
+      avatar: "MKH",
+    },
+    {
+      name: "Mst. Morshada",
+      position: "Director, Community Mobilization",
+      email: "morshada@capsbd.com",
+      department: "Community Mobilization",
+      description:
+        "Engaging communities and building partnerships for effective climate adaptation and sustainable development initiatives.",
+      img: morshedaImg,
+      avatar: "MM",
+    },
+    {
+      name: "Muhammad Al Mamun Hawlader",
+      position: "Director, Project Management",
+      email: "al.mamun@capsbd.com",
+      department: "Project Management",
+      description:
+        "Overseeing project planning, implementation, and monitoring to ensure successful delivery of climate adaptation programs.",
+      img: mamunImg,
+      avatar: "MAH",
+    },
+  ];
+
   return (
     <Box
       sx={{
@@ -667,626 +828,116 @@ function About() {
       {/* Team Section */}
       <AltSectionBox sx={{ width: "100%" }}>
         <Container maxWidth="xl">
-          <Typography
-            variant="h3"
-            gutterBottom
-            sx={{
-              textAlign: "center",
-              color: "primary.main",
-              mb: { xs: 4, md: 8 },
-              fontWeight: "bold",
-              fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.5rem" },
-            }}
+          <SectionHeader>
+            <Typography
+              variant="h2"
+              sx={{
+                fontWeight: 700,
+                color: "#1e3c72",
+                fontSize: { xs: "2rem", sm: "2.5rem", md: "3rem" },
+                mb: 2,
+              }}
+            >
+              Our Leadership Team
+            </Typography>
+            <Typography
+              variant="h6"
+              sx={{
+                color: "#666",
+                fontSize: { xs: "1rem", md: "1.1rem" },
+                maxWidth: "600px",
+                mx: "auto",
+              }}
+            >
+              Meet the dedicated professionals leading our mission for
+              sustainable development and environmental protection
+            </Typography>
+          </SectionHeader>
+
+          <Grid
+            container
+            spacing={4}
+            justifyContent="center"
+            alignItems="stretch"
           >
-            Meet Our Team
-          </Typography>
-
-          <Typography
-            variant="body1"
-            sx={{
-              textAlign: "center",
-              fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
-              lineHeight: 1.8,
-              color: "text.secondary",
-              maxWidth: "800px",
-              mx: "auto",
-              mb: { xs: 4, md: 6 },
-            }}
-          >
-            Our dedicated team of professionals brings together diverse
-            expertise in climate action, community development, education, and
-            sustainable practices to drive positive change.
-          </Typography>
-
-          <Grid container spacing={{ xs: 3, md: 4 }} justifyContent="center">
-            {/* Executive Director */}
-            <Grid item xs={12} md={6}>
-              <Card
-                sx={{
-                  p: { xs: 3, md: 4 },
-                  textAlign: "center",
-                  height: "100%",
-                  "&:hover": {
-                    boxShadow: 8,
-                    transform: "translateY(-4px)",
-                    transition: "all 0.3s ease",
-                  },
-                  transition: "all 0.3s ease",
-                  borderRadius: 3,
-                  background:
-                    "linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)",
-                }}
-              >
-                <Avatar
-                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                  alt="Director General"
-                  sx={{
-                    width: { xs: 120, md: 140 },
-                    height: { xs: 120, md: 140 },
-                    mx: "auto",
-                    mb: 3,
-                    boxShadow: 4,
-                    border: "4px solid white",
-                  }}
-                />
-                <Typography
-                  variant="h4"
-                  sx={{
-                    fontWeight: 700,
-                    mb: 1,
-                    fontSize: { xs: "1.3rem", sm: "1.5rem", md: "1.6rem" },
-                  }}
-                >
-                  Muhammad Asaduzzaman
-                </Typography>
-                <Typography
-                  color="primary"
-                  sx={{
-                    mb: 2,
-                    fontSize: { xs: "1rem", sm: "1.1rem" },
-                    fontWeight: 600,
-                  }}
-                >
-                  Director General
-                </Typography>
-                <Typography
-                  variant="body2"
-                  color="text.secondary"
-                  sx={{
-                    fontSize: { xs: "0.85rem", sm: "0.9rem" },
-                    lineHeight: 1.6,
-                    mb: 2,
-                  }}
-                >
-                  muhammad.asaduzzaman@capsbd.org
-                </Typography>
-                <Typography
-                  variant="body2"
-                  color="text.secondary"
-                  sx={{
-                    fontSize: { xs: "0.85rem", sm: "0.9rem" },
-                    lineHeight: 1.6,
-                  }}
-                >
-                  Leading the overall strategic direction and management of
-                  CAPS. Overseeing all programs and ensuring organizational
-                  excellence.
-                </Typography>
-              </Card>
-            </Grid>
-
-            {/* Program Director */}
-            <Grid item xs={12} md={6}>
-              <Card
-                sx={{
-                  p: { xs: 3, md: 4 },
-                  textAlign: "center",
-                  height: "100%",
-                  "&:hover": {
-                    boxShadow: 8,
-                    transform: "translateY(-4px)",
-                    transition: "all 0.3s ease",
-                  },
-                  transition: "all 0.3s ease",
-                  borderRadius: 3,
-                  background:
-                    "linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)",
-                }}
-              >
-                <Avatar
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                  alt="Chairperson"
-                  sx={{
-                    width: { xs: 120, md: 140 },
-                    height: { xs: 120, md: 140 },
-                    mx: "auto",
-                    mb: 3,
-                    boxShadow: 4,
-                    border: "4px solid white",
-                  }}
-                />
-                <Typography
-                  variant="h4"
-                  sx={{
-                    fontWeight: 700,
-                    mb: 1,
-                    fontSize: { xs: "1.3rem", sm: "1.5rem", md: "1.6rem" },
-                  }}
-                >
-                  Muhammad Golam Sarwar
-                </Typography>
-                <Typography
-                  color="primary"
-                  sx={{
-                    mb: 2,
-                    fontSize: { xs: "1rem", sm: "1.1rem" },
-                    fontWeight: 600,
-                  }}
-                >
-                  Chairperson
-                </Typography>
-                <Typography
-                  variant="body2"
-                  color="text.secondary"
-                  sx={{
-                    fontSize: { xs: "0.85rem", sm: "0.9rem" },
-                    lineHeight: 1.6,
-                    mb: 2,
-                  }}
-                >
-                  muhammad.golam.sarwar@capsbd.org
-                </Typography>
-                <Typography
-                  variant="body2"
-                  color="text.secondary"
-                  sx={{
-                    fontSize: { xs: "0.85rem", sm: "0.9rem" },
-                    lineHeight: 1.6,
-                  }}
-                >
-                  Providing strategic leadership and governance oversight.
-                  Ensuring CAPS mission alignment and sustainable growth.
-                </Typography>
-              </Card>
-            </Grid>
-
-            {/* Education Coordinator */}
-            <Grid item xs={12} sm={6} md={4}>
-              <Card
-                sx={{
-                  p: { xs: 3, md: 4 },
-                  textAlign: "center",
-                  height: "100%",
-                  "&:hover": {
-                    boxShadow: 6,
-                    transform: "translateY(-4px)",
-                    transition: "all 0.3s ease",
-                  },
-                  transition: "all 0.3s ease",
-                  borderRadius: 3,
-                }}
-              >
-                <Avatar
-                  src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                  alt="Director, Education & Training"
-                  sx={{
-                    width: { xs: 100, md: 120 },
-                    height: { xs: 100, md: 120 },
-                    mx: "auto",
-                    mb: 3,
-                    boxShadow: 3,
-                    border: "3px solid white",
-                  }}
-                />
-                <Typography
-                  variant="h5"
-                  sx={{
-                    fontWeight: 700,
-                    mb: 1,
-                    fontSize: { xs: "1.1rem", sm: "1.2rem", md: "1.3rem" },
-                  }}
-                >
-                  Taslima Khanam
-                </Typography>
-                <Typography
-                  color="primary"
-                  sx={{
-                    mb: 2,
-                    fontSize: { xs: "0.9rem", sm: "1rem" },
-                    fontWeight: 600,
-                  }}
-                >
-                  Director, Education & Training
-                </Typography>
-                <Typography
-                  variant="body2"
-                  color="text.secondary"
-                  sx={{
-                    fontSize: { xs: "0.8rem", sm: "0.85rem" },
-                    lineHeight: 1.5,
-                    mb: 2,
-                  }}
-                >
-                  taslima.khanam@capsbd.org
-                </Typography>
-                <Typography
-                  variant="body2"
-                  color="text.secondary"
-                  sx={{
-                    fontSize: { xs: "0.8rem", sm: "0.85rem" },
-                    lineHeight: 1.5,
-                  }}
-                >
-                  Leading climate-smart education initiatives and capacity
-                  building programs for sustainable community development.
-                </Typography>
-              </Card>
-            </Grid>
-
-            {/* Climate Action Specialist */}
-            <Grid item xs={12} sm={6} md={4}>
-              <Card
-                sx={{
-                  p: { xs: 3, md: 4 },
-                  textAlign: "center",
-                  height: "100%",
-                  "&:hover": {
-                    boxShadow: 6,
-                    transform: "translateY(-4px)",
-                    transition: "all 0.3s ease",
-                  },
-                  transition: "all 0.3s ease",
-                  borderRadius: 3,
-                }}
-              >
-                <Avatar
-                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                  alt="Executive Director"
-                  sx={{
-                    width: { xs: 100, md: 120 },
-                    height: { xs: 100, md: 120 },
-                    mx: "auto",
-                    mb: 3,
-                    boxShadow: 3,
-                    border: "3px solid white",
-                  }}
-                />
-                <Typography
-                  variant="h5"
-                  sx={{
-                    fontWeight: 700,
-                    mb: 1,
-                    fontSize: { xs: "1.1rem", sm: "1.2rem", md: "1.3rem" },
-                  }}
-                >
-                  M. Nasir Hossain Panchayet
-                </Typography>
-                <Typography
-                  color="primary"
-                  sx={{
-                    mb: 2,
-                    fontSize: { xs: "0.9rem", sm: "1rem" },
-                    fontWeight: 600,
-                  }}
-                >
-                  Executive Director
-                </Typography>
-                <Typography
-                  variant="body2"
-                  color="text.secondary"
-                  sx={{
-                    fontSize: { xs: "0.8rem", sm: "0.85rem" },
-                    lineHeight: 1.5,
-                    mb: 2,
-                  }}
-                >
-                  nasir.hossain@capsbd.org
-                </Typography>
-                <Typography
-                  variant="body2"
-                  color="text.secondary"
-                  sx={{
-                    fontSize: { xs: "0.8rem", sm: "0.85rem" },
-                    lineHeight: 1.5,
-                  }}
-                >
-                  Managing day-to-day operations and implementing strategic
-                  initiatives for climate adaptation and community resilience.
-                </Typography>
-              </Card>
-            </Grid>
-
-            {/* Community Outreach Manager */}
-            <Grid item xs={12} sm={6} md={4}>
-              <Card
-                sx={{
-                  p: { xs: 3, md: 4 },
-                  textAlign: "center",
-                  height: "100%",
-                  "&:hover": {
-                    boxShadow: 6,
-                    transform: "translateY(-4px)",
-                    transition: "all 0.3s ease",
-                  },
-                  transition: "all 0.3s ease",
-                  borderRadius: 3,
-                }}
-              >
-                <Avatar
-                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                  alt="Executive Director"
-                  sx={{
-                    width: { xs: 100, md: 120 },
-                    height: { xs: 100, md: 120 },
-                    mx: "auto",
-                    mb: 3,
-                    boxShadow: 3,
-                    border: "3px solid white",
-                  }}
-                />
-                <Typography
-                  variant="h5"
-                  sx={{
-                    fontWeight: 700,
-                    mb: 1,
-                    fontSize: { xs: "1.1rem", sm: "1.2rem", md: "1.3rem" },
-                  }}
-                >
-                  Muhammad Siddikur Rahman Khokon
-                </Typography>
-                <Typography
-                  color="primary"
-                  sx={{
-                    mb: 2,
-                    fontSize: { xs: "0.9rem", sm: "1rem" },
-                    fontWeight: 600,
-                  }}
-                >
-                  Executive Director
-                </Typography>
-                <Typography
-                  variant="body2"
-                  color="text.secondary"
-                  sx={{
-                    fontSize: { xs: "0.8rem", sm: "0.85rem" },
-                    lineHeight: 1.5,
-                    mb: 2,
-                  }}
-                >
-                  siddikur.rahman@capsbd.org
-                </Typography>
-                <Typography
-                  variant="body2"
-                  color="text.secondary"
-                  sx={{
-                    fontSize: { xs: "0.8rem", sm: "0.85rem" },
-                    lineHeight: 1.5,
-                  }}
-                >
-                  Coordinating executive operations and strategic planning for
-                  sustainable development and climate resilience programs.
-                </Typography>
-              </Card>
-            </Grid>
-
-            {/* Director, Administration & Operation */}
-            <Grid item xs={12} sm={6} md={4}>
-              <Card
-                sx={{
-                  p: { xs: 3, md: 4 },
-                  textAlign: "center",
-                  height: "100%",
-                  "&:hover": {
-                    boxShadow: 6,
-                    transform: "translateY(-4px)",
-                    transition: "all 0.3s ease",
-                  },
-                  transition: "all 0.3s ease",
-                  borderRadius: 3,
-                }}
-              >
-                <Avatar
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                  alt="Director, Administration & Operation"
-                  sx={{
-                    width: { xs: 100, md: 120 },
-                    height: { xs: 100, md: 120 },
-                    mx: "auto",
-                    mb: 3,
-                    boxShadow: 3,
-                    border: "3px solid white",
-                  }}
-                />
-                <Typography
-                  variant="h5"
-                  sx={{
-                    fontWeight: 700,
-                    mb: 1,
-                    fontSize: { xs: "1.1rem", sm: "1.2rem", md: "1.3rem" },
-                  }}
-                >
-                  Muhammad Kakaria Hossain
-                </Typography>
-                <Typography
-                  color="primary"
-                  sx={{
-                    mb: 2,
-                    fontSize: { xs: "0.9rem", sm: "1rem" },
-                    fontWeight: 600,
-                  }}
-                >
-                  Director, Administration & Operation
-                </Typography>
-                <Typography
-                  variant="body2"
-                  color="text.secondary"
-                  sx={{
-                    fontSize: { xs: "0.8rem", sm: "0.85rem" },
-                    lineHeight: 1.5,
-                    mb: 2,
-                  }}
-                >
-                  kakaria.hossain@capsbd.org
-                </Typography>
-                <Typography
-                  variant="body2"
-                  color="text.secondary"
-                  sx={{
-                    fontSize: { xs: "0.8rem", sm: "0.85rem" },
-                    lineHeight: 1.5,
-                  }}
-                >
-                  Managing administrative functions and operational efficiency
-                  to support CAPS programs and initiatives.
-                </Typography>
-              </Card>
-            </Grid>
-
-            {/* Director, Community Mobilization */}
-            <Grid item xs={12} sm={6} md={4}>
-              <Card
-                sx={{
-                  p: { xs: 3, md: 4 },
-                  textAlign: "center",
-                  height: "100%",
-                  "&:hover": {
-                    boxShadow: 6,
-                    transform: "translateY(-4px)",
-                    transition: "all 0.3s ease",
-                  },
-                  transition: "all 0.3s ease",
-                  borderRadius: 3,
-                }}
-              >
-                <Avatar
-                  src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                  alt="Director, Community Mobilization"
-                  sx={{
-                    width: { xs: 100, md: 120 },
-                    height: { xs: 100, md: 120 },
-                    mx: "auto",
-                    mb: 3,
-                    boxShadow: 3,
-                    border: "3px solid white",
-                  }}
-                />
-                <Typography
-                  variant="h5"
-                  sx={{
-                    fontWeight: 700,
-                    mb: 1,
-                    fontSize: { xs: "1.1rem", sm: "1.2rem", md: "1.3rem" },
-                  }}
-                >
-                  Mst. Morshada
-                </Typography>
-                <Typography
-                  color="primary"
-                  sx={{
-                    mb: 2,
-                    fontSize: { xs: "0.9rem", sm: "1rem" },
-                    fontWeight: 600,
-                  }}
-                >
-                  Director, Community Mobilization
-                </Typography>
-                <Typography
-                  variant="body2"
-                  color="text.secondary"
-                  sx={{
-                    fontSize: { xs: "0.8rem", sm: "0.85rem" },
-                    lineHeight: 1.5,
-                    mb: 2,
-                  }}
-                >
-                  morshada@capsbd.org
-                </Typography>
-                <Typography
-                  variant="body2"
-                  color="text.secondary"
-                  sx={{
-                    fontSize: { xs: "0.8rem", sm: "0.85rem" },
-                    lineHeight: 1.5,
-                  }}
-                >
-                  Engaging communities and building partnerships for effective
-                  climate adaptation and sustainable development initiatives.
-                </Typography>
-              </Card>
-            </Grid>
-
-            {/* Director, Project Management */}
-            <Grid item xs={12} sm={6} md={4}>
-              <Card
-                sx={{
-                  p: { xs: 3, md: 4 },
-                  textAlign: "center",
-                  height: "100%",
-                  "&:hover": {
-                    boxShadow: 6,
-                    transform: "translateY(-4px)",
-                    transition: "all 0.3s ease",
-                  },
-                  transition: "all 0.3s ease",
-                  borderRadius: 3,
-                }}
-              >
-                <Avatar
-                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                  alt="Director, Project Management"
-                  sx={{
-                    width: { xs: 100, md: 120 },
-                    height: { xs: 100, md: 120 },
-                    mx: "auto",
-                    mb: 3,
-                    boxShadow: 3,
-                    border: "3px solid white",
-                  }}
-                />
-                <Typography
-                  variant="h5"
-                  sx={{
-                    fontWeight: 700,
-                    mb: 1,
-                    fontSize: { xs: "1.1rem", sm: "1.2rem", md: "1.3rem" },
-                  }}
-                >
-                  Muhammad Al Mamun Hawlader
-                </Typography>
-                <Typography
-                  color="primary"
-                  sx={{
-                    mb: 2,
-                    fontSize: { xs: "0.9rem", sm: "1rem" },
-                    fontWeight: 600,
-                  }}
-                >
-                  Director, Project Management
-                </Typography>
-                <Typography
-                  variant="body2"
-                  color="text.secondary"
-                  sx={{
-                    fontSize: { xs: "0.8rem", sm: "0.85rem" },
-                    lineHeight: 1.5,
-                    mb: 2,
-                  }}
-                >
-                  al.mamun@capsbd.org
-                </Typography>
-                <Typography
-                  variant="body2"
-                  color="text.secondary"
-                  sx={{
-                    fontSize: { xs: "0.8rem", sm: "0.85rem" },
-                    lineHeight: 1.5,
-                  }}
-                >
-                  Overseeing project planning, implementation, and monitoring to
-                  ensure successful delivery of climate adaptation programs.
-                </Typography>
-              </Card>
-            </Grid>
+            {teamMembers.map((member, index) => (
+              <Grid item xs={12} sm={6} lg={3} key={index}>
+                <AboutTeamCard>
+                  <CardContent sx={{ textAlign: "center", p: 4 }}>
+                    <AboutAvatar
+                      className="avatar"
+                      src={member.img}
+                      alt={member.name}
+                    >
+                      {member.avatar}
+                    </AboutAvatar>
+                    <Typography
+                      variant="h5"
+                      sx={{
+                        fontWeight: 700,
+                        mb: 1,
+                        color: "#1e3c72",
+                        fontSize: { xs: "1.2rem", md: "1.3rem" },
+                      }}
+                    >
+                      {member.name}
+                    </Typography>
+                    <Typography
+                      variant="subtitle1"
+                      sx={{
+                        fontWeight: 600,
+                        mb: 2,
+                        color: "#667eea",
+                        fontSize: { xs: "1rem", md: "1.1rem" },
+                      }}
+                    >
+                      {member.position}
+                    </Typography>
+                    <Chip
+                      label={member.department}
+                      sx={{
+                        mb: 3,
+                        backgroundColor: "rgba(102, 126, 234, 0.1)",
+                        color: "#667eea",
+                        fontWeight: 600,
+                        borderRadius: "20px",
+                      }}
+                    />
+                    <Typography
+                      variant="body2"
+                      sx={{
+                        mb: 3,
+                        color: "#666",
+                        lineHeight: 1.6,
+                        fontSize: "0.95rem",
+                      }}
+                    >
+                      {member.description}
+                    </Typography>
+                    <Box
+                      sx={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        pt: 2,
+                        borderTop: "1px solid rgba(0,0,0,0.08)",
+                      }}
+                    >
+                      <Typography
+                        variant="body2"
+                        sx={{
+                          color: "#888",
+                          fontSize: "0.85rem",
+                          fontWeight: 500,
+                        }}
+                      >
+                        <strong>Email:</strong> {member.email}
+                      </Typography>
+                    </Box>
+                  </CardContent>
+                </AboutTeamCard>
+              </Grid>
+            ))}
           </Grid>
         </Container>
       </AltSectionBox>

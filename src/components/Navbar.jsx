@@ -179,7 +179,7 @@ const navItems = [
           },
         ],
       },
-      
+
       {
         name: "Marine Life",
         path: "/working-area/marine-life",
@@ -222,6 +222,7 @@ const navItems = [
     ],
   },
   { name: "Publications & Stories", path: "/publications" },
+  { name: "Our Team", path: "/teams" },
   { name: "Contact Us", path: "/contact" },
 ];
 
