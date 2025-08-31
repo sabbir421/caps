@@ -148,7 +148,7 @@ const TeamsPage = () => {
       phone: "+880 1234-567890",
       department: "Leadership",
       description:
-        "Leading the overall strategic direction and management of CAPS. Overseeing all programs and ensuring organizational excellence.",
+        "Leading the overall strategic direction and management of CAPS. ",
       img: asad2,
       avatar: "MA",
       icon: Business,
@@ -612,7 +612,7 @@ const TeamsPage = () => {
                           mt: "auto",
                         }}
                       >
-                        <Typography
+                        {/* <Typography
                           variant="body2"
                           sx={{
                             color: "#888",
@@ -633,7 +633,7 @@ const TeamsPage = () => {
                           }}
                         >
                           {member.phone}
-                        </Typography>
+                        </Typography> */}
                       </Box>
                     </CardContent>
                   </EnhancedTeamCard>
