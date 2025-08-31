@@ -54,7 +54,8 @@ import morshedaImg from "../assets/morsheda.jpeg";
 import taslimaImg from "../assets/taslima.png";
 import masudImg from "../assets/masud.jpeg";
 import mamunImg from "../assets/mamun.jpeg";
-
+import samimImg from "../assets/shamim.jpeg";
+import soniaImg from "../assets/sonia.jpeg";
 const teamMembers = [
   {
     name: "Muhammad Asaduzzaman",
@@ -65,6 +66,18 @@ const teamMembers = [
     avatar: "MA",
     featured: true,
     department: "Leadership",
+  },
+  {
+    name: "Samim Chowdhury",
+    position: "ED -Executive Director Climate - smart Microfinance",
+    email: "shamim@capsbd.com",
+    phone: "+880 1234-567890",
+    department: "Leadership",
+    description:
+      "Advancing climate-smart microfinance for sustainable livelihoods and climate resilience.",
+    img: samimImg,
+    avatar: "SC",
+    featured: true,
   },
   {
     name: "Muhammad Golam Sarwar",
@@ -101,6 +114,18 @@ const teamMembers = [
     img: nasirImg,
     avatar: "NHP",
     department: "Executive",
+  },
+  {
+    name: "Soniya Akter",
+    position: "Director, Monitoring Evaluation & Transparent",
+    email: "soniya.akter@capsbd.com",
+    phone: "+880 1234-567896",
+    department: "Community Learning",
+    description:
+      "Leading monitoring and evaluation for climate adaptation programs, ensuring accountability and delivering impact for sustainable development.",
+    img: soniaImg,
+    avatar: "SA",
+    featured: true,
   },
   {
     name: "Muhammad Siddikur Rahman Khokon",
@@ -283,7 +308,7 @@ function Contact() {
           Meet Our Team
         </Typography>
 
-        <Grid container spacing={4} justifyContent="center" >
+        <Grid container spacing={4} justifyContent="center">
           {/* Featured Team Member */}
           {teamMembers
             .filter((m) => m.featured)

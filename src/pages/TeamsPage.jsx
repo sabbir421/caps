@@ -27,7 +27,7 @@ import {
   Star,
   Verified,
 } from "@mui/icons-material";
-import asad2 from "../assets/asad2.jpeg";
+import asad2 from "../assets/asad3.jpeg";
 import nasirImg from "../assets/nasir.jpeg";
 import khokonImg from "../assets/khokon.jpeg";
 import jakariaImg from "../assets/jakaria.jpeg";
@@ -37,7 +37,9 @@ import masudImg from "../assets/masud.jpeg";
 import mamunImg from "../assets/mamun.jpeg";
 import sabrinaImg from "../assets/sabrina.jpeg";
 import mahfuzaImg from "../assets/mahfuza.jpeg";
-import asadImg3 from "../assets/asad3.jpeg";
+
+import samimImg from "../assets/shamim.jpeg";
+import soniaImg from "../assets/sonia.jpeg";
 
 // Enhanced styled components for modern design
 const HeroSection = styled(Box)(({ theme }) => ({
@@ -142,7 +144,7 @@ const TeamsPage = () => {
     {
       name: "Muhammad Asaduzzaman",
       position: "Director General",
-      email: "muhammad.asaduzzaman@capsbd.org",
+      email: "muhammad.asaduzzaman@capsbd.com",
       phone: "+880 1234-567890",
       department: "Leadership",
       description:
@@ -151,6 +153,19 @@ const TeamsPage = () => {
       avatar: "MA",
       icon: Business,
       linkedin: "https://linkedin.com/in/muhammad-asaduzzaman",
+    },
+    {
+      name: "Samim Chowdhury",
+      position: "Executive Director, Climate-Smart Microfinance",
+      email: "shamim@capsbd.com",
+      phone: "+880 1234-567890",
+      department: "Microfinance",
+      description:
+        "Advancing climate-smart microfinance for sustainable livelihoods and climate resilience.",
+      img: samimImg,
+      avatar: "SC",
+      icon: Business,
+      linkedin: "https://linkedin.com/in/samim-chowdhury",
     },
     {
       name: "Muhammad Golam Sarwar",
@@ -229,6 +244,19 @@ const TeamsPage = () => {
       avatar: "MA",
       icon: School,
       linkedin: "https://linkedin.com/in/mahfuza-akter",
+    },
+    {
+      name: "Soniya Akter",
+      position: "Director, Monitoring, Evaluation & Transparency",
+      email: "soniya.akter@capsbd.com",
+      phone: "+880 1234-567896",
+      department: "M&E",
+      description:
+        "Leading monitoring and evaluation for climate adaptation programs, ensuring accountability and delivering impact for sustainable development.",
+      img: soniaImg,
+      avatar: "SA",
+      icon: Business,
+      linkedin: "https://linkedin.com/in/soniya-akter",
     },
     {
       name: "Muhammad Siddikur Rahman Khokon",
@@ -443,7 +471,7 @@ const TeamsPage = () => {
                             mt: "auto",
                           }}
                         >
-                          <Typography
+                          {/* <Typography
                             variant="body1"
                             sx={{
                               color: "#888",
@@ -464,7 +492,7 @@ const TeamsPage = () => {
                             }}
                           >
                             {member.phone}
-                          </Typography>
+                          </Typography> */}
                         </Box>
                       </CardContent>
                     </EnhancedTeamCard>

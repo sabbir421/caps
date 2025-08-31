@@ -19,6 +19,8 @@ import morshedaImg from "../assets/morsheda.jpeg";
 import taslimaImg from "../assets/taslima.png";
 import masudImg from "../assets/masud.jpeg";
 import mamunImg from "../assets/mamun.jpeg";
+import samimImg from "../assets/shamim.jpeg";
+import soniaImg from "../assets/sonia.jpeg";
 
 const SectionBox = styled(Box)(({ theme }) => ({
   padding: theme.spacing(12, 0),
@@ -154,12 +156,22 @@ function About() {
     {
       name: "Muhammad Asaduzzaman",
       position: "Director General",
-      email: "muhammad.asaduzzaman@capsbd.org",
+      email: "muhammad.asaduzzaman@capsbd.com",
       department: "Leadership",
       description:
         "Leading the overall strategic direction and management of CAPS. Overseeing all programs and ensuring organizational excellence.",
       img: asad2,
       avatar: "MA",
+    },
+    {
+      name: "Samim Chowdhury",
+      position: "ED -Executive Director Climate - smart Microfinance",
+      email: "samim@capsbd.com",
+      department: "Leadership",
+      description:
+        "Advancing climate-smart microfinance for sustainable livelihoods and climate resilience.",
+      img: samimImg,
+      avatar: "SC",
     },
     {
       name: "Muhammad Golam Sarwar",
@@ -200,6 +212,16 @@ function About() {
         "Managing day-to-day operations and implementing strategic initiatives for climate adaptation and community resilience.",
       img: nasirImg,
       avatar: "NHP",
+    },
+    {
+      name: "Soniya Akter",
+      position: "Director, Monitoring Evaluation & Transparent",
+      email: "soniya.akter@capsbd.com",
+      department: "Executive",
+      description:
+        "Leading monitoring and evaluation for climate adaptation programs, ensuring accountability and delivering impact for sustainable development.",
+      img: soniaImg,
+      avatar: "SA",
     },
     {
       name: "Muhammad Siddikur Rahman Khokon",
