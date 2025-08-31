@@ -1,15 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Container,
   Typography,
   Grid,
   Card,
+  CardContent,
   Button,
   Avatar,
   Stack,
   Divider,
+  Paper,
+  Chip,
+  Fade,
+  Zoom,
+  useTheme,
+  useMediaQuery,
+  Tabs,
+  Tab,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  IconButton,
+  Tooltip,
+  Breadcrumbs,
+  Link,
 } from "@mui/material";
+import { styled } from "@mui/material/styles";
 import {
   Email,
   Phone,
@@ -20,6 +38,15 @@ import {
   Instagram,
   LinkedIn,
   Navigation,
+  Business,
+  Schedule,
+  ContactSupport,
+  People,
+  Info,
+  Map,
+  Chat,
+  Home,
+  ChevronRight,
 } from "@mui/icons-material";
 
 const contactInfo = [
@@ -28,21 +55,24 @@ const contactInfo = [
     title: "Email Us",
     value: "capsbd25@gmail.com",
     subtitle: "We usually respond within 24 hours",
-    color: "#3B82F6",
+    color: "#1976d2",
+    bgColor: "rgba(25, 118, 210, 0.08)",
   },
   {
     icon: <Phone />,
     title: "Call Us",
     value: "+8801704422997",
     subtitle: "Mon-Fri, 9AM - 6PM",
-    color: "#10B981",
+    color: "#2e7d32",
+    bgColor: "rgba(46, 125, 50, 0.08)",
   },
   {
     icon: <LocationOn />,
     title: "Visit Us",
     value: "Purba Basabat, Bottalar Mor, Ward 08",
     subtitle: "Sadar Bagerhat, Bangladesh",
-    color: "#8B5CF6",
+    color: "#7b1fa2",
+    bgColor: "rgba(123, 31, 162, 0.08)",
   },
 ];
 
@@ -56,6 +86,7 @@ import masudImg from "../assets/masud.jpeg";
 import mamunImg from "../assets/mamun.jpeg";
 import samimImg from "../assets/shamim.jpeg";
 import soniaImg from "../assets/sonia.jpeg";
+
 const teamMembers = [
   {
     name: "Muhammad Asaduzzaman",
@@ -69,12 +100,11 @@ const teamMembers = [
   },
   {
     name: "Samim Chowdhury",
-    position: "ED -Executive Director Climate - smart Microfinance",
+    role: "Executive Director, Climate-Smart Microfinance",
     email: "shamim@capsbd.com",
     phone: "+880 1234-567890",
-    department: "Leadership",
-    description:
-      "Advancing climate-smart microfinance for sustainable livelihoods and climate resilience.",
+    department: "Microfinance",
+    desc: "Advancing climate-smart microfinance for sustainable livelihoods and climate resilience.",
     img: samimImg,
     avatar: "SC",
     featured: true,
@@ -117,12 +147,11 @@ const teamMembers = [
   },
   {
     name: "Soniya Akter",
-    position: "Director, Monitoring Evaluation & Transparent",
+    role: "Director, Monitoring Evaluation & Transparent",
     email: "soniya.akter@capsbd.com",
     phone: "+880 1234-567896",
     department: "Community Learning",
-    description:
-      "Leading monitoring and evaluation for climate adaptation programs, ensuring accountability and delivering impact for sustainable development.",
+    desc: "Leading monitoring and evaluation for climate adaptation programs, ensuring accountability and delivering impact for sustainable development.",
     img: soniaImg,
     avatar: "SA",
     featured: true,
@@ -168,577 +197,1159 @@ const teamMembers = [
 const socialLinks = [
   {
     icon: <Facebook />,
-    color: "white",
+    color: "#1877F2",
     name: "Facebook",
     url: "https://www.facebook.com/share/1RbthrbeBQ/",
   },
 ];
 
+// Professional styled components
+const HeroSection = styled(Box)(({ theme }) => ({
+  background: "linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #1e3c72 100%)",
+  position: "relative",
+  overflow: "hidden",
+  "&::before": {
+    content: '""',
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    background:
+      'url(\'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="0.5" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>\')',
+    opacity: 0.4,
+  },
+}));
+
+const SidebarCard = styled(Card)(({ theme }) => ({
+  background: "#ffffff",
+  border: "1px solid #e0e0e0",
+  borderRadius: "8px",
+  transition: "all 0.3s ease",
+  position: "relative",
+  overflow: "hidden",
+  height: "100%",
+  boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+  "&:hover": {
+    boxShadow: "0 4px 16px rgba(0,0,0,0.12)",
+    borderColor: "#1976d2",
+  },
+}));
+
+const ContentCard = styled(Card)(({ theme }) => ({
+  background: "#ffffff",
+  border: "1px solid #e0e0e0",
+  borderRadius: "8px",
+  transition: "all 0.3s ease",
+  position: "relative",
+  overflow: "hidden",
+  height: "100%",
+  boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+  "&:hover": {
+    boxShadow: "0 4px 16px rgba(0,0,0,0.12)",
+  },
+}));
+
+const TeamCard = styled(Card)(({ theme }) => ({
+  background: "#ffffff",
+  border: "1px solid #e0e0e0",
+  borderRadius: "8px",
+  transition: "all 0.3s ease",
+  position: "relative",
+  overflow: "hidden",
+  height: "100%",
+  display: "flex",
+  flexDirection: "column",
+  boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+  "&:hover": {
+    boxShadow: "0 4px 16px rgba(0,0,0,0.12)",
+    borderColor: "#1976d2",
+    transform: "translateY(-2px)",
+  },
+}));
+
+const FeaturedTeamCard = styled(Card)(({ theme }) => ({
+  background: "#fafafa",
+  border: "2px solid #1976d2",
+  borderRadius: "12px",
+  transition: "all 0.3s ease",
+  position: "relative",
+  overflow: "hidden",
+  boxShadow: "0 4px 16px rgba(25, 118, 210, 0.15)",
+  "&:hover": {
+    boxShadow: "0 8px 24px rgba(25, 118, 210, 0.25)",
+    transform: "translateY(-2px)",
+  },
+}));
+
+const ContactInfoCard = styled(Card)(({ theme }) => ({
+  background: "#ffffff",
+  border: "1px solid #e0e0e0",
+  borderRadius: "8px",
+  transition: "all 0.3s ease",
+  position: "relative",
+  overflow: "hidden",
+  height: "100%",
+  boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+  "&:hover": {
+    boxShadow: "0 4px 16px rgba(0,0,0,0.12)",
+    borderColor: "#1976d2",
+    transform: "translateY(-2px)",
+  },
+}));
+
+const SocialButton = styled(IconButton)(({ theme, color }) => ({
+  background: color,
+  color: "white",
+  width: 48,
+  height: 48,
+  boxShadow: "0 2px 8px rgba(0,0,0,0.15)",
+  transition: "all 0.3s ease",
+  "&:hover": {
+    transform: "translateY(-2px)",
+    boxShadow: "0 4px 16px rgba(0,0,0,0.25)",
+  },
+}));
+
 function Contact() {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+  const [activeTab, setActiveTab] = useState(0);
+
+  const handleTabChange = (event, newValue) => {
+    setActiveTab(newValue);
+  };
+
+  const TabPanel = ({ children, value, index, ...other }) => (
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`contact-tabpanel-${index}`}
+      aria-labelledby={`contact-tab-${index}`}
+      {...other}
+    >
+      {value === index && <Box sx={{ py: 3 }}>{children}</Box>}
+    </div>
+  );
+
   return (
-    <Box sx={{ bgcolor: "#F9FAFB", minHeight: "100vh" }}>
+    <Box sx={{ bgcolor: "#f5f5f5", minHeight: "100vh" }}>
       {/* Hero Section */}
-      <Box
+      <HeroSection
         sx={{
-          background:
-            "linear-gradient(135deg, #3B82F6 0%, #8B5CF6 50%, #3B82F6 100%)",
-          py: { xs: 8, md: 12 },
+          py: { xs: 6, md: 8 },
           textAlign: "center",
           color: "white",
         }}
       >
         <Container maxWidth="xl">
-          <Typography
-            variant="h3"
-            sx={{
-              color: "white",
-              fontWeight: 700,
-              mb: 3,
-              fontSize: { xs: "2rem", sm: "2.5rem", md: "3rem" },
-            }}
-          >
-            Connect With Us
-          </Typography>
-          <Typography
-            sx={{
-              fontSize: { xs: "1rem", md: "1.2rem" },
-              maxWidth: "800px",
-              mx: "auto",
-              lineHeight: 1.6,
-              color: "white",
-            }}
-          >
-            Have questions or want to get involved? Reach out today and join our
-            mission to make a positive impact.
-          </Typography>
-        </Container>
-      </Box>
-
-      {/* Contact Info */}
-      <Container maxWidth="xl" sx={{ py: { xs: 6, md: 10 } }}>
-        <Typography
-          variant="h4"
-          sx={{
-            fontWeight: 700,
-            mb: 6,
-            textAlign: "center",
-            fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.5rem" },
-          }}
-        >
-          Get In Touch
-        </Typography>
-
-        <Grid container spacing={4} justifyContent="center">
-          {contactInfo.map((item, i) => (
-            <Grid item xs={12} sm={6} md={4} key={i}>
-              <Card
-                sx={{
-                  textAlign: "center",
-                  p: 4,
-                  height: "100%",
-                  "&:hover": {
-                    boxShadow: 8,
-                    transform: "translateY(-8px)",
-                    transition: "all 0.3s ease",
-                  },
-                  transition: "all 0.3s ease",
-                  borderRadius: 3,
-                }}
-              >
-                <Box
-                  sx={{
-                    width: 80,
-                    height: 80,
-                    borderRadius: "50%",
-                    bgcolor: item.color,
-                    color: "white",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    mx: "auto",
-                    mb: 3,
-                    fontSize: 36,
-                    boxShadow: 3,
-                  }}
-                >
-                  {item.icon}
-                </Box>
-                <Typography
-                  variant="h6"
-                  sx={{
-                    fontWeight: 700,
-                    mb: 2,
-                    fontSize: { xs: "1.1rem", sm: "1.2rem" },
-                  }}
-                >
-                  {item.title}
-                </Typography>
-                <Typography
-                  sx={{
-                    mb: 1,
-                    fontSize: { xs: "0.95rem", sm: "1rem" },
-                    fontWeight: 500,
-                  }}
-                >
-                  {item.value}
-                </Typography>
-                <Typography
-                  color="text.secondary"
-                  sx={{ fontSize: { xs: "0.85rem", sm: "0.9rem" } }}
-                >
-                  {item.subtitle}
-                </Typography>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-      </Container>
-
-      {/* Team Section */}
-      <Container maxWidth="xl" sx={{ py: { xs: 6, md: 10 } }}>
-        <Typography
-          variant="h4"
-          sx={{
-            fontWeight: 700,
-            mb: 6,
-            textAlign: "center",
-            fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.5rem" },
-          }}
-        >
-          Meet Our Team
-        </Typography>
-
-        <Grid container spacing={4} justifyContent="center">
-          {/* Featured Team Member */}
-          {teamMembers
-            .filter((m) => m.featured)
-            .map((member, i) => (
-              <Grid item xs={12} key={i}>
-                <Card
-                  sx={{
-                    p: 6,
-                    textAlign: "center",
-                    boxShadow: 6,
-                    borderRadius: 4,
-                    maxWidth: "800px",
-                    mx: "auto",
-                    background:
-                      "linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)",
-                  }}
-                >
-                  <Avatar
-                    src={member.img}
-                    alt={member.name}
-                    sx={{
-                      width: 160,
-                      height: 160,
-                      mx: "auto",
-                      mb: 3,
-                      boxShadow: 4,
-                      border: "4px solid white",
-                      fontSize: "3rem",
-                      fontWeight: 600,
-                      background:
-                        "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-                    }}
-                  >
-                    {member.avatar}
-                  </Avatar>
-                  <Typography
-                    variant="h4"
-                    sx={{
-                      fontWeight: 700,
-                      mb: 2,
-                      fontSize: { xs: "1.5rem", sm: "1.8rem", md: "2rem" },
-                    }}
-                  >
-                    {member.name}
-                  </Typography>
-                  <Typography
-                    color="primary"
-                    sx={{
-                      mb: 2,
-                      fontSize: { xs: "1rem", sm: "1.1rem" },
-                      fontWeight: 600,
-                    }}
-                  >
-                    {member.role}
-                  </Typography>
-                  <Typography
-                    variant="body1"
-                    color="text.secondary"
-                    sx={{
-                      mb: 2,
-                      fontSize: { xs: "0.9rem", sm: "1rem" },
-                    }}
-                  >
-                    {member.email}
-                  </Typography>
-                  <Typography
-                    variant="body1"
-                    color="text.secondary"
-                    sx={{
-                      fontSize: { xs: "0.9rem", sm: "1rem" },
-                      lineHeight: 1.6,
-                      maxWidth: "600px",
-                      mx: "auto",
-                    }}
-                  >
-                    {member.desc}
-                  </Typography>
-                </Card>
-              </Grid>
-            ))}
-
-          {/* Other Team Members */}
-          <Grid item xs={12}>
-            <Divider sx={{ my: 4 }} />
+          <Fade in timeout={800}>
             <Typography
-              variant="h5"
+              variant="h3"
               sx={{
+                color: "white",
                 fontWeight: 600,
-                mb: 4,
-                textAlign: "center",
-                fontSize: { xs: "1.3rem", sm: "1.5rem" },
+                mb: 3,
+                fontSize: { xs: "2rem", sm: "2.5rem", md: "3rem" },
+                letterSpacing: "0.5px",
               }}
             >
-              Our Leadership Team
+              Contact Us
             </Typography>
-          </Grid>
+          </Fade>
+          <Fade in timeout={1000}>
+            <Typography
+              sx={{
+                fontSize: { xs: "1rem", md: "1.2rem" },
+                maxWidth: "700px",
+                mx: "auto",
+                lineHeight: 1.6,
+                color: "rgba(255,255,255,0.9)",
+                mb: 4,
+              }}
+            >
+              Get in touch with our team to discuss collaboration opportunities,
+              project inquiries, or general information about our climate
+              adaptation initiatives.
+            </Typography>
+          </Fade>
+        </Container>
+      </HeroSection>
 
-          {teamMembers
-            .filter((m) => !m.featured)
-            .map((member, i) => (
-              <Grid item xs={12} sm={6} md={4} key={i}>
-                <Card
+      {/* Breadcrumbs */}
+      <Container maxWidth="xl" sx={{ py: 2 }}>
+        <Breadcrumbs
+          separator={<ChevronRight fontSize="small" />}
+          aria-label="breadcrumb"
+          sx={{ color: "#666" }}
+        >
+          <Link
+            underline="hover"
+            color="inherit"
+            href="/"
+            sx={{ display: "flex", alignItems: "center" }}
+          >
+            <Home sx={{ mr: 0.5, fontSize: 20 }} />
+            Home
+          </Link>
+          <Typography color="text.primary">Contact</Typography>
+        </Breadcrumbs>
+      </Container>
+
+      {/* Main Content with Sidebar */}
+      <Container maxWidth="xl" sx={{ py: { xs: 4, md: 6 } }}>
+        <Grid container spacing={3}>
+          {/* Sidebar Navigation */}
+          <Grid item xs={12} md={3}>
+            <SidebarCard sx={{ p: 3, position: "sticky", top: 20 }}>
+              <Typography
+                variant="h6"
+                sx={{
+                  fontWeight: 600,
+                  mb: 3,
+                  color: "#1a1a1a",
+                  textAlign: "center",
+                  fontSize: "1.1rem",
+                }}
+              >
+                Quick Navigation
+              </Typography>
+
+              <List sx={{ p: 0 }}>
+                <ListItem
+                  button
+                  selected={activeTab === 0}
+                  onClick={() => setActiveTab(0)}
                   sx={{
-                    p: 4,
-                    textAlign: "center",
-                    height: "100%",
+                    borderRadius: "6px",
+                    mb: 1,
+                    "&.Mui-selected": {
+                      background: "rgba(25, 118, 210, 0.08)",
+                      color: "#1976d2",
+                      borderLeft: "3px solid #1976d2",
+                    },
+                  }}
+                >
+                  <ListItemIcon sx={{ minWidth: 36 }}>
+                    <ContactSupport
+                      color={activeTab === 0 ? "primary" : "action"}
+                      sx={{ fontSize: 20 }}
+                    />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Contact Information"
+                    primaryTypographyProps={{
+                      fontSize: "0.9rem",
+                      fontWeight: 500,
+                    }}
+                  />
+                </ListItem>
+
+                <ListItem
+                  button
+                  selected={activeTab === 1}
+                  onClick={() => setActiveTab(1)}
+                  sx={{
+                    borderRadius: "6px",
+                    mb: 1,
+                    "&.Mui-selected": {
+                      background: "rgba(25, 118, 210, 0.08)",
+                      color: "#1976d2",
+                      borderLeft: "3px solid #1976d2",
+                    },
+                  }}
+                >
+                  <ListItemIcon sx={{ minWidth: 36 }}>
+                    <People
+                      color={activeTab === 1 ? "primary" : "action"}
+                      sx={{ fontSize: 20 }}
+                    />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Our Team"
+                    primaryTypographyProps={{
+                      fontSize: "0.9rem",
+                      fontWeight: 500,
+                    }}
+                  />
+                </ListItem>
+
+                <ListItem
+                  button
+                  selected={activeTab === 2}
+                  onClick={() => setActiveTab(2)}
+                  sx={{
+                    borderRadius: "6px",
+                    mb: 1,
+                    "&.Mui-selected": {
+                      background: "rgba(25, 118, 210, 0.08)",
+                      color: "#1976d2",
+                      borderLeft: "3px solid #1976d2",
+                    },
+                  }}
+                >
+                  <ListItemIcon sx={{ minWidth: 36 }}>
+                    <Info
+                      color={activeTab === 2 ? "primary" : "action"}
+                      sx={{ fontSize: 20 }}
+                    />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Office Information"
+                    primaryTypographyProps={{
+                      fontSize: "0.9rem",
+                      fontWeight: 500,
+                    }}
+                  />
+                </ListItem>
+
+                <ListItem
+                  button
+                  selected={activeTab === 3}
+                  onClick={() => setActiveTab(3)}
+                  sx={{
+                    borderRadius: "6px",
+                    mb: 1,
+                    "&.Mui-selected": {
+                      background: "rgba(25, 118, 210, 0.08)",
+                      color: "#1976d2",
+                      borderLeft: "3px solid #1976d2",
+                    },
+                  }}
+                >
+                  <ListItemIcon sx={{ minWidth: 36 }}>
+                    <Map
+                      color={activeTab === 3 ? "primary" : "action"}
+                      sx={{ fontSize: 20 }}
+                    />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Location & Directions"
+                    primaryTypographyProps={{
+                      fontSize: "0.9rem",
+                      fontWeight: 500,
+                    }}
+                  />
+                </ListItem>
+              </List>
+
+              {/* Quick Contact */}
+              <Divider sx={{ my: 3, borderColor: "#e0e0e0" }} />
+              <Typography
+                variant="h6"
+                sx={{
+                  fontWeight: 600,
+                  mb: 2,
+                  color: "#1a1a1a",
+                  textAlign: "center",
+                  fontSize: "1rem",
+                }}
+              >
+                Quick Contact
+              </Typography>
+
+              <Stack spacing={2}>
+                <Button
+                  variant="contained"
+                  startIcon={<Email />}
+                  fullWidth
+                  sx={{
+                    background: "#1976d2",
+                    borderRadius: "6px",
+                    py: 1.5,
+                    textTransform: "none",
+                    fontWeight: 500,
                     "&:hover": {
-                      boxShadow: 6,
-                      transform: "translateY(-4px)",
-                      transition: "all 0.3s ease",
+                      background: "#1565c0",
+                      transform: "translateY(-1px)",
+                      boxShadow: "0 4px 12px rgba(25, 118, 210, 0.3)",
                     },
                     transition: "all 0.3s ease",
-                    borderRadius: 3,
                   }}
                 >
-                  <Avatar
-                    src={member.img}
-                    alt={member.name}
-                    sx={{
-                      width: 120,
-                      height: 120,
-                      mx: "auto",
-                      mb: 3,
-                      boxShadow: 3,
-                      border: "3px solid white",
-                      fontSize: "2rem",
-                      fontWeight: 600,
-                      background:
-                        "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-                    }}
-                  >
-                    {member.avatar}
-                  </Avatar>
-                  <Typography
-                    variant="h6"
-                    sx={{
-                      fontWeight: 700,
-                      mb: 2,
-                      fontSize: { xs: "1.1rem", sm: "1.2rem" },
-                    }}
-                  >
-                    {member.name}
-                  </Typography>
-                  <Typography
-                    color="primary"
-                    sx={{
-                      mb: 2,
-                      fontSize: { xs: "0.9rem", sm: "1rem" },
-                      fontWeight: 600,
-                    }}
-                  >
-                    {member.role}
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    color="text.secondary"
-                    sx={{
-                      mb: 2,
-                      fontSize: { xs: "0.8rem", sm: "0.85rem" },
-                    }}
-                  >
-                    {member.email}
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    color="text.secondary"
-                    sx={{
-                      fontSize: { xs: "0.8rem", sm: "0.85rem" },
-                      lineHeight: 1.5,
-                    }}
-                  >
-                    {member.desc}
-                  </Typography>
-                </Card>
-              </Grid>
-            ))}
-        </Grid>
-      </Container>
+                  Send Email
+                </Button>
 
-      {/* Office Hours & Location */}
-      <Container maxWidth="xl" sx={{ py: { xs: 6, md: 10 } }}>
-        <Typography
-          variant="h4"
-          sx={{
-            fontWeight: 700,
-            mb: 6,
-            textAlign: "center",
-            fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.5rem" },
-          }}
-        >
-          Office Information
-        </Typography>
-
-        <Grid container spacing={4} justifyContent="center">
-          {/* Office Hours */}
-          <Grid item xs={12} md={6}>
-            <Card sx={{ p: 4, height: "100%", borderRadius: 3 }}>
-              <Stack
-                direction="row"
-                spacing={2}
-                alignItems="center"
-                justifyContent="center"
-                mb={4}
-              >
-                <AccessTime sx={{ color: "#3B82F6", fontSize: 36 }} />
-                <Typography
-                  variant="h5"
+                <Button
+                  variant="outlined"
+                  startIcon={<Phone />}
+                  fullWidth
                   sx={{
-                    fontWeight: 700,
-                    fontSize: { xs: "1.3rem", sm: "1.5rem" },
+                    borderColor: "#1976d2",
+                    color: "#1976d2",
+                    borderRadius: "6px",
+                    py: 1.5,
+                    textTransform: "none",
+                    fontWeight: 500,
+                    "&:hover": {
+                      background: "rgba(25, 118, 210, 0.04)",
+                      borderColor: "#1565c0",
+                      color: "#1565c0",
+                      transform: "translateY(-1px)",
+                    },
+                    transition: "all 0.3s ease",
                   }}
                 >
-                  Office Hours
-                </Typography>
+                  Call Now
+                </Button>
               </Stack>
-              <Stack spacing={2} sx={{ mb: 4 }}>
-                <Stack
-                  direction="row"
-                  justifyContent="space-between"
-                  alignItems="center"
+            </SidebarCard>
+          </Grid>
+
+          {/* Main Content Area */}
+          <Grid item xs={12} md={9}>
+            <ContentCard sx={{ p: 4 }}>
+              {/* Tab Navigation */}
+              <Box sx={{ borderBottom: 1, borderColor: "#e0e0e0", mb: 3 }}>
+                <Tabs
+                  value={activeTab}
+                  onChange={handleTabChange}
+                  variant="scrollable"
+                  scrollButtons="auto"
+                  sx={{
+                    "& .MuiTab-root": {
+                      minHeight: 48,
+                      fontWeight: 500,
+                      textTransform: "none",
+                      fontSize: "0.9rem",
+                      color: "#666",
+                      "&.Mui-selected": {
+                        color: "#1976d2",
+                        fontWeight: 600,
+                      },
+                    },
+                    "& .MuiTabs-indicator": {
+                      backgroundColor: "#1976d2",
+                      height: 3,
+                    },
+                  }}
                 >
-                  <Typography
-                    fontWeight={600}
-                    sx={{ fontSize: { xs: "0.95rem", sm: "1rem" } }}
-                  >
-                    Monday - Friday:
-                  </Typography>
-                  <Typography
-                    color="text.secondary"
-                    sx={{ fontSize: { xs: "0.9rem", sm: "0.95rem" } }}
-                  >
-                    9:00 AM - 6:00 PM
-                  </Typography>
-                </Stack>
-                <Stack
-                  direction="row"
-                  justifyContent="space-between"
-                  alignItems="center"
-                >
-                  <Typography
-                    fontWeight={600}
-                    sx={{ fontSize: { xs: "0.95rem", sm: "1rem" } }}
-                  >
-                    Saturday:
-                  </Typography>
-                  <Typography
-                    color="text.secondary"
-                    sx={{ fontSize: { xs: "0.9rem", sm: "0.95rem" } }}
-                  >
-                    9:00 AM - 6:00 PM
-                  </Typography>
-                </Stack>
-                <Stack
-                  direction="row"
-                  justifyContent="space-between"
-                  alignItems="center"
-                >
-                  <Typography
-                    fontWeight={600}
-                    sx={{ fontSize: { xs: "0.95rem", sm: "1rem" } }}
-                  >
-                    Sunday:
-                  </Typography>
-                  <Typography
-                    color="text.secondary"
-                    sx={{ fontSize: { xs: "0.9rem", sm: "0.95rem" } }}
-                  >
-                    Closed
-                  </Typography>
-                </Stack>
-              </Stack>
-              <Box
-                sx={{
-                  bgcolor: "#FEF2F2",
-                  p: 3,
-                  borderRadius: 3,
-                  border: "2px solid #FECACA",
-                  textAlign: "center",
-                }}
-              >
-                <Typography
-                  fontWeight={700}
-                  mb={1}
-                  sx={{ fontSize: { xs: "1rem", sm: "1.1rem" } }}
-                >
-                  Emergency Contact
-                </Typography>
-                <Typography
-                  color="error"
-                  fontWeight={700}
-                  sx={{ fontSize: { xs: "1.1rem", sm: "1.2rem" } }}
-                >
-                  +8801704422997
-                </Typography>
-                <Typography
-                  color="text.secondary"
-                  sx={{ fontSize: { xs: "0.85rem", sm: "0.9rem" } }}
-                >
-                  Available 24/7
-                </Typography>
+                  <Tab label="Contact Information" icon={<ContactSupport />} />
+                  <Tab label="Our Team" icon={<People />} />
+                  <Tab label="Office Information" icon={<Info />} />
+                  <Tab label="Location & Directions" icon={<Map />} />
+                </Tabs>
               </Box>
-            </Card>
-          </Grid>
 
-          {/* Location */}
-          <Grid item xs={12} md={6}>
-            <Card
-              sx={{
-                p: 4,
-                textAlign: "center",
-                height: "100%",
-                borderRadius: 3,
-              }}
-            >
-              <Stack
-                direction="row"
-                spacing={2}
-                alignItems="center"
-                justifyContent="center"
-                mb={4}
-              >
-                <LocationOn sx={{ color: "#8B5CF6", fontSize: 36 }} />
+              {/* Tab Content */}
+              <TabPanel value={activeTab} index={0}>
+                <Typography
+                  variant="h4"
+                  sx={{
+                    fontWeight: 600,
+                    mb: 4,
+                    color: "#1a1a1a",
+                    fontSize: "1.75rem",
+                  }}
+                >
+                  Contact Information
+                </Typography>
+
+                <Grid container spacing={3}>
+                  {contactInfo.map((item, i) => (
+                    <Grid item xs={12} sm={6} lg={4} key={i}>
+                      <Zoom in timeout={600 + i * 200}>
+                        <ContactInfoCard>
+                          <CardContent sx={{ p: 3, textAlign: "center" }}>
+                            <Box
+                              sx={{
+                                width: 64,
+                                height: 64,
+                                borderRadius: "50%",
+                                background: item.bgColor,
+                                color: item.color,
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                                mx: "auto",
+                                mb: 2,
+                                fontSize: 28,
+                              }}
+                            >
+                              {item.icon}
+                            </Box>
+                            <Typography
+                              variant="h6"
+                              sx={{
+                                fontWeight: 600,
+                                mb: 2,
+                                color: "#1a1a1a",
+                                fontSize: "1.1rem",
+                              }}
+                            >
+                              {item.title}
+                            </Typography>
+                            <Typography
+                              sx={{
+                                mb: 2,
+                                fontWeight: 500,
+                                color: "#333",
+                                fontSize: "0.95rem",
+                              }}
+                            >
+                              {item.value}
+                            </Typography>
+                            <Typography
+                              color="text.secondary"
+                              sx={{ fontSize: "0.85rem", lineHeight: 1.5 }}
+                            >
+                              {item.subtitle}
+                            </Typography>
+                          </CardContent>
+                        </ContactInfoCard>
+                      </Zoom>
+                    </Grid>
+                  ))}
+                </Grid>
+              </TabPanel>
+
+              <TabPanel value={activeTab} index={1}>
+                <Typography
+                  variant="h4"
+                  sx={{
+                    fontWeight: 600,
+                    mb: 4,
+                    color: "#1a1a1a",
+                    fontSize: "1.75rem",
+                  }}
+                >
+                  Our Leadership Team
+                </Typography>
+
+                {/* Featured Team Members */}
+                {teamMembers
+                  .filter((m) => m.featured)
+                  .map((member, i) => (
+                    <Zoom in timeout={600 + i * 200} key={i}>
+                      <FeaturedTeamCard
+                        sx={{
+                          p: { xs: 3, md: 4 },
+                          textAlign: "center",
+                          mb: 4,
+                        }}
+                      >
+                        <Avatar
+                          src={member.img}
+                          alt={member.name}
+                          className="avatar"
+                          sx={{
+                            width: { xs: 100, md: 120 },
+                            height: { xs: 100, md: 120 },
+                            mx: "auto",
+                            mb: 3,
+                            boxShadow: "0 4px 16px rgba(0,0,0,0.15)",
+                            border: "3px solid white",
+                            fontSize: "2rem",
+                            fontWeight: 600,
+                            background: "#1976d2",
+                            transition: "all 0.3s ease",
+                          }}
+                        >
+                          {member.avatar}
+                        </Avatar>
+                        <Typography
+                          variant="h5"
+                          sx={{
+                            fontWeight: 600,
+                            mb: 2,
+                            color: "#1a1a1a",
+                            fontSize: "1.5rem",
+                          }}
+                        >
+                          {member.name}
+                        </Typography>
+                        <Chip
+                          label={member.role}
+                          sx={{
+                            mb: 3,
+                            background: "#1976d2",
+                            color: "white",
+                            fontWeight: 500,
+                            borderRadius: "16px",
+                            px: 2,
+                            py: 1,
+                            fontSize: "0.85rem",
+                          }}
+                        />
+                        <Typography
+                          variant="body1"
+                          color="text.secondary"
+                          sx={{
+                            mb: 3,
+                            lineHeight: 1.6,
+                            fontSize: "0.9rem",
+                          }}
+                        >
+                          {member.email}
+                        </Typography>
+                        <Typography
+                          variant="body1"
+                          color="text.secondary"
+                          sx={{
+                            lineHeight: 1.6,
+                            fontSize: "0.9rem",
+                          }}
+                        >
+                          {member.desc}
+                        </Typography>
+                      </FeaturedTeamCard>
+                    </Zoom>
+                  ))}
+
+                <Divider sx={{ my: 4, borderColor: "#e0e0e0" }} />
+
                 <Typography
                   variant="h5"
                   sx={{
-                    fontWeight: 700,
-                    fontSize: { xs: "1.3rem", sm: "1.5rem" },
+                    fontWeight: 600,
+                    mb: 4,
+                    color: "#333",
+                    fontSize: "1.4rem",
                   }}
                 >
-                  Our Location
+                  Executive Team
                 </Typography>
-              </Stack>
-              <Typography
-                sx={{
-                  mb: 4,
-                  fontSize: { xs: "0.95rem", sm: "1rem" },
-                  lineHeight: 1.6,
-                }}
-              >
-                Purba Basabat, Bottalar Mor Ward 08
-                <br />
-                Sadar Bagerhat, Bangladesh
-              </Typography>
-              <Button
-                variant="contained"
-                startIcon={<Navigation />}
-                size="large"
-                sx={{
-                  background:
-                    "linear-gradient(135deg, #8B5CF6 0%, #3B82F6 100%)",
-                  px: 4,
-                  py: 1.5,
-                  borderRadius: 3,
-                  fontSize: { xs: "0.9rem", sm: "1rem" },
-                  fontWeight: 600,
-                  "&:hover": {
-                    background:
-                      "linear-gradient(135deg, #7C3AED 0%, #2563EB 100%)",
-                    transform: "translateY(-2px)",
-                    boxShadow: 4,
-                  },
-                  transition: "all 0.3s ease",
-                }}
-              >
-                Get Directions
-              </Button>
-            </Card>
+
+                <Grid container spacing={3}>
+                  {teamMembers
+                    .filter((m) => !m.featured)
+                    .map((member, i) => (
+                      <Grid item xs={12} sm={6} lg={4} key={i}>
+                        <Zoom in timeout={600 + i * 100}>
+                          <TeamCard>
+                            <CardContent
+                              sx={{
+                                flexGrow: 1,
+                                display: "flex",
+                                flexDirection: "column",
+                                textAlign: "center",
+                                p: 3,
+                              }}
+                            >
+                              <Avatar
+                                src={member.img}
+                                alt={member.name}
+                                className="avatar"
+                                sx={{
+                                  width: 80,
+                                  height: 80,
+                                  mx: "auto",
+                                  mb: 2,
+                                  boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+                                  border: "2px solid #e0e0e0",
+                                  fontSize: "1.5rem",
+                                  fontWeight: 500,
+                                  background: "#f5f5f5",
+                                  color: "#666",
+                                  transition: "all 0.3s ease",
+                                }}
+                              >
+                                {member.avatar}
+                              </Avatar>
+                              <Typography
+                                variant="h6"
+                                sx={{
+                                  fontWeight: 600,
+                                  mb: 1,
+                                  color: "#1a1a1a",
+                                  fontSize: "1rem",
+                                }}
+                              >
+                                {member.name}
+                              </Typography>
+                              <Chip
+                                label={member.role}
+                                size="small"
+                                sx={{
+                                  mb: 2,
+                                  background: "rgba(25, 118, 210, 0.08)",
+                                  color: "#1976d2",
+                                  fontWeight: 500,
+                                  borderRadius: "12px",
+                                  fontSize: "0.75rem",
+                                }}
+                              />
+                              <Typography
+                                variant="body2"
+                                color="text.secondary"
+                                sx={{
+                                  mb: 2,
+                                  fontSize: "0.8rem",
+                                  lineHeight: 1.4,
+                                }}
+                              >
+                                {member.email}
+                              </Typography>
+                              <Typography
+                                variant="body2"
+                                color="text.secondary"
+                                sx={{
+                                  fontSize: "0.8rem",
+                                  lineHeight: 1.4,
+                                  flexGrow: 1,
+                                }}
+                              >
+                                {member.desc}
+                              </Typography>
+                            </CardContent>
+                          </TeamCard>
+                        </Zoom>
+                      </Grid>
+                    ))}
+                </Grid>
+              </TabPanel>
+
+              <TabPanel value={activeTab} index={2}>
+                <Typography
+                  variant="h4"
+                  sx={{
+                    fontWeight: 600,
+                    mb: 4,
+                    color: "#1a1a1a",
+                    fontSize: "1.75rem",
+                  }}
+                >
+                  Office Information
+                </Typography>
+
+                <Grid container spacing={3}>
+                  <Grid item xs={12} md={6}>
+                    <Card
+                      sx={{
+                        p: 3,
+                        height: "100%",
+                        background: "#ffffff",
+                        border: "1px solid #e0e0e0",
+                        borderRadius: "8px",
+                        boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+                      }}
+                    >
+                      <Stack
+                        direction="row"
+                        spacing={2}
+                        alignItems="center"
+                        mb={3}
+                      >
+                        <Schedule sx={{ color: "#1976d2", fontSize: 28 }} />
+                        <Typography
+                          variant="h5"
+                          sx={{
+                            fontWeight: 600,
+                            color: "#1a1a1a",
+                            fontSize: "1.3rem",
+                          }}
+                        >
+                          Office Hours
+                        </Typography>
+                      </Stack>
+
+                      <Stack spacing={2} sx={{ mb: 4 }}>
+                        <Box
+                          sx={{
+                            p: 2,
+                            borderRadius: "6px",
+                            bgcolor: "rgba(25, 118, 210, 0.04)",
+                            border: "1px solid rgba(25, 118, 210, 0.1)",
+                          }}
+                        >
+                          <Stack
+                            direction="row"
+                            justifyContent="space-between"
+                            alignItems="center"
+                          >
+                            <Typography fontWeight={500} fontSize="0.9rem">
+                              Monday - Friday:
+                            </Typography>
+                            <Typography
+                              color="text.secondary"
+                              fontSize="0.9rem"
+                            >
+                              9:00 AM - 6:00 PM
+                            </Typography>
+                          </Stack>
+                        </Box>
+
+                        <Box
+                          sx={{
+                            p: 2,
+                            borderRadius: "6px",
+                            bgcolor: "rgba(46, 125, 50, 0.04)",
+                            border: "1px solid rgba(46, 125, 50, 0.1)",
+                          }}
+                        >
+                          <Stack
+                            direction="row"
+                            justifyContent="space-between"
+                            alignItems="center"
+                          >
+                            <Typography fontWeight={500} fontSize="0.9rem">
+                              Saturday:
+                            </Typography>
+                            <Typography
+                              color="text.secondary"
+                              fontSize="0.9rem"
+                            >
+                              9:00 AM - 6:00 PM
+                            </Typography>
+                          </Stack>
+                        </Box>
+
+                        <Box
+                          sx={{
+                            p: 2,
+                            borderRadius: "6px",
+                            bgcolor: "rgba(211, 47, 47, 0.04)",
+                            border: "1px solid rgba(211, 47, 47, 0.1)",
+                          }}
+                        >
+                          <Stack
+                            direction="row"
+                            justifyContent="space-between"
+                            alignItems="center"
+                          >
+                            <Typography fontWeight={500} fontSize="0.9rem">
+                              Sunday:
+                            </Typography>
+                            <Typography
+                              color="text.secondary"
+                              fontSize="0.9rem"
+                            >
+                              Closed
+                            </Typography>
+                          </Stack>
+                        </Box>
+                      </Stack>
+
+                      <Box
+                        sx={{
+                          background: "#fff3e0",
+                          p: 3,
+                          borderRadius: "6px",
+                          border: "1px solid #ffb74d",
+                          textAlign: "center",
+                        }}
+                      >
+                        <Typography
+                          fontWeight={600}
+                          mb={1}
+                          sx={{ color: "#e65100", fontSize: "0.95rem" }}
+                        >
+                          🚨 Emergency Contact
+                        </Typography>
+                        <Typography
+                          color="error"
+                          fontWeight={600}
+                          sx={{ fontSize: "1.1rem" }}
+                        >
+                          +8801704422997
+                        </Typography>
+                        <Typography
+                          color="text.secondary"
+                          sx={{ fontSize: "0.8rem" }}
+                        >
+                          Available 24/7 for urgent matters
+                        </Typography>
+                      </Box>
+                    </Card>
+                  </Grid>
+
+                  <Grid item xs={12} md={6}>
+                    <Card
+                      sx={{
+                        p: 3,
+                        height: "100%",
+                        background: "#ffffff",
+                        border: "1px solid #e0e0e0",
+                        borderRadius: "8px",
+                        boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+                      }}
+                    >
+                      <Stack
+                        direction="row"
+                        spacing={2}
+                        alignItems="center"
+                        mb={3}
+                      >
+                        <Business sx={{ color: "#7b1fa2", fontSize: 28 }} />
+                        <Typography
+                          variant="h5"
+                          sx={{
+                            fontWeight: 600,
+                            color: "#1a1a1a",
+                            fontSize: "1.3rem",
+                          }}
+                        >
+                          Organization Information
+                        </Typography>
+                      </Stack>
+
+                      <Stack spacing={3}>
+                        <Box>
+                          <Typography
+                            variant="subtitle1"
+                            sx={{
+                              fontWeight: 600,
+                              mb: 1,
+                              color: "#333",
+                              fontSize: "0.9rem",
+                            }}
+                          >
+                            Department Structure
+                          </Typography>
+                          <Typography
+                            variant="body2"
+                            color="text.secondary"
+                            sx={{ fontSize: "0.85rem", lineHeight: 1.5 }}
+                          >
+                            Leadership, Executive, Climate Action, Education &
+                            Training, Community Mobilization, Project
+                            Management, and more.
+                          </Typography>
+                        </Box>
+
+                        <Box>
+                          <Typography
+                            variant="subtitle1"
+                            sx={{
+                              fontWeight: 600,
+                              mb: 1,
+                              color: "#333",
+                              fontSize: "0.9rem",
+                            }}
+                          >
+                            Focus Areas
+                          </Typography>
+                          <Typography
+                            variant="body2"
+                            color="text.secondary"
+                            sx={{ fontSize: "0.85rem", lineHeight: 1.5 }}
+                          >
+                            Climate adaptation, sustainable development,
+                            community resilience, and environmental education.
+                          </Typography>
+                        </Box>
+
+                        <Box>
+                          <Typography
+                            variant="subtitle1"
+                            sx={{
+                              fontWeight: 600,
+                              mb: 1,
+                              color: "#333",
+                              fontSize: "0.9rem",
+                            }}
+                          >
+                            Response Time
+                          </Typography>
+                          <Typography
+                            variant="body2"
+                            color="text.secondary"
+                            sx={{ fontSize: "0.85rem", lineHeight: 1.5 }}
+                          >
+                            We typically respond to inquiries within 24 hours
+                            during business days.
+                          </Typography>
+                        </Box>
+                      </Stack>
+                    </Card>
+                  </Grid>
+                </Grid>
+              </TabPanel>
+
+              <TabPanel value={activeTab} index={3}>
+                <Typography
+                  variant="h4"
+                  sx={{
+                    fontWeight: 600,
+                    mb: 4,
+                    color: "#1a1a1a",
+                    fontSize: "1.75rem",
+                  }}
+                >
+                  Location & Directions
+                </Typography>
+
+                <Grid container spacing={3}>
+                  <Grid item xs={12} md={6}>
+                    <Card
+                      sx={{
+                        p: 3,
+                        height: "100%",
+                        background: "#ffffff",
+                        border: "1px solid #e0e0e0",
+                        borderRadius: "8px",
+                        boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+                      }}
+                    >
+                      <Stack
+                        direction="row"
+                        spacing={2}
+                        alignItems="center"
+                        mb={3}
+                      >
+                        <LocationOn sx={{ color: "#7b1fa2", fontSize: 28 }} />
+                        <Typography
+                          variant="h5"
+                          sx={{
+                            fontWeight: 600,
+                            color: "#1a1a1a",
+                            fontSize: "1.3rem",
+                          }}
+                        >
+                          Our Address
+                        </Typography>
+                      </Stack>
+
+                      <Typography
+                        sx={{
+                          mb: 4,
+                          fontSize: "1rem",
+                          lineHeight: 1.6,
+                          color: "#333",
+                        }}
+                      >
+                        Purba Basabat, Bottalar Mor Ward 08
+                        <br />
+                        Sadar Bagerhat, Bangladesh
+                      </Typography>
+
+                      <Button
+                        variant="contained"
+                        startIcon={<Navigation />}
+                        size="large"
+                        fullWidth
+                        sx={{
+                          background: "#7b1fa2",
+                          py: 1.5,
+                          borderRadius: "6px",
+                          fontWeight: 500,
+                          textTransform: "none",
+                          boxShadow: "0 2px 8px rgba(123, 31, 162, 0.3)",
+                          "&:hover": {
+                            background: "#6a1b9a",
+                            transform: "translateY(-1px)",
+                            boxShadow: "0 4px 12px rgba(123, 31, 162, 0.4)",
+                          },
+                          transition: "all 0.3s ease",
+                        }}
+                      >
+                        Get Directions
+                      </Button>
+                    </Card>
+                  </Grid>
+
+                  <Grid item xs={12} md={6}>
+                    <Card
+                      sx={{
+                        p: 3,
+                        height: "100%",
+                        background: "#ffffff",
+                        border: "1px solid #e0e0e0",
+                        borderRadius: "8px",
+                        boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+                      }}
+                    >
+                      <Stack
+                        direction="row"
+                        spacing={2}
+                        alignItems="center"
+                        mb={3}
+                      >
+                        <Chat sx={{ color: "#2e7d32", fontSize: 28 }} />
+                        <Typography
+                          variant="h5"
+                          sx={{
+                            fontWeight: 600,
+                            color: "#1a1a1a",
+                            fontSize: "1.3rem",
+                          }}
+                        >
+                          Connect With Us
+                        </Typography>
+                      </Stack>
+
+                      <Stack spacing={3}>
+                        <Box>
+                          <Typography
+                            variant="subtitle1"
+                            sx={{
+                              fontWeight: 600,
+                              mb: 1,
+                              color: "#333",
+                              fontSize: "0.9rem",
+                            }}
+                          >
+                            Social Media
+                          </Typography>
+                          <Stack direction="row" spacing={2}>
+                            {socialLinks.map((social, i) => (
+                              <Tooltip key={i} title={social.name}>
+                                <SocialButton
+                                  component="a"
+                                  href={social.url}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  color={social.color}
+                                >
+                                  {social.icon}
+                                </SocialButton>
+                              </Tooltip>
+                            ))}
+                          </Stack>
+                        </Box>
+
+                        <Box>
+                          <Typography
+                            variant="subtitle1"
+                            sx={{
+                              fontWeight: 600,
+                              mb: 1,
+                              color: "#333",
+                              fontSize: "0.9rem",
+                            }}
+                          >
+                            Best Time to Contact
+                          </Typography>
+                          <Typography
+                            variant="body2"
+                            color="text.secondary"
+                            sx={{ fontSize: "0.85rem", lineHeight: 1.5 }}
+                          >
+                            Weekdays between 9:00 AM - 6:00 PM for immediate
+                            assistance. Emergency contacts available 24/7.
+                          </Typography>
+                        </Box>
+
+                        <Box>
+                          <Typography
+                            variant="subtitle1"
+                            sx={{
+                              fontWeight: 600,
+                              mb: 1,
+                              color: "#333",
+                              fontSize: "0.9rem",
+                            }}
+                          >
+                            Visit Planning
+                          </Typography>
+                          <Typography
+                            variant="body2"
+                            color="text.secondary"
+                            sx={{ fontSize: "0.85rem", lineHeight: 1.5 }}
+                          >
+                            Please schedule appointments in advance for
+                            in-person meetings and consultations.
+                          </Typography>
+                        </Box>
+                      </Stack>
+                    </Card>
+                  </Grid>
+                </Grid>
+              </TabPanel>
+            </ContentCard>
           </Grid>
         </Grid>
       </Container>
-
-      {/* Social Media */}
-      <Box sx={{ py: { xs: 6, md: 10 }, textAlign: "center" }}>
-        <Container maxWidth="xl">
-          <Typography
-            variant="h4"
-            sx={{
-              fontWeight: 700,
-              mb: 4,
-              fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.5rem" },
-            }}
-          >
-            Follow Our Journey
-          </Typography>
-          <Typography
-            sx={{
-              mb: 4,
-              fontSize: { xs: "0.95rem", sm: "1rem" },
-              color: "text.secondary",
-              maxWidth: "600px",
-              mx: "auto",
-            }}
-          >
-            Stay connected with us on social media to get the latest updates
-            about our projects and initiatives.
-          </Typography>
-          <Stack
-            direction="row"
-            spacing={3}
-            justifyContent="center"
-            flexWrap="wrap"
-            sx={{ gap: { xs: 2, sm: 3 } }}
-          >
-            {socialLinks.map((social, i) => (
-              <Button
-                key={i}
-                component="a"
-                href={social.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                sx={{
-                  bgcolor: social.color,
-                  borderRadius: "50%",
-                  width: 64,
-                  height: 64,
-                  minWidth: 64,
-                  "&:hover": {
-                    transform: "scale(1.1)",
-                    filter: "brightness(0.9)",
-                    boxShadow: 4,
-                  },
-                  transition: "all 0.3s ease",
-                }}
-              >
-                {social.icon}
-              </Button>
-            ))}
-          </Stack>
-        </Container>
-      </Box>
     </Box>
   );
 }
