@@ -54,6 +54,18 @@ import ClimateSmartHousing from "./pages/working-area/ClimateSmartHousing";
 import ClimateSmartSchooling from "./pages/working-area/ClimateSmartSchooling";
 import ClimateSmartClub from "./pages/working-area/ClimateSmartClub";
 import ClimateAdaptiveEnglishLearning from "./pages/working-area/ClimateAdaptiveEnglishLearning";
+import ClimateSmartCommunityLearningResearchCentre from "./pages/working-area/ClimateSmartCommunityLearningResearchCentre";
+import ClimateSmartLanguageLearning from "./pages/working-area/ClimateSmartLanguageLearning";
+import GlobalGreenAmbassadorProgram from "./pages/working-area/GlobalGreenAmbassadorProgram";
+
+// New Working Area Pages
+import ClimateSmartCampusAndClassroom from "./pages/working-area/ClimateSmartCampusAndClassroom";
+import ClimateSmartVolunteer from "./pages/working-area/ClimateSmartVolunteer";
+import ClimateSmartExtracurricularActivities from "./pages/working-area/ClimateSmartExtracurricularActivities";
+import ClimateSmartGlobalGreenAmbassador from "./pages/working-area/ClimateSmartGlobalGreenAmbassador";
+import ClimateSmartOnlineEducation from "./pages/working-area/ClimateSmartOnlineEducation";
+import ClimateSmartEcotourismPark from "./pages/working-area/ClimateSmartEcotourismPark";
+import ClimateSustainability from "./pages/working-area/ClimateSustainability";
 
 function App() {
   return (
@@ -197,6 +209,54 @@ function App() {
           <Route
             path="/working-area/climate-adaptive-english-learning"
             element={<ClimateAdaptiveEnglishLearning />}
+          />
+          <Route
+            path="/working-area/community-learning-research-centre"
+            element={<ClimateSmartCommunityLearningResearchCentre />}
+          />
+          <Route
+            path="/working-area/climate-smart-language-learning"
+            element={<ClimateSmartLanguageLearning />}
+          />
+          <Route
+            path="/working-area/global-green-ambassador-program"
+            element={<GlobalGreenAmbassadorProgram />}
+          />
+
+          {/* New Working Area Routes */}
+          <Route
+            path="/working-area/climate-smart-campus-classroom"
+            element={<ClimateSmartCampusAndClassroom />}
+          />
+          <Route
+            path="/working-area/climate-smart-volunteer"
+            element={<ClimateSmartVolunteer />}
+          />
+          <Route
+            path="/working-area/climate-smart-extracurricular-activities"
+            element={<ClimateSmartExtracurricularActivities />}
+          />
+          <Route
+            path="/working-area/climate-smart-global-green-ambassador"
+            element={<ClimateSmartGlobalGreenAmbassador />}
+          />
+          <Route
+            path="/working-area/climate-smart-online-education"
+            element={<ClimateSmartOnlineEducation />}
+          />
+          <Route
+            path="/working-area/climate-smart-ecotourism-park"
+            element={<ClimateSmartEcotourismPark />}
+          />
+          <Route
+            path="/working-area/climate-sustainability"
+            element={<ClimateSustainability />}
+          />
+
+          {/* Volunteer & Community Engagement Routes */}
+          <Route
+            path="/working-area/volunteer-community"
+            element={<ClimateSmartVolunteer />}
           />
 
           {/* What We Do Routes */}

@@ -28,6 +28,12 @@ import {
   Diversity3,
   Recycling,
   Business,
+  Park,
+  Home,
+  Groups,
+  Language,
+  Hub,
+  EmojiEvents,
 } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -89,6 +95,120 @@ const workAreas = [
     description: "Safe and inclusive climate-smart migration pathways.",
     icon: <Public sx={{ fontSize: 40, color: "#667eea" }} />,
     image: "https://www.sei.org/wp-content/uploads/2020/12/mbd0040.jpg",
+  },
+  {
+    title: "Climate Smart Campus & Class Room",
+    description: "Creating sustainable and resilient learning environments.",
+    icon: <School sx={{ fontSize: 40, color: "#f093fb" }} />,
+    image:
+      "https://images.unsplash.com/photo-1523050854058-8df90110c9e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+    link: "/working-area/climate-smart-campus-classroom",
+  },
+  {
+    title: "Climate-Smart Extracurricular Activities",
+    description: "Enhancing climate understanding through hands-on activities.",
+    icon: <School sx={{ fontSize: 40, color: "#667eea" }} />,
+    image:
+      "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2022&q=80",
+    link: "/working-area/climate-smart-extracurricular-activities",
+  },
+  {
+    title: "Climate-Smart Online Education",
+    description: "Digital learning for climate change impact recovery.",
+    icon: <School sx={{ fontSize: 40, color: "#f093fb" }} />,
+    image:
+      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80",
+    link: "/working-area/climate-smart-online-education",
+  },
+  {
+    title: "Climate-Smart Ecotourism Park",
+    description:
+      "Sustainable tourism for climate adaptation and community resilience.",
+    icon: <Park sx={{ fontSize: 40, color: "#667eea" }} />,
+    image:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+    link: "/working-area/climate-smart-ecotourism-park",
+  },
+  {
+    title: "Climate Sustainability",
+    description:
+      "Building a sustainable future through climate adaptation and mitigation.",
+    icon: <Nature sx={{ fontSize: 40, color: "#4caf50" }} />,
+    image:
+      "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+    link: "/working-area/climate-sustainability",
+  },
+  {
+    title: "Climate-smart Technical Education",
+    description:
+      "Integrating climate adaptation strategies into technical and vocational training.",
+    icon: <School sx={{ fontSize: 40, color: "#1976d2" }} />,
+    image:
+      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80",
+    link: "/working-area/climate-smart-technical-education",
+  },
+  {
+    title: "Climate-smart Housing",
+    description:
+      "Building resilient homes that withstand climate impacts while minimizing environmental footprint.",
+    icon: <Home sx={{ fontSize: 40, color: "#8e24aa" }} />,
+    image:
+      "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2073&q=80",
+    link: "/working-area/climate-smart-housing",
+  },
+  {
+    title: "Climate-smart Schooling",
+    description:
+      "Education that equips students with knowledge, skills, and values to address climate change.",
+    icon: <School sx={{ fontSize: 40, color: "#ff6f00" }} />,
+    image:
+      "https://images.unsplash.com/photo-1523050854058-8df90110c9e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+    link: "/working-area/climate-smart-schooling",
+  },
+  {
+    title: "Climate Smart Club",
+    description:
+      "Extracurricular groups focused on educating students about climate change and empowering them to take action.",
+    icon: <Groups sx={{ fontSize: 40, color: "#2e7d32" }} />,
+    image:
+      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80",
+    link: "/working-area/climate-smart-club",
+  },
+  {
+    title: "Climate Adaptive English Learning",
+    description:
+      "Integrating climate change education into English language learning to equip individuals with knowledge and skills.",
+    icon: <Language sx={{ fontSize: 40, color: "#1976d2" }} />,
+    image:
+      "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2022&q=80",
+    link: "/working-area/climate-adaptive-english-learning",
+  },
+  {
+    title: "Climate-smart Community Learning Research Centre",
+    description:
+      "Community-driven learning and research centers that empower communities to address climate change challenges.",
+    icon: <Hub sx={{ fontSize: 40, color: "#6a1b9a" }} />,
+    image:
+      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80",
+    link: "/working-area/community-learning-research-centre",
+  },
+  {
+    title: "Climate-smart Language Learning (CLL)",
+    description:
+      "Integrating climate action and environmental awareness into language education for enhanced skills and opportunities.",
+    icon: <Language sx={{ fontSize: 40, color: "#d84315" }} />,
+    image:
+      "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2022&q=80",
+    link: "/working-area/climate-smart-language-learning",
+  },
+  {
+    title: "Global Green Ambassador Program for Climate Adaptation",
+    description:
+      "Empowering individuals to drive positive change in their communities through climate adaptation and sustainability initiatives.",
+    icon: <EmojiEvents sx={{ fontSize: 40, color: "#2e7d32" }} />,
+    image:
+      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80",
+    link: "/working-area/global-green-ambassador-program",
   },
 
   // Waste Management
@@ -218,6 +338,24 @@ const workAreas = [
     image:
       "https://www.larive.com/wp-content/uploads/2023/06/Technology-image-01.jpg",
     link: "/working-area/agriculture-water/aquaculture",
+  },
+
+  // Volunteer & Community Engagement
+  {
+    title: "Climate-Smart Volunteer",
+    description: "Empowering communities through active participation.",
+    icon: <Group sx={{ fontSize: 40, color: "#667eea" }} />,
+    image:
+      "https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80",
+    link: "/working-area/climate-smart-volunteer",
+  },
+  {
+    title: "Climate Smart Global Green Ambassador",
+    description: "Promoting climate-smart solutions globally.",
+    icon: <Public sx={{ fontSize: 40, color: "#f093fb" }} />,
+    image:
+      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+    link: "/working-area/climate-smart-global-green-ambassador",
   },
 ];
 

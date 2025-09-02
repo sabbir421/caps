@@ -77,19 +77,35 @@ const navItems = [
             path: "/working-area/community-education/migration",
           },
           {
-            name: "Global Green Ambassador",
-            path: "/working-area/global-green-ambassador",
+            name: "Climate Smart Campus & Class Room",
+            path: "/working-area/climate-smart-campus-classroom",
           },
           {
-            name: "Climate-Smart Technical Education",
+            name: "Climate-Smart Extracurricular Activities",
+            path: "/working-area/climate-smart-extracurricular-activities",
+          },
+          {
+            name: "Climate-Smart Online Education",
+            path: "/working-area/climate-smart-online-education",
+          },
+          {
+            name: "Climate-Smart Ecotourism Park",
+            path: "/working-area/climate-smart-ecotourism-park",
+          },
+          {
+            name: "Climate Sustainability",
+            path: "/working-area/climate-sustainability",
+          },
+          {
+            name: "Climate-smart Technical Education",
             path: "/working-area/climate-smart-technical-education",
           },
           {
-            name: "Climate-Smart Housing",
+            name: "Climate-smart Housing",
             path: "/working-area/climate-smart-housing",
           },
           {
-            name: "Climate-Smart Schooling",
+            name: "Climate-smart Schooling",
             path: "/working-area/climate-smart-schooling",
           },
           {
@@ -99,6 +115,33 @@ const navItems = [
           {
             name: "Climate Adaptive English Learning",
             path: "/working-area/climate-adaptive-english-learning",
+          },
+          {
+            name: "Climate-smart Community Learning Research Centre",
+            path: "/working-area/community-learning-research-centre",
+          },
+          {
+            name: "Climate-smart Language Learning (CLL)",
+            path: "/working-area/climate-smart-language-learning",
+          },
+          {
+            name: "Global Green Ambassador Program for Climate Adaptation",
+            path: "/working-area/global-green-ambassador-program",
+          },
+        ],
+      },
+      {
+        name: "Volunteer & Community Engagement",
+        path: "/working-area/volunteer-community",
+        icon: Psychology,
+        subSubItems: [
+          {
+            name: "Climate-Smart Volunteer",
+            path: "/working-area/climate-smart-volunteer",
+          },
+          {
+            name: "Climate Smart Global Green Ambassador",
+            path: "/working-area/climate-smart-global-green-ambassador",
           },
         ],
       },
