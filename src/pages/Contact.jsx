@@ -572,7 +572,7 @@ function Contact() {
 
               {/* Quick Contact */}
               <Divider sx={{ my: 3, borderColor: "#e0e0e0" }} />
-              <Typography
+              {/* <Typography
                 variant="h6"
                 sx={{
                   fontWeight: 600,
@@ -629,7 +629,7 @@ function Contact() {
                 >
                   Call Now
                 </Button>
-              </Stack>
+              </Stack> */}
             </SidebarCard>
           </Grid>
 
