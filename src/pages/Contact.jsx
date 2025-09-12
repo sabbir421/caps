@@ -208,6 +208,10 @@ const HeroSection = styled(Box)(({ theme }) => ({
   background: "linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #1e3c72 100%)",
   position: "relative",
   overflow: "hidden",
+  width: "100vw",
+  maxWidth: "100vw",
+  margin: 0,
+  padding: 0,
   "&::before": {
     content: '""',
     position: "absolute",
@@ -229,6 +233,7 @@ const SidebarCard = styled(Card)(({ theme }) => ({
   position: "relative",
   overflow: "hidden",
   height: "100%",
+  width: "100%",
   boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
   "&:hover": {
     boxShadow: "0 4px 16px rgba(0,0,0,0.12)",
@@ -244,6 +249,7 @@ const ContentCard = styled(Card)(({ theme }) => ({
   position: "relative",
   overflow: "hidden",
   height: "100%",
+  width: "100%",
   boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
   "&:hover": {
     boxShadow: "0 4px 16px rgba(0,0,0,0.12)",
@@ -258,6 +264,7 @@ const TeamCard = styled(Card)(({ theme }) => ({
   position: "relative",
   overflow: "hidden",
   height: "100%",
+  width: "100%",
   display: "flex",
   flexDirection: "column",
   boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
@@ -290,6 +297,7 @@ const ContactInfoCard = styled(Card)(({ theme }) => ({
   position: "relative",
   overflow: "hidden",
   height: "100%",
+  width: "100%",
   boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
   "&:hover": {
     boxShadow: "0 4px 16px rgba(0,0,0,0.12)",
@@ -333,16 +341,30 @@ function Contact() {
   );
 
   return (
-    <Box sx={{ bgcolor: "#f5f5f5", minHeight: "100vh" }}>
+    <Box
+      sx={{
+        bgcolor: "#f5f5f5",
+        minHeight: "100vh",
+        width: "100vw",
+        maxWidth: "100vw",
+        overflowX: "hidden",
+        margin: 0,
+        padding: 0,
+      }}
+    >
       {/* Hero Section */}
       <HeroSection
         sx={{
           py: { xs: 6, md: 8 },
           textAlign: "center",
           color: "white",
+          width: "100vw",
+          maxWidth: "100vw",
+          margin: 0,
+          padding: 0,
         }}
       >
-        <Container maxWidth="xl">
+        <Box sx={{ px: { xs: 2, sm: 3, md: 4 }, width: "100%" }}>
           <Fade in timeout={800}>
             <Typography
               variant="h3"
@@ -373,11 +395,11 @@ function Contact() {
               adaptation initiatives.
             </Typography>
           </Fade>
-        </Container>
+        </Box>
       </HeroSection>
 
       {/* Breadcrumbs */}
-      <Container maxWidth="xl" sx={{ py: 2 }}>
+      <Box sx={{ py: 2, px: { xs: 2, sm: 3, md: 4 }, width: "100%" }}>
         <Breadcrumbs
           separator={<ChevronRight fontSize="small" />}
           aria-label="breadcrumb"
@@ -394,14 +416,29 @@ function Contact() {
           </Link>
           <Typography color="text.primary">Contact</Typography>
         </Breadcrumbs>
-      </Container>
+      </Box>
 
       {/* Main Content with Sidebar */}
-      <Container maxWidth="xl" sx={{ py: { xs: 4, md: 6 } }}>
-        <Grid container spacing={3}>
+      <Box
+        sx={{
+          py: { xs: 4, md: 6 },
+          px: { xs: 2, sm: 3, md: 4 },
+          width: "100%",
+          maxWidth: "100%",
+          margin: 0,
+        }}
+      >
+        <Grid container spacing={{ xs: 2, sm: 3 }} sx={{ width: "100%" }}>
           {/* Sidebar Navigation */}
-          <Grid item xs={12} md={3}>
-            <SidebarCard sx={{ p: 3, position: "sticky", top: 20 }}>
+          <Grid item xs={12} md={3} sx={{ width: "100%" }}>
+            <SidebarCard
+              sx={{
+                p: { xs: 2, sm: 3 },
+                position: { xs: "static", md: "sticky" },
+                top: 20,
+                width: "100%",
+              }}
+            >
               <Typography
                 variant="h6"
                 sx={{
@@ -597,8 +634,8 @@ function Contact() {
           </Grid>
 
           {/* Main Content Area */}
-          <Grid item xs={12} md={9}>
-            <ContentCard sx={{ p: 4 }}>
+          <Grid item xs={12} md={9} sx={{ width: "100%" }}>
+            <ContentCard sx={{ p: { xs: 2, sm: 3, md: 4 }, width: "100%" }}>
               {/* Tab Navigation */}
               <Box sx={{ borderBottom: 1, borderColor: "#e0e0e0", mb: 3 }}>
                 <Tabs
@@ -645,12 +682,29 @@ function Contact() {
                   Contact Information
                 </Typography>
 
-                <Grid container spacing={3}>
+                <Grid
+                  container
+                  spacing={{ xs: 2, sm: 3 }}
+                  sx={{ width: "100%" }}
+                >
                   {contactInfo.map((item, i) => (
-                    <Grid item xs={12} sm={6} lg={4} key={i}>
+                    <Grid
+                      item
+                      xs={12}
+                      sm={6}
+                      lg={4}
+                      key={i}
+                      sx={{ width: "100%" }}
+                    >
                       <Zoom in timeout={600 + i * 200}>
-                        <ContactInfoCard>
-                          <CardContent sx={{ p: 3, textAlign: "center" }}>
+                        <ContactInfoCard sx={{ width: "100%" }}>
+                          <CardContent
+                            sx={{
+                              p: { xs: 2, sm: 3 },
+                              textAlign: "center",
+                              width: "100%",
+                            }}
+                          >
                             <Box
                               sx={{
                                 width: 64,
@@ -810,20 +864,32 @@ function Contact() {
                   Executive Team
                 </Typography>
 
-                <Grid container spacing={3}>
+                <Grid
+                  container
+                  spacing={{ xs: 2, sm: 3 }}
+                  sx={{ width: "100%" }}
+                >
                   {teamMembers
                     .filter((m) => !m.featured)
                     .map((member, i) => (
-                      <Grid item xs={12} sm={6} lg={4} key={i}>
+                      <Grid
+                        item
+                        xs={12}
+                        sm={6}
+                        lg={4}
+                        key={i}
+                        sx={{ width: "100%" }}
+                      >
                         <Zoom in timeout={600 + i * 100}>
-                          <TeamCard>
+                          <TeamCard sx={{ width: "100%" }}>
                             <CardContent
                               sx={{
                                 flexGrow: 1,
                                 display: "flex",
                                 flexDirection: "column",
                                 textAlign: "center",
-                                p: 3,
+                                p: { xs: 2, sm: 3 },
+                                width: "100%",
                               }}
                             >
                               <Avatar
@@ -912,12 +978,17 @@ function Contact() {
                   Office Information
                 </Typography>
 
-                <Grid container spacing={3}>
-                  <Grid item xs={12} md={6}>
+                <Grid
+                  container
+                  spacing={{ xs: 2, sm: 3 }}
+                  sx={{ width: "100%" }}
+                >
+                  <Grid item xs={12} md={6} sx={{ width: "100%" }}>
                     <Card
                       sx={{
-                        p: 3,
+                        p: { xs: 2, sm: 3 },
                         height: "100%",
+                        width: "100%",
                         background: "#ffffff",
                         border: "1px solid #e0e0e0",
                         borderRadius: "8px",
@@ -1053,11 +1124,12 @@ function Contact() {
                     </Card>
                   </Grid>
 
-                  <Grid item xs={12} md={6}>
+                  <Grid item xs={12} md={6} sx={{ width: "100%" }}>
                     <Card
                       sx={{
-                        p: 3,
+                        p: { xs: 2, sm: 3 },
                         height: "100%",
+                        width: "100%",
                         background: "#ffffff",
                         border: "1px solid #e0e0e0",
                         borderRadius: "8px",
@@ -1169,12 +1241,17 @@ function Contact() {
                   Location & Directions
                 </Typography>
 
-                <Grid container spacing={3}>
-                  <Grid item xs={12} md={6}>
+                <Grid
+                  container
+                  spacing={{ xs: 2, sm: 3 }}
+                  sx={{ width: "100%" }}
+                >
+                  <Grid item xs={12} md={6} sx={{ width: "100%" }}>
                     <Card
                       sx={{
-                        p: 3,
+                        p: { xs: 2, sm: 3 },
                         height: "100%",
+                        width: "100%",
                         background: "#ffffff",
                         border: "1px solid #e0e0e0",
                         borderRadius: "8px",
@@ -1238,11 +1315,12 @@ function Contact() {
                     </Card>
                   </Grid>
 
-                  <Grid item xs={12} md={6}>
+                  <Grid item xs={12} md={6} sx={{ width: "100%" }}>
                     <Card
                       sx={{
-                        p: 3,
+                        p: { xs: 2, sm: 3 },
                         height: "100%",
+                        width: "100%",
                         background: "#ffffff",
                         border: "1px solid #e0e0e0",
                         borderRadius: "8px",
@@ -1349,7 +1427,7 @@ function Contact() {
             </ContentCard>
           </Grid>
         </Grid>
-      </Container>
+      </Box>
     </Box>
   );
 }

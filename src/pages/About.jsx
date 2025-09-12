@@ -98,6 +98,7 @@ const AboutTeamCard = styled(Card)(({ theme }) => ({
   border: "1px solid rgba(0,0,0,0.08)",
   borderRadius: "16px",
   transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+  width: "100%",
   position: "relative",
   overflow: "hidden",
   "&::before": {
@@ -119,13 +120,13 @@ const AboutTeamCard = styled(Card)(({ theme }) => ({
 }));
 
 const AboutAvatar = styled(Avatar)(({ theme }) => ({
-  width: 100,
-  height: 100,
+  width: { xs: 80, sm: 90, md: 100 },
+  height: { xs: 80, sm: 90, md: 100 },
   margin: "0 auto 20px",
   border: "4px solid #fff",
   boxShadow: "0 8px 24px rgba(0,0,0,0.15)",
   transition: "transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
-  fontSize: "2rem",
+  fontSize: { xs: "1.5rem", sm: "1.8rem", md: "2rem" },
   fontWeight: 600,
   background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
   "& img": {
@@ -348,11 +349,15 @@ function About() {
                       variant="body1"
                       paragraph
                       sx={{
-                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
-                        lineHeight: 1.8,
+                        fontSize: { xs: "0.85rem", sm: "0.9rem", md: "1rem" },
+                        lineHeight: 1.7,
                         mb: 4,
                         color: "text.primary",
                         textAlign: "justify",
+                        wordBreak: "break-word",
+                        overflowWrap: "break-word",
+                        hyphens: "auto",
+                        maxWidth: "100%",
                       }}
                     >
                       Caps || Climate Adaptation Plan Society has designed a
@@ -540,7 +545,10 @@ function About() {
 
       {/* Key Approaches Section */}
       <AltSectionBox sx={{ width: "100%" }}>
-        <Container maxWidth="xl">
+        <Container
+          maxWidth={false}
+          sx={{ px: { xs: 2, sm: 3, md: 4 }, width: "100%" }}
+        >
           <Typography
             variant="h3"
             gutterBottom
@@ -557,13 +565,16 @@ function About() {
           <Typography
             variant="body1"
             sx={{
-              fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
-              lineHeight: 1.8,
+              fontSize: { xs: "0.85rem", sm: "0.9rem", md: "1rem" },
+              lineHeight: 1.7,
               color: "text.primary",
               textAlign: "justify",
               maxWidth: { xs: "100%", sm: "800px", md: "900px" },
               mx: "auto",
-              mb: { xs: 4, md: 6 },
+              mb: { xs: 3, sm: 4, md: 5 },
+              wordBreak: "break-word",
+              overflowWrap: "break-word",
+              hyphens: "auto",
             }}
           >
             Our comprehensive approach to climate adaptation encompasses
@@ -580,13 +591,16 @@ function About() {
           <Typography
             variant="body1"
             sx={{
-              fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
-              lineHeight: 1.8,
+              fontSize: { xs: "0.85rem", sm: "0.9rem", md: "1rem" },
+              lineHeight: 1.7,
               color: "text.primary",
               textAlign: "justify",
               maxWidth: { xs: "100%", sm: "800px", md: "900px" },
               mx: "auto",
-              mb: { xs: 4, md: 6 },
+              mb: { xs: 3, sm: 4, md: 5 },
+              wordBreak: "break-word",
+              overflowWrap: "break-word",
+              hyphens: "auto",
             }}
           >
             <strong>Adaptive Capacity Building</strong> is central to our
@@ -602,13 +616,16 @@ function About() {
           <Typography
             variant="body1"
             sx={{
-              fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
-              lineHeight: 1.8,
+              fontSize: { xs: "0.85rem", sm: "0.9rem", md: "1rem" },
+              lineHeight: 1.7,
               color: "text.primary",
               textAlign: "justify",
               maxWidth: { xs: "100%", sm: "800px", md: "900px" },
               mx: "auto",
-              mb: { xs: 4, md: 6 },
+              mb: { xs: 3, sm: 4, md: 5 },
+              wordBreak: "break-word",
+              overflowWrap: "break-word",
+              hyphens: "auto",
             }}
           >
             We emphasize <strong>Policy and Governance</strong> by incorporating
@@ -623,13 +640,16 @@ function About() {
           <Typography
             variant="body1"
             sx={{
-              fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
-              lineHeight: 1.8,
+              fontSize: { xs: "0.85rem", sm: "0.9rem", md: "1rem" },
+              lineHeight: 1.7,
               color: "text.primary",
               textAlign: "justify",
               maxWidth: { xs: "100%", sm: "800px", md: "900px" },
               mx: "auto",
-              mb: { xs: 4, md: 6 },
+              mb: { xs: 3, sm: 4, md: 5 },
+              wordBreak: "break-word",
+              overflowWrap: "break-word",
+              hyphens: "auto",
             }}
           >
             <strong>Water Resource Management</strong> strategies address the
@@ -643,13 +663,16 @@ function About() {
           <Typography
             variant="body1"
             sx={{
-              fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
-              lineHeight: 1.8,
+              fontSize: { xs: "0.85rem", sm: "0.9rem", md: "1rem" },
+              lineHeight: 1.7,
               color: "text.primary",
               textAlign: "justify",
               maxWidth: { xs: "100%", sm: "800px", md: "900px" },
               mx: "auto",
-              mb: { xs: 4, md: 6 },
+              mb: { xs: 3, sm: 4, md: 5 },
+              wordBreak: "break-word",
+              overflowWrap: "break-word",
+              hyphens: "auto",
             }}
           >
             Our <strong>Urban Green Spaces</strong> initiatives create resilient
@@ -664,13 +687,16 @@ function About() {
           <Typography
             variant="body1"
             sx={{
-              fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
-              lineHeight: 1.8,
+              fontSize: { xs: "0.85rem", sm: "0.9rem", md: "1rem" },
+              lineHeight: 1.7,
               color: "text.primary",
               textAlign: "justify",
               maxWidth: { xs: "100%", sm: "800px", md: "900px" },
               mx: "auto",
-              mb: { xs: 4, md: 6 },
+              mb: { xs: 3, sm: 4, md: 5 },
+              wordBreak: "break-word",
+              overflowWrap: "break-word",
+              hyphens: "auto",
             }}
           >
             Through <strong>Reducing Economic Losses</strong>, we help
@@ -849,7 +875,10 @@ function About() {
 
       {/* Team Section */}
       <AltSectionBox sx={{ width: "100%" }}>
-        <Container maxWidth="xl">
+        <Container
+          maxWidth={false}
+          sx={{ px: { xs: 2, sm: 3, md: 4 }, width: "100%" }}
+        >
           <SectionHeader>
             <Typography
               variant="h2"
@@ -878,14 +907,28 @@ function About() {
 
           <Grid
             container
-            spacing={4}
+            spacing={{ xs: 2, sm: 3, md: 4 }}
             justifyContent="center"
             alignItems="stretch"
+            sx={{ width: "100%" }}
           >
             {teamMembers.map((member, index) => (
-              <Grid item xs={12} sm={6} lg={3} key={index}>
+              <Grid
+                item
+                xs={12}
+                sm={6}
+                lg={3}
+                key={index}
+                sx={{ width: "100%" }}
+              >
                 <AboutTeamCard>
-                  <CardContent sx={{ textAlign: "center", p: 4 }}>
+                  <CardContent
+                    sx={{
+                      textAlign: "center",
+                      p: { xs: 2, sm: 3, md: 4 },
+                      width: "100%",
+                    }}
+                  >
                     <AboutAvatar
                       className="avatar"
                       src={member.img}
@@ -931,7 +974,15 @@ function About() {
                         mb: 3,
                         color: "#666",
                         lineHeight: 1.6,
-                        fontSize: "0.95rem",
+                        fontSize: {
+                          xs: "0.85rem",
+                          sm: "0.9rem",
+                          md: "0.95rem",
+                        },
+                        textAlign: "justify",
+                        wordBreak: "break-word",
+                        overflowWrap: "break-word",
+                        hyphens: "auto",
                       }}
                     >
                       {member.description}
@@ -949,8 +1000,14 @@ function About() {
                         variant="body2"
                         sx={{
                           color: "#888",
-                          fontSize: "0.85rem",
+                          fontSize: {
+                            xs: "0.75rem",
+                            sm: "0.8rem",
+                            md: "0.85rem",
+                          },
                           fontWeight: 500,
+                          wordBreak: "break-word",
+                          overflowWrap: "break-word",
                         }}
                       >
                         <strong>Email:</strong> {member.email}

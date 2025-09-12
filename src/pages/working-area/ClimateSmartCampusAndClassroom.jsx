@@ -16,62 +16,252 @@ import {
   School,
   Groups,
 } from "@mui/icons-material";
+import { useNavigate } from "react-router-dom";
 
 const ClimateSmartCampusAndClassroom = () => {
+  const navigate = useNavigate();
+
+  const handleLearnMore = () => {
+    navigate("/about");
+  };
+
+  const handleGetInvolved = () => {
+    navigate("/contact");
+  };
+
   return (
     <Box sx={{ bgcolor: "#f9f9f9", minHeight: "100vh", width: "100%" }}>
       {/* Hero Section */}
       <Box
         sx={{
-          background: "linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)",
+          position: "relative",
+          background:
+            "linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%)",
           color: "#fff",
-          py: { xs: 4, sm: 6, md: 8, lg: 12 },
+          py: { xs: 8, sm: 12, md: 16, lg: 20 },
           textAlign: "center",
-          px: { xs: 2, sm: 0 },
+          overflow: "hidden",
           width: "100%",
+          "&::before": {
+            content: '""',
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background:
+              "radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%), radial-gradient(circle at 40% 80%, rgba(120, 219, 255, 0.3) 0%, transparent 50%)",
+            zIndex: 1,
+          },
         }}
       >
-        <Container maxWidth={false} sx={{ px: { xs: 2, sm: 3, md: 4 } }}>
-          <Typography
-            variant="h2"
+        {/* Floating Elements */}
+        <Box
+          sx={{
+            position: "absolute",
+            top: "10%",
+            left: "10%",
+            width: 60,
+            height: 60,
+            borderRadius: "50%",
+            background: "rgba(255, 255, 255, 0.1)",
+            backdropFilter: "blur(10px)",
+            zIndex: 2,
+            animation: "float 6s ease-in-out infinite",
+            "@keyframes float": {
+              "0%, 100%": { transform: "translateY(0px)" },
+              "50%": { transform: "translateY(-20px)" },
+            },
+          }}
+        />
+        <Box
+          sx={{
+            position: "absolute",
+            top: "20%",
+            right: "15%",
+            width: 40,
+            height: 40,
+            borderRadius: "50%",
+            background: "rgba(255, 255, 255, 0.15)",
+            backdropFilter: "blur(10px)",
+            zIndex: 2,
+            animation: "float 4s ease-in-out infinite reverse",
+          }}
+        />
+        <Box
+          sx={{
+            position: "absolute",
+            bottom: "20%",
+            left: "20%",
+            width: 80,
+            height: 80,
+            borderRadius: "50%",
+            background: "rgba(255, 255, 255, 0.08)",
+            backdropFilter: "blur(10px)",
+            zIndex: 2,
+            animation: "float 8s ease-in-out infinite",
+          }}
+        />
+
+        <Container
+          maxWidth={false}
+          sx={{ px: { xs: 2, sm: 3, md: 4 }, position: "relative", zIndex: 3 }}
+        >
+          {/* Badge */}
+          <Box
             sx={{
-              color:"white",
-              fontWeight: 700,
-              mb: { xs: 2, sm: 3 },
-              fontSize: {
-                xs: "1.8rem",
-                sm: "2.2rem",
-                md: "2.5rem",
-                lg: "3rem",
-              },
-              lineHeight: { xs: 1.2, sm: 1.3, md: 1.4 },
-              maxWidth: "100%",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 1,
+              px: { xs: 2, sm: 3 },
+              py: { xs: 1, sm: 1.5 },
+              mb: { xs: 3, sm: 4 },
+              background: "rgba(255, 255, 255, 0.15)",
+              backdropFilter: "blur(20px)",
+              borderRadius: "50px",
+              border: "1px solid rgba(255, 255, 255, 0.2)",
             }}
           >
-            Climate Smart Campus & Classroom
-          </Typography>
+            <Box
+              sx={{
+                width: 8,
+                height: 8,
+                borderRadius: "50%",
+                background: "#4ade80",
+                animation: "pulse 2s infinite",
+                "@keyframes pulse": {
+                  "0%, 100%": { opacity: 1 },
+                  "50%": { opacity: 0.5 },
+                },
+              }}
+            />
+            <Typography
+              sx={{
+                fontSize: { xs: "0.8rem", sm: "0.9rem" },
+                fontWeight: 500,
+                color: "rgba(255, 255, 255, 0.9)",
+              }}
+            >
+              Sustainable Education Initiative
+            </Typography>
+          </Box>
+
+          {/* Main Title */}
           <Typography
-            variant="h5"
+            variant="h1"
+            sx={{
+              fontWeight: 800,
+              mb: { xs: 3, sm: 4 },
+              fontSize: {
+                xs: "2.5rem",
+                sm: "3.5rem",
+                md: "4.5rem",
+                lg: "5.5rem",
+              },
+              lineHeight: { xs: 1.1, sm: 1.2 },
+              background: "linear-gradient(45deg, #ffffff 30%, #f0f9ff 90%)",
+              backgroundClip: "text",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              textShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
+              letterSpacing: { xs: "-0.02em", sm: "-0.03em" },
+            }}
+          >
+            Climate Smart
+            <br />
+            <Box
+              component="span"
+              sx={{
+                background: "linear-gradient(45deg, #4ade80 30%, #22c55e 90%)",
+                backgroundClip: "text",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+            >
+              Campus
+            </Box>
+          </Typography>
+
+          {/* Subtitle */}
+          <Typography
             sx={{
               maxWidth: { xs: "100%", sm: "600px", md: "700px" },
               mx: "auto",
               fontWeight: 400,
               lineHeight: 1.6,
-              color:"white",
               fontSize: {
-                xs: "0.9rem",
-                sm: "1rem",
-                md: "1.1rem",
-                lg: "1.2rem",
+                xs: "1.1rem",
+                sm: "1.3rem",
+                md: "1.4rem",
+                lg: "1.5rem",
               },
-              opacity: 0.9,
-              px: { xs: 2, sm: 0 },
+              color: "rgba(255, 255, 255, 0.9)",
+              mb: { xs: 4, sm: 6 },
+              textShadow: "0 2px 10px rgba(0, 0, 0, 0.1)",
             }}
           >
-            Creating sustainable and resilient learning environments that
-            mitigate climate change impacts and adapt to future climate
-            scenarios.
+            Transform educational spaces into sustainable, resilient
+            environments that inspire climate action
           </Typography>
+
+          {/* CTA Buttons */}
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: { xs: "column", sm: "row" },
+              gap: { xs: 2, sm: 3 },
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Button
+              variant="contained"
+              onClick={handleGetInvolved}
+              sx={{
+                px: { xs: 4, sm: 6 },
+                py: { xs: 1.5, sm: 2 },
+                fontSize: { xs: "1rem", sm: "1.1rem" },
+                fontWeight: 600,
+                background: "linear-gradient(45deg, #4ade80 30%, #22c55e 90%)",
+                borderRadius: "50px",
+                textTransform: "none",
+                boxShadow: "0 8px 32px rgba(34, 197, 94, 0.3)",
+                "&:hover": {
+                  background:
+                    "linear-gradient(45deg, #22c55e 30%, #16a34a 90%)",
+                  transform: "translateY(-2px)",
+                  boxShadow: "0 12px 40px rgba(34, 197, 94, 0.4)",
+                },
+                transition: "all 0.3s ease",
+              }}
+            >
+              Get Involved
+            </Button>
+            <Button
+              variant="outlined"
+              onClick={handleLearnMore}
+              sx={{
+                px: { xs: 4, sm: 6 },
+                py: { xs: 1.5, sm: 2 },
+                fontSize: { xs: "1rem", sm: "1.1rem" },
+                fontWeight: 600,
+                color: "white",
+                borderColor: "rgba(255, 255, 255, 0.3)",
+                borderRadius: "50px",
+                textTransform: "none",
+                backdropFilter: "blur(10px)",
+                background: "rgba(255, 255, 255, 0.1)",
+                "&:hover": {
+                  borderColor: "rgba(255, 255, 255, 0.6)",
+                  background: "rgba(255, 255, 255, 0.2)",
+                  transform: "translateY(-2px)",
+                },
+                transition: "all 0.3s ease",
+              }}
+            >
+              Learn More
+            </Button>
+          </Box>
         </Container>
       </Box>
 
@@ -97,7 +287,7 @@ const ClimateSmartCampusAndClassroom = () => {
                   <Typography
                     sx={{
                       fontWeight: 700,
-                      color:"white",
+                      color: "white",
                       fontSize: {
                         xs: "1.2rem",
                         sm: "1.4rem",
@@ -112,7 +302,7 @@ const ClimateSmartCampusAndClassroom = () => {
                   <Typography
                     sx={{
                       opacity: 0.85,
-                      color:"white",
+                      color: "white",
                       fontSize: { xs: "0.75rem", sm: "0.8rem", md: "0.9rem" },
                       lineHeight: 1.2,
                     }}

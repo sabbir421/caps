@@ -84,6 +84,7 @@ const EnhancedTeamCard = styled(Card)(({ theme }) => ({
   cursor: "pointer",
   display: "flex",
   flexDirection: "column",
+  width: "100%",
   "&::before": {
     content: '""',
     position: "absolute",
@@ -379,23 +380,32 @@ const TeamsPage = () => {
       </HeroSection>
 
       {/* Team Members Grid */}
-      <Container maxWidth="xl" sx={{ px: { xs: 2, sm: 3 }, pb: 8 }}>
-        <Grid container spacing={4} justifyContent="center">
+      <Container
+        maxWidth={false}
+        sx={{ px: { xs: 2, sm: 3, md: 4 }, pb: 8, width: "100%" }}
+      >
+        <Grid
+          container
+          spacing={{ xs: 2, sm: 3, md: 4 }}
+          justifyContent="center"
+          sx={{ width: "100%" }}
+        >
           {/* Director General - Single Column */}
           {teamMembers
             .filter((member) => member.position === "Director General")
             .map((member, index) => (
-              <Grid item xs={12} key={index}>
+              <Grid item xs={12} key={index} sx={{ width: "100%" }}>
                 <Zoom in timeout={500 + index * 100}>
-                  <Box sx={{ maxWidth: "600px", mx: "auto" }}>
+                  <Box sx={{ maxWidth: "600px", mx: "auto", width: "100%" }}>
                     <EnhancedTeamCard>
                       <CardContent
                         sx={{
                           textAlign: "center",
-                          p: 4,
+                          p: { xs: 2, sm: 3, md: 4 },
                           flexGrow: 1,
                           display: "flex",
                           flexDirection: "column",
+                          width: "100%",
                         }}
                       >
                         <EnhancedAvatar
@@ -443,14 +453,29 @@ const TeamsPage = () => {
                           }}
                         />
 
-                        <Box sx={{ mb: 3 }}>
+                        <Box
+                          sx={{
+                            mb: 3,
+                            flexGrow: 1,
+                            display: "flex",
+                            flexDirection: "column",
+                          }}
+                        >
                           <Typography
                             variant="body1"
                             sx={{
                               color: "#666",
                               lineHeight: 1.6,
-                              fontSize: "1rem",
+                              fontSize: {
+                                xs: "0.9rem",
+                                sm: "0.95rem",
+                                md: "1rem",
+                              },
                               textAlign: "justify",
+                              flexGrow: 1,
+                              wordBreak: "break-word",
+                              overflowWrap: "break-word",
+                              hyphens: "auto",
                             }}
                           >
                             {member.description}
@@ -505,16 +530,24 @@ const TeamsPage = () => {
           {teamMembers
             .filter((member) => member.position !== "Director General")
             .map((member, index) => (
-              <Grid item xs={12} md={6} lg={4} key={index}>
+              <Grid
+                item
+                xs={12}
+                md={6}
+                lg={4}
+                key={index}
+                sx={{ width: "100%" }}
+              >
                 <Zoom in timeout={500 + index * 100}>
                   <EnhancedTeamCard>
                     <CardContent
                       sx={{
                         textAlign: "center",
-                        p: 4,
+                        p: { xs: 2, sm: 3, md: 4 },
                         flexGrow: 1,
                         display: "flex",
                         flexDirection: "column",
+                        width: "100%",
                       }}
                     >
                       <EnhancedAvatar
@@ -561,15 +594,29 @@ const TeamsPage = () => {
                         }}
                       />
 
-                      <Box sx={{ mb: 3 }}>
+                      <Box
+                        sx={{
+                          mb: 3,
+                          flexGrow: 1,
+                          display: "flex",
+                          flexDirection: "column",
+                        }}
+                      >
                         <Typography
                           variant="body2"
                           sx={{
                             color: "#666",
                             lineHeight: 1.6,
-                            fontSize: "0.95rem",
-                            minHeight: "4rem",
+                            fontSize: {
+                              xs: "0.85rem",
+                              sm: "0.9rem",
+                              md: "0.95rem",
+                            },
                             textAlign: "justify",
+                            flexGrow: 1,
+                            wordBreak: "break-word",
+                            overflowWrap: "break-word",
+                            hyphens: "auto",
                           }}
                         >
                           {expandedCards[index]
@@ -583,10 +630,11 @@ const TeamsPage = () => {
                               mt: 1,
                               color: "#667eea",
                               textTransform: "none",
-                              fontSize: "0.85rem",
+                              fontSize: { xs: "0.8rem", sm: "0.85rem" },
                               fontWeight: 600,
                               p: 0,
                               minWidth: "auto",
+                              alignSelf: "flex-start",
                               "&:hover": {
                                 backgroundColor: "transparent",
                                 textDecoration: "underline",
