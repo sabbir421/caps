@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Container,
@@ -9,6 +9,18 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
+  Card,
+  CardMedia,
+  CardContent,
+  Button,
+  Chip,
+  Stack,
+  IconButton,
+  Dialog,
+  DialogContent,
+  DialogTitle,
+  Fade,
+  Zoom,
 } from "@mui/material";
 import SchoolIcon from "@mui/icons-material/School";
 import PublicIcon from "@mui/icons-material/Public";
@@ -24,8 +36,140 @@ import ScienceIcon from "@mui/icons-material/Science";
 import GamesIcon from "@mui/icons-material/Games";
 import LandscapeIcon from "@mui/icons-material/Landscape";
 import Diversity3Icon from "@mui/icons-material/Diversity3";
+import PhotoLibraryIcon from "@mui/icons-material/PhotoLibrary";
+import CloseIcon from "@mui/icons-material/Close";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import ExpandLessIcon from "@mui/icons-material/ExpandLess";
+import FilterListIcon from "@mui/icons-material/FilterList";
 
 const ClimateSmartCommunityEducation = () => {
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [showAll, setShowAll] = useState(false);
+
+  const galleryData = [
+    {
+      id: 1,
+      title: "Community Learning Center",
+      category: "infrastructure",
+      image:
+        "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      description: "Modern learning environment for climate education",
+      date: "2024",
+    },
+    {
+      id: 2,
+      title: "Students in Action",
+      category: "education",
+      image:
+        "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      description: "Students participating in climate awareness activities",
+      date: "2024",
+    },
+    {
+      id: 3,
+      title: "Environmental Workshop",
+      category: "workshop",
+      image:
+        "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      description: "Hands-on learning about environmental sustainability",
+      date: "2024",
+    },
+    {
+      id: 4,
+      title: "Community Garden",
+      category: "sustainability",
+      image:
+        "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      description: "Sustainable agriculture practices in action",
+      date: "2024",
+    },
+    {
+      id: 5,
+      title: "Teacher Training",
+      category: "training",
+      image:
+        "https://images.unsplash.com/photo-1523240798034-6a5c0eaa0f5a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      description: "Educating educators about climate-smart teaching",
+      date: "2024",
+    },
+    {
+      id: 6,
+      title: "Youth Engagement",
+      category: "education",
+      image:
+        "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      description: "Empowering young minds for climate action",
+      date: "2024",
+    },
+    {
+      id: 7,
+      title: "Research Activities",
+      category: "research",
+      image:
+        "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      description: "Scientific research on climate adaptation",
+      date: "2024",
+    },
+    {
+      id: 8,
+      title: "Community Meeting",
+      category: "community",
+      image:
+        "https://images.unsplash.com/photo-1515187029135-18ee286d815b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      description: "Community discussions on climate resilience",
+      date: "2024",
+    },
+  ];
+
+  const categories = [
+    { key: "all", label: "All Photos", count: galleryData.length },
+    {
+      key: "education",
+      label: "Education",
+      count: galleryData.filter((item) => item.category === "education").length,
+    },
+    {
+      key: "infrastructure",
+      label: "Infrastructure",
+      count: galleryData.filter((item) => item.category === "infrastructure")
+        .length,
+    },
+    {
+      key: "workshop",
+      label: "Workshops",
+      count: galleryData.filter((item) => item.category === "workshop").length,
+    },
+    {
+      key: "sustainability",
+      label: "Sustainability",
+      count: galleryData.filter((item) => item.category === "sustainability")
+        .length,
+    },
+    {
+      key: "training",
+      label: "Training",
+      count: galleryData.filter((item) => item.category === "training").length,
+    },
+    {
+      key: "research",
+      label: "Research",
+      count: galleryData.filter((item) => item.category === "research").length,
+    },
+    {
+      key: "community",
+      label: "Community",
+      count: galleryData.filter((item) => item.category === "community").length,
+    },
+  ];
+
+  const filteredData =
+    selectedCategory === "all"
+      ? galleryData
+      : galleryData.filter((item) => item.category === selectedCategory);
+
+  const displayedData = showAll ? filteredData : filteredData.slice(0, 6);
+
   return (
     <Box sx={{ py: { xs: 6, md: 8 }, bgcolor: "grey.50" }}>
       <Container maxWidth="xl">
@@ -60,18 +204,273 @@ const ClimateSmartCommunityEducation = () => {
             </Typography>
           </Box>
 
+          {/* Photo Gallery Section */}
           <Box sx={{ mb: { xs: 4, md: 6 } }}>
-            <img
-              src="https://placehold.co/1200x500/E0F2F1/004D40?text=Community+Learning+Center"
-              alt="A group of people, including children, learning in a community center"
-              style={{
-                width: "100%",
-                height: "auto",
-                borderRadius: "12px",
-                boxShadow: "0px 8px 16px rgba(0, 0, 0, 0.1)",
-              }}
-            />
+            <Box sx={{ textAlign: "center", mb: 4 }}>
+              <Typography
+                variant="h4"
+                component="h2"
+                gutterBottom
+                sx={{
+                  fontWeight: 600,
+                  color: "primary.main",
+                  fontSize: { xs: "1.5rem", sm: "1.8rem", md: "2rem" },
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: 2,
+                }}
+              >
+                <PhotoLibraryIcon
+                  sx={{ fontSize: { xs: "1.5rem", md: "2rem" } }}
+                />
+                Photo Gallery & Archive
+              </Typography>
+              <Typography
+                variant="body1"
+                color="text.secondary"
+                sx={{
+                  fontSize: { xs: "0.9rem", sm: "1rem" },
+                  maxWidth: "600px",
+                  mx: "auto",
+                }}
+              >
+                Explore our journey through climate-smart education initiatives
+              </Typography>
+            </Box>
+
+            {/* Category Filter */}
+            <Box sx={{ mb: 4 }}>
+              <Stack
+                direction="row"
+                spacing={1}
+                sx={{
+                  flexWrap: "wrap",
+                  justifyContent: "center",
+                  gap: 1,
+                }}
+              >
+                {categories.map((category) => (
+                  <Chip
+                    key={category.key}
+                    label={`${category.label} (${category.count})`}
+                    onClick={() => setSelectedCategory(category.key)}
+                    variant={
+                      selectedCategory === category.key ? "filled" : "outlined"
+                    }
+                    color={
+                      selectedCategory === category.key ? "primary" : "default"
+                    }
+                    sx={{
+                      mb: 1,
+                      transition: "all 0.3s ease",
+                      "&:hover": {
+                        transform: "translateY(-2px)",
+                        boxShadow: 2,
+                      },
+                    }}
+                  />
+                ))}
+              </Stack>
+            </Box>
+
+            {/* Gallery Grid */}
+            <Grid container spacing={3}>
+              {displayedData.map((item, index) => (
+                <Grid item xs={12} sm={6} md={4} key={item.id}>
+                  <Zoom in={true} timeout={300 + index * 100}>
+                    <Card
+                      sx={{
+                        height: "100%",
+                        cursor: "pointer",
+                        transition: "all 0.3s ease",
+                        "&:hover": {
+                          transform: "translateY(-8px)",
+                          boxShadow: "0px 12px 24px rgba(0, 0, 0, 0.15)",
+                        },
+                      }}
+                      onClick={() => setSelectedImage(item)}
+                    >
+                      <Box sx={{ position: "relative" }}>
+                        <CardMedia
+                          component="img"
+                          height="250"
+                          image={item.image}
+                          alt={item.title}
+                          sx={{
+                            objectFit: "cover",
+                            transition: "transform 0.3s ease",
+                            "&:hover": {
+                              transform: "scale(1.05)",
+                            },
+                          }}
+                        />
+                        <Box
+                          sx={{
+                            position: "absolute",
+                            top: 8,
+                            right: 8,
+                            bgcolor: "rgba(0, 0, 0, 0.7)",
+                            color: "white",
+                            px: 1.5,
+                            py: 0.5,
+                            borderRadius: 1,
+                            fontSize: "0.75rem",
+                            fontWeight: 500,
+                          }}
+                        >
+                          {item.date}
+                        </Box>
+                      </Box>
+                      <CardContent sx={{ p: 2 }}>
+                        <Typography
+                          variant="h6"
+                          component="h3"
+                          gutterBottom
+                          sx={{
+                            fontSize: { xs: "1rem", sm: "1.1rem" },
+                            fontWeight: 600,
+                            color: "text.primary",
+                            mb: 1,
+                          }}
+                        >
+                          {item.title}
+                        </Typography>
+                        <Typography
+                          variant="body2"
+                          color="text.secondary"
+                          sx={{
+                            fontSize: { xs: "0.8rem", sm: "0.85rem" },
+                            lineHeight: 1.4,
+                          }}
+                        >
+                          {item.description}
+                        </Typography>
+                        <Chip
+                          label={item.category}
+                          size="small"
+                          sx={{
+                            mt: 1.5,
+                            textTransform: "capitalize",
+                            bgcolor: "primary.light",
+                            color: "primary.contrastText",
+                            fontSize: "0.7rem",
+                          }}
+                        />
+                      </CardContent>
+                    </Card>
+                  </Zoom>
+                </Grid>
+              ))}
+            </Grid>
+
+            {/* Show More/Less Button */}
+            {filteredData.length > 6 && (
+              <Box sx={{ textAlign: "center", mt: 4 }}>
+                <Button
+                  variant="outlined"
+                  endIcon={showAll ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+                  onClick={() => setShowAll(!showAll)}
+                  sx={{
+                    px: 4,
+                    py: 1.5,
+                    borderRadius: 3,
+                    textTransform: "none",
+                    fontSize: "1rem",
+                    fontWeight: 500,
+                    transition: "all 0.3s ease",
+                    "&:hover": {
+                      transform: "translateY(-2px)",
+                      boxShadow: 3,
+                    },
+                  }}
+                >
+                  {showAll
+                    ? "Show Less"
+                    : `Show All ${filteredData.length} Photos`}
+                </Button>
+              </Box>
+            )}
           </Box>
+
+          {/* Image Modal */}
+          <Dialog
+            open={!!selectedImage}
+            onClose={() => setSelectedImage(null)}
+            maxWidth="md"
+            fullWidth
+            PaperProps={{
+              sx: {
+                borderRadius: 3,
+                overflow: "hidden",
+              },
+            }}
+          >
+            {selectedImage && (
+              <>
+                <DialogTitle
+                  sx={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    pb: 1,
+                  }}
+                >
+                  <Typography variant="h6" component="div">
+                    {selectedImage.title}
+                  </Typography>
+                  <IconButton
+                    onClick={() => setSelectedImage(null)}
+                    sx={{ color: "text.secondary" }}
+                  >
+                    <CloseIcon />
+                  </IconButton>
+                </DialogTitle>
+                <DialogContent sx={{ p: 0 }}>
+                  <Box sx={{ position: "relative" }}>
+                    <img
+                      src={selectedImage.image}
+                      alt={selectedImage.title}
+                      style={{
+                        width: "100%",
+                        height: "auto",
+                        display: "block",
+                      }}
+                    />
+                    <Box
+                      sx={{
+                        position: "absolute",
+                        bottom: 0,
+                        left: 0,
+                        right: 0,
+                        bgcolor: "rgba(0, 0, 0, 0.7)",
+                        color: "white",
+                        p: 2,
+                      }}
+                    >
+                      <Typography variant="body1" sx={{ mb: 1 }}>
+                        {selectedImage.description}
+                      </Typography>
+                      <Stack direction="row" spacing={1} alignItems="center">
+                        <Chip
+                          label={selectedImage.category}
+                          size="small"
+                          sx={{
+                            textTransform: "capitalize",
+                            bgcolor: "primary.main",
+                            color: "primary.contrastText",
+                          }}
+                        />
+                        <Typography variant="caption" sx={{ ml: "auto" }}>
+                          {selectedImage.date}
+                        </Typography>
+                      </Stack>
+                    </Box>
+                  </Box>
+                </DialogContent>
+              </>
+            )}
+          </Dialog>
 
           <Typography
             variant="body1"

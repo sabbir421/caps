@@ -63,7 +63,7 @@ const HeroSection = () => {
             lineHeight: 1.2,
           }}
         >
-          Climate Adaptation Plan Society
+         CAPS || Climate Adaptation Plan Society
         </Typography>
 
         {/* Subtext */}
