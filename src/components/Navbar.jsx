@@ -266,7 +266,7 @@ const navItems = [
   },
   { name: "Publications & Stories", path: "/publications" },
   { name: "Our Team", path: "/teams" },
-  { name: "Photo Gallery", path: "/gallery" },
+  // { name: "Photo Gallery", path: "/gallery" },
   { name: "Contact Us", path: "/contact" },
 ];
 

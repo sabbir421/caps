@@ -47,6 +47,9 @@ const HeroSection = styled(Box)(({ theme }) => ({
   position: "relative",
   overflow: "hidden",
   padding: theme.spacing(12, 0),
+  width: "100%",
+  maxWidth: "100vw",
+  margin: 0,
   "&::before": {
     content: '""',
     position: "absolute",
@@ -155,19 +158,7 @@ const TeamsPage = () => {
       icon: Business,
       linkedin: "https://linkedin.com/in/muhammad-asaduzzaman",
     },
-    {
-      name: "Samim Chowdhury",
-      position: "Executive Director, Climate-Smart Microfinance",
-      email: "shamim@capsbd.com",
-      phone: "+880 1234-567890",
-      department: "Microfinance",
-      description:
-        "Advancing climate-smart microfinance for sustainable livelihoods and climate resilience.",
-      img: samimImg,
-      avatar: "SC",
-      icon: Business,
-      linkedin: "https://linkedin.com/in/samim-chowdhury",
-    },
+
     {
       name: "Muhammad Golam Sarwar",
       position: "Chairperson",
@@ -314,12 +305,30 @@ const TeamsPage = () => {
   ];
 
   return (
-    <Box sx={{ minHeight: "100vh", backgroundColor: "#f8f9fa" }}>
+    <Box
+      sx={{
+        minHeight: "100vh",
+        backgroundColor: "#f8f9fa",
+        width: "100%",
+        maxWidth: "100vw",
+        overflowX: "hidden",
+        margin: 0,
+        padding: 0,
+      }}
+    >
       {/* Enhanced Hero Section */}
       <HeroSection>
         <Container
           maxWidth="xl"
-          sx={{ px: { xs: 2, sm: 3 }, position: "relative", zIndex: 1 }}
+          sx={{
+            px: { xs: 2, sm: 3 },
+            position: "relative",
+            zIndex: 1,
+            width: "100%",
+            maxWidth: "100vw",
+            margin: 0,
+            overflowX: "hidden",
+          }}
         >
           <Box sx={{ textAlign: "center" }}>
             <Fade in timeout={1000}>
@@ -379,313 +388,384 @@ const TeamsPage = () => {
         </Container>
       </HeroSection>
 
-      {/* Team Members Grid */}
+      {/* Team Members Grid - Same as About Us */}
       <Container
         maxWidth={false}
-        sx={{ px: { xs: 2, sm: 3, md: 4 }, pb: 8, width: "100%" }}
+        sx={{
+          px: { xs: 2, sm: 3, md: 4 },
+          pb: 8,
+          width: "100%",
+          maxWidth: "100vw",
+          margin: 0,
+          overflowX: "hidden",
+        }}
       >
-        <Grid
-          container
-          spacing={{ xs: 2, sm: 3, md: 4 }}
-          justifyContent="center"
-          sx={{ width: "100%" }}
+        {/* Director General - Featured Single Column */}
+        <Box
+          sx={{ mb: 6, width: "100%", maxWidth: "100%", overflowX: "hidden" }}
         >
-          {/* Director General - Single Column */}
-          {teamMembers
-            .filter((member) => member.position === "Director General")
-            .map((member, index) => (
-              <Grid item xs={12} key={index} sx={{ width: "100%" }}>
-                <Zoom in timeout={500 + index * 100}>
-                  <Box sx={{ maxWidth: "600px", mx: "auto", width: "100%" }}>
-                    <EnhancedTeamCard>
-                      <CardContent
-                        sx={{
-                          textAlign: "center",
-                          p: { xs: 2, sm: 3, md: 4 },
-                          flexGrow: 1,
-                          display: "flex",
-                          flexDirection: "column",
-                          width: "100%",
-                        }}
-                      >
+          <Grid
+            container
+            justifyContent="center"
+            sx={{ width: "100%", margin: 0, padding: 0 }}
+          >
+            <Grid
+              item
+              xs={12}
+              sm={10}
+              md={8}
+              lg={6}
+              sx={{ width: "100%", maxWidth: "100%" }}
+            >
+              {(() => {
+                const directorGeneral = teamMembers.find(
+                  (member) => member.position === "Director General"
+                );
+                return directorGeneral ? (
+                  <EnhancedTeamCard
+                    sx={{
+                      width: "100%",
+                      maxWidth: "600px",
+                      minHeight: "400px",
+                      display: "flex",
+                      flexDirection: "column",
+                      position: "relative",
+                      overflow: "hidden",
+                      mx: "auto",
+                      "&:hover": {
+                        transform: "translateY(-8px) scale(1.02)",
+                        boxShadow: "0 25px 50px rgba(0,0,0,0.2)",
+                      },
+                    }}
+                  >
+                    <CardContent
+                      sx={{
+                        textAlign: "center",
+                        p: { xs: 4, sm: 5 },
+                        width: "100%",
+                        flexGrow: 1,
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "space-between",
+                      }}
+                    >
+                      {/* Avatar */}
+                      <Box sx={{ mb: 3 }}>
                         <EnhancedAvatar
                           className="avatar"
-                          src={member.img}
-                          alt={member.name}
+                          src={directorGeneral.img}
+                          alt={directorGeneral.name}
+                          sx={{
+                            width: { xs: 100, sm: 120, md: 140 },
+                            height: { xs: 100, sm: 120, md: 140 },
+                            margin: "0 auto 20px",
+                            border: "6px solid #fff",
+                            boxShadow: "0 12px 32px rgba(0,0,0,0.2)",
+                          }}
                         >
-                          {member.avatar}
+                          {directorGeneral.avatar}
                         </EnhancedAvatar>
+                      </Box>
 
+                      {/* Name and Position */}
+                      <Box sx={{ mb: 3 }}>
                         <Typography
                           variant="h4"
                           sx={{
                             fontWeight: 700,
-                            mb: 1,
+                            mb: 2,
                             color: "#1e3c72",
-                            fontSize: { xs: "1.5rem", md: "1.8rem" },
+                            fontSize: {
+                              xs: "1.5rem",
+                              sm: "1.8rem",
+                              md: "2rem",
+                            },
+                            lineHeight: 1.3,
                           }}
                         >
-                          {member.name}
+                          {directorGeneral.name}
                         </Typography>
-
                         <Typography
-                          variant="h6"
+                          variant="h5"
                           sx={{
                             fontWeight: 600,
-                            mb: 2,
+                            mb: 3,
                             color: "#667eea",
-                            fontSize: { xs: "1.1rem", md: "1.3rem" },
+                            fontSize: {
+                              xs: "1.1rem",
+                              sm: "1.3rem",
+                              md: "1.4rem",
+                            },
+                            lineHeight: 1.4,
                           }}
                         >
-                          {member.position}
+                          {directorGeneral.position}
                         </Typography>
+                      </Box>
 
+                      {/* Department Chip */}
+                      <Box sx={{ mb: 4 }}>
                         <Chip
-                          icon={<member.icon />}
-                          label={member.department}
+                          label={directorGeneral.department}
                           sx={{
-                            mb: 3,
                             backgroundColor: "rgba(102, 126, 234, 0.1)",
                             color: "#667eea",
                             fontWeight: 600,
-                            borderRadius: "20px",
-                            fontSize: "1rem",
+                            borderRadius: "25px",
+                            fontSize: { xs: "0.9rem", sm: "1rem" },
+                            px: 3,
+                            py: 1.5,
+                            height: "auto",
                           }}
                         />
+                      </Box>
 
-                        <Box
+                      {/* Description */}
+                      <Typography
+                        variant="body1"
+                        sx={{
+                          mb: 4,
+                          color: "#666",
+                          lineHeight: 1.7,
+                          fontSize: {
+                            xs: "1rem",
+                            sm: "1.1rem",
+                            md: "1.2rem",
+                          },
+                          textAlign: "justify",
+                          wordBreak: "break-word",
+                          overflowWrap: "break-word",
+                          hyphens: "auto",
+                          flexGrow: 1,
+                          display: "flex",
+                          alignItems: "center",
+                        }}
+                      >
+                        {directorGeneral.description}
+                      </Typography>
+
+                      {/* Email Footer */}
+                      <Box
+                        sx={{
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          pt: 3,
+                          borderTop: "2px solid rgba(0,0,0,0.08)",
+                          mt: "auto",
+                        }}
+                      >
+                        <Typography
+                          variant="body1"
                           sx={{
-                            mb: 3,
-                            flexGrow: 1,
-                            display: "flex",
-                            flexDirection: "column",
+                            color: "#888",
+                            fontSize: {
+                              xs: "0.9rem",
+                              sm: "1rem",
+                              md: "1.1rem",
+                            },
+                            fontWeight: 500,
+                            wordBreak: "break-word",
+                            overflowWrap: "break-word",
+                            textAlign: "center",
                           }}
                         >
-                          <Typography
-                            variant="body1"
-                            sx={{
-                              color: "#666",
-                              lineHeight: 1.6,
-                              fontSize: {
-                                xs: "0.9rem",
-                                sm: "0.95rem",
-                                md: "1rem",
-                              },
-                              textAlign: "justify",
-                              flexGrow: 1,
-                              wordBreak: "break-word",
-                              overflowWrap: "break-word",
-                              hyphens: "auto",
-                            }}
-                          >
-                            {member.description}
-                          </Typography>
-                        </Box>
+                          <strong>Email:</strong> {directorGeneral.email}
+                        </Typography>
+                      </Box>
+                    </CardContent>
+                  </EnhancedTeamCard>
+                ) : null;
+              })()}
+            </Grid>
+          </Grid>
+        </Box>
 
-                        <Divider
-                          sx={{ my: 2, borderColor: "rgba(0,0,0,0.08)" }}
-                        />
-
-                        {/* Contact Information */}
-                        <Box
-                          sx={{
-                            display: "flex",
-                            flexDirection: "column",
-                            gap: 1,
-                            alignItems: "center",
-                            mt: "auto",
-                          }}
-                        >
-                          {/* <Typography
-                            variant="body1"
-                            sx={{
-                              color: "#888",
-                              fontSize: "1rem",
-                              fontWeight: 500,
-                              textAlign: "center",
-                            }}
-                          >
-                            {member.email}
-                          </Typography>
-                          <Typography
-                            variant="body2"
-                            sx={{
-                              color: "#888",
-                              fontSize: "0.9rem",
-                              fontWeight: 400,
-                              textAlign: "center",
-                            }}
-                          >
-                            {member.phone}
-                          </Typography> */}
-                        </Box>
-                      </CardContent>
-                    </EnhancedTeamCard>
-                  </Box>
-                </Zoom>
-              </Grid>
-            ))}
-
-          {/* Other Team Members - 3 Column Grid */}
+        {/* Rest of the Team - 3 Column Grid */}
+        <Grid
+          container
+          spacing={{ xs: 3, sm: 4, md: 5 }}
+          justifyContent="center"
+          alignItems="stretch"
+          sx={{
+            width: "100%",
+            maxWidth: "1200px",
+            mx: "auto",
+            margin: 0,
+            padding: 0,
+          }}
+        >
           {teamMembers
             .filter((member) => member.position !== "Director General")
             .map((member, index) => (
               <Grid
                 item
                 xs={12}
-                md={6}
+                sm={6}
+                md={4}
                 lg={4}
                 key={index}
-                sx={{ width: "100%" }}
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  mb: 3,
+                  width: "100%",
+                  maxWidth: "100%",
+                  padding: 0,
+                  margin: 0,
+                }}
               >
-                <Zoom in timeout={500 + index * 100}>
-                  <EnhancedTeamCard>
-                    <CardContent
-                      sx={{
-                        textAlign: "center",
-                        p: { xs: 2, sm: 3, md: 4 },
-                        flexGrow: 1,
-                        display: "flex",
-                        flexDirection: "column",
-                        width: "100%",
-                      }}
-                    >
+                <EnhancedTeamCard
+                  sx={{
+                    width: "100%",
+                    maxWidth: "350px",
+                    minHeight: "500px",
+                    display: "flex",
+                    flexDirection: "column",
+                    position: "relative",
+                    overflow: "hidden",
+                    "&:hover": {
+                      transform: "translateY(-8px) scale(1.02)",
+                      boxShadow: "0 25px 50px rgba(0,0,0,0.2)",
+                    },
+                  }}
+                >
+                  <CardContent
+                    sx={{
+                      textAlign: "center",
+                      p: { xs: 3, sm: 4 },
+                      width: "100%",
+                      flexGrow: 1,
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "space-between",
+                    }}
+                  >
+                    {/* Avatar */}
+                    <Box sx={{ mb: 3 }}>
                       <EnhancedAvatar
                         className="avatar"
                         src={member.img}
                         alt={member.name}
+                        sx={{
+                          width: { xs: 70, sm: 80, md: 90 },
+                          height: { xs: 70, sm: 80, md: 90 },
+                          margin: "0 auto 16px",
+                          border: "4px solid #fff",
+                          boxShadow: "0 8px 24px rgba(0,0,0,0.15)",
+                        }}
                       >
                         {member.avatar}
                       </EnhancedAvatar>
+                    </Box>
 
+                    {/* Name and Position */}
+                    <Box sx={{ mb: 2 }}>
                       <Typography
                         variant="h5"
                         sx={{
                           fontWeight: 700,
                           mb: 1,
                           color: "#1e3c72",
-                          fontSize: { xs: "1.2rem", md: "1.3rem" },
+                          fontSize: {
+                            xs: "1.1rem",
+                            sm: "1.2rem",
+                            md: "1.3rem",
+                          },
+                          lineHeight: 1.3,
                         }}
                       >
                         {member.name}
                       </Typography>
-
                       <Typography
                         variant="subtitle1"
                         sx={{
                           fontWeight: 600,
                           mb: 2,
                           color: "#667eea",
-                          fontSize: { xs: "1rem", md: "1.1rem" },
+                          fontSize: {
+                            xs: "0.9rem",
+                            sm: "1rem",
+                            md: "1.1rem",
+                          },
+                          lineHeight: 1.4,
                         }}
                       >
                         {member.position}
                       </Typography>
+                    </Box>
 
+                    {/* Department Chip */}
+                    <Box sx={{ mb: 3 }}>
                       <Chip
-                        icon={<member.icon />}
                         label={member.department}
                         sx={{
-                          mb: 3,
                           backgroundColor: "rgba(102, 126, 234, 0.1)",
                           color: "#667eea",
                           fontWeight: 600,
                           borderRadius: "20px",
+                          fontSize: { xs: "0.75rem", sm: "0.8rem" },
+                          px: 2,
+                          py: 1,
                         }}
                       />
+                    </Box>
 
-                      <Box
+                    {/* Description */}
+                    <Typography
+                      variant="body2"
+                      sx={{
+                        mb: 3,
+                        color: "#666",
+                        lineHeight: 1.6,
+                        fontSize: {
+                          xs: "0.8rem",
+                          sm: "0.85rem",
+                          md: "0.9rem",
+                        },
+                        textAlign: "justify",
+                        wordBreak: "break-word",
+                        overflowWrap: "break-word",
+                        hyphens: "auto",
+                        flexGrow: 1,
+                        display: "flex",
+                        alignItems: "center",
+                      }}
+                    >
+                      {member.description}
+                    </Typography>
+
+                    {/* Email Footer */}
+                    <Box
+                      sx={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        pt: 2,
+                        borderTop: "1px solid rgba(0,0,0,0.08)",
+                        mt: "auto",
+                      }}
+                    >
+                      <Typography
+                        variant="body2"
                         sx={{
-                          mb: 3,
-                          flexGrow: 1,
-                          display: "flex",
-                          flexDirection: "column",
+                          color: "#888",
+                          fontSize: {
+                            xs: "0.7rem",
+                            sm: "0.75rem",
+                            md: "0.8rem",
+                          },
+                          fontWeight: 500,
+                          wordBreak: "break-word",
+                          overflowWrap: "break-word",
+                          textAlign: "center",
                         }}
                       >
-                        <Typography
-                          variant="body2"
-                          sx={{
-                            color: "#666",
-                            lineHeight: 1.6,
-                            fontSize: {
-                              xs: "0.85rem",
-                              sm: "0.9rem",
-                              md: "0.95rem",
-                            },
-                            textAlign: "justify",
-                            flexGrow: 1,
-                            wordBreak: "break-word",
-                            overflowWrap: "break-word",
-                            hyphens: "auto",
-                          }}
-                        >
-                          {expandedCards[index]
-                            ? member.description
-                            : truncateText(member.description, 100)}
-                        </Typography>
-                        {member.description.length > 100 && (
-                          <Button
-                            onClick={() => toggleExpanded(index)}
-                            sx={{
-                              mt: 1,
-                              color: "#667eea",
-                              textTransform: "none",
-                              fontSize: { xs: "0.8rem", sm: "0.85rem" },
-                              fontWeight: 600,
-                              p: 0,
-                              minWidth: "auto",
-                              alignSelf: "flex-start",
-                              "&:hover": {
-                                backgroundColor: "transparent",
-                                textDecoration: "underline",
-                              },
-                            }}
-                          >
-                            {expandedCards[index] ? "Read Less" : "Read More"}
-                          </Button>
-                        )}
-                      </Box>
-
-                      <Divider
-                        sx={{ my: 2, borderColor: "rgba(0,0,0,0.08)" }}
-                      />
-
-                      {/* Contact Information */}
-                      <Box
-                        sx={{
-                          display: "flex",
-                          flexDirection: "column",
-                          gap: 1,
-                          alignItems: "center",
-                          mt: "auto",
-                        }}
-                      >
-                        {/* <Typography
-                          variant="body2"
-                          sx={{
-                            color: "#888",
-                            fontSize: "0.9rem",
-                            fontWeight: 500,
-                            textAlign: "center",
-                          }}
-                        >
-                          {member.email}
-                        </Typography>
-                        <Typography
-                          variant="body2"
-                          sx={{
-                            color: "#888",
-                            fontSize: "0.85rem",
-                            fontWeight: 400,
-                            textAlign: "center",
-                          }}
-                        >
-                          {member.phone}
-                        </Typography> */}
-                      </Box>
-                    </CardContent>
-                  </EnhancedTeamCard>
-                </Zoom>
+                        <strong>Email:</strong> {member.email}
+                      </Typography>
+                    </Box>
+                  </CardContent>
+                </EnhancedTeamCard>
               </Grid>
             ))}
         </Grid>

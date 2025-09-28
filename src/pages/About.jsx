@@ -165,16 +165,6 @@ function About() {
       avatar: "MA",
     },
     {
-      name: "Samim Chowdhury",
-      position: "ED -Executive Director Climate - smart Microfinance",
-      email: "samim@capsbd.com",
-      department: "Leadership",
-      description:
-        "Advancing climate-smart microfinance for sustainable livelihoods and climate resilience.",
-      img: samimImg,
-      avatar: "SC",
-    },
-    {
       name: "Muhammad Golam Sarwar",
       position: "Chairperson",
       email: "muhammad.golam.sarwar@capsbd.org",
@@ -905,118 +895,351 @@ function About() {
             </Typography>
           </SectionHeader>
 
+          {/* Director General - Featured Single Column */}
+          <Box sx={{ mb: 6 }}>
+            <Grid container justifyContent="center">
+              <Grid item xs={12} sm={10} md={8} lg={6}>
+                {(() => {
+                  const directorGeneral = teamMembers.find(
+                    (member) => member.position === "Director General"
+                  );
+                  return directorGeneral ? (
+                    <AboutTeamCard
+                      sx={{
+                        width: "100%",
+                        maxWidth: "600px",
+                        minHeight: "400px",
+                        display: "flex",
+                        flexDirection: "column",
+                        position: "relative",
+                        overflow: "hidden",
+                        mx: "auto",
+                        "&:hover": {
+                          transform: "translateY(-8px) scale(1.02)",
+                          boxShadow: "0 25px 50px rgba(0,0,0,0.2)",
+                        },
+                      }}
+                    >
+                      <CardContent
+                        sx={{
+                          textAlign: "center",
+                          p: { xs: 4, sm: 5 },
+                          width: "100%",
+                          flexGrow: 1,
+                          display: "flex",
+                          flexDirection: "column",
+                          justifyContent: "space-between",
+                        }}
+                      >
+                        {/* Avatar */}
+                        <Box sx={{ mb: 3 }}>
+                          <AboutAvatar
+                            className="avatar"
+                            src={directorGeneral.img}
+                            alt={directorGeneral.name}
+                            sx={{
+                              width: { xs: 100, sm: 120, md: 140 },
+                              height: { xs: 100, sm: 120, md: 140 },
+                              margin: "0 auto 20px",
+                              border: "6px solid #fff",
+                              boxShadow: "0 12px 32px rgba(0,0,0,0.2)",
+                            }}
+                          >
+                            {directorGeneral.avatar}
+                          </AboutAvatar>
+                        </Box>
+
+                        {/* Name and Position */}
+                        <Box sx={{ mb: 3 }}>
+                          <Typography
+                            variant="h4"
+                            sx={{
+                              fontWeight: 700,
+                              mb: 2,
+                              color: "#1e3c72",
+                              fontSize: {
+                                xs: "1.5rem",
+                                sm: "1.8rem",
+                                md: "2rem",
+                              },
+                              lineHeight: 1.3,
+                            }}
+                          >
+                            {directorGeneral.name}
+                          </Typography>
+                          <Typography
+                            variant="h5"
+                            sx={{
+                              fontWeight: 600,
+                              mb: 3,
+                              color: "#667eea",
+                              fontSize: {
+                                xs: "1.1rem",
+                                sm: "1.3rem",
+                                md: "1.4rem",
+                              },
+                              lineHeight: 1.4,
+                            }}
+                          >
+                            {directorGeneral.position}
+                          </Typography>
+                        </Box>
+
+                        {/* Department Chip */}
+                        <Box sx={{ mb: 4 }}>
+                          <Chip
+                            label={directorGeneral.department}
+                            sx={{
+                              backgroundColor: "rgba(102, 126, 234, 0.1)",
+                              color: "#667eea",
+                              fontWeight: 600,
+                              borderRadius: "25px",
+                              fontSize: { xs: "0.9rem", sm: "1rem" },
+                              px: 3,
+                              py: 1.5,
+                              height: "auto",
+                            }}
+                          />
+                        </Box>
+
+                        {/* Description */}
+                        <Typography
+                          variant="body1"
+                          sx={{
+                            mb: 4,
+                            color: "#666",
+                            lineHeight: 1.7,
+                            fontSize: {
+                              xs: "1rem",
+                              sm: "1.1rem",
+                              md: "1.2rem",
+                            },
+                            textAlign: "justify",
+                            wordBreak: "break-word",
+                            overflowWrap: "break-word",
+                            hyphens: "auto",
+                            flexGrow: 1,
+                            display: "flex",
+                            alignItems: "center",
+                          }}
+                        >
+                          {directorGeneral.description}
+                        </Typography>
+
+                        {/* Email Footer */}
+                        <Box
+                          sx={{
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            pt: 3,
+                            borderTop: "2px solid rgba(0,0,0,0.08)",
+                            mt: "auto",
+                          }}
+                        >
+                          <Typography
+                            variant="body1"
+                            sx={{
+                              color: "#888",
+                              fontSize: {
+                                xs: "0.9rem",
+                                sm: "1rem",
+                                md: "1.1rem",
+                              },
+                              fontWeight: 500,
+                              wordBreak: "break-word",
+                              overflowWrap: "break-word",
+                              textAlign: "center",
+                            }}
+                          >
+                            <strong>Email:</strong> {directorGeneral.email}
+                          </Typography>
+                        </Box>
+                      </CardContent>
+                    </AboutTeamCard>
+                  ) : null;
+                })()}
+              </Grid>
+            </Grid>
+          </Box>
+
+          {/* Rest of the Team - 3 Column Grid */}
           <Grid
             container
-            spacing={{ xs: 2, sm: 3, md: 4 }}
+            spacing={{ xs: 3, sm: 4, md: 5 }}
             justifyContent="center"
             alignItems="stretch"
-            sx={{ width: "100%" }}
+            sx={{ width: "100%", maxWidth: "1200px", mx: "auto" }}
           >
-            {teamMembers.map((member, index) => (
-              <Grid
-                item
-                xs={12}
-                sm={6}
-                lg={3}
-                key={index}
-                sx={{ width: "100%" }}
-              >
-                <AboutTeamCard>
-                  <CardContent
+            {teamMembers
+              .filter((member) => member.position !== "Director General")
+              .map((member, index) => (
+                <Grid
+                  item
+                  xs={12}
+                  sm={6}
+                  md={4}
+                  lg={4}
+                  key={index}
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    mb: 3,
+                  }}
+                >
+                  <AboutTeamCard
                     sx={{
-                      textAlign: "center",
-                      p: { xs: 2, sm: 3, md: 4 },
                       width: "100%",
+                      maxWidth: "350px",
+                      minHeight: "500px",
+                      display: "flex",
+                      flexDirection: "column",
+                      position: "relative",
+                      overflow: "hidden",
+                      "&:hover": {
+                        transform: "translateY(-8px) scale(1.02)",
+                        boxShadow: "0 25px 50px rgba(0,0,0,0.2)",
+                      },
                     }}
                   >
-                    <AboutAvatar
-                      className="avatar"
-                      src={member.img}
-                      alt={member.name}
-                    >
-                      {member.avatar}
-                    </AboutAvatar>
-                    <Typography
-                      variant="h5"
+                    <CardContent
                       sx={{
-                        fontWeight: 700,
-                        mb: 1,
-                        color: "#1e3c72",
-                        fontSize: { xs: "1.2rem", md: "1.3rem" },
-                      }}
-                    >
-                      {member.name}
-                    </Typography>
-                    <Typography
-                      variant="subtitle1"
-                      sx={{
-                        fontWeight: 600,
-                        mb: 2,
-                        color: "#667eea",
-                        fontSize: { xs: "1rem", md: "1.1rem" },
-                      }}
-                    >
-                      {member.position}
-                    </Typography>
-                    <Chip
-                      label={member.department}
-                      sx={{
-                        mb: 3,
-                        backgroundColor: "rgba(102, 126, 234, 0.1)",
-                        color: "#667eea",
-                        fontWeight: 600,
-                        borderRadius: "20px",
-                      }}
-                    />
-                    <Typography
-                      variant="body2"
-                      sx={{
-                        mb: 3,
-                        color: "#666",
-                        lineHeight: 1.6,
-                        fontSize: {
-                          xs: "0.85rem",
-                          sm: "0.9rem",
-                          md: "0.95rem",
-                        },
-                        textAlign: "justify",
-                        wordBreak: "break-word",
-                        overflowWrap: "break-word",
-                        hyphens: "auto",
-                      }}
-                    >
-                      {member.description}
-                    </Typography>
-                    <Box
-                      sx={{
+                        textAlign: "center",
+                        p: { xs: 3, sm: 4 },
+                        width: "100%",
+                        flexGrow: 1,
                         display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        pt: 2,
-                        borderTop: "1px solid rgba(0,0,0,0.08)",
+                        flexDirection: "column",
+                        justifyContent: "space-between",
                       }}
                     >
+                      {/* Avatar */}
+                      <Box sx={{ mb: 3 }}>
+                        <AboutAvatar
+                          className="avatar"
+                          src={member.img}
+                          alt={member.name}
+                          sx={{
+                            width: { xs: 70, sm: 80, md: 90 },
+                            height: { xs: 70, sm: 80, md: 90 },
+                            margin: "0 auto 16px",
+                            border: "4px solid #fff",
+                            boxShadow: "0 8px 24px rgba(0,0,0,0.15)",
+                          }}
+                        >
+                          {member.avatar}
+                        </AboutAvatar>
+                      </Box>
+
+                      {/* Name and Position */}
+                      <Box sx={{ mb: 2 }}>
+                        <Typography
+                          variant="h5"
+                          sx={{
+                            fontWeight: 700,
+                            mb: 1,
+                            color: "#1e3c72",
+                            fontSize: {
+                              xs: "1.1rem",
+                              sm: "1.2rem",
+                              md: "1.3rem",
+                            },
+                            lineHeight: 1.3,
+                          }}
+                        >
+                          {member.name}
+                        </Typography>
+                        <Typography
+                          variant="subtitle1"
+                          sx={{
+                            fontWeight: 600,
+                            mb: 2,
+                            color: "#667eea",
+                            fontSize: {
+                              xs: "0.9rem",
+                              sm: "1rem",
+                              md: "1.1rem",
+                            },
+                            lineHeight: 1.4,
+                          }}
+                        >
+                          {member.position}
+                        </Typography>
+                      </Box>
+
+                      {/* Department Chip */}
+                      <Box sx={{ mb: 3 }}>
+                        <Chip
+                          label={member.department}
+                          sx={{
+                            backgroundColor: "rgba(102, 126, 234, 0.1)",
+                            color: "#667eea",
+                            fontWeight: 600,
+                            borderRadius: "20px",
+                            fontSize: { xs: "0.75rem", sm: "0.8rem" },
+                            px: 2,
+                            py: 1,
+                          }}
+                        />
+                      </Box>
+
+                      {/* Description */}
                       <Typography
                         variant="body2"
                         sx={{
-                          color: "#888",
+                          mb: 3,
+                          color: "#666",
+                          lineHeight: 1.6,
                           fontSize: {
-                            xs: "0.75rem",
-                            sm: "0.8rem",
-                            md: "0.85rem",
+                            xs: "0.8rem",
+                            sm: "0.85rem",
+                            md: "0.9rem",
                           },
-                          fontWeight: 500,
+                          textAlign: "justify",
                           wordBreak: "break-word",
                           overflowWrap: "break-word",
+                          hyphens: "auto",
+                          flexGrow: 1,
+                          display: "flex",
+                          alignItems: "center",
                         }}
                       >
-                        <strong>Email:</strong> {member.email}
+                        {member.description}
                       </Typography>
-                    </Box>
-                  </CardContent>
-                </AboutTeamCard>
-              </Grid>
-            ))}
+
+                      {/* Email Footer */}
+                      <Box
+                        sx={{
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          pt: 2,
+                          borderTop: "1px solid rgba(0,0,0,0.08)",
+                          mt: "auto",
+                        }}
+                      >
+                        <Typography
+                          variant="body2"
+                          sx={{
+                            color: "#888",
+                            fontSize: {
+                              xs: "0.7rem",
+                              sm: "0.75rem",
+                              md: "0.8rem",
+                            },
+                            fontWeight: 500,
+                            wordBreak: "break-word",
+                            overflowWrap: "break-word",
+                            textAlign: "center",
+                          }}
+                        >
+                          <strong>Email:</strong> {member.email}
+                        </Typography>
+                      </Box>
+                    </CardContent>
+                  </AboutTeamCard>
+                </Grid>
+              ))}
           </Grid>
         </Container>
       </AltSectionBox>
