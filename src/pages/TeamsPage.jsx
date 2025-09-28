@@ -47,9 +47,6 @@ const HeroSection = styled(Box)(({ theme }) => ({
   position: "relative",
   overflow: "hidden",
   padding: theme.spacing(12, 0),
-  width: "100%",
-  maxWidth: "100vw",
-  margin: 0,
   "&::before": {
     content: '""',
     position: "absolute",
@@ -305,17 +302,7 @@ const TeamsPage = () => {
   ];
 
   return (
-    <Box
-      sx={{
-        minHeight: "100vh",
-        backgroundColor: "#f8f9fa",
-        width: "100%",
-        maxWidth: "100vw",
-        overflowX: "hidden",
-        margin: 0,
-        padding: 0,
-      }}
-    >
+    <Box sx={{ minHeight: "100vh", backgroundColor: "#f8f9fa" }}>
       {/* Enhanced Hero Section */}
       <HeroSection>
         <Container
@@ -324,10 +311,6 @@ const TeamsPage = () => {
             px: { xs: 2, sm: 3 },
             position: "relative",
             zIndex: 1,
-            width: "100%",
-            maxWidth: "100vw",
-            margin: 0,
-            overflowX: "hidden",
           }}
         >
           <Box sx={{ textAlign: "center" }}>
@@ -390,33 +373,16 @@ const TeamsPage = () => {
 
       {/* Team Members Grid - Same as About Us */}
       <Container
-        maxWidth={false}
+        maxWidth="xl"
         sx={{
           px: { xs: 2, sm: 3, md: 4 },
           pb: 8,
-          width: "100%",
-          maxWidth: "100vw",
-          margin: 0,
-          overflowX: "hidden",
         }}
       >
         {/* Director General - Featured Single Column */}
-        <Box
-          sx={{ mb: 6, width: "100%", maxWidth: "100%", overflowX: "hidden" }}
-        >
-          <Grid
-            container
-            justifyContent="center"
-            sx={{ width: "100%", margin: 0, padding: 0 }}
-          >
-            <Grid
-              item
-              xs={12}
-              sm={10}
-              md={8}
-              lg={6}
-              sx={{ width: "100%", maxWidth: "100%" }}
-            >
+        <Box sx={{ mb: 6 }}>
+          <Grid container justifyContent="center">
+            <Grid item xs={12} sm={10} md={8} lg={6}>
               {(() => {
                 const directorGeneral = teamMembers.find(
                   (member) => member.position === "Director General"
@@ -587,13 +553,6 @@ const TeamsPage = () => {
           spacing={{ xs: 3, sm: 4, md: 5 }}
           justifyContent="center"
           alignItems="stretch"
-          sx={{
-            width: "100%",
-            maxWidth: "1200px",
-            mx: "auto",
-            margin: 0,
-            padding: 0,
-          }}
         >
           {teamMembers
             .filter((member) => member.position !== "Director General")
@@ -609,10 +568,6 @@ const TeamsPage = () => {
                   display: "flex",
                   justifyContent: "center",
                   mb: 3,
-                  width: "100%",
-                  maxWidth: "100%",
-                  padding: 0,
-                  margin: 0,
                 }}
               >
                 <EnhancedTeamCard
