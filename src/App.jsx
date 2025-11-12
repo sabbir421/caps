@@ -70,216 +70,218 @@ import ClimateSustainability from "./pages/working-area/ClimateSustainability";
 
 function App() {
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        minHeight: "100vh",
-        width: "100%",
-      }}
-    >
-      <Navbar />
-      <Box component="main" sx={{ flexGrow: 1, width: "100%" }}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+    <>
+    </>
+    // <Box
+    //   sx={{
+    //     display: "flex",
+    //     flexDirection: "column",
+    //     minHeight: "100vh",
+    //     width: "100%",
+    //   }}
+    // >
+    //   <Navbar />
+    //   <Box component="main" sx={{ flexGrow: 1, width: "100%" }}>
+    //     <Routes>
+    //       <Route path="/" element={<Home />} />
+    //       <Route path="/about" element={<About />} />
 
-          {/* Working Area Routes */}
-          <Route path="/working-area" element={<WorkingArea />} />
-          <Route
-            path="/working-area/climate-action"
-            element={<ClimateAction />}
-          />
-          <Route path="/working-area/education" element={<Education />} />
-          <Route path="/working-area/healthcare" element={<Healthcare />} />
-          <Route path="/working-area/agriculture" element={<Agriculture />} />
-          <Route path="/working-area/water" element={<WaterManagement />} />
-          <Route path="/working-area/energy" element={<RenewableEnergy />} />
+    //       {/* Working Area Routes */}
+    //       <Route path="/working-area" element={<WorkingArea />} />
+    //       <Route
+    //         path="/working-area/climate-action"
+    //         element={<ClimateAction />}
+    //       />
+    //       <Route path="/working-area/education" element={<Education />} />
+    //       <Route path="/working-area/healthcare" element={<Healthcare />} />
+    //       <Route path="/working-area/agriculture" element={<Agriculture />} />
+    //       <Route path="/working-area/water" element={<WaterManagement />} />
+    //       <Route path="/working-area/energy" element={<RenewableEnergy />} />
 
-          {/*new Working Area Routes */}
-          <Route
-            path="/working-area/community-education/community-education"
-            element={<ClimateSmartCommunityEducation />}
-          />
-          <Route
-            path="/working-area/community-education/child-protection"
-            element={<ClimateSmartChildprotection />}
-          />
-          <Route
-            path="/working-area/community-education/coding-education"
-            element={<ClimateSmartCodingEducation />}
-          />
-          <Route
-            path="/working-area/community-education/disabilities"
-            element={<ClimateSmartProgramsForPeopleWithDisabilities />}
-          />
-          <Route
-            path="/working-area/community-education/women-entrepreneurs"
-            element={<ClimateSmartWomenEntrepreneurs />}
-          />
-          <Route
-            path="/working-area/community-education/vulnerable-people"
-            element={<PrioritizingClimateVulnerablePeople />}
-          />
-          <Route
-            path="/working-area/community-education/migration"
-            element={<ClimateSmartMigration />}
-          />
+    //       {/*new Working Area Routes */}
+    //       <Route
+    //         path="/working-area/community-education/community-education"
+    //         element={<ClimateSmartCommunityEducation />}
+    //       />
+    //       <Route
+    //         path="/working-area/community-education/child-protection"
+    //         element={<ClimateSmartChildprotection />}
+    //       />
+    //       <Route
+    //         path="/working-area/community-education/coding-education"
+    //         element={<ClimateSmartCodingEducation />}
+    //       />
+    //       <Route
+    //         path="/working-area/community-education/disabilities"
+    //         element={<ClimateSmartProgramsForPeopleWithDisabilities />}
+    //       />
+    //       <Route
+    //         path="/working-area/community-education/women-entrepreneurs"
+    //         element={<ClimateSmartWomenEntrepreneurs />}
+    //       />
+    //       <Route
+    //         path="/working-area/community-education/vulnerable-people"
+    //         element={<PrioritizingClimateVulnerablePeople />}
+    //       />
+    //       <Route
+    //         path="/working-area/community-education/migration"
+    //         element={<ClimateSmartMigration />}
+    //       />
 
-          {/* ******** */}
-          <Route
-            path="/working-area/waste-management/garbage-management"
-            element={<ClimateSmartCommunityGarbageManagement />}
-          />
-          <Route
-            path="/working-area/waste-management/plastic-management"
-            element={<ClimateSmartPlasticManagement />}
-          />
-          <Route
-            path="/working-area/marine-life/sea-species"
-            element={<ClimateSmartAdaptationForSeaSpecies />}
-          />
-          <Route
-            path="/working-area/coastal-forests/sundarbans"
-            element={<ClimateSmartSundarbans />}
-          />
-          <Route
-            path="/working-area/coastal-forests/afforestation"
-            element={<ClimateSmartAfforestation />}
-          />
-          <Route
-            path="/working-area/coastal-forests/wildlife"
-            element={<ClimateSmartWildlifeAdaptation />}
-          />
-          <Route
-            path="/working-area/coastal-forests/wilderness"
-            element={<ClimateSmartWilderness />}
-          />
-          <Route
-            path="/working-area/coastal-forests/fisherman-resettlement"
-            element={<ClimateSmartFishermanResettlement />}
-          />
-          <Route
-            path="/working-area/coastal-forests/women-resettlement"
-            element={<ClimateSmartResettlementForWomen />}
-          />
-          <Route
-            path="/working-area/agriculture-water/agro-forestry"
-            element={<ClimateSmartAgroForestry />}
-          />
-          <Route
-            path="/working-area/agriculture-water/csa"
-            element={<ClimateSmartAgriculture />}
-          />
-          <Route
-            path="/working-area/agriculture-water/irrigation"
-            element={<ClimateSmartIrrigation />}
-          />
-          <Route
-            path="/working-area/agriculture-water/water-plant"
-            element={<ClimateSmartWaterPlant />}
-          />
-          <Route
-            path="/working-area/agriculture-water/canal-river"
-            element={<ClimateSmartCanalAndRiverExcavation />}
-          />
-          <Route
-            path="/working-area/agriculture-water/aquaculture"
-            element={<ClimateSmartAquaculture />}
-          />
-          <Route
-            path="/working-area/global-green-ambassador"
-            element={<GlobalGreenAmbassador />}
-          />
-          <Route
-            path="/working-area/climate-smart-technical-education"
-            element={<ClimateSmartTechnicalEducation />}
-          />
-          <Route
-            path="/working-area/climate-smart-housing"
-            element={<ClimateSmartHousing />}
-          />
-          <Route
-            path="/working-area/climate-smart-schooling"
-            element={<ClimateSmartSchooling />}
-          />
-          <Route
-            path="/working-area/climate-smart-club"
-            element={<ClimateSmartClub />}
-          />
-          <Route
-            path="/working-area/climate-adaptive-english-learning"
-            element={<ClimateAdaptiveEnglishLearning />}
-          />
-          <Route
-            path="/working-area/community-learning-research-centre"
-            element={<ClimateSmartCommunityLearningResearchCentre />}
-          />
-          <Route
-            path="/working-area/climate-smart-language-learning"
-            element={<ClimateSmartLanguageLearning />}
-          />
-          <Route
-            path="/working-area/global-green-ambassador-program"
-            element={<GlobalGreenAmbassadorProgram />}
-          />
+    //       {/* ******** */}
+    //       <Route
+    //         path="/working-area/waste-management/garbage-management"
+    //         element={<ClimateSmartCommunityGarbageManagement />}
+    //       />
+    //       <Route
+    //         path="/working-area/waste-management/plastic-management"
+    //         element={<ClimateSmartPlasticManagement />}
+    //       />
+    //       <Route
+    //         path="/working-area/marine-life/sea-species"
+    //         element={<ClimateSmartAdaptationForSeaSpecies />}
+    //       />
+    //       <Route
+    //         path="/working-area/coastal-forests/sundarbans"
+    //         element={<ClimateSmartSundarbans />}
+    //       />
+    //       <Route
+    //         path="/working-area/coastal-forests/afforestation"
+    //         element={<ClimateSmartAfforestation />}
+    //       />
+    //       <Route
+    //         path="/working-area/coastal-forests/wildlife"
+    //         element={<ClimateSmartWildlifeAdaptation />}
+    //       />
+    //       <Route
+    //         path="/working-area/coastal-forests/wilderness"
+    //         element={<ClimateSmartWilderness />}
+    //       />
+    //       <Route
+    //         path="/working-area/coastal-forests/fisherman-resettlement"
+    //         element={<ClimateSmartFishermanResettlement />}
+    //       />
+    //       <Route
+    //         path="/working-area/coastal-forests/women-resettlement"
+    //         element={<ClimateSmartResettlementForWomen />}
+    //       />
+    //       <Route
+    //         path="/working-area/agriculture-water/agro-forestry"
+    //         element={<ClimateSmartAgroForestry />}
+    //       />
+    //       <Route
+    //         path="/working-area/agriculture-water/csa"
+    //         element={<ClimateSmartAgriculture />}
+    //       />
+    //       <Route
+    //         path="/working-area/agriculture-water/irrigation"
+    //         element={<ClimateSmartIrrigation />}
+    //       />
+    //       <Route
+    //         path="/working-area/agriculture-water/water-plant"
+    //         element={<ClimateSmartWaterPlant />}
+    //       />
+    //       <Route
+    //         path="/working-area/agriculture-water/canal-river"
+    //         element={<ClimateSmartCanalAndRiverExcavation />}
+    //       />
+    //       <Route
+    //         path="/working-area/agriculture-water/aquaculture"
+    //         element={<ClimateSmartAquaculture />}
+    //       />
+    //       <Route
+    //         path="/working-area/global-green-ambassador"
+    //         element={<GlobalGreenAmbassador />}
+    //       />
+    //       <Route
+    //         path="/working-area/climate-smart-technical-education"
+    //         element={<ClimateSmartTechnicalEducation />}
+    //       />
+    //       <Route
+    //         path="/working-area/climate-smart-housing"
+    //         element={<ClimateSmartHousing />}
+    //       />
+    //       <Route
+    //         path="/working-area/climate-smart-schooling"
+    //         element={<ClimateSmartSchooling />}
+    //       />
+    //       <Route
+    //         path="/working-area/climate-smart-club"
+    //         element={<ClimateSmartClub />}
+    //       />
+    //       <Route
+    //         path="/working-area/climate-adaptive-english-learning"
+    //         element={<ClimateAdaptiveEnglishLearning />}
+    //       />
+    //       <Route
+    //         path="/working-area/community-learning-research-centre"
+    //         element={<ClimateSmartCommunityLearningResearchCentre />}
+    //       />
+    //       <Route
+    //         path="/working-area/climate-smart-language-learning"
+    //         element={<ClimateSmartLanguageLearning />}
+    //       />
+    //       <Route
+    //         path="/working-area/global-green-ambassador-program"
+    //         element={<GlobalGreenAmbassadorProgram />}
+    //       />
 
-          {/* New Working Area Routes */}
-          <Route
-            path="/working-area/climate-smart-campus-classroom"
-            element={<ClimateSmartCampusAndClassroom />}
-          />
-          <Route
-            path="/working-area/climate-smart-volunteer"
-            element={<ClimateSmartVolunteer />}
-          />
-          <Route
-            path="/working-area/climate-smart-extracurricular-activities"
-            element={<ClimateSmartExtracurricularActivities />}
-          />
-          <Route
-            path="/working-area/climate-smart-global-green-ambassador"
-            element={<ClimateSmartGlobalGreenAmbassador />}
-          />
-          <Route
-            path="/working-area/climate-smart-online-education"
-            element={<ClimateSmartOnlineEducation />}
-          />
-          <Route
-            path="/working-area/climate-smart-ecotourism-park"
-            element={<ClimateSmartEcotourismPark />}
-          />
-          <Route
-            path="/working-area/climate-sustainability"
-            element={<ClimateSustainability />}
-          />
+    //       {/* New Working Area Routes */}
+    //       <Route
+    //         path="/working-area/climate-smart-campus-classroom"
+    //         element={<ClimateSmartCampusAndClassroom />}
+    //       />
+    //       <Route
+    //         path="/working-area/climate-smart-volunteer"
+    //         element={<ClimateSmartVolunteer />}
+    //       />
+    //       <Route
+    //         path="/working-area/climate-smart-extracurricular-activities"
+    //         element={<ClimateSmartExtracurricularActivities />}
+    //       />
+    //       <Route
+    //         path="/working-area/climate-smart-global-green-ambassador"
+    //         element={<ClimateSmartGlobalGreenAmbassador />}
+    //       />
+    //       <Route
+    //         path="/working-area/climate-smart-online-education"
+    //         element={<ClimateSmartOnlineEducation />}
+    //       />
+    //       <Route
+    //         path="/working-area/climate-smart-ecotourism-park"
+    //         element={<ClimateSmartEcotourismPark />}
+    //       />
+    //       <Route
+    //         path="/working-area/climate-sustainability"
+    //         element={<ClimateSustainability />}
+    //       />
 
-          {/* Volunteer & Community Engagement Routes */}
-          <Route
-            path="/working-area/volunteer-community"
-            element={<ClimateSmartVolunteer />}
-          />
+    //       {/* Volunteer & Community Engagement Routes */}
+    //       <Route
+    //         path="/working-area/volunteer-community"
+    //         element={<ClimateSmartVolunteer />}
+    //       />
 
-          {/* What We Do Routes */}
-          <Route path="/what-we-do" element={<WhatWeDo />} />
-          <Route path="/what-we-do/programs" element={<ProgramsOverview />} />
-          <Route
-            path="/what-we-do/community"
-            element={<CommunityDevelopment />}
-          />
-          <Route path="/what-we-do/research" element={<ResearchInnovation />} />
-          <Route path="/what-we-do/capacity" element={<CapacityBuilding />} />
-          <Route path="/what-we-do/advocacy" element={<AdvocacyPolicy />} />
-          <Route path="/what-we-do/partnerships" element={<Partnerships />} />
+    //       {/* What We Do Routes */}
+    //       <Route path="/what-we-do" element={<WhatWeDo />} />
+    //       <Route path="/what-we-do/programs" element={<ProgramsOverview />} />
+    //       <Route
+    //         path="/what-we-do/community"
+    //         element={<CommunityDevelopment />}
+    //       />
+    //       <Route path="/what-we-do/research" element={<ResearchInnovation />} />
+    //       <Route path="/what-we-do/capacity" element={<CapacityBuilding />} />
+    //       <Route path="/what-we-do/advocacy" element={<AdvocacyPolicy />} />
+    //       <Route path="/what-we-do/partnerships" element={<Partnerships />} />
 
-          <Route path="/publications" element={<Publications />} />
-          <Route path="/teams" element={<TeamsPage />} />
-          <Route path="/gallery" element={<PhotoGallery />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </Box>
-      <Footer />
-    </Box>
+    //       <Route path="/publications" element={<Publications />} />
+    //       <Route path="/teams" element={<TeamsPage />} />
+    //       <Route path="/gallery" element={<PhotoGallery />} />
+    //       <Route path="/contact" element={<Contact />} />
+    //     </Routes>
+    //   </Box>
+    //   <Footer />
+    // </Box>
   );
 }
 
